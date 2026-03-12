@@ -5,25 +5,27 @@ import Layout from '../layouts/Layout.astro';
 <Layout title="About — Starling AIX" description="Starling AIX creates a classification system for business knowledge that lives in natural language. Our methodology transforms generic LLMs into contextualized Intelligence Agents.">
 
 <!-- ── Hero ──────────────────────────────────────────────────── -->
-<section style="position:relative;overflow:hidden;padding:7rem 0 5rem;" class="grid-bg">
-  <div class="hero-glow"></div>
-  <span class="corner-mark cm-tl">+</span>
-  <span class="corner-mark cm-tr">+</span>
+<section style="position:relative;overflow:hidden;padding:7rem 0 5rem;background:#ffffff;border-bottom:1px solid rgba(0,0,0,0.07);">
+  <!-- Light grid overlay -->
+  <div style="position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(0,0,0,0.018) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,0.018) 1px,transparent 1px);background-size:72px 72px;"></div>
+  <!-- Orange radial glow -->
+  <div style="position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 50% 40% at 50% 0%,rgba(224,100,28,0.045) 0%,transparent 65%);"></div>
+
   <div class="container" style="position:relative;z-index:1;">
     <div class="about-hero-grid">
       <div>
-        <p class="feat-num fade-up" data-delay="0">Starling AIX · The Breakthrough</p>
-        <h1 class="heading-display fade-up" data-delay="0.08"
-            style="font-size:clamp(3rem,8vw,5rem);margin:0 0 1.5rem;max-width:580px;">
-          Your business,<br/>now fluent in AI.
+        <div class="stag stag-o fade-up" data-delay="0" style="margin-bottom:1.5rem;">Starling AIX · The Breakthrough</div>
+        <h1 class="fade-up" data-delay="0.08"
+            style="font-family:'Bitter',Georgia,serif;font-weight:700;font-size:clamp(3rem,8vw,5rem);margin:0 0 1.5rem;max-width:580px;line-height:1;letter-spacing:-0.04em;color:#0c0c0c;">
+          Your business,<br/>now <em style="color:#e0641c;font-style:italic;">fluent in AI.</em>
         </h1>
         <p class="fade-up" data-delay="0.15"
-           style="font-size:1.05rem;color:#71717a;line-height:1.75;max-width:480px;margin:0 0 2.5rem;">
+           style="font-family:'Inter Tight',system-ui,sans-serif;font-size:1.05rem;color:#4a4a4a;line-height:1.75;max-width:480px;margin:0 0 2.5rem;">
           We create a classification system for business knowledge that lives in natural language — not machine code. Our systems establish governing protocols where AI operates by human rules.
         </p>
         <div class="fade-up" data-delay="0.2" style="display:flex;gap:0.75rem;flex-wrap:wrap;">
-          <a href="/cognitive-design" class="btn btn-primary">Enroll Now →</a>
-          <a href="/ai-guide" class="btn btn-ghost">Get Free AI Guide</a>
+          <a href="/cognitive-design" class="btn btn-org">Enroll Now →</a>
+          <a href="/ai-guide" class="btn-ghost-light">Get Free AI Guide</a>
         </div>
       </div>
       <!-- Metric cluster -->
@@ -41,9 +43,9 @@ import Layout from '../layouts/Layout.astro';
             </div>
           ))}
         </div>
-        <div class="glass" style="padding:1.25rem;margin-top:0.75rem;display:flex;align-items:flex-start;gap:0.75rem;">
+        <div class="card-light" style="padding:1.25rem;margin-top:0.75rem;display:flex;align-items:flex-start;gap:0.75rem;">
           <span style="font-size:1rem;">💬</span>
-          <p style="font-size:0.82rem;color:#71717a;line-height:1.65;margin:0;font-style:italic;">
+          <p style="font-size:0.82rem;color:#4a4a4a;line-height:1.65;margin:0;font-style:italic;font-family:'Inter Tight',system-ui,sans-serif;">
             "In 20 minutes, it took me from being overwhelmed with information to only 53 attachments unattached. That huge mental burden on recall — gone."
           </p>
         </div>
@@ -52,16 +54,14 @@ import Layout from '../layouts/Layout.astro';
   </div>
 </section>
 
-<div class="divider"></div>
-
 <!-- ── Application Intelligence ──────────────────────────────── -->
-<section class="feat-section">
+<section style="background:#f2f1ee;padding:5rem 0;border-top:1px solid rgba(0,0,0,0.07);">
   <div class="container">
     <div class="feat-header">
       <div>
-        <p class="feat-num fade-up" data-delay="0">1.0 · Application Intelligence</p>
-        <h2 class="feat-h2 heading-display fade-up" data-delay="0.06">
-          Raw power meets structured expertise.
+        <div class="stag stag-o fade-up" data-delay="0" style="margin-bottom:1.25rem;">1.0 · Application Intelligence</div>
+        <h2 class="feat-h2 fade-up" data-delay="0.06">
+          Raw power meets<br/>structured expertise.
         </h2>
       </div>
       <div>
@@ -74,7 +74,7 @@ import Layout from '../layouts/Layout.astro';
       </div>
     </div>
 
-    <!-- AI² equation — colorful -->
+    <!-- AI² equation — colorful mock window, intentionally dark for contrast -->
     <div class="wide-mock fade-up" data-delay="0.18">
       <div class="mock-bar">
         <span class="mock-dot r"></span><span class="mock-dot y"></span><span class="mock-dot g"></span>
@@ -87,7 +87,7 @@ import Layout from '../layouts/Layout.astro';
           { label: 'AI²', accent: '#fff', bg: 'rgba(255,255,255,0.025)', border: 'rgba(255,255,255,0.08)', title: 'Cross Intelligence', desc: 'The product of both: cognitive systems that learn and evolve through memory training, natural conversation, and organisational feedback loops.' },
         ].map(({ label, accent, bg, border, title, desc }) => (
           <div style={`background:#050505;padding:1.75rem 2rem;display:flex;gap:1.5rem;align-items:flex-start;border-left:2px solid ${border};`}>
-            <div style={`font-family:'Space Grotesk',sans-serif;font-size:1.9rem;font-weight:700;color:${accent};min-width:52px;line-height:1;`}>{label}</div>
+            <div style={`font-family:'Bitter',Georgia,serif;font-size:1.9rem;font-weight:700;color:${accent};min-width:52px;line-height:1;`}>{label}</div>
             <div>
               <p style={`font-size:0.9rem;font-weight:600;margin:0 0 0.35rem;color:${accent};`}>{title}</p>
               <p style="font-size:0.825rem;color:#52525b;line-height:1.7;margin:0;">{desc}</p>
@@ -105,7 +105,7 @@ import Layout from '../layouts/Layout.astro';
 </section>
 
 <!-- ── Image Split: Leader ────────────────────────────────────── -->
-<section style="border-top:1px solid rgba(255,255,255,0.07);overflow:hidden;">
+<section style="border-top:1px solid rgba(0,0,0,0.07);overflow:hidden;">
   <div class="img-split">
     <div class="img-split-photo">
       <img src="/images/women-teal.png" alt="AI-native leader with organizational intelligence system" />
@@ -116,11 +116,11 @@ import Layout from '../layouts/Layout.astro';
         </div>
       </div>
     </div>
-    <div class="img-split-content">
+    <div class="img-split-content" style="padding:4rem 2.5rem;">
       <p class="feat-num" style="margin-bottom:0.75rem;">2.0 · AI-Native Org Design</p>
-      <h2 class="feat-h2 heading-display" style="margin-bottom:1.25rem;">The first methodology built<br/>for the AI era.</h2>
-      <p style="font-size:0.95rem;color:#71717a;line-height:1.8;margin:0 0 2rem;">
-        Starling AIX is built on <strong style="color:#e4e4e7;">Cognitive Design</strong> — a comprehensive approach to business transformation that synthesises systematic efficiency with human values. This isn't AI trained on the Internet. It's AI trained on your methodology.
+      <h2 class="feat-h2" style="margin-bottom:1.25rem;">The first methodology built<br/>for the AI era.</h2>
+      <p style="font-family:'Inter Tight',system-ui,sans-serif;font-size:0.95rem;color:#4a4a4a;line-height:1.8;margin:0 0 2rem;">
+        Starling AIX is built on <strong style="color:#0c0c0c;">Cognitive Design</strong> — a comprehensive approach to business transformation that synthesises systematic efficiency with human values. This isn't AI trained on the Internet. It's AI trained on your methodology.
       </p>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;margin-bottom:2rem;">
         {[
@@ -129,54 +129,54 @@ import Layout from '../layouts/Layout.astro';
           ['Sovereign architecture', 'You own every memory, forever'],
           ['No code required', 'Conversation as configuration'],
         ].map(([title, body]) => (
-          <div style="padding:0.875rem 1rem;border:1px solid rgba(255,255,255,0.07);border-radius:8px;background:rgba(255,255,255,0.02);">
-            <p style="font-size:0.82rem;color:#e4e4e7;font-weight:600;margin:0 0 0.2rem;">{title}</p>
-            <p style="font-size:0.75rem;color:#52525b;line-height:1.5;margin:0;">{body}</p>
+          <div class="card-light" style="padding:0.875rem 1rem;">
+            <p style="font-size:0.82rem;color:#0c0c0c;font-weight:600;margin:0 0 0.2rem;font-family:'Inter Tight',sans-serif;">{title}</p>
+            <p style="font-size:0.75rem;color:#6a6a6a;line-height:1.5;margin:0;font-family:'Inter Tight',sans-serif;">{body}</p>
           </div>
         ))}
       </div>
-      <a href="/cognitive-design" class="btn btn-primary" style="align-self:flex-start;">See the Curriculum →</a>
+      <a href="/cognitive-design" class="btn btn-org" style="align-self:flex-start;">See the Curriculum →</a>
     </div>
   </div>
 </section>
 
 <!-- ── Proven Methods ─────────────────────────────────────────── -->
-<section class="feat-section" style="position:relative;overflow:hidden;border-top:1px solid rgba(255,255,255,0.07);">
+<section style="padding:5rem 0;position:relative;overflow:hidden;border-top:1px solid rgba(0,0,0,0.07);background:#ffffff;">
   <div class="section-grid-accent"></div>
   <div class="container" style="position:relative;z-index:1;">
     <div class="feat-header">
       <div>
-        <p class="feat-num fade-up" data-delay="0">3.0 · Proven Methods</p>
-        <h2 class="feat-h2 heading-display fade-up" data-delay="0.06">
+        <div class="stag stag-g fade-up" data-delay="0" style="margin-bottom:1.25rem;">3.0 · Proven Methods</div>
+        <h2 class="feat-h2 fade-up" data-delay="0.06">
           Built from real frameworks,<br/>not research labs.
         </h2>
       </div>
       <div>
         <p class="feat-body fade-up" data-delay="0.1">
-          Most AI platforms start with technology and try to fit business into it. Starling AIX started with <strong style="color:#e4e4e7;">Chris Kincade</strong> and <strong style="color:#e4e4e7;">Ari Meisel's</strong> frameworks for business design, optimisation, and transformation — then made them machine-executable.
+          Most AI platforms start with technology and try to fit business into it. Starling AIX started with <strong style="color:#0c0c0c;">Chris Kincade</strong> and <strong style="color:#0c0c0c;">Ari Meisel's</strong> frameworks for business design, optimisation, and transformation — then made them machine-executable.
         </p>
-        <p class="feat-body fade-up" data-delay="0.13" style="font-style:italic;color:#3f3f46;margin-bottom:0;">
+        <p class="feat-body fade-up" data-delay="0.13" style="font-style:italic;color:#888;margin-bottom:0;border-left:2px solid rgba(224,100,28,0.3);padding-left:1rem;">
           The sound barrier didn't stop aviation. It defined the engineering required to go faster. We designed the airframe for Industry 5.0.
         </p>
       </div>
     </div>
 
-    <!-- Stats strip -->
-    <div class="fade-up" data-delay="0.15" style="display:grid;grid-template-columns:repeat(2,1fr);border:1px solid rgba(255,255,255,0.07);border-radius:12px;overflow:hidden;margin-bottom:3rem;" class="stats-strip-4">
+    <!-- Stats strip — light with orange numbers -->
+    <div class="fade-up" data-delay="0.15" style="display:grid;grid-template-columns:repeat(2,1fr);border:1px solid rgba(0,0,0,0.08);border-radius:12px;overflow:hidden;margin-bottom:3rem;background:#ffffff;" class="stats-strip-4">
       {[
         ['25', 'Years of methodology'],
         ['12K', 'Hours of interface design'],
         ['12', 'Installer frameworks'],
         ['28', 'Constitutional memories'],
       ].map(([num, label], i) => (
-        <div style={`background:#0a0a0a;padding:2rem 1.5rem;text-align:center;${i % 2 === 0 ? 'border-right:1px solid rgba(255,255,255,0.07);' : ''}${i < 2 ? 'border-bottom:1px solid rgba(255,255,255,0.07);' : ''}`}>
+        <div style={`padding:2rem 1.5rem;text-align:center;${i % 2 === 0 ? 'border-right:1px solid rgba(0,0,0,0.08);' : ''}${i < 2 ? 'border-bottom:1px solid rgba(0,0,0,0.08);' : ''}`}>
           <div class="stat-num">{num}</div>
           <div class="stat-label">{label}</div>
         </div>
       ))}
     </div>
 
-    <!-- Three Systems as wide-mock — colorized -->
+    <!-- Twelve Frameworks — dark mock window (intentional contrast) -->
     <div class="wide-mock fade-up" data-delay="0.18">
       <div class="mock-bar">
         <span class="mock-dot r"></span><span class="mock-dot y"></span><span class="mock-dot g"></span>
@@ -268,7 +268,7 @@ import Layout from '../layouts/Layout.astro';
 </section>
 
 <!-- ── Image Split: Enterprise ────────────────────────────────── -->
-<section style="border-top:1px solid rgba(255,255,255,0.07);overflow:hidden;">
+<section style="border-top:1px solid rgba(0,0,0,0.07);overflow:hidden;">
   <div class="img-split reverse">
     <div class="img-split-photo">
       <img src="/images/abstract-city-building-shadows.jpg" alt="Enterprise-scale organizational intelligence" />
@@ -276,16 +276,16 @@ import Layout from '../layouts/Layout.astro';
         <div style="display:flex;gap:1rem;flex-wrap:wrap;">
           {[['12', 'Installers'],['28','Memories'],['9wk','Certification']].map(([n,l]) => (
             <div style="background:rgba(0,0,0,0.7);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:0.6rem 0.9rem;">
-              <div style="font-family:'Space Grotesk',sans-serif;font-size:1.2rem;font-weight:700;color:#fff;line-height:1;">{n}</div>
+              <div style="font-family:'Bitter',Georgia,serif;font-size:1.2rem;font-weight:700;color:#fff;line-height:1;">{n}</div>
               <div style="font-family:'JetBrains Mono',monospace;font-size:0.55rem;color:#71717a;text-transform:uppercase;letter-spacing:0.08em;margin-top:0.2rem;">{l}</div>
             </div>
           ))}
         </div>
       </div>
     </div>
-    <div class="img-split-content">
+    <div class="img-split-content" style="background:#f2f1ee;padding:4rem 2.5rem;">
       <p class="feat-num" style="margin-bottom:0.75rem;">4.0 · Design Principles</p>
-      <h2 class="feat-h2 heading-display" style="margin-bottom:1.25rem;">Three commitments.<br/>One architecture.</h2>
+      <h2 class="feat-h2" style="margin-bottom:1.25rem;">Three commitments.<br/>One architecture.</h2>
       <div style="display:flex;flex-direction:column;gap:1.25rem;margin-bottom:2rem;">
         {[
           { num:'01', title:'Information Sovereignty', body:'Your knowledge stays in your repository. Readable. Editable. Portable. Forever. The AI serves your data — it never owns it.' },
@@ -293,37 +293,37 @@ import Layout from '../layouts/Layout.astro';
           { num:'03', title:'Architecture Over Tools', body:'Tools change. Platforms sunset. Models improve. Architecture endures. UCA is a permanent free standard.' },
         ].map(({num, title, body}) => (
           <div style="display:flex;gap:1rem;align-items:flex-start;">
-            <span style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;color:#3f3f46;padding-top:0.15rem;flex-shrink:0;">{num}</span>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;color:#e0641c;padding-top:0.15rem;flex-shrink:0;">{num}</span>
             <div>
-              <p style="font-size:0.9rem;color:#e4e4e7;font-weight:600;margin:0 0 0.2rem;">{title}</p>
-              <p style="font-size:0.82rem;color:#71717a;line-height:1.65;margin:0;">{body}</p>
+              <p style="font-family:'Inter Tight',sans-serif;font-size:0.9rem;color:#0c0c0c;font-weight:600;margin:0 0 0.2rem;">{title}</p>
+              <p style="font-family:'Inter Tight',sans-serif;font-size:0.82rem;color:#4a4a4a;line-height:1.65;margin:0;">{body}</p>
             </div>
           </div>
         ))}
       </div>
-      <a href="/ai-guide" class="btn btn-primary" style="align-self:flex-start;">Get the Free AI Guide →</a>
+      <a href="/ai-guide" class="btn btn-org" style="align-self:flex-start;">Get the Free AI Guide →</a>
     </div>
   </div>
 </section>
 
 <!-- ── Final CTA ──────────────────────────────────────────────── -->
-<section class="feat-section" style="border-top:1px solid rgba(255,255,255,0.07);">
+<section style="background:#f2f1ee;padding:5rem 0;border-top:1px solid rgba(0,0,0,0.07);">
   <div class="container">
     <div class="cta-row">
       <div>
-        <p class="feat-num fade-up" data-delay="0">Ready to build →</p>
-        <h2 class="feat-h2 heading-display fade-up" data-delay="0.06" style="margin-bottom:1rem;">
+        <div class="stag stag-o fade-up" data-delay="0" style="margin-bottom:1.25rem;">Ready to build →</div>
+        <h2 class="feat-h2 fade-up" data-delay="0.06" style="margin-bottom:1rem;">
           Ready to build the airframe?
         </h2>
         <p class="feat-body fade-up" data-delay="0.1">
           Start with the free standard. See how semantic addressing works. Then decide if you want to go further.
         </p>
         <div class="feat-ctas fade-up" data-delay="0.14">
-          <a href="/ai-guide" class="btn btn-primary">Get the Free AI Guide →</a>
-          <a href="https://calendly.com/starlingaix" target="_blank" rel="noopener" class="btn btn-ghost">Talk to Us</a>
+          <a href="/ai-guide" class="btn btn-org">Get the Free AI Guide →</a>
+          <a href="https://calendly.com/starlingaix" target="_blank" rel="noopener" class="btn-ghost-light">Talk to Us</a>
         </div>
       </div>
-      <div class="glass fade-up" data-delay="0.12" style="padding:2.5rem;">
+      <div class="card-light fade-up" data-delay="0.12" style="padding:2.5rem;">
         <p class="feat-num" style="margin-bottom:1.25rem;">What you get on day one</p>
         <div style="display:flex;flex-direction:column;gap:0.85rem;">
           {[
@@ -363,7 +363,10 @@ import Layout from '../layouts/Layout.astro';
   @media(min-width: 768px) {
     .systems-grid > div { border-right: 1px solid rgba(255,255,255,0.06); border-bottom: none !important; }
     .systems-grid > div:last-child { border-right: none; }
-    .stats-strip-4 > div { border-right: 1px solid rgba(255,255,255,0.07) !important; border-bottom: none !important; }
+    .stats-strip-4 > div { border-right: 1px solid rgba(0,0,0,0.08) !important; border-bottom: none !important; }
     .stats-strip-4 > div:last-child { border-right: none !important; }
+  }
+  @media(min-width: 768px) {
+    .img-split-content { padding: 5rem 4rem !important; }
   }
 </style>

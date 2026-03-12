@@ -5,25 +5,24 @@ import Layout from '../layouts/Layout.astro';
 <Layout title="Starling Workspace — Starling AIX" description="Starling Workspace is where your Domain Language Model lives. An AI work surface with your entire Org Brain behind it.">
 
 <!-- ── Hero ──────────────────────────────────────────────────── -->
-<section style="position:relative;overflow:hidden;padding:7rem 0 5rem;" class="grid-bg">
-  <div class="hero-glow"></div>
-  <span class="corner-mark cm-tl">+</span>
-  <span class="corner-mark cm-tr">+</span>
+<section style="position:relative;overflow:hidden;padding:7rem 0 5rem;background:#ffffff;border-bottom:1px solid rgba(0,0,0,0.07);">
+  <div style="position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(0,0,0,0.018) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,0.018) 1px,transparent 1px);background-size:72px 72px;"></div>
+  <div style="position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 50% 40% at 50% 0%,rgba(224,100,28,0.04) 0%,transparent 65%);"></div>
   <div class="container" style="position:relative;z-index:1;">
     <div style="display:grid;grid-template-columns:1fr;gap:3rem;align-items:center;" class="platform-hero-grid">
       <div>
-        <p class="feat-num fade-up" data-delay="0">Starling AIX · Workspace</p>
-        <h1 class="heading-display fade-up" data-delay="0.08"
-            style="font-size:clamp(3rem,8vw,5rem);margin:0 0 1.5rem;max-width:620px;">
-          Work that<br/>remembers.
+        <div class="stag stag-o fade-up" data-delay="0" style="margin-bottom:1.5rem;">Starling AIX · Workspace</div>
+        <h1 class="fade-up" data-delay="0.08"
+            style="font-family:'Bitter',Georgia,serif;font-weight:700;font-size:clamp(3rem,8vw,5rem);margin:0 0 1.5rem;max-width:620px;line-height:1;letter-spacing:-0.04em;color:#0c0c0c;">
+          Work that<br/><em style="color:#e0641c;font-style:italic;">remembers.</em>
         </h1>
         <p class="fade-up" data-delay="0.15"
-           style="font-size:1.05rem;color:#71717a;line-height:1.75;max-width:480px;margin:0 0 2.5rem;">
+           style="font-family:'Inter Tight',system-ui,sans-serif;font-size:1.05rem;color:#4a4a4a;line-height:1.75;max-width:480px;margin:0 0 2.5rem;">
           Starling Workspace is where your Domain Language Model lives — an AI work surface with your entire Org Brain behind it. Every deliverable you produce makes the next one better.
         </p>
         <div class="fade-up" data-delay="0.2" style="display:flex;gap:0.75rem;flex-wrap:wrap;align-items:center;">
-          <a href="#beta" class="btn btn-primary">Request Beta Access →</a>
-          <span style="font-size:0.85rem;color:#3f3f46;">Beta opens March 2026. Free for 14 days.</span>
+          <a href="#beta" class="btn btn-org">Request Beta Access →</a>
+          <span style="font-family:'Inter Tight',sans-serif;font-size:0.85rem;color:#888;">Beta opens March 2026. Free for 14 days.</span>
         </div>
       </div>
       <!-- Platform status panel -->
@@ -54,15 +53,13 @@ import Layout from '../layouts/Layout.astro';
   </div>
 </section>
 
-<div class="divider"></div>
-
 <!-- ── DLM Pipeline Section ───────────────────────────────────── -->
-<section class="feat-section">
+<section style="background:#f2f1ee;padding:5rem 0;border-top:1px solid rgba(0,0,0,0.07);">
   <div class="container">
     <div class="feat-header">
       <div>
-        <p class="feat-num fade-up" data-delay="0">1.0 · Your Domain Language Model</p>
-        <h2 class="feat-h2 heading-display fade-up" data-delay="0.06">
+        <div class="stag stag-o fade-up" data-delay="0" style="margin-bottom:1.25rem;">1.0 · Your Domain Language Model</div>
+        <h2 class="feat-h2 fade-up" data-delay="0.06">
           The model processes.<br/>The domain remembers.
         </h2>
       </div>
@@ -76,7 +73,7 @@ import Layout from '../layouts/Layout.astro';
       </div>
     </div>
 
-    <!-- DLM wide mockup — fully colorized pipeline -->
+    <!-- DLM pipeline mock — dark for contrast -->
     <div class="wide-mock fade-up" data-delay="0.18">
       <div class="mock-bar">
         <span class="mock-dot r"></span><span class="mock-dot y"></span><span class="mock-dot g"></span>
@@ -111,8 +108,8 @@ import Layout from '../layouts/Layout.astro';
   </div>
 </section>
 
-<!-- ── Image Split: Enterprise ────────────────────────────────── -->
-<section style="border-top:1px solid rgba(255,255,255,0.07);overflow:hidden;">
+<!-- ── Image Split: Architecture ──────────────────────────────── -->
+<section style="border-top:1px solid rgba(0,0,0,0.07);overflow:hidden;">
   <div class="img-split reverse">
     <div class="img-split-photo">
       <img src="/images/abstract-city-building-shadows.jpg" alt="Enterprise-scale organizational intelligence architecture" />
@@ -127,10 +124,10 @@ import Layout from '../layouts/Layout.astro';
         </div>
       </div>
     </div>
-    <div class="img-split-content">
+    <div class="img-split-content" style="padding:4rem 2.5rem;">
       <p class="feat-num" style="margin-bottom:0.75rem;">2.0 · Architecture</p>
-      <h2 class="feat-h2 heading-display" style="margin-bottom:1.25rem;">Build once.<br/>Deploy anywhere.</h2>
-      <p style="font-size:0.95rem;color:#71717a;line-height:1.8;margin:0 0 2rem;">
+      <h2 class="feat-h2" style="margin-bottom:1.25rem;">Build once.<br/>Deploy anywhere.</h2>
+      <p style="font-family:'Inter Tight',system-ui,sans-serif;font-size:0.95rem;color:#4a4a4a;line-height:1.8;margin:0 0 2rem;">
         Three layers. One stores. One translates. One thinks. You own the first two. The third is stateless and swappable. Claude today. GPT tomorrow. Gemini next week. The intelligence isn't in the model — it's in your Org Brain.
       </p>
       <div style="display:flex;flex-direction:column;gap:0.75rem;margin-bottom:2rem;">
@@ -139,14 +136,14 @@ import Layout from '../layouts/Layout.astro';
           { num:'02', label:'Translate', sub:'MCP Server · Starling', color:'#a78bfa', body:'Reads your Org Brain, assembles context, injects it into any LLM. Automatic memory management.' },
           { num:'03', label:'Think', sub:'Any LLM · Your Choice', color:'#2dd4bf', body:'Switch providers without losing a single memory. The intelligence is yours.' },
         ].map(({ num, label, sub, color, body }) => (
-          <div style={`display:flex;gap:1rem;align-items:flex-start;padding:0.875rem 1rem;border:1px solid rgba(255,255,255,0.06);border-left:3px solid ${color}44;border-radius:0 8px 8px 0;background:rgba(255,255,255,0.015);`}>
+          <div style={`display:flex;gap:1rem;align-items:flex-start;padding:0.875rem 1rem;border:1px solid rgba(0,0,0,0.08);border-left:3px solid ${color};border-radius:0 8px 8px 0;background:rgba(0,0,0,0.02);`}>
             <span style={`font-family:'JetBrains Mono',monospace;font-size:0.62rem;color:${color};flex-shrink:0;padding-top:0.2rem;`}>{num}</span>
             <div>
               <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.2rem;">
                 <span style={`font-family:'JetBrains Mono',monospace;font-size:0.72rem;color:${color};font-weight:600;text-transform:uppercase;letter-spacing:0.06em;`}>{label}</span>
-                <span style="font-family:'JetBrains Mono',monospace;font-size:0.62rem;color:#3f3f46;">{sub}</span>
+                <span style="font-family:'JetBrains Mono',monospace;font-size:0.62rem;color:#888;">{sub}</span>
               </div>
-              <p style="font-size:0.82rem;color:#71717a;line-height:1.6;margin:0;">{body}</p>
+              <p style="font-family:'Inter Tight',sans-serif;font-size:0.82rem;color:#4a4a4a;line-height:1.6;margin:0;">{body}</p>
             </div>
           </div>
         ))}
@@ -156,13 +153,13 @@ import Layout from '../layouts/Layout.astro';
 </section>
 
 <!-- ── Platform Features ──────────────────────────────────────── -->
-<section class="feat-section" style="position:relative;overflow:hidden;border-top:1px solid rgba(255,255,255,0.07);">
+<section style="background:#ffffff;padding:5rem 0;position:relative;overflow:hidden;border-top:1px solid rgba(0,0,0,0.07);">
   <div class="section-grid-accent"></div>
   <div class="container" style="position:relative;z-index:1;">
     <div class="feat-header">
       <div>
-        <p class="feat-num fade-up" data-delay="0">3.0 · Inside the Platform</p>
-        <h2 class="feat-h2 heading-display fade-up" data-delay="0.06">
+        <div class="stag stag-g fade-up" data-delay="0" style="margin-bottom:1.25rem;">3.0 · Inside the Platform</div>
+        <h2 class="feat-h2 fade-up" data-delay="0.06">
           Two modes.<br/>One intelligence layer.
         </h2>
       </div>
@@ -173,7 +170,7 @@ import Layout from '../layouts/Layout.astro';
       </div>
     </div>
 
-    <!-- Feature mockup — colorized -->
+    <!-- Feature mockup — dark for contrast -->
     <div class="wide-mock fade-up" data-delay="0.16">
       <div class="mock-bar">
         <span class="mock-dot r"></span><span class="mock-dot y"></span><span class="mock-dot g"></span>
@@ -224,13 +221,13 @@ import Layout from '../layouts/Layout.astro';
   </div>
 </section>
 
-<!-- ── Workflow ───────────────────────────────────────────────── -->
-<section class="feat-section" style="border-top:1px solid rgba(255,255,255,0.07);">
+<!-- ── Compounding Loop ───────────────────────────────────────── -->
+<section style="background:#f2f1ee;padding:5rem 0;border-top:1px solid rgba(0,0,0,0.07);">
   <div class="container">
     <div class="feat-header">
       <div>
-        <p class="feat-num fade-up" data-delay="0">4.0 · The Compounding Loop</p>
-        <h2 class="feat-h2 heading-display fade-up" data-delay="0.06">
+        <div class="stag stag-o fade-up" data-delay="0" style="margin-bottom:1.25rem;">4.0 · The Compounding Loop</div>
+        <h2 class="feat-h2 fade-up" data-delay="0.06">
           Work is your best memory.
         </h2>
       </div>
@@ -241,18 +238,18 @@ import Layout from '../layouts/Layout.astro';
       </div>
     </div>
 
-    <div style="display:grid;grid-template-columns:1fr;gap:0;border:1px solid rgba(255,255,255,0.08);border-radius:12px;overflow:hidden;" class="fade-up loop-grid" data-delay="0.16">
+    <div style="display:grid;grid-template-columns:1fr;gap:0;border:1px solid rgba(0,0,0,0.08);border-radius:12px;overflow:hidden;background:#ffffff;" class="fade-up loop-grid" data-delay="0.16">
       {[
         { num:'01', title:'Create a Session', body:'Open a project, create a session. The system already knows you. Your Org Brain loads automatically.', color:'#60a5fa' },
         { num:'02', title:'Add Context', body:'The right knowledge loads. Persistent memory, active work, and learned patterns — all through semantic addressing.', color:'#a78bfa' },
         { num:'03', title:'Generate Artifact', body:'Super content, from the jump. Every artifact becomes memory for the next one. The system gets smarter with each deliverable.', color:'#2dd4bf' },
       ].map(({ num, title, body, color }, i) => (
-        <div style={`padding:2rem;background:#0a0a0a;border-left:3px solid ${color}33;${i < 2 ? 'border-bottom:1px solid rgba(255,255,255,0.06);' : ''}`}>
+        <div style={`padding:2rem;background:#ffffff;border-left:3px solid ${color}55;${i < 2 ? 'border-bottom:1px solid rgba(0,0,0,0.08);' : ''}`}>
           <div style="display:flex;align-items:flex-start;gap:1.25rem;">
             <span style={`font-family:'JetBrains Mono',monospace;font-size:1rem;color:${color};flex-shrink:0;font-weight:700;`}>{num}</span>
             <div>
-              <h3 style="font-size:1rem;font-weight:600;color:#fff;margin:0 0 0.35rem;letter-spacing:-0.01em;">{title}</h3>
-              <p style="font-size:0.875rem;color:#71717a;line-height:1.7;margin:0;">{body}</p>
+              <h3 style="font-family:'Inter Tight',sans-serif;font-size:1rem;font-weight:600;color:#0c0c0c;margin:0 0 0.35rem;letter-spacing:-0.01em;">{title}</h3>
+              <p style="font-family:'Inter Tight',sans-serif;font-size:0.875rem;color:#4a4a4a;line-height:1.7;margin:0;">{body}</p>
             </div>
           </div>
         </div>
@@ -262,15 +259,15 @@ import Layout from '../layouts/Layout.astro';
   </div>
 </section>
 
-<div class="divider"></div>
+<hr style="border:none;border-top:1px solid rgba(0,0,0,0.08);" />
 
 <!-- ── Beta CTA ───────────────────────────────────────────────── -->
-<section id="beta" class="feat-section">
+<section id="beta" style="background:#ffffff;padding:5rem 0;">
   <div class="container">
     <div class="cta-row">
       <div>
-        <p class="feat-num fade-up" data-delay="0">Beta · March 2026</p>
-        <h2 class="feat-h2 heading-display fade-up" data-delay="0.06" style="margin-bottom:1rem;">
+        <div class="stag stag-o fade-up" data-delay="0" style="margin-bottom:1.25rem;">Beta · March 2026</div>
+        <h2 class="feat-h2 fade-up" data-delay="0.06" style="margin-bottom:1rem;">
           Be first in the door.
         </h2>
         <p class="feat-body fade-up" data-delay="0.1">
@@ -278,13 +275,13 @@ import Layout from '../layouts/Layout.astro';
         </p>
         <div class="feat-ctas fade-up" data-delay="0.14">
           <form id="beta-form" style="display:flex;gap:0.75rem;flex-wrap:wrap;">
-            <input type="email" name="email" placeholder="Email address" required class="input" style="flex:1;min-width:220px;max-width:300px;" />
-            <button type="submit" class="btn btn-primary">Request Invite</button>
+            <input type="email" name="email" placeholder="Email address" required class="input-light" style="flex:1;min-width:220px;max-width:300px;" />
+            <button type="submit" class="btn btn-org">Request Invite</button>
           </form>
-          <p style="font-size:0.78rem;color:#3f3f46;margin:0.5rem 0 0;">We'll email when it's ready. No spam.</p>
+          <p style="font-family:'Inter',sans-serif;font-size:0.78rem;color:#888;margin:0.5rem 0 0;">We'll email when it's ready. No spam.</p>
         </div>
       </div>
-      <div class="glass fade-up" data-delay="0.12" style="padding:2.5rem;">
+      <div class="card-light fade-up" data-delay="0.12" style="padding:2.5rem;">
         <p class="feat-num" style="margin-bottom:1.25rem;">What's included in beta</p>
         <div style="display:flex;flex-direction:column;gap:0.85rem;">
           {[
@@ -316,8 +313,9 @@ import Layout from '../layouts/Layout.astro';
   @media(min-width: 768px) {
     .feature-panels > div { border-bottom: none !important; border-right: 1px solid rgba(255,255,255,0.05); }
     .feature-panels > div:last-child { border-right: none; }
-    .loop-grid > div { border-bottom: none !important; border-right: 1px solid rgba(255,255,255,0.06); }
+    .loop-grid > div { border-bottom: none !important; border-right: 1px solid rgba(0,0,0,0.08); }
     .loop-grid > div:last-child { border-right: none; }
+    .img-split-content { padding: 5rem 4rem !important; }
   }
 </style>
 

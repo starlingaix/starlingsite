@@ -5,25 +5,24 @@ import Layout from '../layouts/Layout.astro';
 <Layout title="Enterprise Services — Starling AIX" description="Starling builds organizational intelligence systems — then makes sure someone in your organization can run them. Every engagement ends with a person, not a report.">
 
 <!-- ── Hero ──────────────────────────────────────────────────── -->
-<section style="position:relative;overflow:hidden;padding:7rem 0 5rem;" class="grid-bg">
-  <div class="hero-glow"></div>
-  <span class="corner-mark cm-tl">+</span>
-  <span class="corner-mark cm-tr">+</span>
+<section style="position:relative;overflow:hidden;padding:7rem 0 5rem;background:#ffffff;border-bottom:1px solid rgba(0,0,0,0.07);">
+  <div style="position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(0,0,0,0.018) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,0.018) 1px,transparent 1px);background-size:72px 72px;"></div>
+  <div style="position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 50% 40% at 50% 0%,rgba(224,100,28,0.04) 0%,transparent 65%);"></div>
   <div class="container" style="position:relative;z-index:1;">
     <div style="display:grid;grid-template-columns:1fr;gap:3rem;align-items:center;" class="services-hero-grid">
       <div>
-        <p class="feat-num fade-up" data-delay="0">Starling AIX · Enterprise Services</p>
-        <h1 class="heading-display fade-up" data-delay="0.08"
-            style="font-size:clamp(3rem,8vw,5rem);margin:0 0 1.5rem;max-width:640px;">
+        <div class="stag stag-o fade-up" data-delay="0" style="margin-bottom:1.5rem;">Starling AIX · Enterprise Services</div>
+        <h1 class="fade-up" data-delay="0.08"
+            style="font-family:'Bitter',Georgia,serif;font-weight:700;font-size:clamp(3rem,8vw,5rem);margin:0 0 1.5rem;max-width:640px;line-height:1;letter-spacing:-0.04em;color:#0c0c0c;">
           We build it.<br/>We teach it.<br/>We staff it.
         </h1>
         <p class="fade-up" data-delay="0.15"
-           style="font-size:1.05rem;color:#71717a;line-height:1.75;max-width:480px;margin:0 0 2.5rem;">
+           style="font-family:'Inter Tight',system-ui,sans-serif;font-size:1.05rem;color:#4a4a4a;line-height:1.75;max-width:480px;margin:0 0 2.5rem;">
           Starling builds organisational intelligence systems — then makes sure someone in your organisation can run them. Every engagement ends with a person, not a report.
         </p>
         <div class="fade-up" data-delay="0.2" style="display:flex;gap:0.75rem;flex-wrap:wrap;">
-          <a href="https://calendly.com/starlingaix" target="_blank" rel="noopener" class="btn btn-primary">Book a Discovery Call →</a>
-          <a href="#how-we-work" class="btn btn-ghost">See How We Work</a>
+          <a href="https://calendly.com/starlingaix" target="_blank" rel="noopener" class="btn btn-org">Book a Discovery Call →</a>
+          <a href="#how-we-work" class="btn-ghost-light">See How We Work</a>
         </div>
       </div>
       <!-- Service type chips -->
@@ -34,10 +33,10 @@ import Layout from '../layouts/Layout.astro';
             { badge:'License', label:'badge-violet', desc:'License the methodology for your org, accelerator, or consulting practice.', price:'Per cohort' },
             { badge:'Certify / Place', label:'badge-teal', desc:'Every gate ends with a certified human who runs the system you built.', price:'Included' },
           ].map(({ badge, label, desc, price }) => (
-            <div style="display:flex;align-items:center;gap:1rem;padding:1rem 1.25rem;border:1px solid rgba(255,255,255,0.07);border-radius:10px;background:rgba(255,255,255,0.02);">
+            <div class="card-light" style="display:flex;align-items:center;gap:1rem;padding:1rem 1.25rem;">
               <span class={`badge ${label}`} style="flex-shrink:0;">{badge}</span>
-              <p style="font-size:0.82rem;color:#71717a;margin:0;flex:1;line-height:1.5;">{desc}</p>
-              <span style="font-family:'JetBrains Mono',monospace;font-size:0.68rem;color:#3f3f46;white-space:nowrap;">{price}</span>
+              <p style="font-family:'Inter Tight',sans-serif;font-size:0.82rem;color:#4a4a4a;margin:0;flex:1;line-height:1.5;">{desc}</p>
+              <span style="font-family:'JetBrains Mono',monospace;font-size:0.68rem;color:#888;white-space:nowrap;">{price}</span>
             </div>
           ))}
         </div>
@@ -46,15 +45,13 @@ import Layout from '../layouts/Layout.astro';
   </div>
 </section>
 
-<div class="divider"></div>
-
 <!-- ── The Mach 1 Problem ─────────────────────────────────────── -->
-<section class="feat-section">
+<section style="background:#f2f1ee;padding:5rem 0;border-top:1px solid rgba(0,0,0,0.07);">
   <div class="container">
     <div class="feat-header">
       <div>
-        <p class="feat-num fade-up" data-delay="0">1.0 · The Mach 1 Problem</p>
-        <h2 class="feat-h2 heading-display fade-up" data-delay="0.06">
+        <div class="stag stag-o fade-up" data-delay="0" style="margin-bottom:1.25rem;">1.0 · The Mach 1 Problem</div>
+        <h2 class="feat-h2 fade-up" data-delay="0.06">
           Your AI works.<br/>Your org can't absorb it.
         </h2>
       </div>
@@ -68,7 +65,7 @@ import Layout from '../layouts/Layout.astro';
       </div>
     </div>
 
-    <!-- Wide diagnostic mockup — colorized -->
+    <!-- Diagnostic mockup — intentionally dark for contrast -->
     <div class="wide-mock fade-up" data-delay="0.18">
       <div class="mock-bar">
         <span class="mock-dot r"></span><span class="mock-dot y"></span><span class="mock-dot g"></span>
@@ -104,7 +101,7 @@ import Layout from '../layouts/Layout.astro';
 </section>
 
 <!-- ── Image Split: Client Work ───────────────────────────────── -->
-<section style="border-top:1px solid rgba(255,255,255,0.07);overflow:hidden;">
+<section style="border-top:1px solid rgba(0,0,0,0.07);overflow:hidden;">
   <div class="img-split">
     <div class="img-split-photo">
       <img src="/images/realestateclient.png" alt="Client working with organizational intelligence system" />
@@ -116,10 +113,10 @@ import Layout from '../layouts/Layout.astro';
         </div>
       </div>
     </div>
-    <div class="img-split-content">
+    <div class="img-split-content" style="padding:4rem 2.5rem;">
       <p class="feat-num" style="margin-bottom:0.75rem;">2.0 · How We Work</p>
-      <h2 class="feat-h2 heading-display" style="margin-bottom:1.25rem;">Three ways to build organisational intelligence.</h2>
-      <p style="font-size:0.95rem;color:#71717a;line-height:1.8;margin:0 0 2rem;">
+      <h2 class="feat-h2" style="margin-bottom:1.25rem;">Three ways to build organisational intelligence.</h2>
+      <p style="font-family:'Inter Tight',system-ui,sans-serif;font-size:0.95rem;color:#4a4a4a;line-height:1.8;margin:0 0 2rem;">
         Every engagement produces a working system and a certified person to run it. Pick your entry point. Every path leads to the same destination: a Domain Language Model your organisation owns.
       </p>
       <div style="display:flex;flex-direction:column;gap:0.75rem;margin-bottom:2rem;">
@@ -128,64 +125,64 @@ import Layout from '../layouts/Layout.astro';
           ['License the Methodology', 'Scale it', '#a78bfa'],
           ['Certify or Place', 'The exit guarantee', '#2dd4bf'],
         ].map(([title, sub, color]) => (
-          <div style={`display:flex;align-items:center;gap:0.75rem;padding:0.75rem 1rem;border-left:2px solid ${color};border-radius:0 8px 8px 0;background:rgba(255,255,255,0.02);`}>
+          <div style={`display:flex;align-items:center;gap:0.75rem;padding:0.75rem 1rem;border-left:2px solid ${color};border-radius:0 8px 8px 0;background:rgba(0,0,0,0.025);`}>
             <div style="flex:1;">
-              <p style="font-size:0.9rem;color:#e4e4e7;font-weight:600;margin:0;">{title}</p>
+              <p style="font-family:'Inter Tight',sans-serif;font-size:0.9rem;color:#0c0c0c;font-weight:600;margin:0;">{title}</p>
               <p style={`font-family:'JetBrains Mono',monospace;font-size:0.62rem;color:${color};margin:0.1rem 0 0;`}>{sub}</p>
             </div>
             <span style={`font-size:1.1rem;color:${color};opacity:0.5;`}>→</span>
           </div>
         ))}
       </div>
-      <a href="https://calendly.com/starlingaix" target="_blank" rel="noopener" class="btn btn-primary" style="align-self:flex-start;">Book a Call →</a>
+      <a href="https://calendly.com/starlingaix" target="_blank" rel="noopener" class="btn btn-org" style="align-self:flex-start;">Book a Call →</a>
     </div>
   </div>
 </section>
 
 <!-- ── Service Cards ──────────────────────────────────────────── -->
-<section id="how-we-work" class="feat-section" style="border-top:1px solid rgba(255,255,255,0.07);background:#030303;">
+<section id="how-we-work" style="background:#ffffff;padding:5rem 0;border-top:1px solid rgba(0,0,0,0.07);">
   <div class="container">
     <div style="display:grid;grid-template-columns:1fr;gap:1.25rem;" class="services-grid">
 
-      <div class="card fade-up" data-delay="0" style="padding:2.5rem;border-top:2px solid rgba(96,165,250,0.3);">
+      <div class="card-light fade-up" data-delay="0" style="padding:2.5rem;border-top:2px solid rgba(96,165,250,0.4);">
         <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1.5rem;">
           <span class="badge badge-accent">01 · Done For You</span>
         </div>
-        <h3 class="heading-upright" style="font-size:1.3rem;margin:0 0 1rem;color:#fff;">Build Your Org Brain</h3>
-        <p style="color:#71717a;font-size:0.9rem;line-height:1.8;margin:0 0 1.5rem;">
+        <h3 style="font-family:'Bitter',Georgia,serif;font-size:1.3rem;margin:0 0 1rem;color:#0c0c0c;font-weight:700;">Build Your Org Brain</h3>
+        <p style="font-family:'Inter Tight',sans-serif;color:#4a4a4a;font-size:0.9rem;line-height:1.8;margin:0 0 1.5rem;">
           Starling builds your organisational intelligence system directly. C-suite immersion. Guided extraction. Your values, positioning, processes, and culture codified into persistent memory.
         </p>
-        <div style="padding:1rem 1.25rem;background:rgba(96,165,250,0.05);border:1px solid rgba(96,165,250,0.15);border-radius:8px;">
+        <div style="padding:1rem 1.25rem;background:rgba(96,165,250,0.05);border:1px solid rgba(96,165,250,0.2);border-radius:8px;">
           <p style="font-family:'JetBrains Mono',monospace;font-size:0.68rem;color:#60a5fa;letter-spacing:0.05em;margin:0 0 0.3rem;text-transform:uppercase;">Deliverable</p>
-          <p style="font-size:0.825rem;color:#a1a1aa;margin:0;">Working Org Brain + certified System Librarian (internal or placed)</p>
+          <p style="font-family:'Inter Tight',sans-serif;font-size:0.825rem;color:#4a4a4a;margin:0;">Working Org Brain + certified System Librarian (internal or placed)</p>
         </div>
       </div>
 
-      <div class="card fade-up" data-delay="0.06" style="padding:2.5rem;border-top:2px solid rgba(167,139,250,0.3);">
+      <div class="card-light fade-up" data-delay="0.06" style="padding:2.5rem;border-top:2px solid rgba(167,139,250,0.4);">
         <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1.5rem;">
           <span class="badge badge-violet">02 · License</span>
         </div>
-        <h3 class="heading-upright" style="font-size:1.3rem;margin:0 0 1rem;color:#fff;">Cognitive Design Program</h3>
-        <p style="color:#71717a;font-size:0.9rem;line-height:1.8;margin:0 0 1.5rem;">
+        <h3 style="font-family:'Bitter',Georgia,serif;font-size:1.3rem;margin:0 0 1rem;color:#0c0c0c;font-weight:700;">Cognitive Design Program</h3>
+        <p style="font-family:'Inter Tight',sans-serif;color:#4a4a4a;font-size:0.9rem;line-height:1.8;margin:0 0 1.5rem;">
           License the methodology to run at scale inside your organisation, accelerator, or consulting practice. We train your trainers. You certify your people. The curriculum is yours to deploy.
         </p>
-        <div style="padding:1rem 1.25rem;background:rgba(167,139,250,0.05);border:1px solid rgba(167,139,250,0.15);border-radius:8px;">
+        <div style="padding:1rem 1.25rem;background:rgba(167,139,250,0.05);border:1px solid rgba(167,139,250,0.2);border-radius:8px;">
           <p style="font-family:'JetBrains Mono',monospace;font-size:0.68rem;color:#a78bfa;letter-spacing:0.05em;margin:0 0 0.3rem;text-transform:uppercase;">Deliverable</p>
-          <p style="font-size:0.825rem;color:#a1a1aa;margin:0;">Per-cohort license + certified facilitators who deliver the program internally</p>
+          <p style="font-family:'Inter Tight',sans-serif;font-size:0.825rem;color:#4a4a4a;margin:0;">Per-cohort license + certified facilitators who deliver the program internally</p>
         </div>
       </div>
 
-      <div class="card fade-up" data-delay="0.12" style="padding:2.5rem;border-top:2px solid rgba(45,212,191,0.3);">
+      <div class="card-light fade-up" data-delay="0.12" style="padding:2.5rem;border-top:2px solid rgba(45,212,191,0.4);">
         <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1.5rem;">
           <span class="badge badge-teal">03 · Every Gate</span>
         </div>
-        <h3 class="heading-upright" style="font-size:1.3rem;margin:0 0 1rem;color:#fff;">Certify or Place</h3>
-        <p style="color:#71717a;font-size:0.9rem;line-height:1.8;margin:0 0 1.5rem;">
+        <h3 style="font-family:'Bitter',Georgia,serif;font-size:1.3rem;margin:0 0 1rem;color:#0c0c0c;font-weight:700;">Certify or Place</h3>
+        <p style="font-family:'Inter Tight',sans-serif;color:#4a4a4a;font-size:0.9rem;line-height:1.8;margin:0 0 1.5rem;">
           At the end of every engagement, your organisation gets a person — either trained from within or placed from the Starling network. You don't just get a methodology. You get the human who runs it.
         </p>
-        <div style="padding:1rem 1.25rem;background:rgba(45,212,191,0.05);border:1px solid rgba(45,212,191,0.15);border-radius:8px;">
+        <div style="padding:1rem 1.25rem;background:rgba(45,212,191,0.05);border:1px solid rgba(45,212,191,0.2);border-radius:8px;">
           <p style="font-family:'JetBrains Mono',monospace;font-size:0.68rem;color:#2dd4bf;letter-spacing:0.05em;margin:0 0 0.3rem;text-transform:uppercase;">Deliverable</p>
-          <p style="font-size:0.825rem;color:#a1a1aa;margin:0;">System Librarian, Cognitive Designer, or Chief Intelligence Officer — yours to keep</p>
+          <p style="font-family:'Inter Tight',sans-serif;font-size:0.825rem;color:#4a4a4a;margin:0;">System Librarian, Cognitive Designer, or Chief Intelligence Officer — yours to keep</p>
         </div>
       </div>
 
@@ -193,16 +190,16 @@ import Layout from '../layouts/Layout.astro';
   </div>
 </section>
 
-<div class="divider"></div>
+<hr style="border:none;border-top:1px solid rgba(0,0,0,0.08);" />
 
 <!-- ── Curriculum ─────────────────────────────────────────────── -->
-<section class="feat-section" style="position:relative;overflow:hidden;">
+<section style="background:#f2f1ee;padding:5rem 0;position:relative;overflow:hidden;">
   <div class="section-grid-accent"></div>
   <div class="container" style="position:relative;z-index:1;">
     <div class="feat-header">
       <div>
-        <p class="feat-num fade-up" data-delay="0">3.0 · The Curriculum</p>
-        <h2 class="feat-h2 heading-display fade-up" data-delay="0.06">
+        <div class="stag stag-o fade-up" data-delay="0" style="margin-bottom:1.25rem;">3.0 · The Curriculum</div>
+        <h2 class="feat-h2 fade-up" data-delay="0.06">
           Eight sprints.<br/>Three certifications.
         </h2>
       </div>
@@ -211,7 +208,7 @@ import Layout from '../layouts/Layout.astro';
           The Cognitive Design Accelerator takes an organisation from zero to full organisational intelligence — codified, connected, and governed. Each certification gate is a natural stopping point with a complete deliverable.
         </p>
         <div class="feat-ctas fade-up" data-delay="0.14">
-          <a href="/cognitive-design" class="btn btn-ghost">Explore Full Curriculum →</a>
+          <a href="/cognitive-design" class="btn-ghost-light">Explore Full Curriculum →</a>
         </div>
       </div>
     </div>
@@ -248,22 +245,22 @@ import Layout from '../layouts/Layout.astro';
           ],
         },
       ].map(({ badge, badgeClass, accent, meta, gate, sprints }, idx) => (
-        <div class="card fade-up" data-delay={`${idx * 0.08}`} style={`padding:0;overflow:hidden;border-top:2px solid ${accent}33;`}>
-          <div style={`padding:1.25rem 2rem;background:${accent}08;border-bottom:1px solid ${accent}1a;display:flex;align-items:center;gap:1rem;flex-wrap:wrap;`}>
+        <div class="card-light fade-up" data-delay={`${idx * 0.08}`} style={`padding:0;overflow:hidden;border-top:2px solid ${accent}55;`}>
+          <div style={`padding:1.25rem 2rem;background:${accent}08;border-bottom:1px solid ${accent}22;display:flex;align-items:center;gap:1rem;flex-wrap:wrap;`}>
             <span class={`badge ${badgeClass}`}>{badge}</span>
-            <span style="font-family:'JetBrains Mono',monospace;font-size:0.68rem;color:#52525b;">{meta}</span>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:0.68rem;color:#888;">{meta}</span>
           </div>
           <div style="display:grid;grid-template-columns:1fr;gap:0;" class="sprint-grid">
             {sprints.map(([label, title, body], i) => (
-              <div style={`padding:1.5rem 2rem;${i < sprints.length - 1 ? 'border-bottom:1px solid rgba(255,255,255,0.05);' : ''}`}>
+              <div style={`padding:1.5rem 2rem;${i < sprints.length - 1 ? 'border-bottom:1px solid rgba(0,0,0,0.06);' : ''}`}>
                 <p style={`font-family:'JetBrains Mono',monospace;font-size:0.68rem;color:${accent};margin:0 0 0.4rem;text-transform:uppercase;letter-spacing:0.08em;`}>{label}</p>
-                <h4 style="font-size:0.95rem;color:#e4e4e7;margin:0 0 0.3rem;font-weight:600;">{title}</h4>
-                <p style="font-size:0.825rem;color:#71717a;line-height:1.65;margin:0;">{body}</p>
+                <h4 style="font-family:'Inter Tight',sans-serif;font-size:0.95rem;color:#0c0c0c;margin:0 0 0.3rem;font-weight:600;">{title}</h4>
+                <p style="font-family:'Inter Tight',sans-serif;font-size:0.825rem;color:#4a4a4a;line-height:1.65;margin:0;">{body}</p>
               </div>
             ))}
           </div>
-          <div style={`padding:1.25rem 2rem;border-top:1px solid rgba(255,255,255,0.05);background:${accent}04;`}>
-            <p style={`font-size:0.825rem;color:#a1a1aa;margin:0;`}><span style={`color:${accent};`}>↳ Gate: </span>{gate}</p>
+          <div style={`padding:1.25rem 2rem;border-top:1px solid rgba(0,0,0,0.06);background:${accent}04;`}>
+            <p style={`font-family:'Inter Tight',sans-serif;font-size:0.825rem;color:#4a4a4a;margin:0;`}><span style={`color:${accent};`}>↳ Gate: </span>{gate}</p>
           </div>
         </div>
       ))}
@@ -271,15 +268,15 @@ import Layout from '../layouts/Layout.astro';
   </div>
 </section>
 
-<div class="divider"></div>
+<hr style="border:none;border-top:1px solid rgba(0,0,0,0.08);" />
 
 <!-- ── Corporate Licensing ────────────────────────────────────── -->
-<section class="feat-section">
+<section style="background:#ffffff;padding:5rem 0;">
   <div class="container">
     <div class="feat-header">
       <div>
-        <p class="feat-num fade-up" data-delay="0">4.0 · Corporate Licensing</p>
-        <h2 class="feat-h2 heading-display fade-up" data-delay="0.06">
+        <div class="stag stag-g fade-up" data-delay="0" style="margin-bottom:1.25rem;">4.0 · Corporate Licensing</div>
+        <h2 class="feat-h2 fade-up" data-delay="0.06">
           License the methodology.<br/>Scale without us.
         </h2>
       </div>
@@ -291,13 +288,13 @@ import Layout from '../layouts/Layout.astro';
     </div>
 
     <div style="overflow-x:auto;" class="fade-up" data-delay="0.14">
-      <table class="ptable" style="min-width:680px;">
+      <table style="width:100%;border-collapse:collapse;background:#fff;border:1px solid rgba(0,0,0,0.08);border-radius:12px;overflow:hidden;min-width:680px;">
         <thead>
-          <tr>
-            <th></th>
-            <th style="color:#60a5fa;">Sprint License</th>
-            <th style="color:#a78bfa;">Program License</th>
-            <th style="color:#2dd4bf;">Enterprise License</th>
+          <tr style="background:#f2f1ee;">
+            <th style="padding:0.8rem 1rem;text-align:left;font-family:'Inter',sans-serif;font-size:0.62rem;text-transform:uppercase;letter-spacing:0.08em;color:#888;border-bottom:1px solid rgba(0,0,0,0.08);"></th>
+            <th style="padding:0.8rem 1rem;text-align:left;font-family:'Inter',sans-serif;font-size:0.62rem;text-transform:uppercase;letter-spacing:0.08em;color:#60a5fa;border-bottom:1px solid rgba(0,0,0,0.08);">Sprint License</th>
+            <th style="padding:0.8rem 1rem;text-align:left;font-family:'Inter',sans-serif;font-size:0.62rem;text-transform:uppercase;letter-spacing:0.08em;color:#a78bfa;border-bottom:1px solid rgba(0,0,0,0.08);">Program License</th>
+            <th style="padding:0.8rem 1rem;text-align:left;font-family:'Inter',sans-serif;font-size:0.62rem;text-transform:uppercase;letter-spacing:0.08em;color:#2dd4bf;border-bottom:1px solid rgba(0,0,0,0.08);">Enterprise License</th>
           </tr>
         </thead>
         <tbody>
@@ -308,12 +305,12 @@ import Layout from '../layouts/Layout.astro';
             ['Duration', '9 weeks', '12 weeks', '8 weeks'],
             ['Cohort License', '$25,000', '$50,000', '$75,000'],
             ['Per-Seat Certification', '$500', '$1,500', '$5,000'],
-          ].map(([feat, a, b, c]) => (
-            <tr>
-              <td>{feat}</td>
-              <td style="color:#93c5fd;">{a}</td>
-              <td style="color:#c4b5fd;">{b}</td>
-              <td style="color:#5eead4;">{c}</td>
+          ].map(([feat, a, b, c], i, arr) => (
+            <tr style={i < arr.length - 1 ? 'border-bottom:1px solid rgba(0,0,0,0.06);' : ''}>
+              <td style="padding:0.8rem 1rem;font-family:'Inter Tight',sans-serif;font-size:0.875rem;color:#888;">{feat}</td>
+              <td style="padding:0.8rem 1rem;font-family:'Inter Tight',sans-serif;font-size:0.875rem;color:#3b82f6;font-weight:500;">{a}</td>
+              <td style="padding:0.8rem 1rem;font-family:'Inter Tight',sans-serif;font-size:0.875rem;color:#8b5cf6;font-weight:500;">{b}</td>
+              <td style="padding:0.8rem 1rem;font-family:'Inter Tight',sans-serif;font-size:0.875rem;color:#14b8a6;font-weight:500;">{c}</td>
             </tr>
           ))}
         </tbody>
@@ -322,15 +319,15 @@ import Layout from '../layouts/Layout.astro';
   </div>
 </section>
 
-<div class="divider"></div>
+<hr style="border:none;border-top:1px solid rgba(0,0,0,0.08);" />
 
 <!-- ── Who This Is For ────────────────────────────────────────── -->
-<section class="feat-section" style="background:#030303;">
+<section style="background:#f2f1ee;padding:5rem 0;">
   <div class="container">
     <div class="feat-header">
       <div>
-        <p class="feat-num fade-up" data-delay="0">5.0 · Who This Is For</p>
-        <h2 class="feat-h2 heading-display fade-up" data-delay="0.06">
+        <div class="stag stag-o fade-up" data-delay="0" style="margin-bottom:1.25rem;">5.0 · Who This Is For</div>
+        <h2 class="feat-h2 fade-up" data-delay="0.06">
           Three markets.<br/>One methodology.
         </h2>
       </div>
@@ -347,11 +344,11 @@ import Layout from '../layouts/Layout.astro';
         { title:'Accelerators', sub:'Program Director · Managing Partner', accent:'#a78bfa', badgeClass:'badge-violet', body:'Give every startup in your batch a working Org Brain by demo day. Their AI produces strategically coherent output — not generic decks.', model:'Sprint License per batch. Each startup leaves with a working DLM and a certified System Librarian.' },
         { title:'Consulting Firms', sub:'Practice Lead · MD of AI/Digital', accent:'#2dd4bf', badgeClass:'badge-teal', body:'Add organisational intelligence to your AI transformation practice. Certify your consultants. Deliver Org Brain builds to clients under your brand.', model:'Program License to certify consultants → consultants deliver Sprint License engagements. 3–6× markup.' },
       ].map(({ title, sub, accent, badgeClass, body, model }, i) => (
-        <div class="card fade-up" data-delay={`${i*0.06}`} style={`padding:2rem;border-top:2px solid ${accent}33;`}>
+        <div class="card-light fade-up" data-delay={`${i*0.06}`} style={`padding:2rem;border-top:2px solid ${accent}55;`}>
           <span class={`badge ${badgeClass}`} style="margin-bottom:0.75rem;display:inline-flex;">{title}</span>
-          <p style={`font-family:'JetBrains Mono',monospace;font-size:0.65rem;color:#3f3f46;margin:0 0 1rem;text-transform:uppercase;letter-spacing:0.08em;`}>{sub}</p>
-          <p style="color:#71717a;font-size:0.875rem;line-height:1.75;margin:0 0 1rem;">{body}</p>
-          <p style="font-size:0.8rem;color:#52525b;line-height:1.7;margin:0;">
+          <p style={`font-family:'JetBrains Mono',monospace;font-size:0.65rem;color:#888;margin:0 0 1rem;text-transform:uppercase;letter-spacing:0.08em;`}>{sub}</p>
+          <p style="font-family:'Inter Tight',sans-serif;color:#4a4a4a;font-size:0.875rem;line-height:1.75;margin:0 0 1rem;">{body}</p>
+          <p style="font-family:'Inter Tight',sans-serif;font-size:0.8rem;color:#6a6a6a;line-height:1.7;margin:0;">
             <strong style={`color:${accent};`}>Model: </strong>{model}
           </p>
         </div>
@@ -360,26 +357,26 @@ import Layout from '../layouts/Layout.astro';
   </div>
 </section>
 
-<div class="divider"></div>
+<hr style="border:none;border-top:1px solid rgba(0,0,0,0.08);" />
 
 <!-- ── Final CTA ──────────────────────────────────────────────── -->
-<section class="feat-section">
+<section style="background:#ffffff;padding:5rem 0;">
   <div class="container">
     <div class="cta-row">
       <div>
-        <p class="feat-num fade-up" data-delay="0">Ready →</p>
-        <h2 class="feat-h2 heading-display fade-up" data-delay="0.06" style="margin-bottom:1rem;">
+        <div class="stag stag-o fade-up" data-delay="0" style="margin-bottom:1.25rem;">Ready →</div>
+        <h2 class="feat-h2 fade-up" data-delay="0.06" style="margin-bottom:1rem;">
           Book a discovery call.
         </h2>
         <p class="feat-body fade-up" data-delay="0.1">
           We'll run the Org Brain Diagnostic, show you exactly where your organisation stands, and map the fastest path to a working intelligence system.
         </p>
         <div class="feat-ctas fade-up" data-delay="0.14">
-          <a href="https://calendly.com/starlingaix" target="_blank" rel="noopener" class="btn btn-primary">Book a Consultation →</a>
-          <a href="/cognitive-design" class="btn btn-ghost">Explore Cognitive Design</a>
+          <a href="https://calendly.com/starlingaix" target="_blank" rel="noopener" class="btn btn-org">Book a Consultation →</a>
+          <a href="/cognitive-design" class="btn-ghost-light">Explore Cognitive Design</a>
         </div>
       </div>
-      <div class="glass fade-up" data-delay="0.12" style="padding:2.5rem;">
+      <div class="card-light fade-up" data-delay="0.12" style="padding:2.5rem;">
         <p class="feat-num" style="margin-bottom:1.25rem;">What happens in session one</p>
         <div style="display:flex;flex-direction:column;gap:0.85rem;">
           {[
@@ -410,5 +407,8 @@ import Layout from '../layouts/Layout.astro';
   }
   @media(min-width: 1024px) {
     .sprint-grid { grid-template-columns: repeat(3, 1fr) !important; }
+  }
+  @media(min-width: 768px) {
+    .img-split-content { padding: 5rem 4rem !important; }
   }
 </style>
