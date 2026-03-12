@@ -7,37 +7,39 @@ import Layout from '../layouts/Layout.astro';
 >
 
 <!-- ── Hero ──────────────────────────────────────────────────── -->
-<section style="position:relative;overflow:hidden;padding:5.5rem 0 4rem;" class="grid-bg">
+<section style="position:relative;overflow:hidden;padding:7rem 0 6rem;" class="grid-bg">
   <div class="hero-glow"></div>
+  <span class="corner-mark cm-tl">+</span>
+  <span class="corner-mark cm-tr">+</span>
   <div class="container" style="position:relative;z-index:1;">
-    <div style="display:grid;grid-template-columns:1fr;gap:3rem;align-items:center;max-width:960px;margin-inline:auto;" class="guide-hero-grid">
+    <div style="display:grid;grid-template-columns:1fr;gap:3rem;align-items:center;" class="guide-hero-grid">
 
       <div>
-        <span class="badge fade-up" data-delay="0" style="margin-bottom:1.25rem;display:inline-flex;">Free eBook</span>
-        <h1 class="heading-display fade-up" data-delay="0.07"
-            style="font-size:clamp(2.2rem,6vw,3.8rem);margin:0 0 1.25rem;">
-          The AI-native enterprise is here. <em>Are you ready for it?</em>
+        <p class="feat-num fade-up" data-delay="0">Starling AIX · Free eBook</p>
+        <h1 class="heading-display fade-up" data-delay="0.08"
+            style="font-size:clamp(3rem,8vw,5.5rem);margin:0 0 1.5rem;letter-spacing:-0.04em;max-width:760px;">
+          The AI-native enterprise is here. <em>Are you ready?</em>
         </h1>
-        <p class="fade-up" data-delay="0.13" style="font-size:1rem;color:#71717a;line-height:1.75;margin:0 0 0.75rem;">
-          Claude connects to 50+ workplace tools. Agent teams run multi-step workflows. The outputs are Word docs, decks, and spreadsheets — not chat responses. <em>AI has arrived — it is now squarely in work.</em>
+        <p class="fade-up" data-delay="0.13" style="font-size:1.05rem;color:#71717a;line-height:1.75;max-width:520px;margin:0 0 0.75rem;">
+          Claude connects to 50+ workplace tools. Agent teams run multi-step workflows. The outputs are Word docs, decks, and spreadsheets — not chat responses.
         </p>
-        <p class="fade-up" data-delay="0.16" style="font-size:1rem;color:#71717a;line-height:1.75;margin:0 0 2rem;">
-          The question isn't whether AI will change your organization. <em>It's whether you've got the architecture to handle it.</em>
+        <p class="fade-up" data-delay="0.16" style="font-size:1rem;color:#71717a;line-height:1.75;max-width:520px;margin:0 0 2.5rem;">
+          The question isn't whether AI will change your organisation. <em>It's whether you've got the architecture to handle it.</em>
         </p>
         <div class="fade-up" data-delay="0.2" style="display:flex;gap:0.75rem;flex-wrap:wrap;">
-          <a href="#download" class="btn btn-primary" style="font-size:0.95rem;padding:0.7rem 1.5rem;">Get the Free eBook</a>
-          <a href="/cognitive-design" class="btn btn-ghost" style="font-size:0.95rem;padding:0.7rem 1.5rem;">Build Your Org Brain</a>
+          <a href="#download" class="btn btn-primary">Get the Free eBook →</a>
+          <a href="/cognitive-design" class="btn btn-ghost">Build Your Org Brain</a>
         </div>
         <p style="font-size:0.78rem;color:#3f3f46;margin-top:0.75rem;">Includes the complete UCA Standard · Download below</p>
       </div>
 
       <!-- Book mockup -->
-      <div class="fade-up" data-delay="0.1" style="display:flex;justify-content:center;">
+      <div class="fade-up" data-delay="0.12" style="display:flex;justify-content:flex-start;">
         <div class="card-flat" style="width:220px;overflow:hidden;position:relative;">
           <div style="height:3px;background:linear-gradient(90deg,#f97316,#fb923c);"></div>
           <div style="padding:2rem 1.5rem 1.75rem;display:flex;flex-direction:column;min-height:300px;justify-content:space-between;">
             <div>
-              <span class="badge" style="margin-bottom:1.25rem;display:inline-flex;">Contains the complete UCA Standard + Summon Starling</span>
+              <span class="badge" style="margin-bottom:1.25rem;display:inline-flex;font-size:0.62rem;">Contains the complete UCA Standard + Summon Starling</span>
               <h2 class="heading-upright" style="font-size:1.5rem;color:#fff;margin:0 0 0.4rem;line-height:1.2;">Mach 1 Business</h2>
               <p style="font-size:0.8rem;color:#71717a;margin:0 0 0.75rem;line-height:1.4;">Designing the Airframe for Industry 5.0</p>
             </div>
@@ -55,25 +57,38 @@ import Layout from '../layouts/Layout.astro';
 <div class="divider"></div>
 
 <!-- ── The Real Problem ───────────────────────────────────────── -->
-<section style="padding:5rem 0;">
+<section class="feat-section">
   <div class="container">
-    <p class="section-label fade-up" data-delay="0" style="text-align:center;margin-bottom:3rem;">The Real Problem</p>
-    <h2 class="heading-display fade-up" data-delay="0.05"
-        style="font-size:clamp(1.8rem,4vw,2.8rem);text-align:center;max-width:640px;margin:0 auto 3rem;">
-      The tools work. The architecture doesn't.
-    </h2>
-
-    <div style="display:grid;grid-template-columns:1fr;gap:1.25rem;max-width:760px;margin-inline:auto;" class="problem-grid">
-      <div class="card" style="padding:2rem;">
-        <h3 class="heading-upright" style="font-size:1.15rem;margin:0 0 0.75rem;color:#fff;">Who owns your knowledge?</h3>
-        <p style="color:#71717a;font-size:0.9rem;line-height:1.7;margin:0;">
-          Every conversation with AI teaches the platform more about how your organization thinks. If that intelligence lives on their servers, under their governance, improving their model, you're building someone else's asset.
+    <div class="feat-header">
+      <!-- Left -->
+      <div>
+        <p class="feat-num fade-up" data-delay="0">1.0 · The Real Problem</p>
+        <h2 class="feat-h2 heading-display fade-up" data-delay="0.06">
+          The tools work. The architecture doesn't.
+        </h2>
+      </div>
+      <!-- Right -->
+      <div>
+        <p class="feat-body fade-up" data-delay="0.1">
+          Every conversation with AI teaches the platform more about how your organisation thinks. If that intelligence lives on their servers, under their governance, improving their model — you're building someone else's asset.
+        </p>
+        <p class="feat-body fade-up" data-delay="0.13" style="margin-bottom:0;">
+          Try switching AI vendors after a year of accumulated context. That's the trap. When the platform owns the memory, switching means starting from zero. The more you use it, the harder it is to leave.
         </p>
       </div>
-      <div class="card" style="padding:2rem;">
-        <h3 class="heading-upright" style="font-size:1.15rem;margin:0 0 0.75rem;color:#fff;">The HAL Architecture</h3>
-        <p style="color:#71717a;font-size:0.9rem;line-height:1.7;margin:0;">
-          Try switching AI vendors after a year of accumulated context. That's the trap. When the platform owns the memory, switching means starting from zero. The more you use it, the harder it is to leave — even as better alternatives emerge.
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr;gap:1.25rem;" class="problem-grid">
+      <div class="card fade-up" data-delay="0" style="padding:2rem;">
+        <h3 style="font-size:1.1rem;margin:0 0 0.75rem;color:#fff;font-weight:600;letter-spacing:-0.01em;">Who owns your knowledge?</h3>
+        <p style="color:#71717a;font-size:0.9rem;line-height:1.75;margin:0;">
+          You've deployed AI and still get generic outputs. You've trained models on company knowledge. Built custom GPTs. Deployed agents that execute tasks but don't understand your business. Different teams re-teach the same context to different tools.
+        </p>
+      </div>
+      <div class="card fade-up" data-delay="0.06" style="padding:2rem;">
+        <h3 style="font-size:1.1rem;margin:0 0 0.75rem;color:#fff;font-weight:600;letter-spacing:-0.01em;">The HAL Architecture</h3>
+        <p style="color:#71717a;font-size:0.9rem;line-height:1.75;margin:0;">
+          Your AI is a brilliant consultant, not a contextualised Chief of Staff. The intelligence is generic. The memory is theirs. The lock-in compounds over time. This is the Mach 1 Problem — and it has an architectural solution.
         </p>
       </div>
     </div>
@@ -83,33 +98,38 @@ import Layout from '../layouts/Layout.astro';
 <div class="divider"></div>
 
 <!-- ── Search vs Address ──────────────────────────────────────── -->
-<section style="padding:5rem 0;">
+<section class="feat-section" style="background:#030303;">
   <div class="container">
-    <div style="text-align:center;margin-bottom:3rem;">
-      <p class="section-label fade-up" data-delay="0" style="margin-bottom:0.75rem;">The Cognitive Design Solution</p>
-      <h2 class="heading-display fade-up" data-delay="0.06"
-          style="font-size:clamp(1.8rem,4vw,2.8rem);margin:0 0 1rem;">
-        Search vs. Address
-      </h2>
-      <p class="fade-up" data-delay="0.1" style="font-size:0.95rem;color:#71717a;max-width:520px;margin-inline:auto;line-height:1.75;">
-        Every AI system today searches for your knowledge. That's the problem. Search burns tokens re-discovering context you already have. Addressing eliminates the cost entirely.
-      </p>
+    <div class="feat-header">
+      <!-- Left -->
+      <div>
+        <p class="feat-num fade-up" data-delay="0">2.0 · The Solution</p>
+        <h2 class="feat-h2 heading-display fade-up" data-delay="0.06">
+          Search vs. Address.
+        </h2>
+      </div>
+      <!-- Right -->
+      <div>
+        <p class="feat-body fade-up" data-delay="0.1">
+          Every AI system today searches for your knowledge. That's the problem. Search burns tokens re-discovering context you already have. Addressing eliminates the cost entirely — O(1) lookup instead of O(n) search.
+        </p>
+      </div>
     </div>
 
-    <div style="display:grid;grid-template-columns:1fr;gap:1.25rem;max-width:760px;margin-inline:auto;" class="compare-grid">
-      <div class="card-flat" style="padding:2rem;border-left:3px solid #3f3f46;">
-        <p class="mono" style="font-size:0.7rem;color:#52525b;letter-spacing:0.08em;text-transform:uppercase;margin:0 0 1rem;">Search / RAG</p>
-        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.6rem;">
-          {['Scattered data across platforms','Tangled connections, exponential complexity','Every query burns tokens re-discovering context','RAG hits a wall at enterprise volume','Token cost scales with organizational size'].map(t => (
-            <li style="font-size:0.9rem;color:#71717a;padding-left:1rem;border-left:1px solid rgba(255,255,255,0.07);">{t}</li>
+    <div style="display:grid;grid-template-columns:1fr;gap:1.25rem;" class="compare-grid">
+      <div class="card-flat fade-up" data-delay="0" style="padding:2rem;border-left:3px solid #3f3f46;">
+        <p style="font-family:'JetBrains Mono',monospace;font-size:0.68rem;color:#52525b;letter-spacing:0.08em;text-transform:uppercase;margin:0 0 1.25rem;">Search / RAG</p>
+        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.65rem;">
+          {['Scattered data across platforms','Tangled connections, exponential complexity','Every query burns tokens re-discovering context','RAG hits a wall at enterprise volume','Token cost scales with organisational size'].map(t => (
+            <li style="font-size:0.875rem;color:#71717a;padding-left:1rem;border-left:1px solid rgba(255,255,255,0.07);line-height:1.6;">{t}</li>
           ))}
         </ul>
       </div>
-      <div class="card-flat" style="padding:2rem;border-left:3px solid #f97316;">
-        <p class="mono" style="font-size:0.7rem;color:#f97316;letter-spacing:0.08em;text-transform:uppercase;margin:0 0 1rem;">Address / UCA</p>
-        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.6rem;">
-          {['Organized knowledge in semantic coordinates','Permanent addresses, instant retrieval','Constant time regardless of scale','O(1) lookup replaces O(n) search','The output is head code — canonical context your agents reference'].map(t => (
-            <li style="font-size:0.9rem;color:#a1a1aa;padding-left:1rem;border-left:1px solid rgba(249,115,22,0.2);">{t}</li>
+      <div class="card-flat fade-up" data-delay="0.06" style="padding:2rem;border-left:3px solid #f97316;">
+        <p style="font-family:'JetBrains Mono',monospace;font-size:0.68rem;color:#f97316;letter-spacing:0.08em;text-transform:uppercase;margin:0 0 1.25rem;">Address / UCA</p>
+        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.65rem;">
+          {['Organised knowledge in semantic coordinates','Permanent addresses, instant retrieval','Constant time regardless of scale','O(1) lookup replaces O(n) search','The output is head code — canonical context your agents reference'].map(t => (
+            <li style="font-size:0.875rem;color:#a1a1aa;padding-left:1rem;border-left:1px solid rgba(249,115,22,0.2);line-height:1.6;">{t}</li>
           ))}
         </ul>
       </div>
@@ -120,28 +140,35 @@ import Layout from '../layouts/Layout.astro';
 <div class="divider"></div>
 
 <!-- ── Who This Is For ────────────────────────────────────────── -->
-<section style="padding:5rem 0;">
+<section class="feat-section" style="position:relative;" class="grid-bg">
   <div class="container">
-    <p class="section-label fade-up" data-delay="0" style="text-align:center;margin-bottom:0.75rem;">Who This Is For</p>
-    <h2 class="heading-display fade-up" data-delay="0.06"
-        style="font-size:clamp(1.8rem,4vw,2.6rem);text-align:center;max-width:640px;margin:0 auto 1rem;">
-      Leaders who want AI that compounds, remembers, and delivers.
-    </h2>
-    <p class="fade-up" data-delay="0.1" style="font-size:0.95rem;color:#71717a;text-align:center;max-width:560px;margin:0 auto 3rem;line-height:1.75;">
-      You're ready to get serious about AI implementation. But you're watching platforms rise and fall, vendors pivot overnight, and last year's best practice become this year's technical debt. You need architecture that outlasts the tools.
-    </p>
-
-    <div style="display:grid;grid-template-columns:1fr;gap:1.25rem;max-width:760px;margin-inline:auto;" class="for-grid">
-      <div class="card" style="padding:2rem;">
-        <h3 class="heading-upright" style="font-size:1.1rem;margin:0 0 0.75rem;color:#fff;">You've deployed AI and still get generic outputs.</h3>
-        <p style="color:#71717a;font-size:0.9rem;line-height:1.7;margin:0;">
-          You've trained models on company knowledge. Built custom GPTs. Deployed agents that execute tasks but don't understand your business. Different teams re-teach the same context to different tools. Your AI is a brilliant consultant, not a contextualized Chief of Staff.
+    <div class="feat-header">
+      <!-- Left -->
+      <div>
+        <p class="feat-num fade-up" data-delay="0">3.0 · Who This Is For</p>
+        <h2 class="feat-h2 heading-display fade-up" data-delay="0.06">
+          Leaders who want AI that compounds.
+        </h2>
+      </div>
+      <!-- Right -->
+      <div>
+        <p class="feat-body fade-up" data-delay="0.1">
+          You're watching platforms rise and fall, vendors pivot overnight, and last year's best practice become this year's technical debt. You need architecture that outlasts the tools. You don't need a technical background — you need to understand what's happening and ask the right questions.
         </p>
       </div>
-      <div class="card" style="padding:2rem;">
-        <h3 class="heading-upright" style="font-size:1.1rem;margin:0 0 0.75rem;color:#fff;">You need AI that knows <em>your</em> domain.</h3>
-        <p style="color:#71717a;font-size:0.9rem;line-height:1.7;margin:0;">
-          Not a search engine with memory. Not an autonomous model. A productivity booster that compounds your knowledge — where every session builds on the last, and the intelligence belongs to you. You don't need a technical background to realize this. You need to know what's happening, why it matters, and what the right questions are.
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr;gap:1.25rem;" class="for-grid">
+      <div class="card fade-up" data-delay="0" style="padding:2rem;">
+        <h3 style="font-size:1.05rem;margin:0 0 0.75rem;color:#fff;font-weight:600;letter-spacing:-0.01em;">You've deployed AI and still get generic outputs.</h3>
+        <p style="color:#71717a;font-size:0.875rem;line-height:1.75;margin:0;">
+          You've built custom GPTs. Deployed agents that execute tasks but don't understand your business. Your AI is a brilliant consultant — not a contextualised Chief of Staff. The architecture is the gap.
+        </p>
+      </div>
+      <div class="card fade-up" data-delay="0.06" style="padding:2rem;">
+        <h3 style="font-size:1.05rem;margin:0 0 0.75rem;color:#fff;font-weight:600;letter-spacing:-0.01em;">You need AI that knows <em>your</em> domain.</h3>
+        <p style="color:#71717a;font-size:0.875rem;line-height:1.75;margin:0;">
+          Not a search engine with memory. A productivity booster that compounds your knowledge — where every session builds on the last, and the intelligence belongs to you. That's what this book explains.
         </p>
       </div>
     </div>
@@ -151,33 +178,45 @@ import Layout from '../layouts/Layout.astro';
 <div class="divider"></div>
 
 <!-- ── What You Get ───────────────────────────────────────────── -->
-<section style="padding:5rem 0;">
+<section class="feat-section">
   <div class="container">
-    <p class="section-label fade-up" data-delay="0" style="text-align:center;margin-bottom:0.75rem;">What You Get</p>
-    <h2 class="heading-display fade-up" data-delay="0.06"
-        style="font-size:clamp(1.8rem,4vw,2.6rem);text-align:center;max-width:540px;margin:0 auto 0.75rem;">
-      Mach 1 Business
-    </h2>
-    <p class="fade-up" data-delay="0.1" style="font-size:0.9rem;color:#71717a;text-align:center;max-width:520px;margin:0 auto 3rem;line-height:1.7;">
-      The architecture guide for AI-native organizations. This book names the forces breaking enterprise AI, introduces the Domain Language Model, and includes the complete Universal Cognitive Architecture Standard as a working appendix. It's also a dataset — load it into your AI and summon Starling.
-    </p>
+    <div class="feat-header">
+      <!-- Left -->
+      <div>
+        <p class="feat-num fade-up" data-delay="0">4.0 · What You Get</p>
+        <h2 class="feat-h2 heading-display fade-up" data-delay="0.06">
+          Mach 1 Business.
+        </h2>
+      </div>
+      <!-- Right -->
+      <div>
+        <p class="feat-body fade-up" data-delay="0.1">
+          The architecture guide for AI-native organisations. This book names the forces breaking enterprise AI, introduces the Domain Language Model, and includes the complete Universal Cognitive Architecture Standard as a working appendix. It's also a dataset — load it into your AI and summon Starling.
+        </p>
+      </div>
+    </div>
 
-    <div style="display:grid;grid-template-columns:1fr;gap:1px;border:1px solid rgba(255,255,255,0.08);border-radius:12px;overflow:hidden;max-width:820px;margin-inline:auto;" class="book-parts-grid">
+    <!-- Book contents as wide-mock -->
+    <div class="wide-mock fade-up" data-delay="0.16">
+      <div class="mock-bar">
+        <span class="mock-dot r"></span><span class="mock-dot y"></span><span class="mock-dot g"></span>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:#3f3f46;margin-left:0.75rem;">Mach 1 Business — Table of Contents</span>
+        <span class="badge badge-neutral" style="margin-left:auto;">Free Download</span>
+      </div>
       {[
         ['Part I','Why Enterprise AI Fails','Business has never had canon. The NL/JSON handoff point. Why 95% of enterprise AI pilots fail — and why the problem is architecture, not intelligence.'],
         ['Part II','The Domain Language Model','The DLM equation. O(1) semantic addressing vs. O(n) search. Information sovereignty. 3P0 Architecture — you own the memory, AI remains stateless.'],
-        ['Part III','Unlocking Organizational Intelligence','Smart OS activation at 23 memories. The Constitutional 28 that complete organizational wholeness. Three paths from this book to a working Org Brain.'],
-        ['Appendix A','Universal Cognitive Architecture','The complete UCA Standard. 11 Organizational Cognates, four memory tiers, semantic addressing protocol, the Constitutional 28, the 17 Value Systems, and the AI Processing Directive. CC BY 4.0.'],
-        ['Appendix B','Summon Starling','The book installs itself. Upload to any AI, type "Starling," and activate an AI Chief of Staff that understands semantic addressing. Five minutes to organizational intelligence.'],
-      ].map(([label, title, body]) => (
-        <div class="fade-up" data-delay="0.05"
-             style="background:#0d0d0d;padding:1.75rem 2rem;display:grid;grid-template-columns:90px 1fr;gap:1.25rem;border-bottom:1px solid rgba(255,255,255,0.06);">
-          <div>
-            <span class="mono" style="font-size:0.7rem;color:#f97316;">{label}</span>
-          </div>
-          <div>
-            <h4 style="font-size:1rem;font-weight:500;color:#fff;margin:0 0 0.4rem;">{title}</h4>
-            <p style="font-size:0.875rem;color:#71717a;line-height:1.65;margin:0;">{body}</p>
+        ['Part III','Unlocking Organisational Intelligence','Smart OS activation at 23 memories. The Constitutional 28 that complete organisational wholeness. Three paths from this book to a working Org Brain.'],
+        ['Appendix A','Universal Cognitive Architecture','The complete UCA Standard. 11 Organisational Cognates, four memory tiers, semantic addressing protocol, the Constitutional 28, and the AI Processing Directive. CC BY 4.0.'],
+        ['Appendix B','Summon Starling','The book installs itself. Upload to any AI, type "Starling," and activate an AI Chief of Staff that understands semantic addressing. Five minutes to organisational intelligence.'],
+      ].map(([label, title, body], i, arr) => (
+        <div style={`padding:1.5rem 2rem;display:grid;gap:0;${i < arr.length - 1 ? 'border-bottom:1px solid rgba(255,255,255,0.05);' : ''}`} class="book-row">
+          <div style="display:flex;gap:1.5rem;align-items:flex-start;">
+            <span style="font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:#f97316;min-width:72px;padding-top:2px;">{label}</span>
+            <div>
+              <p style="font-size:0.9rem;font-weight:600;color:#e4e4e7;margin:0 0 0.3rem;letter-spacing:-0.01em;">{title}</p>
+              <p style="font-size:0.825rem;color:#52525b;line-height:1.65;margin:0;">{body}</p>
+            </div>
           </div>
         </div>
       ))}
@@ -188,37 +227,39 @@ import Layout from '../layouts/Layout.astro';
 <div class="divider"></div>
 
 <!-- ── iPub ───────────────────────────────────────────────────── -->
-<section style="padding:5rem 0;">
+<section class="feat-section" style="background:#030303;">
   <div class="container">
-    <div style="max-width:760px;margin-inline:auto;">
-      <p class="section-label fade-up" data-delay="0" style="margin-bottom:0.75rem;">The Learning System</p>
-      <h2 class="heading-display fade-up" data-delay="0.06"
-          style="font-size:clamp(1.8rem,4vw,2.5rem);margin:0 0 0.75rem;">
-        What's an iPub?
-      </h2>
-      <p class="fade-up" data-delay="0.1" style="font-size:1rem;color:#a1a1aa;line-height:1.75;margin:0 0 0.75rem;">
-        Books that double as datasets. You read the narrative — your AI reads the architecture.
-      </p>
-      <p class="fade-up" data-delay="0.13" style="font-size:0.9rem;color:#71717a;line-height:1.75;margin:0 0 2.5rem;">
-        iPubs are a new kind of business book. Each one teaches a framework, produces strategic outputs, and functions as a plug-in for your AI. Load it as project knowledge and the book becomes an operational tool.
-      </p>
-
-      <div style="display:grid;grid-template-columns:1fr;gap:1px;border:1px solid rgba(255,255,255,0.08);border-radius:12px;overflow:hidden;" class="ipub-grid">
-        {[
-          ['Chapters','Narrative + Framework','The argument. Proprietary business frameworks taught through guided discovery. You read to understand — your AI reads to process.'],
-          ['Appendix A','Always included · The Standard','The open specification. Machine-readable architecture your AI uses to classify, address, and govern organizational knowledge.'],
-          ['Appendix B','Always included · The Installer or Wake Word','Machine-executable logic. In the full library, this is the guided extraction sequence. In Mach 1 Business, it\'s the Summon Starling protocol.'],
-          ['Appendix C','When applicable · The Worked Example','A complete reference implementation. Shows what the output looks like when the installer runs against real organizational data.'],
-        ].map(([label, title, body]) => (
-          <div style="background:#0d0d0d;padding:1.5rem 1.75rem;display:grid;grid-template-columns:90px 1fr;gap:1rem;border-bottom:1px solid rgba(255,255,255,0.06);">
-            <span class="mono" style="font-size:0.68rem;color:#52525b;">{label}</span>
-            <div>
-              <p style="font-size:0.9rem;font-weight:500;color:#e4e4e7;margin:0 0 0.35rem;">{title}</p>
-              <p style="font-size:0.85rem;color:#71717a;line-height:1.65;margin:0;">{body}</p>
-            </div>
-          </div>
-        ))}
+    <div class="feat-header">
+      <!-- Left -->
+      <div>
+        <p class="feat-num fade-up" data-delay="0">5.0 · The Learning System</p>
+        <h2 class="feat-h2 heading-display fade-up" data-delay="0.06">
+          What's an iPub?
+        </h2>
       </div>
+      <!-- Right -->
+      <div>
+        <p class="feat-body fade-up" data-delay="0.1">
+          Books that double as datasets. You read the narrative — your AI reads the architecture. iPubs are a new kind of business book: each one teaches a framework, produces strategic outputs, and functions as a plug-in for your AI.
+        </p>
+      </div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:0;border:1px solid rgba(255,255,255,0.08);border-radius:12px;overflow:hidden;" class="fade-up" data-delay="0.14">
+      {[
+        ['Chapters','Narrative + Framework','The argument. Proprietary business frameworks taught through guided discovery. You read to understand — your AI reads to process.'],
+        ['Appendix A','Always included · The Standard','The open specification. Machine-readable architecture your AI uses to classify, address, and govern organisational knowledge.'],
+        ['Appendix B','Always included · The Installer or Wake Word','Machine-executable logic. In the full library, this is the guided extraction sequence. In Mach 1 Business, it\'s the Summon Starling protocol.'],
+        ['Appendix C','When applicable · The Worked Example','A complete reference implementation. Shows what the output looks like when the installer runs against real organisational data.'],
+      ].map(([label, title, body], i, arr) => (
+        <div style={`background:#0a0a0a;padding:1.5rem 2rem;display:flex;gap:1.5rem;align-items:flex-start;${i < arr.length - 1 ? 'border-bottom:1px solid rgba(255,255,255,0.06);' : ''}`}>
+          <span style="font-family:'JetBrains Mono',monospace;font-size:0.68rem;color:#3f3f46;min-width:80px;padding-top:2px;">{label}</span>
+          <div>
+            <p style="font-size:0.875rem;font-weight:600;color:#e4e4e7;margin:0 0 0.3rem;letter-spacing:-0.01em;">{title}</p>
+            <p style="font-size:0.825rem;color:#71717a;line-height:1.65;margin:0;">{body}</p>
+          </div>
+        </div>
+      ))}
     </div>
   </div>
 </section>
@@ -226,34 +267,46 @@ import Layout from '../layouts/Layout.astro';
 <div class="divider"></div>
 
 <!-- ── Download CTA ───────────────────────────────────────────── -->
-<section id="download" style="padding:5rem 0;">
-  <div class="container" style="max-width:560px;margin-inline:auto;text-align:center;">
-    <p class="section-label fade-up" data-delay="0" style="margin-bottom:0.75rem;">Get Started</p>
-    <h2 class="heading-display fade-up" data-delay="0.06"
-        style="font-size:clamp(1.8rem,4vw,2.5rem);margin:0 0 1rem;">
-      Get the book.
-    </h2>
-    <p class="fade-up" data-delay="0.1" style="font-size:0.95rem;color:#71717a;line-height:1.75;margin:0 0 2rem;">
-      Download Mach 1 Business free — including the complete UCA Standard and the Summon Starling appendix. You'll also receive the newsletter <em>On Cognitive Design</em> with insights on organizational intelligence.
-    </p>
-    <form id="dl-form" class="fade-up" data-delay="0.14"
-          style="display:flex;flex-direction:column;gap:0.75rem;">
-      <input type="email" name="email" placeholder="Email address" required class="input" />
-      <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;padding:0.75rem;">
-        Download Free
-      </button>
-    </form>
-    <p style="font-size:0.78rem;color:#3f3f46;margin-top:0.75rem;">Delivered immediately as PDF. No spam. Unsubscribe anytime.</p>
+<section id="download" class="feat-section">
+  <div class="container">
+    <div class="cta-row">
+      <div>
+        <p class="feat-num fade-up" data-delay="0">6.0 · Get Started</p>
+        <h2 class="feat-h2 heading-display fade-up" data-delay="0.06" style="margin-bottom:1rem;">
+          Get the book.
+        </h2>
+        <p class="feat-body fade-up" data-delay="0.1">
+          Download Mach 1 Business free — including the complete UCA Standard and the Summon Starling appendix. You'll also receive the newsletter <em>On Cognitive Design</em> with insights on organisational intelligence.
+        </p>
+        <form id="dl-form" class="fade-up" data-delay="0.14"
+              style="display:flex;flex-direction:column;gap:0.75rem;max-width:400px;">
+          <input type="email" name="email" placeholder="Email address" required class="input" />
+          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;padding:0.75rem;">
+            Download Free
+          </button>
+        </form>
+        <p style="font-size:0.78rem;color:#3f3f46;margin-top:0.75rem;">Delivered immediately as PDF. No spam.</p>
+      </div>
 
-    <div class="divider" style="margin:2.5rem 0;"></div>
-
-    <h3 class="heading-upright fade-up" data-delay="0" style="font-size:1.25rem;margin:0 0 0.75rem;color:#fff;">Ready to build?</h3>
-    <p class="fade-up" data-delay="0.05" style="font-size:0.875rem;color:#71717a;line-height:1.7;margin:0 0 1.5rem;">
-      Once you've read Mach 1 Business, you'll understand why the architecture matters. Start free with Appendix B, build it yourself with the Cognitive Design accelerator, or have us build it for you.
-    </p>
-    <div class="fade-up" data-delay="0.1" style="display:flex;gap:0.75rem;justify-content:center;flex-wrap:wrap;">
-      <a href="/cognitive-design" class="btn btn-ghost">Build it yourself</a>
-      <a href="/services"         class="btn btn-primary">Have us build it</a>
+      <div class="glass fade-up" data-delay="0.12" style="padding:2.5rem;">
+        <p class="feat-num" style="margin-bottom:1.25rem;">After the book, three paths</p>
+        <div style="display:flex;flex-direction:column;gap:1rem;">
+          {[
+            { label: 'Start Free', title: 'Appendix B — Summon Starling', body: 'Upload the book to Claude. Type "Starling." Get an AI Chief of Staff in five minutes.', href: '#download', btn: 'Download Now' },
+            { label: 'Build Yourself', title: 'Cognitive Design Accelerator', body: 'Nine-week guided program. Build your Org Brain, get certified.', href: '/cognitive-design', btn: 'See the Curriculum' },
+            { label: 'Have Us Build It', title: 'Enterprise Services', body: 'Starling builds your Org Brain directly. Every engagement ends with a certified person.', href: '/services', btn: 'Talk to Us' },
+          ].map(({ label, title, body, href, btn }) => (
+            <div style="padding:1rem;border:1px solid rgba(255,255,255,0.07);border-radius:8px;">
+              <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.4rem;">
+                <span class="badge badge-neutral">{label}</span>
+                <span style="font-size:0.825rem;color:#e4e4e7;font-weight:500;">{title}</span>
+              </div>
+              <p style="font-size:0.8rem;color:#52525b;margin:0 0 0.65rem;line-height:1.6;">{body}</p>
+              <a href={href} class="btn btn-ghost" style="font-size:0.75rem;padding:0.3rem 0.75rem;">{btn}</a>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -262,11 +315,10 @@ import Layout from '../layouts/Layout.astro';
 
 <style>
   @media(min-width:768px) {
-    .guide-hero-grid  { grid-template-columns: 1fr 260px !important; }
-    .problem-grid     { grid-template-columns: 1fr 1fr !important; }
-    .compare-grid     { grid-template-columns: 1fr 1fr !important; }
-    .for-grid         { grid-template-columns: 1fr 1fr !important; }
-    .ipub-grid > div  { grid-template-columns: 100px 1fr !important; }
+    .guide-hero-grid { grid-template-columns: 1fr 260px !important; }
+    .problem-grid    { grid-template-columns: 1fr 1fr !important; }
+    .compare-grid    { grid-template-columns: 1fr 1fr !important; }
+    .for-grid        { grid-template-columns: 1fr 1fr !important; }
   }
 </style>
 

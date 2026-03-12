@@ -137,3 +137,19 @@ hr,.divider{border:none;border-top:1px solid rgba(255,255,255,0.07)}
 /* ── Stats */
 .stat-num{font-family:'DM Serif Display',Georgia,serif;font-size:2.2rem;color:#fff;line-height:1;letter-spacing:-0.02em}
 .stat-label{font-family:'JetBrains Mono',monospace;font-size:0.65rem;color:#52525b;text-transform:uppercase;letter-spacing:0.08em;margin-top:0.25rem}
+
+/* ── Feature section layout (shared across pages) */
+.feat-section{padding:5rem 0}
+.feat-num{font-family:'JetBrains Mono',monospace;font-size:0.72rem;color:#52525b;letter-spacing:0.05em;margin:0 0 1.25rem}
+.feat-h2{font-size:clamp(1.8rem,4vw,2.8rem);letter-spacing:-0.035em;margin:0;color:#fff;line-height:1.1}
+.feat-header{display:grid;grid-template-columns:1fr;gap:2rem;margin-bottom:3rem;align-items:start}
+.feat-body{font-size:1rem;color:#71717a;line-height:1.8;margin:0 0 1.5rem}
+.feat-ctas{display:flex;gap:0.75rem;flex-wrap:wrap}
+@media(min-width:768px){.feat-header{grid-template-columns:1fr 1fr;gap:5rem}}
+
+/* ── Wide mock (app screenshot panels) */
+.wide-mock{background:#0a0a0a;border:1px solid rgba(255,255,255,0.09);border-radius:10px;overflow:hidden}
+
+/* ── Two-col CTA row */
+.cta-row{display:grid;grid-template-columns:1fr;gap:3rem;align-items:center}
+@media(min-width:768px){.cta-row{grid-template-columns:1fr 1fr;gap:5rem}}
