@@ -36,7 +36,7 @@ import Layout from '../layouts/Layout.astro';
       <!-- Book mockup -->
       <div class="fade-up" data-delay="0.12" style="display:flex;justify-content:flex-start;">
         <div class="card-flat" style="width:220px;overflow:hidden;position:relative;">
-          <div style="height:3px;background:linear-gradient(90deg,#f97316,#fb923c);"></div>
+          <div style="height:3px;background:linear-gradient(90deg,#3b82f6,#60a5fa);"></div>
           <div style="padding:2rem 1.5rem 1.75rem;display:flex;flex-direction:column;min-height:300px;justify-content:space-between;">
             <div>
               <span class="badge" style="margin-bottom:1.25rem;display:inline-flex;font-size:0.62rem;">Contains the complete UCA Standard + Summon Starling</span>
@@ -125,11 +125,11 @@ import Layout from '../layouts/Layout.astro';
           ))}
         </ul>
       </div>
-      <div class="card-flat fade-up" data-delay="0.06" style="padding:2rem;border-left:3px solid #f97316;">
-        <p style="font-family:'JetBrains Mono',monospace;font-size:0.68rem;color:#f97316;letter-spacing:0.08em;text-transform:uppercase;margin:0 0 1.25rem;">Address / UCA</p>
+      <div class="card-flat fade-up" data-delay="0.06" style="padding:2rem;border-left:3px solid #60a5fa;">
+        <p style="font-family:'JetBrains Mono',monospace;font-size:0.68rem;color:#60a5fa;letter-spacing:0.08em;text-transform:uppercase;margin:0 0 1.25rem;">Address / UCA</p>
         <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.65rem;">
           {['Organised knowledge in semantic coordinates','Permanent addresses, instant retrieval','Constant time regardless of scale','O(1) lookup replaces O(n) search','The output is head code — canonical context your agents reference'].map(t => (
-            <li style="font-size:0.875rem;color:#a1a1aa;padding-left:1rem;border-left:1px solid rgba(249,115,22,0.2);line-height:1.6;">{t}</li>
+            <li style="font-size:0.875rem;color:#a1a1aa;padding-left:1rem;border-left:1px solid rgba(96,165,250,0.2);line-height:1.6;">{t}</li>
           ))}
         </ul>
       </div>
@@ -175,6 +175,53 @@ import Layout from '../layouts/Layout.astro';
   </div>
 </section>
 
+<!-- ── Image Split: Architecture ──────────────────────────────── -->
+<div class="img-split reverse">
+  <div class="img-split-photo">
+    <img src="/images/abstract-city-building-shadows.jpg" alt="Organisational architecture" loading="lazy" />
+    <div class="img-split-overlay">
+      <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
+        <div style="padding:0.65rem 1rem;border:1px solid rgba(96,165,250,0.3);border-radius:8px;background:rgba(0,0,0,0.65);backdrop-filter:blur(8px);">
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:1.3rem;font-weight:700;color:#60a5fa;line-height:1;letter-spacing:-0.03em;">O(1)</div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:0.58rem;color:#71717a;text-transform:uppercase;letter-spacing:0.08em;margin-top:0.25rem;">Lookup Cost</div>
+        </div>
+        <div style="padding:0.65rem 1rem;border:1px solid rgba(167,139,250,0.3);border-radius:8px;background:rgba(0,0,0,0.65);backdrop-filter:blur(8px);">
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:1.3rem;font-weight:700;color:#a78bfa;line-height:1;letter-spacing:-0.03em;">3P0</div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:0.58rem;color:#71717a;text-transform:uppercase;letter-spacing:0.08em;margin-top:0.25rem;">Architecture</div>
+        </div>
+        <div style="padding:0.65rem 1rem;border:1px solid rgba(45,212,191,0.3);border-radius:8px;background:rgba(0,0,0,0.65);backdrop-filter:blur(8px);">
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:1.3rem;font-weight:700;color:#2dd4bf;line-height:1;letter-spacing:-0.03em;">28</div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:0.58rem;color:#71717a;text-transform:uppercase;letter-spacing:0.08em;margin-top:0.25rem;">Memories</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="img-split-content">
+    <p class="feat-num" style="margin-bottom:1rem;">The architecture inside</p>
+    <h2 class="heading-display" style="font-size:clamp(2rem,5vw,3rem);margin:0 0 1.25rem;letter-spacing:-0.04em;">
+      Your AI. Your data. Zero lock-in.
+    </h2>
+    <p style="font-size:0.95rem;color:#71717a;line-height:1.75;margin:0 0 1.75rem;">
+      The 3P0 Architecture keeps your AI stateless — it reads your memory on demand but never stores it. Switch models tomorrow without losing a single knowledge node. The intelligence compounds in your infrastructure, not theirs.
+    </p>
+    <div style="display:flex;flex-direction:column;gap:0.75rem;">
+      {[
+        { num:'01', label:'Plain-language knowledge', desc:'Readable by any LLM — Claude today, something else tomorrow' },
+        { num:'02', label:'Semantic addressing', desc:'Every memory has a permanent coordinate. No search required.' },
+        { num:'03', label:'Sovereign infrastructure', desc:'Your files, your governance. Portable from day one.' },
+      ].map(({ num, label, desc }) => (
+        <div style="display:flex;gap:1rem;align-items:flex-start;">
+          <span style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;color:#3f3f46;padding-top:3px;min-width:24px;">{num}</span>
+          <div>
+            <p style="font-size:0.85rem;font-weight:600;color:#e4e4e7;margin:0 0 0.15rem;">{label}</p>
+            <p style="font-size:0.8rem;color:#52525b;margin:0;line-height:1.5;">{desc}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</div>
+
 <div class="divider"></div>
 
 <!-- ── What You Get ───────────────────────────────────────────── -->
@@ -212,7 +259,7 @@ import Layout from '../layouts/Layout.astro';
       ].map(([label, title, body], i, arr) => (
         <div style={`padding:1.5rem 2rem;display:grid;gap:0;${i < arr.length - 1 ? 'border-bottom:1px solid rgba(255,255,255,0.05);' : ''}`} class="book-row">
           <div style="display:flex;gap:1.5rem;align-items:flex-start;">
-            <span style="font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:#f97316;min-width:72px;padding-top:2px;">{label}</span>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:#60a5fa;min-width:72px;padding-top:2px;">{label}</span>
             <div>
               <p style="font-size:0.9rem;font-weight:600;color:#e4e4e7;margin:0 0 0.3rem;letter-spacing:-0.01em;">{title}</p>
               <p style="font-size:0.825rem;color:#52525b;line-height:1.65;margin:0;">{body}</p>

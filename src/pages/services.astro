@@ -5,29 +5,44 @@ import Layout from '../layouts/Layout.astro';
 <Layout title="Enterprise Services — Starling AIX" description="Starling builds organizational intelligence systems — then makes sure someone in your organization can run them. Every engagement ends with a person, not a report.">
 
 <!-- ── Hero ──────────────────────────────────────────────────── -->
-<section style="position:relative;overflow:hidden;padding:7rem 0 6rem;" class="grid-bg">
+<section style="position:relative;overflow:hidden;padding:7rem 0 5rem;" class="grid-bg">
   <div class="hero-glow"></div>
   <span class="corner-mark cm-tl">+</span>
   <span class="corner-mark cm-tr">+</span>
   <div class="container" style="position:relative;z-index:1;">
-
-    <p class="feat-num fade-up" data-delay="0">Starling AIX · Enterprise Services</p>
-
-    <h1 class="heading-display fade-up" data-delay="0.08"
-        style="font-size:clamp(3rem,8vw,5.5rem);margin:0 0 1.5rem;max-width:820px;letter-spacing:-0.04em;">
-      We build it. We teach it. We <em>staff</em> it.
-    </h1>
-
-    <p class="fade-up" data-delay="0.15"
-       style="font-size:1.05rem;color:#71717a;line-height:1.75;max-width:540px;margin:0 0 2.5rem;">
-      Starling builds organisational intelligence systems — then makes sure someone in your organisation can run them. Every engagement ends with a person, not a report.
-    </p>
-
-    <div class="fade-up" data-delay="0.2" style="display:flex;gap:0.75rem;flex-wrap:wrap;">
-      <a href="https://calendly.com/starlingaix" target="_blank" rel="noopener" class="btn btn-primary">Book a Discovery Call →</a>
-      <a href="#how-we-work" class="btn btn-ghost">See How We Work</a>
+    <div style="display:grid;grid-template-columns:1fr;gap:3rem;align-items:center;" class="services-hero-grid">
+      <div>
+        <p class="feat-num fade-up" data-delay="0">Starling AIX · Enterprise Services</p>
+        <h1 class="heading-display fade-up" data-delay="0.08"
+            style="font-size:clamp(3rem,8vw,5rem);margin:0 0 1.5rem;max-width:640px;">
+          We build it.<br/>We teach it.<br/>We staff it.
+        </h1>
+        <p class="fade-up" data-delay="0.15"
+           style="font-size:1.05rem;color:#71717a;line-height:1.75;max-width:480px;margin:0 0 2.5rem;">
+          Starling builds organisational intelligence systems — then makes sure someone in your organisation can run them. Every engagement ends with a person, not a report.
+        </p>
+        <div class="fade-up" data-delay="0.2" style="display:flex;gap:0.75rem;flex-wrap:wrap;">
+          <a href="https://calendly.com/starlingaix" target="_blank" rel="noopener" class="btn btn-primary">Book a Discovery Call →</a>
+          <a href="#how-we-work" class="btn btn-ghost">See How We Work</a>
+        </div>
+      </div>
+      <!-- Service type chips -->
+      <div class="fade-up services-chips" data-delay="0.14">
+        <div style="display:flex;flex-direction:column;gap:0.75rem;">
+          {[
+            { badge:'Done For You', label:'badge-accent', desc:'We build your Org Brain directly. C-suite immersion, guided extraction, full deployment.', price:'Custom' },
+            { badge:'License', label:'badge-violet', desc:'License the methodology for your org, accelerator, or consulting practice.', price:'Per cohort' },
+            { badge:'Certify / Place', label:'badge-teal', desc:'Every gate ends with a certified human who runs the system you built.', price:'Included' },
+          ].map(({ badge, label, desc, price }) => (
+            <div style="display:flex;align-items:center;gap:1rem;padding:1rem 1.25rem;border:1px solid rgba(255,255,255,0.07);border-radius:10px;background:rgba(255,255,255,0.02);">
+              <span class={`badge ${label}`} style="flex-shrink:0;">{badge}</span>
+              <p style="font-size:0.82rem;color:#71717a;margin:0;flex:1;line-height:1.5;">{desc}</p>
+              <span style="font-family:'JetBrains Mono',monospace;font-size:0.68rem;color:#3f3f46;white-space:nowrap;">{price}</span>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
-
   </div>
 </section>
 
@@ -37,124 +52,139 @@ import Layout from '../layouts/Layout.astro';
 <section class="feat-section">
   <div class="container">
     <div class="feat-header">
-      <!-- Left -->
       <div>
         <p class="feat-num fade-up" data-delay="0">1.0 · The Mach 1 Problem</p>
         <h2 class="feat-h2 heading-display fade-up" data-delay="0.06">
-          Your AI works. Your org can't absorb what it produces.
+          Your AI works.<br/>Your org can't absorb it.
         </h2>
       </div>
-      <!-- Right -->
       <div>
         <p class="feat-body fade-up" data-delay="0.1">
           Decisions accelerate past governance. Knowledge fragments across tools. Context evaporates between sessions. The technology succeeds and the organisation breaks.
         </p>
         <p class="feat-body fade-up" data-delay="0.13" style="margin-bottom:0;">
-          AI memory systems extract patterns from your conversations and harden them over time. The Org Brain is persistent by design. The difference is whether you govern the system — or the system governs you.
+          The Org Brain is persistent by design. The difference is whether you govern the system — or the system governs you.
         </p>
       </div>
     </div>
 
-    <!-- Wide diagnostic mockup -->
+    <!-- Wide diagnostic mockup — colorized -->
     <div class="wide-mock fade-up" data-delay="0.18">
       <div class="mock-bar">
         <span class="mock-dot r"></span><span class="mock-dot y"></span><span class="mock-dot g"></span>
         <span style="font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:#3f3f46;margin-left:0.75rem;">Org Brain Diagnostic — Governance Readiness</span>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:0.62rem;color:#ef4444;margin-left:auto;padding-right:0.75rem;">Score: 28/100</span>
       </div>
-      <div style="padding:2rem;display:grid;grid-template-columns:1fr;gap:0.75rem;" class="diag-grid">
+      <div style="padding:2rem;display:flex;flex-direction:column;gap:0.75rem;">
         {[
-          { label: 'Knowledge Fragmentation', score: 72, status: 'Critical', color: '#ef4444' },
-          { label: 'Decision Velocity', score: 48, status: 'At Risk', color: '#f97316' },
-          { label: 'Context Persistence', score: 21, status: 'Failing', color: '#ef4444' },
-          { label: 'Memory Governance', score: 0, status: 'Not Configured', color: '#3f3f46' },
-          { label: 'Org Brain Coverage', score: 0, status: 'Not Started', color: '#3f3f46' },
-        ].map(({ label, score, status, color }) => (
-          <div style="display:flex;align-items:center;gap:1.25rem;padding:0.75rem 0;border-bottom:1px solid rgba(255,255,255,0.04);">
-            <span style="font-family:'JetBrains Mono',monospace;font-size:0.72rem;color:#52525b;min-width:200px;">{label}</span>
-            <div style="flex:1;height:4px;background:rgba(255,255,255,0.06);border-radius:2px;overflow:hidden;">
-              <div style={`height:100%;width:${score}%;background:${color};border-radius:2px;`}></div>
+          { label: 'Knowledge Fragmentation',  score: 72, status: 'Critical',       color: '#ef4444', bg:'rgba(239,68,68,0.08)' },
+          { label: 'Decision Velocity',         score: 48, status: 'At Risk',        color: '#f97316', bg:'rgba(249,115,22,0.08)' },
+          { label: 'Context Persistence',       score: 21, status: 'Failing',        color: '#ef4444', bg:'rgba(239,68,68,0.06)' },
+          { label: 'Memory Governance',          score: 0,  status: 'Not Configured', color: '#3f3f46', bg:'rgba(255,255,255,0.02)' },
+          { label: 'Org Brain Coverage',         score: 0,  status: 'Not Started',   color: '#3f3f46', bg:'rgba(255,255,255,0.02)' },
+        ].map(({ label, score, status, color, bg }) => (
+          <div style={`padding:0.875rem 1rem;border-radius:8px;border:1px solid rgba(255,255,255,0.05);background:${bg};`}>
+            <div style="display:flex;align-items:center;gap:1rem;margin-bottom:0.5rem;">
+              <span style="font-family:'JetBrains Mono',monospace;font-size:0.72rem;color:#71717a;flex:1;">{label}</span>
+              <span style={`font-family:'JetBrains Mono',monospace;font-size:0.68rem;color:${color};`}>{status}</span>
             </div>
-            <span style={`font-family:'JetBrains Mono',monospace;font-size:0.68rem;color:${color};min-width:100px;text-align:right;`}>{status}</span>
+            <div style="height:4px;background:rgba(255,255,255,0.06);border-radius:2px;overflow:hidden;">
+              <div style={`height:100%;width:${score}%;background:${color};border-radius:2px;transition:width 0.6s ease;`}></div>
+            </div>
           </div>
         ))}
       </div>
       <div style="padding:1rem 2rem;border-top:1px solid rgba(255,255,255,0.06);display:flex;align-items:center;gap:1rem;">
-        <span style="font-size:0.8rem;color:#71717a;">Overall readiness score:</span>
-        <span style="font-family:'JetBrains Mono',monospace;font-size:0.875rem;color:#ef4444;font-weight:600;">28 / 100</span>
-        <span class="badge badge-neutral" style="margin-left:auto;">Run diagnostic in session 1</span>
+        <span style="font-size:0.8rem;color:#71717a;">The typical org before Starling. Run this diagnostic in session one.</span>
+        <span class="badge badge-neutral" style="margin-left:auto;flex-shrink:0;">Free in discovery call</span>
       </div>
     </div>
 
   </div>
 </section>
 
-<div class="divider"></div>
-
-<!-- ── How We Work ───────────────────────────────────────────── -->
-<section id="how-we-work" class="feat-section" style="background:#030303;">
-  <div class="container">
-    <div class="feat-header">
-      <!-- Left -->
-      <div>
-        <p class="feat-num fade-up" data-delay="0">2.0 · How We Work</p>
-        <h2 class="feat-h2 heading-display fade-up" data-delay="0.06">
-          Three ways to build organisational intelligence.
-        </h2>
-      </div>
-      <!-- Right -->
-      <div>
-        <p class="feat-body fade-up" data-delay="0.1">
-          Every engagement produces a working system and a certified person to run it. Pick your entry point. Every path leads to the same destination: a Domain Language Model your organisation owns.
-        </p>
-        <div class="feat-ctas fade-up" data-delay="0.14">
-          <a href="https://calendly.com/starlingaix" target="_blank" rel="noopener" class="btn btn-primary">Book a Call →</a>
+<!-- ── Image Split: Client Work ───────────────────────────────── -->
+<section style="border-top:1px solid rgba(255,255,255,0.07);overflow:hidden;">
+  <div class="img-split">
+    <div class="img-split-photo">
+      <img src="/images/realestateclient.png" alt="Client working with organizational intelligence system" />
+      <div class="img-split-overlay">
+        <div class="glass-dark" style="padding:1rem 1.25rem;border-radius:10px;max-width:280px;">
+          <p style="font-family:'JetBrains Mono',monospace;font-size:0.6rem;color:#2dd4bf;margin:0 0 0.25rem;text-transform:uppercase;letter-spacing:0.08em;">Live deployment</p>
+          <p style="font-size:0.82rem;color:#e4e4e7;margin:0;line-height:1.5;">"Found contradictions from old positioning mixed with new SOPs. It was the most productive day we'd had all year."</p>
+          <p style="font-family:'JetBrains Mono',monospace;font-size:0.62rem;color:#52525b;margin:0.5rem 0 0;">— Tristan G., CEO Wrks Online</p>
         </div>
       </div>
     </div>
+    <div class="img-split-content">
+      <p class="feat-num" style="margin-bottom:0.75rem;">2.0 · How We Work</p>
+      <h2 class="feat-h2 heading-display" style="margin-bottom:1.25rem;">Three ways to build organisational intelligence.</h2>
+      <p style="font-size:0.95rem;color:#71717a;line-height:1.8;margin:0 0 2rem;">
+        Every engagement produces a working system and a certified person to run it. Pick your entry point. Every path leads to the same destination: a Domain Language Model your organisation owns.
+      </p>
+      <div style="display:flex;flex-direction:column;gap:0.75rem;margin-bottom:2rem;">
+        {[
+          ['Build Your Org Brain', 'Done For You', '#60a5fa'],
+          ['License the Methodology', 'Scale it', '#a78bfa'],
+          ['Certify or Place', 'The exit guarantee', '#2dd4bf'],
+        ].map(([title, sub, color]) => (
+          <div style={`display:flex;align-items:center;gap:0.75rem;padding:0.75rem 1rem;border-left:2px solid ${color};border-radius:0 8px 8px 0;background:rgba(255,255,255,0.02);`}>
+            <div style="flex:1;">
+              <p style="font-size:0.9rem;color:#e4e4e7;font-weight:600;margin:0;">{title}</p>
+              <p style={`font-family:'JetBrains Mono',monospace;font-size:0.62rem;color:${color};margin:0.1rem 0 0;`}>{sub}</p>
+            </div>
+            <span style={`font-size:1.1rem;color:${color};opacity:0.5;`}>→</span>
+          </div>
+        ))}
+      </div>
+      <a href="https://calendly.com/starlingaix" target="_blank" rel="noopener" class="btn btn-primary" style="align-self:flex-start;">Book a Call →</a>
+    </div>
+  </div>
+</section>
 
+<!-- ── Service Cards ──────────────────────────────────────────── -->
+<section id="how-we-work" class="feat-section" style="border-top:1px solid rgba(255,255,255,0.07);background:#030303;">
+  <div class="container">
     <div style="display:grid;grid-template-columns:1fr;gap:1.25rem;" class="services-grid">
 
-      <div class="card fade-up" data-delay="0" style="padding:2.5rem;">
+      <div class="card fade-up" data-delay="0" style="padding:2.5rem;border-top:2px solid rgba(96,165,250,0.3);">
         <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1.5rem;">
-          <span class="badge">01</span>
-          <span style="color:#3f3f46;font-size:0.8rem;font-family:'JetBrains Mono',monospace;">Done For You</span>
+          <span class="badge badge-accent">01 · Done For You</span>
         </div>
-        <h3 class="heading-upright" style="font-size:1.3rem;margin:0 0 1rem;color:#fff;letter-spacing:-0.02em;">Build Your Org Brain</h3>
+        <h3 class="heading-upright" style="font-size:1.3rem;margin:0 0 1rem;color:#fff;">Build Your Org Brain</h3>
         <p style="color:#71717a;font-size:0.9rem;line-height:1.8;margin:0 0 1.5rem;">
           Starling builds your organisational intelligence system directly. C-suite immersion. Guided extraction. Your values, positioning, processes, and culture codified into persistent memory.
         </p>
-        <div style="padding:1rem 1.25rem;background:rgba(249,115,22,0.05);border:1px solid rgba(249,115,22,0.15);border-radius:8px;">
-          <p style="font-family:'JetBrains Mono',monospace;font-size:0.68rem;color:#f97316;letter-spacing:0.05em;margin:0 0 0.3rem;text-transform:uppercase;">Deliverable</p>
+        <div style="padding:1rem 1.25rem;background:rgba(96,165,250,0.05);border:1px solid rgba(96,165,250,0.15);border-radius:8px;">
+          <p style="font-family:'JetBrains Mono',monospace;font-size:0.68rem;color:#60a5fa;letter-spacing:0.05em;margin:0 0 0.3rem;text-transform:uppercase;">Deliverable</p>
           <p style="font-size:0.825rem;color:#a1a1aa;margin:0;">Working Org Brain + certified System Librarian (internal or placed)</p>
         </div>
       </div>
 
-      <div class="card fade-up" data-delay="0.06" style="padding:2.5rem;">
+      <div class="card fade-up" data-delay="0.06" style="padding:2.5rem;border-top:2px solid rgba(167,139,250,0.3);">
         <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1.5rem;">
-          <span class="badge">02</span>
-          <span style="color:#3f3f46;font-size:0.8rem;font-family:'JetBrains Mono',monospace;">License</span>
+          <span class="badge badge-violet">02 · License</span>
         </div>
-        <h3 class="heading-upright" style="font-size:1.3rem;margin:0 0 1rem;color:#fff;letter-spacing:-0.02em;">Cognitive Design Program</h3>
+        <h3 class="heading-upright" style="font-size:1.3rem;margin:0 0 1rem;color:#fff;">Cognitive Design Program</h3>
         <p style="color:#71717a;font-size:0.9rem;line-height:1.8;margin:0 0 1.5rem;">
           License the methodology to run at scale inside your organisation, accelerator, or consulting practice. We train your trainers. You certify your people. The curriculum is yours to deploy.
         </p>
-        <div style="padding:1rem 1.25rem;background:rgba(249,115,22,0.05);border:1px solid rgba(249,115,22,0.15);border-radius:8px;">
-          <p style="font-family:'JetBrains Mono',monospace;font-size:0.68rem;color:#f97316;letter-spacing:0.05em;margin:0 0 0.3rem;text-transform:uppercase;">Deliverable</p>
+        <div style="padding:1rem 1.25rem;background:rgba(167,139,250,0.05);border:1px solid rgba(167,139,250,0.15);border-radius:8px;">
+          <p style="font-family:'JetBrains Mono',monospace;font-size:0.68rem;color:#a78bfa;letter-spacing:0.05em;margin:0 0 0.3rem;text-transform:uppercase;">Deliverable</p>
           <p style="font-size:0.825rem;color:#a1a1aa;margin:0;">Per-cohort license + certified facilitators who deliver the program internally</p>
         </div>
       </div>
 
-      <div class="card fade-up" data-delay="0.12" style="padding:2.5rem;">
+      <div class="card fade-up" data-delay="0.12" style="padding:2.5rem;border-top:2px solid rgba(45,212,191,0.3);">
         <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1.5rem;">
-          <span class="badge">03</span>
-          <span style="color:#3f3f46;font-size:0.8rem;font-family:'JetBrains Mono',monospace;">Every Gate</span>
+          <span class="badge badge-teal">03 · Every Gate</span>
         </div>
-        <h3 class="heading-upright" style="font-size:1.3rem;margin:0 0 1rem;color:#fff;letter-spacing:-0.02em;">Certify or Place</h3>
+        <h3 class="heading-upright" style="font-size:1.3rem;margin:0 0 1rem;color:#fff;">Certify or Place</h3>
         <p style="color:#71717a;font-size:0.9rem;line-height:1.8;margin:0 0 1.5rem;">
           At the end of every engagement, your organisation gets a person — either trained from within or placed from the Starling network. You don't just get a methodology. You get the human who runs it.
         </p>
-        <div style="padding:1rem 1.25rem;background:rgba(249,115,22,0.05);border:1px solid rgba(249,115,22,0.15);border-radius:8px;">
-          <p style="font-family:'JetBrains Mono',monospace;font-size:0.68rem;color:#f97316;letter-spacing:0.05em;margin:0 0 0.3rem;text-transform:uppercase;">Deliverable</p>
+        <div style="padding:1rem 1.25rem;background:rgba(45,212,191,0.05);border:1px solid rgba(45,212,191,0.15);border-radius:8px;">
+          <p style="font-family:'JetBrains Mono',monospace;font-size:0.68rem;color:#2dd4bf;letter-spacing:0.05em;margin:0 0 0.3rem;text-transform:uppercase;">Deliverable</p>
           <p style="font-size:0.825rem;color:#a1a1aa;margin:0;">System Librarian, Cognitive Designer, or Chief Intelligence Officer — yours to keep</p>
         </div>
       </div>
@@ -165,18 +195,17 @@ import Layout from '../layouts/Layout.astro';
 
 <div class="divider"></div>
 
-<!-- ── The Curriculum ─────────────────────────────────────────── -->
-<section class="feat-section" style="position:relative;" class="grid-bg">
-  <div class="container">
+<!-- ── Curriculum ─────────────────────────────────────────────── -->
+<section class="feat-section" style="position:relative;overflow:hidden;">
+  <div class="section-grid-accent"></div>
+  <div class="container" style="position:relative;z-index:1;">
     <div class="feat-header">
-      <!-- Left -->
       <div>
         <p class="feat-num fade-up" data-delay="0">3.0 · The Curriculum</p>
         <h2 class="feat-h2 heading-display fade-up" data-delay="0.06">
-          Eight sprints. Three certifications.
+          Eight sprints.<br/>Three certifications.
         </h2>
       </div>
-      <!-- Right -->
       <div>
         <p class="feat-body fade-up" data-delay="0.1">
           The Cognitive Design Accelerator takes an organisation from zero to full organisational intelligence — codified, connected, and governed. Each certification gate is a natural stopping point with a complete deliverable.
@@ -188,10 +217,9 @@ import Layout from '../layouts/Layout.astro';
     </div>
 
     <div style="display:flex;flex-direction:column;gap:1.5rem;">
-
       {[
         {
-          badge: 'System Librarian',
+          badge: 'System Librarian', badgeClass: 'badge-accent', accent: '#60a5fa',
           meta: 'Sprints 1–2 · 9 weeks',
           gate: 'Build and govern an Org Brain. For most startups and mid-market companies, this is the complete package.',
           sprints: [
@@ -200,7 +228,7 @@ import Layout from '../layouts/Layout.astro';
           ],
         },
         {
-          badge: 'Cognitive Designer',
+          badge: 'Cognitive Designer', badgeClass: 'badge-violet', accent: '#a78bfa',
           meta: 'Sprints 3–5 · 12 weeks',
           gate: 'Design how an organisation thinks. Build systems that compound. Connect knowledge to enterprise infrastructure.',
           sprints: [
@@ -210,7 +238,7 @@ import Layout from '../layouts/Layout.astro';
           ],
         },
         {
-          badge: 'Chief Intelligence Officer',
+          badge: 'Chief Intelligence Officer', badgeClass: 'badge-teal', accent: '#2dd4bf',
           meta: 'Sprints 6–8 · 8 weeks',
           gate: 'Architect, deploy, and govern enterprise-wide organisational intelligence responsibly.',
           sprints: [
@@ -219,27 +247,26 @@ import Layout from '../layouts/Layout.astro';
             ['Sprint 8', 'Governance & Impact', 'AI governance, social impact, the responsibility framework.'],
           ],
         },
-      ].map(({ badge, meta, gate, sprints }, idx) => (
-        <div class="card fade-up" data-delay={`${idx * 0.08}`} style="padding:0;overflow:hidden;">
-          <div style="padding:1.5rem 2rem;background:rgba(249,115,22,0.04);border-bottom:1px solid rgba(249,115,22,0.12);display:flex;align-items:center;gap:1rem;flex-wrap:wrap;">
-            <span class="badge">{badge}</span>
+      ].map(({ badge, badgeClass, accent, meta, gate, sprints }, idx) => (
+        <div class="card fade-up" data-delay={`${idx * 0.08}`} style={`padding:0;overflow:hidden;border-top:2px solid ${accent}33;`}>
+          <div style={`padding:1.25rem 2rem;background:${accent}08;border-bottom:1px solid ${accent}1a;display:flex;align-items:center;gap:1rem;flex-wrap:wrap;`}>
+            <span class={`badge ${badgeClass}`}>{badge}</span>
             <span style="font-family:'JetBrains Mono',monospace;font-size:0.68rem;color:#52525b;">{meta}</span>
           </div>
           <div style="display:grid;grid-template-columns:1fr;gap:0;" class="sprint-grid">
             {sprints.map(([label, title, body], i) => (
               <div style={`padding:1.5rem 2rem;${i < sprints.length - 1 ? 'border-bottom:1px solid rgba(255,255,255,0.05);' : ''}`}>
-                <p style="font-family:'JetBrains Mono',monospace;font-size:0.68rem;color:#3f3f46;margin:0 0 0.4rem;text-transform:uppercase;letter-spacing:0.08em;">{label}</p>
+                <p style={`font-family:'JetBrains Mono',monospace;font-size:0.68rem;color:${accent};margin:0 0 0.4rem;text-transform:uppercase;letter-spacing:0.08em;`}>{label}</p>
                 <h4 style="font-size:0.95rem;color:#e4e4e7;margin:0 0 0.3rem;font-weight:600;">{title}</h4>
                 <p style="font-size:0.825rem;color:#71717a;line-height:1.65;margin:0;">{body}</p>
               </div>
             ))}
           </div>
-          <div style="padding:1.25rem 2rem;border-top:1px solid rgba(255,255,255,0.05);background:rgba(249,115,22,0.02);">
-            <p style="font-size:0.825rem;color:#a1a1aa;margin:0;"><span style="color:#f97316;">☆ Gate: </span>{gate}</p>
+          <div style={`padding:1.25rem 2rem;border-top:1px solid rgba(255,255,255,0.05);background:${accent}04;`}>
+            <p style={`font-size:0.825rem;color:#a1a1aa;margin:0;`}><span style={`color:${accent};`}>↳ Gate: </span>{gate}</p>
           </div>
         </div>
       ))}
-
     </div>
   </div>
 </section>
@@ -250,14 +277,12 @@ import Layout from '../layouts/Layout.astro';
 <section class="feat-section">
   <div class="container">
     <div class="feat-header">
-      <!-- Left -->
       <div>
         <p class="feat-num fade-up" data-delay="0">4.0 · Corporate Licensing</p>
         <h2 class="feat-h2 heading-display fade-up" data-delay="0.06">
-          License the methodology. Scale without us.
+          License the methodology.<br/>Scale without us.
         </h2>
       </div>
-      <!-- Right -->
       <div>
         <p class="feat-body fade-up" data-delay="0.1">
           Per-cohort licensing for organisations that need Cognitive Design at workforce scale. We deliver the first cohort directly. Your certified facilitators deliver every cohort after.
@@ -270,9 +295,9 @@ import Layout from '../layouts/Layout.astro';
         <thead>
           <tr>
             <th></th>
-            <th>Sprint License</th>
-            <th>Program License</th>
-            <th>Enterprise License</th>
+            <th style="color:#60a5fa;">Sprint License</th>
+            <th style="color:#a78bfa;">Program License</th>
+            <th style="color:#2dd4bf;">Enterprise License</th>
           </tr>
         </thead>
         <tbody>
@@ -286,9 +311,9 @@ import Layout from '../layouts/Layout.astro';
           ].map(([feat, a, b, c]) => (
             <tr>
               <td>{feat}</td>
-              <td>{a}</td>
-              <td>{b}</td>
-              <td>{c}</td>
+              <td style="color:#93c5fd;">{a}</td>
+              <td style="color:#c4b5fd;">{b}</td>
+              <td style="color:#5eead4;">{c}</td>
             </tr>
           ))}
         </tbody>
@@ -303,14 +328,12 @@ import Layout from '../layouts/Layout.astro';
 <section class="feat-section" style="background:#030303;">
   <div class="container">
     <div class="feat-header">
-      <!-- Left -->
       <div>
         <p class="feat-num fade-up" data-delay="0">5.0 · Who This Is For</p>
         <h2 class="feat-h2 heading-display fade-up" data-delay="0.06">
-          Three markets. One methodology.
+          Three markets.<br/>One methodology.
         </h2>
       </div>
-      <!-- Right -->
       <div>
         <p class="feat-body fade-up" data-delay="0.1">
           Cognitive Design is a licensing model, not a SaaS subscription. Organisations, accelerators, and consulting firms all deploy the same curriculum — at different scales, with different entry points.
@@ -319,145 +342,18 @@ import Layout from '../layouts/Layout.astro';
     </div>
 
     <div style="display:grid;grid-template-columns:1fr;gap:1.25rem;" class="markets-grid">
-
-      <div class="card fade-up" data-delay="0" style="padding:2rem;">
-        <span class="badge" style="margin-bottom:0.75rem;display:inline-flex;">Enterprise</span>
-        <p style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;color:#3f3f46;margin:0 0 1rem;text-transform:uppercase;letter-spacing:0.08em;">CHRO · CIO · VP AI Strategy</p>
-        <p style="color:#71717a;font-size:0.875rem;line-height:1.75;margin:0 0 1rem;">
-          Organisations deploying AI at scale who need structured knowledge architecture, not just more tools. Train 20 or 2,000.
-        </p>
-        <p style="font-size:0.8rem;color:#52525b;line-height:1.7;margin:0;">
-          <strong style="color:#a1a1aa;">Model:</strong> Sprint License pilot → Program License for facilitator corps → Enterprise License for leadership.
-        </p>
-      </div>
-
-      <div class="card fade-up" data-delay="0.06" style="padding:2rem;">
-        <span class="badge" style="margin-bottom:0.75rem;display:inline-flex;">Accelerators</span>
-        <p style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;color:#3f3f46;margin:0 0 1rem;text-transform:uppercase;letter-spacing:0.08em;">Program Director · Managing Partner</p>
-        <p style="color:#71717a;font-size:0.875rem;line-height:1.75;margin:0 0 1rem;">
-          Give every startup in your batch a working Org Brain by demo day. Their AI produces strategically coherent output — not generic decks.
-        </p>
-        <p style="font-size:0.8rem;color:#52525b;line-height:1.7;margin:0;">
-          <strong style="color:#a1a1aa;">Model:</strong> Sprint License per batch. Each startup leaves with a working DLM and a certified System Librarian.
-        </p>
-      </div>
-
-      <div class="card fade-up" data-delay="0.12" style="padding:2rem;">
-        <span class="badge" style="margin-bottom:0.75rem;display:inline-flex;">Consulting Firms</span>
-        <p style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;color:#3f3f46;margin:0 0 1rem;text-transform:uppercase;letter-spacing:0.08em;">Practice Lead · MD of AI/Digital</p>
-        <p style="color:#71717a;font-size:0.875rem;line-height:1.75;margin:0 0 1rem;">
-          Add organisational intelligence to your AI transformation practice. Certify your consultants. Deliver Org Brain builds to clients under your brand.
-        </p>
-        <p style="font-size:0.8rem;color:#52525b;line-height:1.7;margin:0;">
-          <strong style="color:#a1a1aa;">Model:</strong> Program License to certify consultants → consultants deliver Sprint License engagements. 3–6× markup.
-        </p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- ── Exit Guarantee ─────────────────────────────────────────── -->
-<section class="feat-section">
-  <div class="container">
-    <div class="feat-header">
-      <!-- Left -->
-      <div>
-        <p class="feat-num fade-up" data-delay="0">6.0 · The Exit Guarantee</p>
-        <h2 class="feat-h2 heading-display fade-up" data-delay="0.06">
-          Every engagement ends with a person.
-        </h2>
-      </div>
-      <!-- Right -->
-      <div>
-        <p class="feat-body fade-up" data-delay="0.1">
-          At every certification gate, you have two options. Either way, your organisation gets the human capability to sustain what was built. No report. No slide deck. A person who runs the system.
-        </p>
-      </div>
-    </div>
-
-    <div style="display:grid;grid-template-columns:1fr;gap:1.25rem;" class="guarantee-grid">
-
-      <div class="card fade-up" data-delay="0" style="padding:2rem;">
-        <span class="badge" style="margin-bottom:1.25rem;display:inline-flex;">Option A</span>
-        <h3 style="font-size:1.1rem;color:#fff;margin:0 0 0.75rem;letter-spacing:-0.02em;">Certify someone inside your org.</h3>
-        <p style="color:#71717a;font-size:0.875rem;line-height:1.75;margin:0 0 1.25rem;">
-          An internal employee earns the credential through demonstrated mastery — not attendance. They own the knowledge, the tools, and the ongoing governance.
-        </p>
-        <div style="display:flex;flex-direction:column;gap:0;">
-          {[
-            ['System Librarian', '$65–$85K'],
-            ['Cognitive Designer', '$95–$120K'],
-            ['Chief Intelligence Officer', '$150–$200K+'],
-          ].map(([role, comp]) => (
-            <div style="display:flex;justify-content:space-between;align-items:center;padding:0.6rem 0;border-bottom:1px solid rgba(255,255,255,0.05);">
-              <span style="font-size:0.85rem;color:#a1a1aa;">{role}</span>
-              <span style="font-family:'JetBrains Mono',monospace;font-size:0.78rem;color:#f97316;">{comp}</span>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <div class="card fade-up" data-delay="0.08" style="padding:2rem;">
-        <span class="badge" style="margin-bottom:1.25rem;display:inline-flex;">Option B</span>
-        <h3 style="font-size:1.1rem;color:#fff;margin:0 0 0.75rem;letter-spacing:-0.02em;">We place someone from our network.</h3>
-        <p style="color:#71717a;font-size:0.875rem;line-height:1.75;margin:0 0 1.25rem;">
-          Starling places a pre-certified professional from the broader talent network. Same credentials, same capability — ready to operate from day one.
-        </p>
-        <div style="display:flex;flex-direction:column;gap:0;">
-          {[
-            ['System Librarian', '$65–$85K'],
-            ['Cognitive Designer', '$95–$120K'],
-            ['Chief Intelligence Officer', '$150–$200K+'],
-          ].map(([role, comp]) => (
-            <div style="display:flex;justify-content:space-between;align-items:center;padding:0.6rem 0;border-bottom:1px solid rgba(255,255,255,0.05);">
-              <span style="font-size:0.85rem;color:#a1a1aa;">{role}</span>
-              <span style="font-family:'JetBrains Mono',monospace;font-size:0.78rem;color:#f97316;">{comp}</span>
-            </div>
-          ))}
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- ── DLM Value Prop ─────────────────────────────────────────── -->
-<section class="feat-section" style="background:#030303;">
-  <div class="container">
-    <div class="feat-header">
-      <!-- Left -->
-      <div>
-        <p class="feat-num fade-up" data-delay="0">7.0 · What You Get</p>
-        <h2 class="feat-h2 heading-display fade-up" data-delay="0.06">
-          Every engagement produces a Domain Language Model.
-        </h2>
-      </div>
-      <!-- Right -->
-      <div>
-        <p class="feat-body fade-up" data-delay="0.1">
-          A DLM is what happens when a large language model meets your Org Brain. It doesn't know "business." It knows <em>your</em> business. Four multiplicative factors — remove any one and the product is zero.
-        </p>
-      </div>
-    </div>
-
-    <div style="display:grid;grid-template-columns:1fr;gap:1.25rem;" class="dlm-factors">
       {[
-        ['LLM', 'Raw Intelligence', 'Claude, GPT, Gemini — powerful but generic. They know everything about the world and nothing about your business.'],
-        ['MCP', 'The Connection', 'Anthropic\'s open protocol. Free for everyone. Makes the LLM replaceable and your intelligence the asset.'],
-        ['UCA', 'The Architecture', 'Universal Cognitive Architecture — 11 cognates, 4 memory tiers, semantic addressing. The free, open standard.'],
-        ['ORG BRAIN', 'Your Knowledge', 'Your sovereign repository — Persistent Memories, Active Work, Extracted Wisdom — governed by Starling OS.'],
-      ].map(([label, title, body], i) => (
-        <div class="card fade-up" data-delay={`${i * 0.05}`} style="padding:1.75rem;display:flex;gap:1.25rem;align-items:flex-start;">
-          <span class="badge" style="flex-shrink:0;">{label}</span>
-          <div>
-            <h3 style="font-size:0.95rem;color:#e4e4e7;margin:0 0 0.35rem;font-weight:600;">{title}</h3>
-            <p style="font-size:0.85rem;color:#71717a;line-height:1.7;margin:0;">{body}</p>
-          </div>
+        { title:'Enterprise', sub:'CHRO · CIO · VP AI Strategy', accent:'#60a5fa', badgeClass:'badge-accent', body:'Organisations deploying AI at scale who need structured knowledge architecture, not just more tools. Train 20 or 2,000.', model:'Sprint License pilot → Program License for facilitator corps → Enterprise License for leadership.' },
+        { title:'Accelerators', sub:'Program Director · Managing Partner', accent:'#a78bfa', badgeClass:'badge-violet', body:'Give every startup in your batch a working Org Brain by demo day. Their AI produces strategically coherent output — not generic decks.', model:'Sprint License per batch. Each startup leaves with a working DLM and a certified System Librarian.' },
+        { title:'Consulting Firms', sub:'Practice Lead · MD of AI/Digital', accent:'#2dd4bf', badgeClass:'badge-teal', body:'Add organisational intelligence to your AI transformation practice. Certify your consultants. Deliver Org Brain builds to clients under your brand.', model:'Program License to certify consultants → consultants deliver Sprint License engagements. 3–6× markup.' },
+      ].map(({ title, sub, accent, badgeClass, body, model }, i) => (
+        <div class="card fade-up" data-delay={`${i*0.06}`} style={`padding:2rem;border-top:2px solid ${accent}33;`}>
+          <span class={`badge ${badgeClass}`} style="margin-bottom:0.75rem;display:inline-flex;">{title}</span>
+          <p style={`font-family:'JetBrains Mono',monospace;font-size:0.65rem;color:#3f3f46;margin:0 0 1rem;text-transform:uppercase;letter-spacing:0.08em;`}>{sub}</p>
+          <p style="color:#71717a;font-size:0.875rem;line-height:1.75;margin:0 0 1rem;">{body}</p>
+          <p style="font-size:0.8rem;color:#52525b;line-height:1.7;margin:0;">
+            <strong style={`color:${accent};`}>Model: </strong>{model}
+          </p>
         </div>
       ))}
     </div>
@@ -504,15 +400,15 @@ import Layout from '../layouts/Layout.astro';
 </Layout>
 
 <style>
-  @media(min-width:768px) {
-    .services-grid  { grid-template-columns: repeat(3, 1fr) !important; }
-    .markets-grid   { grid-template-columns: repeat(3, 1fr) !important; }
-    .guarantee-grid { grid-template-columns: repeat(2, 1fr) !important; }
-    .dlm-factors    { grid-template-columns: repeat(2, 1fr) !important; }
-    .sprint-grid    { grid-template-columns: repeat(2, 1fr) !important; }
-    .diag-grid      { grid-template-columns: 1fr !important; }
+  .services-chips { display: none; }
+  @media(min-width: 768px) {
+    .services-hero-grid { grid-template-columns: 1fr 1fr !important; align-items: center; }
+    .services-chips     { display: block; }
+    .services-grid      { grid-template-columns: repeat(3, 1fr) !important; }
+    .markets-grid       { grid-template-columns: repeat(3, 1fr) !important; }
+    .sprint-grid        { grid-template-columns: repeat(2, 1fr) !important; }
   }
-  @media(min-width:1024px) {
+  @media(min-width: 1024px) {
     .sprint-grid { grid-template-columns: repeat(3, 1fr) !important; }
   }
 </style>

@@ -172,10 +172,10 @@ const testimonials = [
       <div style="display:flex;flex-direction:column;gap:0;">
         {[
           { tier:'System', range:'00–19', desc:'Operating logic and architecture', items:['Operating Prompt','Cognitive Architecture','Semantic Addressing'], color:'#52525b' },
-          { tier:'Constitutional', range:'20–23', desc:'Core identity and strategy', items:['Cultural Values','Competitive Position','Product Roadmap'], color:'#f97316' },
-          { tier:'Persistent', range:'24–49', desc:'Extended strategic depth', items:['IP Strategy','Brand Nomenclature','Remote Work Protocols'], color:'#fb923c' },
-          { tier:'Active', range:'50–79', desc:'Daily work as addressable memory', items:['Q2 Campaign Brief','Enterprise Page Copy','Board Deck'], color:'#a1a1aa' },
-          { tier:'Learned', range:'80–99', desc:'Extracted patterns from operations', items:['Direct outreach converts 3× cold email','Q1 retro → async works'], color:'#71717a' },
+          { tier:'Constitutional', range:'20–23', desc:'Core identity and strategy', items:['Cultural Values','Competitive Position','Product Roadmap'], color:'#60a5fa' },
+          { tier:'Persistent', range:'24–49', desc:'Extended strategic depth', items:['IP Strategy','Brand Nomenclature','Remote Work Protocols'], color:'#a78bfa' },
+          { tier:'Active', range:'50–79', desc:'Daily work as addressable memory', items:['Q2 Campaign Brief','Enterprise Page Copy','Board Deck'], color:'#2dd4bf' },
+          { tier:'Learned', range:'80–99', desc:'Extracted patterns from operations', items:['Direct outreach converts 3× cold email','Q1 retro → async works'], color:'#34d399' },
         ].map(({ tier, range, desc, items, color }, i, arr) => (
           <div style={`padding:1.25rem 2rem;display:flex;gap:2rem;align-items:flex-start;flex-wrap:wrap;${i < arr.length - 1 ? 'border-bottom:1px solid rgba(255,255,255,0.05);' : ''}`}>
             <div style="min-width:160px;">
@@ -198,6 +198,52 @@ const testimonials = [
 
   </div>
 </section>
+
+<!-- ── Image Split: What You Build ────────────────────────────── -->
+<div class="img-split">
+  <div class="img-split-photo">
+    <img src="/images/women-teal.png" alt="Building your Org Brain" loading="lazy" />
+    <div class="img-split-overlay">
+      <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
+        <div style="padding:0.65rem 1rem;border:1px solid rgba(96,165,250,0.3);border-radius:8px;background:rgba(0,0,0,0.6);backdrop-filter:blur(8px);">
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:1.5rem;font-weight:700;color:#60a5fa;line-height:1;letter-spacing:-0.03em;">9</div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:0.58rem;color:#71717a;text-transform:uppercase;letter-spacing:0.08em;margin-top:0.25rem;">Weeks</div>
+        </div>
+        <div style="padding:0.65rem 1rem;border:1px solid rgba(167,139,250,0.3);border-radius:8px;background:rgba(0,0,0,0.6);backdrop-filter:blur(8px);">
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:1.5rem;font-weight:700;color:#a78bfa;line-height:1;letter-spacing:-0.03em;">28</div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:0.58rem;color:#71717a;text-transform:uppercase;letter-spacing:0.08em;margin-top:0.25rem;">Memories</div>
+        </div>
+        <div style="padding:0.65rem 1rem;border:1px solid rgba(45,212,191,0.3);border-radius:8px;background:rgba(0,0,0,0.6);backdrop-filter:blur(8px);">
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:1.5rem;font-weight:700;color:#2dd4bf;line-height:1;letter-spacing:-0.03em;">4</div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:0.58rem;color:#71717a;text-transform:uppercase;letter-spacing:0.08em;margin-top:0.25rem;">Tiers</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="img-split-content">
+    <p class="feat-num" style="margin-bottom:1rem;">What you build</p>
+    <h2 class="heading-display" style="font-size:clamp(2rem,5vw,3rem);margin:0 0 1.25rem;letter-spacing:-0.04em;">
+      Sovereign memory. Built in weeks.
+    </h2>
+    <p style="font-size:0.95rem;color:#71717a;line-height:1.75;margin:0 0 2rem;">
+      Every iPub you complete produces a real, working memory node — governed, addressed, and ready for any LLM. You don't finish with a certification and a PDF. You finish with a functioning AI system that knows your business.
+    </p>
+    <div style="display:flex;flex-direction:column;gap:0.85rem;">
+      {[
+        { color:'#60a5fa', label:'Constitutional Layer', desc:'15+ identity and strategy memories codified by week 5' },
+        { color:'#a78bfa', label:'Persistent Layer', desc:'11 operational memories extending your strategic depth' },
+        { color:'#2dd4bf', label:'Active + Learned Layers', desc:'Live work and extracted patterns that compound over time' },
+      ].map(({ color, label, desc }) => (
+        <div style={`display:flex;gap:0.85rem;align-items:flex-start;padding:0.85rem 1rem;border-radius:8px;background:rgba(255,255,255,0.02);border-left:2px solid ${color};`}>
+          <div>
+            <p style={`font-size:0.82rem;font-weight:600;color:${color};margin:0 0 0.2rem;letter-spacing:-0.01em;`}>{label}</p>
+            <p style="font-size:0.8rem;color:#71717a;margin:0;line-height:1.5;">{desc}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</div>
 
 <div class="divider"></div>
 
@@ -231,7 +277,7 @@ const testimonials = [
                 <span class="badge">{w.badge}</span>
               </div>
               <h3 style="font-size:1rem;font-weight:500;color:#fff;margin:0 0 0.4rem;letter-spacing:-0.01em;">{w.title}</h3>
-              <p style="font-size:0.85rem;color:#f97316;margin:0 0 0.75rem;font-style:italic;">{w.one}</p>
+              <p style="font-size:0.85rem;color:#60a5fa;margin:0 0 0.75rem;">{w.one}</p>
               <p style="font-size:0.875rem;color:#71717a;line-height:1.7;margin:0 0 1rem;white-space:pre-line;">{w.body}</p>
               <div style="display:flex;gap:0.4rem;flex-wrap:wrap;">
                 {w.tags.map(t => <span style="font-family:'JetBrains Mono',monospace;font-size:0.63rem;padding:0.18rem 0.55rem;border-radius:999px;border:1px solid rgba(255,255,255,0.1);color:#52525b;">{t}</span>)}
@@ -239,13 +285,13 @@ const testimonials = [
             </div>
           </div>
           {w.milestone && (
-            <div style="margin-top:1.5rem;padding:1rem 1.25rem;border:1px solid rgba(249,115,22,0.2);border-radius:8px;background:rgba(249,115,22,0.04);">
-              <p style="font-size:0.82rem;color:#f97316;margin:0;font-family:'JetBrains Mono',monospace;">Milestone — {w.milestone}</p>
+            <div style="margin-top:1.5rem;padding:1rem 1.25rem;border:1px solid rgba(96,165,250,0.25);border-radius:8px;background:rgba(96,165,250,0.05);">
+              <p style="font-size:0.82rem;color:#60a5fa;margin:0;font-family:'JetBrains Mono',monospace;">Milestone — {w.milestone}</p>
             </div>
           )}
           {w.cert && (
-            <div style="margin-top:1.5rem;padding:1rem 1.25rem;border:1px solid rgba(249,115,22,0.3);border-radius:8px;background:rgba(249,115,22,0.06);">
-              <p style="font-size:0.82rem;color:#fb923c;margin:0;font-family:'JetBrains Mono',monospace;">All 9 weeks complete. You've built your Innovation System. Complete a mastery walkthrough for System Librarian certification.</p>
+            <div style="margin-top:1.5rem;padding:1rem 1.25rem;border:1px solid rgba(45,212,191,0.3);border-radius:8px;background:rgba(45,212,191,0.05);">
+              <p style="font-size:0.82rem;color:#2dd4bf;margin:0;font-family:'JetBrains Mono',monospace;">All 9 weeks complete. You've built your Innovation System. Complete a mastery walkthrough for System Librarian certification.</p>
             </div>
           )}
         </div>
@@ -300,7 +346,7 @@ const testimonials = [
     <div class="cta-row">
 
       <!-- Left: pricing card -->
-      <div class="card fade-up" data-delay="0" style="padding:2.5rem;border-color:rgba(249,115,22,0.25);">
+      <div class="card fade-up" data-delay="0" style="padding:2.5rem;border-color:rgba(96,165,250,0.25);">
         <div style="display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-bottom:1.5rem;">
           <div>
             <span class="badge" style="margin-bottom:0.75rem;display:inline-flex;">Program 1</span>
@@ -308,7 +354,7 @@ const testimonials = [
             <p style="font-size:0.8rem;color:#52525b;margin:0;">From Innovation to Applied Intelligence</p>
           </div>
           <div style="text-align:right;">
-            <div class="heading-upright" style="font-size:2.8rem;color:#f97316;line-height:1;">$999</div>
+            <div class="heading-upright" style="font-size:2.8rem;color:#fff;line-height:1;">$999</div>
             <p style="font-size:0.8rem;color:#52525b;margin:0.25rem 0 0;">or 3 × $333/mo</p>
           </div>
         </div>
