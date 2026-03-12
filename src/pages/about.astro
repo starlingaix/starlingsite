@@ -1,0 +1,319 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="About — Starling AIX" description="Starling AIX creates a classification system for business knowledge that lives in natural language. Our methodology transforms generic LLMs into contextualized Intelligence Agents.">
+
+<!-- ── Hero ──────────────────────────────────────────────────── -->
+<section style="position:relative;overflow:hidden;padding:6rem 0 5rem;text-align:center;" class="grid-bg">
+  <div class="hero-glow"></div>
+  <div class="container" style="position:relative;z-index:1;">
+
+    <div class="badge fade-up" data-delay="0" style="margin-bottom:1.5rem;">
+      The Breakthrough
+    </div>
+
+    <h1 class="heading-display fade-up" data-delay="0.08"
+        style="font-size:clamp(3rem,8vw,5.5rem);margin:0 0 1.5rem;max-width:800px;margin-inline:auto;">
+      Your business, now <em>fluent in AI</em>
+    </h1>
+
+    <p class="fade-up" data-delay="0.15"
+       style="font-size:1.05rem;color:#71717a;line-height:1.75;max-width:600px;margin:0 auto 2.5rem;">
+      Starling AI Systems creates a classification system for business knowledge that lives in natural language, not machine code. Our systems establish governing protocols where AI operates by human rules — transforming generic LLMs into contextualized Intelligence Agents.
+    </p>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── Application Intelligence ──────────────────────────────── -->
+<section style="padding:5rem 0;">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr;gap:4rem;align-items:center;max-width:900px;margin-inline:auto;" class="ai-grid">
+
+      <div>
+        <p class="section-label fade-up" data-delay="0" style="margin-bottom:0.75rem;">Application Intelligence</p>
+        <h2 class="heading-display fade-up" data-delay="0.06"
+            style="font-size:clamp(2rem,5vw,3rem);margin:0 0 1.25rem;">
+          Your knowledge. Machine speed. Exponential power.
+        </h2>
+        <p class="fade-up" data-delay="0.1"
+           style="font-size:1rem;color:#71717a;line-height:1.85;margin:0 0 1rem;">
+          Starling transforms generic LLMs into AI² advisors that understand your specific business context. We provide the operating logic that codifies and continually refines your unique approach to innovation.
+        </p>
+        <p class="fade-up" data-delay="0.13"
+           style="font-size:1rem;color:#71717a;line-height:1.85;margin:0;">
+          The AI provides raw processing power. You provide structured expertise. Together they produce Cross Intelligence — cognitive systems that learn and evolve through memory training and daily conversation.
+        </p>
+      </div>
+
+      <div class="card fade-up" data-delay="0.08" style="padding:2.5rem;text-align:center;">
+        <div style="font-family:'DM Serif Display',Georgia,serif;font-size:clamp(2rem,5vw,3rem);color:#fff;margin-bottom:1.5rem;font-style:italic;">
+          AI1 × <span style="color:#f97316;">AI2</span> = AI²
+        </div>
+        <div style="display:flex;flex-direction:column;gap:1rem;">
+          {[
+            ['AI1', 'Artificial Intelligence', 'Raw processing power and pattern recognition (Large Language Models)'],
+            ['AI2', 'Application Intelligence', 'Human expertise structured for machine processing (your unique genius)'],
+            ['AI²', 'Cross Intelligence', 'Cognitive systems that learn and evolve through memory'],
+          ].map(([label, title, body]) => (
+            <div style="display:flex;gap:1rem;align-items:flex-start;text-align:left;padding:0.75rem 0;border-bottom:1px solid rgba(255,255,255,0.05);">
+              <span class="badge" style="flex-shrink:0;">{label}</span>
+              <div>
+                <p style="font-size:0.875rem;color:#e4e4e7;margin:0 0 0.2rem;font-weight:500;">{title}</p>
+                <p style="font-size:0.8rem;color:#52525b;line-height:1.6;margin:0;">{body}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── AI-Native Org Design ───────────────────────────────────── -->
+<section style="padding:5rem 0;">
+  <div class="container">
+    <div style="max-width:820px;margin-inline:auto;">
+      <p class="section-label fade-up" data-delay="0" style="margin-bottom:0.75rem;">AI-Native Org Design</p>
+      <h2 class="heading-display fade-up" data-delay="0.06"
+          style="font-size:clamp(2rem,5vw,3rem);margin:0 0 1rem;">
+        The first business methodology designed specifically for the AI era.
+      </h2>
+      <p class="fade-up" data-delay="0.1"
+         style="font-size:1rem;color:#71717a;line-height:1.85;margin:0 0 2.5rem;">
+        Starling AIX is built on <strong style="color:#e4e4e7;">Cognitive Design</strong> — a comprehensive approach to business design and transformation that synthesizes systematic efficiency with human values. Powering your AI² Chief of Staff. This isn't AI trained on the Internet. It's AI trained on Cognitive Design — the methodology of Smart Orgs.
+      </p>
+
+      <div style="display:grid;grid-template-columns:1fr;gap:1rem;" class="principles-grid">
+        {[
+          ['Combines the efficiency of Lean', 'With the human-centered problem-solving of Design Thinking — now machine-executable.'],
+          ['Makes business knowledge machine-executable', 'While codifying your Hierarchy of Organizational Values through six progressive systems.'],
+          ['Creates self-improving knowledge systems', 'Build intelligence through natural conversation that compounds with every session.'],
+          ['Enables a systematic enterprise asset', 'That gets smarter and more valuable over time — not a subscription that resets.'],
+        ].map(([title, body], i) => (
+          <div class="card fade-up" data-delay={`${i * 0.06}`} style="padding:1.5rem 1.75rem;display:flex;gap:1rem;align-items:flex-start;">
+            <div style="width:6px;height:6px;border-radius:50%;background:#f97316;flex-shrink:0;margin-top:0.55rem;"></div>
+            <div>
+              <p style="font-size:0.95rem;color:#e4e4e7;margin:0 0 0.3rem;font-weight:500;">{title}</p>
+              <p style="font-size:0.875rem;color:#71717a;line-height:1.7;margin:0;">{body}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── Proven Methods ─────────────────────────────────────────── -->
+<section style="padding:5rem 0;">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:3rem;">
+      <p class="section-label fade-up" data-delay="0" style="margin-bottom:0.75rem;">Proven Methods</p>
+      <h2 class="heading-display fade-up" data-delay="0.06"
+          style="font-size:clamp(2rem,5vw,3rem);margin:0 0 1rem;">
+        Built from real business frameworks,<br/>not research labs.
+      </h2>
+      <p class="fade-up" data-delay="0.1"
+         style="font-size:1rem;color:#71717a;line-height:1.75;max-width:600px;margin-inline:auto;margin-bottom:2rem;">
+        Most AI platforms start with technology and try to fit business into it. Starling AIX started with <strong style="color:#e4e4e7;">Chris Kincade</strong> and <strong style="color:#e4e4e7;">Ari Meisel's</strong> frameworks for business design, optimization, and transformation — then made them machine-executable.
+      </p>
+      <p class="fade-up" data-delay="0.13"
+         style="font-size:0.95rem;color:#52525b;font-style:italic;">
+        The sound barrier didn't stop aviation. It defined the engineering required to go faster. We designed the airframe for Industry 5.0.
+      </p>
+    </div>
+
+    <!-- Stats -->
+    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:rgba(255,255,255,0.07);border-radius:12px;overflow:hidden;max-width:700px;margin:0 auto 4rem;" class="fade-up stats-grid" data-delay="0.14">
+      {[
+        ['25', 'Years of methodology'],
+        ['12K', 'Hours of interface design'],
+        ['12', 'Installer frameworks'],
+        ['28', 'Constitutional memories'],
+      ].map(([num, label]) => (
+        <div style="background:#0d0d0d;padding:2rem;text-align:center;">
+          <div style="font-family:'DM Serif Display',Georgia,serif;font-size:2.5rem;color:#fff;margin-bottom:0.25rem;">{num}</div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:0.68rem;color:#52525b;text-transform:uppercase;letter-spacing:0.1em;">{label}</div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Three Systems -->
+    <div style="display:flex;flex-direction:column;gap:2rem;max-width:900px;margin-inline:auto;">
+
+      <!-- Innovation System -->
+      <div class="card fade-up" data-delay="0" style="padding:0;overflow:hidden;">
+        <div style="padding:1.5rem 2rem;border-bottom:1px solid rgba(255,255,255,0.06);">
+          <div style="display:flex;align-items:center;gap:0.75rem;flex-wrap:wrap;">
+            <span class="badge">Innovation System</span>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:0.68rem;color:#52525b;">Chris Kincade</span>
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr;gap:0;" class="framework-grid">
+          {[
+            ['ID10', 'Value-Centric Design', 'Conversational excavation of who you are — creates Cultural, Product, Customer, and Market Values, plus Dual Metrics drafts (ID20–23; LA20–21).'],
+            ['MA10', 'Open Road Canvas', 'Strategic positioning that defines where you compete and how you win — creates Competitive Positioning, Business Model, and Revenue Strategy (MA20–22).'],
+            ['IN10', 'Value Mapping', 'Defines what you\'re building and how you\'re expanding — creates Product Roadmap and Growth Strategy (IN20–21).'],
+            ['BR10', 'Impact Branding', 'Transforms values into authentic market impact — creates Brand Positioning, Market Expression, and Stakeholder Communications (BR20–22).'],
+          ].map(([code, title, body], i, arr) => (
+            <div style={`padding:1.5rem 2rem;${i < arr.length - 1 ? 'border-bottom:1px solid rgba(255,255,255,0.05);' : ''}`}>
+              <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.4rem;">
+                <span style="font-family:'JetBrains Mono',monospace;font-size:0.72rem;color:#f97316;">{code}</span>
+                <span style="font-size:0.9rem;color:#e4e4e7;font-weight:500;">{title}</span>
+              </div>
+              <p style="font-size:0.825rem;color:#71717a;line-height:1.7;margin:0;">{body}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Optimization System -->
+      <div class="card fade-up" data-delay="0.06" style="padding:0;overflow:hidden;">
+        <div style="padding:1.5rem 2rem;border-bottom:1px solid rgba(255,255,255,0.06);">
+          <div style="display:flex;align-items:center;gap:0.75rem;flex-wrap:wrap;">
+            <span class="badge">Optimization System</span>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:0.68rem;color:#52525b;">Ari Meisel</span>
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr;gap:0;" class="framework-grid">
+          {[
+            ['PD10', 'The Genius Paradigm', 'Defines where you do your most strategic work — creates Innovation Zone and Task Replacement Plan (PD20–21).'],
+            ['WF10', 'Smart Workflows', 'Clarifies how work flows with minimal friction — creates Signal Clarity, Project Clarity, and Delegation Standards (WF20–22).'],
+            ['PR10', 'Process Perfection', 'Establishes Standing Operating Protocols (the AI-native SOP) — creates Process Clarity, OAO Methodology, and Quality Standards (PR20–22).'],
+            ['CU10', 'Eight Traits of Endurance', 'Establishes cultural practices that sustain performance — creates Cultural Framework, Leadership Development, and Team Structure (CU20–22).'],
+          ].map(([code, title, body], i, arr) => (
+            <div style={`padding:1.5rem 2rem;${i < arr.length - 1 ? 'border-bottom:1px solid rgba(255,255,255,0.05);' : ''}`}>
+              <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.4rem;">
+                <span style="font-family:'JetBrains Mono',monospace;font-size:0.72rem;color:#f97316;">{code}</span>
+                <span style="font-size:0.9rem;color:#e4e4e7;font-weight:500;">{title}</span>
+              </div>
+              <p style="font-size:0.825rem;color:#71717a;line-height:1.7;margin:0;">{body}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Cognitive System -->
+      <div class="card fade-up" data-delay="0.12" style="padding:0;overflow:hidden;">
+        <div style="padding:1.5rem 2rem;border-bottom:1px solid rgba(255,255,255,0.06);">
+          <div style="display:flex;align-items:center;gap:0.75rem;flex-wrap:wrap;">
+            <span class="badge">Cognitive System</span>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:0.68rem;color:#52525b;">Chris Kincade</span>
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr;gap:0;" class="framework-grid">
+          {[
+            ['SY10', 'Smart Orgs', 'AI-native organizational design — establishes System Configuration and governance protocols for Smart OS activation (SY21).'],
+            ['LA10', 'Organizational Intelligence', 'Builds the measurement layer — creates Empirical Metrics and Empathic Metrics as Autonomic Equations (LA20–21).'],
+            ['IT10', 'Activating Your Smart OS', 'Connects external intelligence sources — creates Intelligence Access and Integration Standards (IT20–21).'],
+            ['SY11', 'Unlocking Deep Context', 'Advanced memory enhancement — refines all Constitutional memories with Deep Context layers for richer AI synthesis.'],
+          ].map(([code, title, body], i, arr) => (
+            <div style={`padding:1.5rem 2rem;${i < arr.length - 1 ? 'border-bottom:1px solid rgba(255,255,255,0.05);' : ''}`}>
+              <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.4rem;">
+                <span style="font-family:'JetBrains Mono',monospace;font-size:0.72rem;color:#f97316;">{code}</span>
+                <span style="font-size:0.9rem;color:#e4e4e7;font-weight:500;">{title}</span>
+              </div>
+              <p style="font-size:0.825rem;color:#71717a;line-height:1.7;margin:0;">{body}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+    </div>
+
+    <div class="card fade-up" data-delay="0.18" style="padding:2rem;max-width:900px;margin:1.5rem auto 0;text-align:center;">
+      <p style="font-size:1rem;color:#e4e4e7;margin:0 0 0.5rem;">The result? A complete AI-native business system you can build in natural conversation.</p>
+      <p style="font-size:0.875rem;color:#52525b;margin:0;">Six successive systems. Each one builds on the last. No code required.</p>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── Design Principles ──────────────────────────────────────── -->
+<section style="padding:5rem 0;">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:3rem;">
+      <p class="section-label fade-up" data-delay="0" style="margin-bottom:0.75rem;">Design Principles</p>
+      <h2 class="heading-display fade-up" data-delay="0.06"
+          style="font-size:clamp(2rem,5vw,3rem);margin:0 0 1rem;">
+        What we believe.
+      </h2>
+      <p class="fade-up" data-delay="0.1"
+         style="font-size:1rem;color:#71717a;line-height:1.75;max-width:500px;margin-inline:auto;">
+        Every design decision in Starling traces back to three principles. They aren't marketing copy. They're engineering constraints.
+      </p>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr;gap:1.5rem;max-width:900px;margin-inline:auto;" class="dp-grid">
+
+      <div class="card fade-up" data-delay="0" style="padding:2.5rem;">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:0.72rem;color:#f97316;margin-bottom:1rem;">01</div>
+        <h3 style="font-size:1.3rem;color:#fff;margin:0 0 0.75rem;">Information Sovereignty</h3>
+        <p style="color:#71717a;font-size:0.95rem;line-height:1.8;margin:0;">
+          Your knowledge stays in your repository. Readable. Editable. Portable. Forever. The AI serves your data — it never owns it. No vendor lock-in. No proprietary formats. Natural language, stored where you control it.
+        </p>
+      </div>
+
+      <div class="card fade-up" data-delay="0.06" style="padding:2.5rem;">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:0.72rem;color:#f97316;margin-bottom:1rem;">02</div>
+        <h3 style="font-size:1.3rem;color:#fff;margin:0 0 0.75rem;">Conversation as Configuration</h3>
+        <p style="color:#71717a;font-size:0.95rem;line-height:1.8;margin:0;">
+          Business knowledge shouldn't require a developer to encode. Starling installers extract organizational intelligence through guided conversation — the same way a great consultant would, at machine speed, with permanent output.
+        </p>
+      </div>
+
+      <div class="card fade-up" data-delay="0.12" style="padding:2.5rem;">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:0.72rem;color:#f97316;margin-bottom:1rem;">03</div>
+        <h3 style="font-size:1.3rem;color:#fff;margin:0 0 0.75rem;">Architecture Over Tools</h3>
+        <p style="color:#71717a;font-size:0.95rem;line-height:1.8;margin:0;">
+          Tools change. Platforms sunset. Models improve. Architecture endures. UCA is a permanent free standard because the classification system for business knowledge shouldn't belong to any single vendor — including us.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── Final CTA ──────────────────────────────────────────────── -->
+<section style="padding:5rem 0;">
+  <div class="container" style="text-align:center;">
+    <h2 class="heading-display fade-up" data-delay="0" style="font-size:clamp(2rem,4vw,2.8rem);margin:0 0 1rem;">
+      Ready to build the airframe?
+    </h2>
+    <p class="fade-up" data-delay="0.06" style="font-size:1rem;color:#71717a;line-height:1.75;max-width:480px;margin:0 auto 2.5rem;">
+      Start with the free standard. See how semantic addressing works. Then decide if you want to go further.
+    </p>
+    <div class="fade-up" data-delay="0.12" style="display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;">
+      <a href="/ai-guide" class="btn btn-primary" style="font-size:0.95rem;padding:0.7rem 1.75rem;">
+        Get the Free AI Guide
+      </a>
+      <a href="/services" class="btn btn-ghost" style="font-size:0.95rem;padding:0.7rem 1.75rem;">
+        Talk to Us
+      </a>
+    </div>
+  </div>
+</section>
+
+</Layout>
+
+<style>
+  @media(min-width:768px) {
+    .ai-grid         { grid-template-columns: 1fr 1fr !important; }
+    .principles-grid { grid-template-columns: repeat(2, 1fr) !important; }
+    .dp-grid         { grid-template-columns: repeat(3, 1fr) !important; }
+    .framework-grid  { grid-template-columns: repeat(2, 1fr) !important; }
+    .stats-grid      { grid-template-columns: repeat(4, 1fr) !important; }
+  }
+</style>

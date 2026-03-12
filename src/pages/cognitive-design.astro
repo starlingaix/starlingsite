@@ -1,0 +1,388 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const weeks = [
+  {
+    n:'01', name:'Cognitive Design', badge:'Starling OS +',
+    title:'Cognitive Design: The Operating System for AI-Native Business',
+    one:'The methodology, the operating system, and your first Memory Node. Everything starts here.',
+    body:'Cognitive Design is the methodology that makes organizations speakable to AI. This iPub introduces the discipline — what it is, why it exists, and how it works. You\'ll learn the memory tier architecture, semantic addressing, and why persistence beats permanence.\n\nThis iPub ships with Starling OS — the operating logic that governs how your AI reads, writes, and references organizational memory. Load it once into a Claude Project. It powers every session from here on.',
+    tags:['Starling OS','Context Node','UCA Framework','Semantic Addressing'],
+  },
+  {
+    n:'02', name:'The 17 Value Systems', badge:'Identity +',
+    title:'The 17 Value Systems Every Business Needs to Codify',
+    one:'Your product, cultural, customer, and market values, and the machine and human metrics that measure them.',
+    body:'The foundation everything else builds on. The 17 Value Systems anchors your business in dynamic Value Systems — operational values that prove themselves through observable behavior. Each system includes discovery questions, self-validation tests, and the integration logic that connects values to decisions.',
+    tags:['Cultural Values','Product Values','Dual Metrics','Customer Values','Market Values'],
+  },
+  {
+    n:'03', name:'Open Road', badge:'Market +',
+    title:'Open Road Canvas: From Competitive Analysis to Category Creation',
+    one:'Where you compete. Competitive position, business model, and revenue strategy.',
+    body:'Three frameworks that map your competitive landscape: the Four Corner Analysis for positioning, the Open Road Canvas for business model design, and the Four Factor Method for revenue optimization.\n\nYou finish knowing exactly where you compete, how your business model works, and the levers that drive revenue.',
+    tags:['Competitive Position','Business Model','Revenue Strategy'],
+  },
+  {
+    n:'04', name:'Value Mapping', badge:'Innovation +',
+    title:'Value Mapping: Customer Impact Analysis and Innovation Planning',
+    one:'What you\'re building. Product roadmap and growth strategy, codified.',
+    body:'Customer Value Mapping (CVM) builds your product roadmap through the Viable → Lovable → Indispensable progression. Market Value Mapping (MVM) defines your growth strategy with release architecture and market entry sequencing.',
+    tags:['Product Roadmap','Growth Strategy'],
+  },
+  {
+    n:'05', name:'Impact Branding', badge:'Brand +',
+    title:'Impact Branding: The Four Quadrants of Authentic Market Expression',
+    one:'How you\'re known. Brand positioning, campaigns, and stakeholder communications.',
+    body:'The Four Quadrants framework for brand positioning. The Four Campaigns architecture for market expression. The Four Archetypes for stakeholder communications. Brand strategy that your AI can execute — not just describe.',
+    tags:['Brand Positioning','Market Expression','Stakeholder Comms'],
+    milestone:'The First Fifteen. You\'ve codified enough constitutional memories to give your AI the strategic context to extrapolate what comes next.',
+  },
+  {
+    n:'06', name:'Domain Depth', badge:'Strategy +',
+    title:'Domain Depth: Extending Your Strategic Foundation',
+    one:'Extended strategic depth. Core Boosters that expand your Org Brain beyond the First Fifteen.',
+    body:'The First Fifteen give your AI strategic context. Persistent Intelligence deepens it — core innovations, intellectual property strategy, technology infrastructure, brand nomenclature, brand story, and the systematic intelligence process.',
+    tags:['Core Innovations','IP Strategy','Technology Infrastructure','Brand Nomenclature','Brand Story','Systematic Intelligence'],
+  },
+  {
+    n:'07', name:'Work as Memory', badge:'Active Memory +',
+    title:'Work As Memory: How Active Projects Build Organizational Intelligence',
+    one:'Active campaigns and projects, connected to your canon. Your work becomes organizational memory.',
+    body:'Work is the most valuable form of organizational memory. This module builds your Active Memory layer — live campaigns, projects, and deliverables that reference your Constitutional Memories by semantic address.',
+    tags:['Active Memory Structure','Campaign Masters','Project Architecture','Canon-Connected Work'],
+  },
+  {
+    n:'08', name:'The Intelligence Loop', badge:'Learning Memory +',
+    title:'The Intelligence Loop: How Work Becomes Wisdom',
+    one:'Lessons learned. The patterns your organization discovers through real work.',
+    body:'The third memory tier — Learning Memories. Decision patterns, communication approaches, process improvements, market insights, and team dynamics extracted from actual operations. This is where your Org Brain gets smarter over time.',
+    tags:['Learning Memory Structure','Decision Patterns','Process Improvements','Market Insights'],
+  },
+  {
+    n:'09', name:'Governing Intelligence', badge:'Certification +',
+    title:'Governing Intelligence: Human Oversight for AI-Native Organizations',
+    one:'The essential tools of a System Librarian. Then demonstrate mastery and earn the credential.',
+    body:'The capstone iPub. What a System Librarian does, what tools they use, and what competencies define the role. How to maintain an Org Brain over time — updating memories as the business evolves, running diagnostics, managing active work folders, and extracting learned patterns.\n\nThen prove it. Record a Loom walkthrough that demonstrates you can build, explain, and defend the work. The gate is competence, not seat time.',
+    tags:['System Librarian Competency Model','Org Brain Maintenance Protocol','Mastery Walkthrough Certification'],
+    cert: true,
+  },
+];
+
+const testimonials = [
+  { quote:'In 20 minutes, it took me from being overwhelmed with information to only 53 of my attachments being unattached. That huge mental burden on recall — gone.', name:'Brady Patterson', role:'CEO, Brady OS' },
+  { quote:'I ran the diagnostic on our Org Brain and spent 12 hours straight rebuilding everything. Found hallucinations, contradictions from old positioning mixed with new SOPs, missing elements. It was the most productive day we\'ve had all year.', name:'Tristan Guilbeault', role:'CEO, Wrks Online' },
+  { quote:'Now I feel like the cloud has clarity and lightness, like there\'s no storms coming. You\'ve taken something incredibly complex and dynamic — like very dynamic, functional living systems — and structured it into something that can work for someone.', name:'Jamie Sullivan', role:'Founder, The Truffle Box' },
+];
+---
+
+<Layout
+  title="Cognitive Design — 9 Weeks to Your Org Brain | Starling AIX"
+  description="An AI-guided discovery process. 9 weeks to your working Org Brain. Build your cognitive AI system and get certified as the dataset administrator every AI-native company needs."
+>
+
+<!-- ── Hero ──────────────────────────────────────────────────── -->
+<section style="position:relative;overflow:hidden;padding:5.5rem 0 4rem;" class="grid-bg">
+  <div class="hero-glow"></div>
+  <div class="container" style="position:relative;z-index:1;text-align:center;max-width:800px;margin-inline:auto;">
+    <span class="badge fade-up" data-delay="0" style="margin-bottom:1.25rem;display:inline-flex;">An AI-Guided Discovery Process</span>
+    <h1 class="heading-display fade-up" data-delay="0.07"
+        style="font-size:clamp(2.2rem,6vw,4rem);margin:0 0 0.75rem;">
+      9 weeks to your working Org Brain.
+    </h1>
+    <p class="fade-up" data-delay="0.12" style="font-size:1rem;color:#a1a1aa;line-height:1.75;margin:0 0 0.5rem;">
+      Build your cognitive AI system, and get certified as the dataset administrator every AI-native company needs.
+    </p>
+    <p class="fade-up" data-delay="0.15" style="font-size:0.875rem;color:#52525b;margin:0 0 2rem;">
+      A drip-learning system undertaken in natural conversation with AI.
+    </p>
+    <div class="fade-up" data-delay="0.18" style="display:flex;gap:0.75rem;justify-content:center;flex-wrap:wrap;">
+      <a href="#pricing" class="btn btn-primary" style="font-size:0.95rem;padding:0.7rem 1.5rem;">Enroll Now</a>
+      <a href="#curriculum" class="btn btn-ghost" style="font-size:0.95rem;padding:0.7rem 1.5rem;">See the Curriculum</a>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── Core insight ───────────────────────────────────────────── -->
+<section style="padding:5rem 0;">
+  <div class="container" style="max-width:720px;margin-inline:auto;">
+    <p class="section-label fade-up" data-delay="0" style="margin-bottom:0.75rem;">Cognitive Design by Starling · Build Your Org Brain · From Innovation to Applied Intelligence</p>
+    <div class="card" style="padding:2.5rem;">
+      <p style="font-size:0.95rem;color:#a1a1aa;line-height:1.85;margin:0 0 1rem;">
+        Every AI conversation you have disappears when the session ends. Every workflow you build inside a platform belongs to that platform. Switch tools, lose everything. The better AI gets, the more your business depends on knowledge you don't own and can't move.
+      </p>
+      <p style="font-size:0.95rem;color:#a1a1aa;line-height:1.85;margin:0;">
+        An Org Brain changes that. It's yours — sovereign, portable, structured in plain language that any LLM can read. Claude today, something else tomorrow. The knowledge travels because it lives in your infrastructure, not theirs. This is how you stop renting your business intelligence and start owning it.
+      </p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── Memory Architecture ────────────────────────────────────── -->
+<section style="padding:5rem 0;">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:3rem;">
+      <h2 class="heading-display fade-up" data-delay="0.06"
+          style="font-size:clamp(1.8rem,4vw,2.8rem);margin:0 0 0.75rem;">
+        What You Build
+      </h2>
+      <p class="fade-up" data-delay="0.1" style="font-size:1rem;color:#a1a1aa;margin:0 0 0.5rem;">A complete organizational memory system.</p>
+      <p class="fade-up" data-delay="0.13" style="font-size:0.9rem;color:#71717a;max-width:500px;margin-inline:auto;line-height:1.7;">
+        This is the architecture that makes session-based AI remember your business. Four memory tiers. Semantic addressing. Governed knowledge that your AI reads by name.
+      </p>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr;gap:1px;border:1px solid rgba(255,255,255,0.08);border-radius:12px;overflow:hidden;max-width:820px;margin-inline:auto;">
+      {[
+        ['System','00–19','Operating logic and architecture',['Operating Prompt','Cognitive Architecture','Semantic Addressing']],
+        ['Constitutional','20–23','Core identity and strategy',['Cultural Values','Competitive Position','Product Roadmap']],
+        ['Persistent','20–49','Extended strategic depth',['IP Strategy','Brand Nomenclature','Remote Work Protocols']],
+        ['Active','50–79','Daily work as addressable memory',['Q2 Campaign Brief','Enterprise Page Copy']],
+        ['Learned','80–99','Extracted patterns from operations',['Direct outreach converts 3× cold email']],
+      ].map(([tier, range, desc, items]: any) => (
+        <div style="background:#0d0d0d;padding:1.5rem 2rem;display:grid;gap:1rem;border-bottom:1px solid rgba(255,255,255,0.06);" class="mem-row">
+          <div style="display:flex;align-items:baseline;gap:1rem;flex-wrap:wrap;">
+            <span style="font-family:'JetBrains Mono',monospace;font-size:0.68rem;color:#f97316;min-width:80px;">{tier} {range}</span>
+            <span style="font-size:0.9rem;color:#a1a1aa;">{desc}</span>
+          </div>
+          <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
+            {items.map((t: string) => <span class="badge-neutral" style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;padding:0.18rem 0.55rem;border-radius:999px;border:1px solid rgba(255,255,255,0.1);color:#71717a;">{t}</span>)}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── Curriculum ─────────────────────────────────────────────── -->
+<section id="curriculum" style="padding:5rem 0;">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:3rem;">
+      <p class="section-label fade-up" data-delay="0" style="margin-bottom:0.75rem;">The Program</p>
+      <h2 class="heading-display fade-up" data-delay="0.06"
+          style="font-size:clamp(1.8rem,4vw,2.8rem);margin:0 0 0.75rem;">
+        Your business canon, built week by week.
+      </h2>
+      <p class="fade-up" data-delay="0.1" style="font-size:0.9rem;color:#71717a;max-width:560px;margin-inline:auto;line-height:1.7;">
+        As you establish your business fundamentals, Cognitive Design codifies organizational knowledge into sovereign, governed, architecturally complete memory. Each week, we ship an iPub — a training framework that doubles as a dataset plug-in. You read the narrative. Your AI runs the framework.
+      </p>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:1px;border:1px solid rgba(255,255,255,0.08);border-radius:12px;overflow:hidden;">
+      {weeks.map((w, i) => (
+        <div class="fade-up card-flat" data-delay={String(i*0.04)}
+             style="padding:2rem;border-radius:0;border:none;border-bottom:1px solid rgba(255,255,255,0.06);">
+          <div style="display:grid;grid-template-columns:1fr;gap:1.25rem;" class="week-inner">
+            <div>
+              <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.75rem;flex-wrap:wrap;">
+                <span class="week-num">Week {w.n}</span>
+                <span class="badge">{w.badge}</span>
+              </div>
+              <h3 style="font-size:1rem;font-weight:500;color:#fff;margin:0 0 0.4rem;">{w.title}</h3>
+              <p style="font-size:0.85rem;color:#f97316;margin:0 0 0.75rem;font-style:italic;">{w.one}</p>
+              <p style="font-size:0.875rem;color:#71717a;line-height:1.7;margin:0 0 1rem;white-space:pre-line;">{w.body}</p>
+              <div style="display:flex;gap:0.4rem;flex-wrap:wrap;">
+                {w.tags.map(t => <span class="badge-neutral" style="font-family:'JetBrains Mono',monospace;font-size:0.63rem;padding:0.18rem 0.55rem;border-radius:999px;border:1px solid rgba(255,255,255,0.1);color:#52525b;">{t}</span>)}
+              </div>
+            </div>
+          </div>
+          {w.milestone && (
+            <div style="margin-top:1.5rem;padding:1rem 1.25rem;border:1px solid rgba(249,115,22,0.2);border-radius:8px;background:rgba(249,115,22,0.04);">
+              <p style="font-size:0.82rem;color:#f97316;margin:0;font-family:'JetBrains Mono',monospace;">Milestone — {w.milestone}</p>
+            </div>
+          )}
+          {w.cert && (
+            <div style="margin-top:1.5rem;padding:1rem 1.25rem;border:1px solid rgba(249,115,22,0.3);border-radius:8px;background:rgba(249,115,22,0.06);">
+              <p style="font-size:0.82rem;color:#fb923c;margin:0;font-family:'JetBrains Mono',monospace;">All 9 weeks complete. You've built your Innovation System. Complete a mastery walkthrough for System Librarian certification.</p>
+            </div>
+          )}
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── How It Works ───────────────────────────────────────────── -->
+<section style="padding:5rem 0;">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:3rem;">
+      <h2 class="heading-display fade-up" data-delay="0.06"
+          style="font-size:clamp(1.8rem,4vw,2.6rem);margin:0 0 0.75rem;">
+        How It Works
+      </h2>
+      <p class="fade-up" data-delay="0.1" style="font-size:0.9rem;color:#71717a;max-width:480px;margin-inline:auto;line-height:1.7;">
+        iPubs + Claude + Office Hours + Mastery Gate. Each iPub produces real organizational memory: governed, addressable, and sovereign.
+      </p>
+      <p class="fade-up" data-delay="0.13" style="font-size:0.85rem;color:#52525b;max-width:520px;margin:0.75rem auto 0;line-height:1.65;">
+        This program requires Claude by Anthropic. Starling OS runs as a Claude Project. The free tier works for discovery sessions, but we recommend Claude Max ($99/mo) for extended context and daily use alongside the program.
+      </p>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr;gap:1.25rem;" class="how-grid">
+      {[
+        ['📚','iPubs','Read along to understand the proprietary business frameworks. Run the installer to produce real organizational memory. Kindle + Machine-Ready MD Edition.'],
+        ['💬','Office Hours','Weekly group sessions with guided discovery. AI summaries available to all subscribers. Not required for certification — but the fastest path to mastery.'],
+        ['🏆','Mastery Gate','Certification requires a recorded Loom walkthrough — demonstrating you can build, explain, and defend the work. The gate is competence, not seat time.'],
+        ['⏱','9-Week Drip','One module per week for 9 weeks. Focused enough to build momentum, paced enough to absorb. Your working Org Brain in eight weeks; certification in 9.'],
+      ].map(([icon, title, body]) => (
+        <div class="card fade-up" data-delay="0.05" style="padding:1.75rem;">
+          <div style="font-size:1.5rem;margin-bottom:0.75rem;">{icon}</div>
+          <h3 style="font-size:1rem;font-weight:500;color:#fff;margin:0 0 0.5rem;">{title}</h3>
+          <p style="font-size:0.875rem;color:#71717a;line-height:1.7;margin:0;">{body}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── Pricing ────────────────────────────────────────────────── -->
+<section id="pricing" style="padding:5rem 0;">
+  <div class="container" style="max-width:640px;margin-inline:auto;">
+    <div style="text-align:center;margin-bottom:2.5rem;">
+      <p class="section-label fade-up" data-delay="0" style="margin-bottom:0.75rem;">Pricing</p>
+      <h2 class="heading-display fade-up" data-delay="0.06"
+          style="font-size:clamp(1.8rem,4vw,2.5rem);margin:0;">
+        Mach 1 business. A career-defining credential. One program.
+      </h2>
+    </div>
+
+    <div class="card fade-up" data-delay="0.1" style="padding:2.5rem;border-color:rgba(249,115,22,0.25);">
+      <div style="display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.35rem;">
+        <div>
+          <span class="badge" style="margin-bottom:0.75rem;display:inline-flex;">Program 1</span>
+          <h3 class="heading-upright" style="font-size:1.4rem;margin:0.5rem 0 0.25rem;color:#fff;">Build Your Org Brain</h3>
+          <p style="font-size:0.8rem;color:#52525b;margin:0 0 1.5rem;">From Innovation to Applied Intelligence</p>
+        </div>
+        <div style="text-align:right;">
+          <div class="heading-upright" style="font-size:2.8rem;color:#f97316;line-height:1;">$999</div>
+          <p style="font-size:0.8rem;color:#52525b;margin:0.25rem 0 0;">or 3 × $333/mo</p>
+        </div>
+      </div>
+
+      <div class="divider" style="margin:1.5rem 0;"></div>
+
+      <div style="display:grid;grid-template-columns:1fr;gap:1.5rem;" class="pricing-cols">
+        <div>
+          <p class="mono" style="font-size:0.68rem;color:#52525b;text-transform:uppercase;letter-spacing:0.08em;margin:0 0 0.75rem;">What's In the Box</p>
+          {["9 iPubs — the training frameworks that are also your AI plug-ins","Starling OS — the operating logic that powers every session","Office Hours access — weekly guided discovery sessions","System Librarian Certification Exam"].map(t => (
+            <div class="check-item" style="margin-bottom:0.55rem;">{t}</div>
+          ))}
+        </div>
+        <div>
+          <p class="mono" style="font-size:0.68rem;color:#52525b;text-transform:uppercase;letter-spacing:0.08em;margin:0 0 0.75rem;">What You'll Produce</p>
+          {["15+ Constitutional Memories — identity, market, innovation, brand, plus extended PMNs","Active Work Architecture — campaigns and projects flowing through organizational memory","Learning Memory Structure — organizational wisdom that compounds over time"].map(t => (
+            <div class="check-item" style="margin-bottom:0.55rem;">{t}</div>
+          ))}
+        </div>
+      </div>
+
+      <div class="divider" style="margin:1.75rem 0;"></div>
+      <a href="https://calendly.com/starlingaix" target="_blank" rel="noopener" class="btn btn-primary" style="width:100%;justify-content:center;padding:0.8rem;font-size:0.95rem;">
+        Get Started
+      </a>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── What Comes Next ────────────────────────────────────────── -->
+<section style="padding:5rem 0;">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:3rem;">
+      <h2 class="heading-display fade-up" data-delay="0.06"
+          style="font-size:clamp(1.8rem,4vw,2.6rem);margin:0 0 0.75rem;">
+        What Comes Next
+      </h2>
+      <p class="fade-up" data-delay="0.1" style="font-size:0.9rem;color:#71717a;max-width:480px;margin-inline:auto;line-height:1.7;">
+        Continue the path. System Librarian is where most organizations start — and where many startups finish. For those ready to go deeper, three additional programs are in development.
+      </p>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr;gap:1.25rem;max-width:820px;margin-inline:auto;" class="next-grid">
+      {[
+        ['Optimization System','Operations & Culture','Productivity, workflow, process, and culture. Four disciplines that codify how your organization actually operates. Produces 11 additional Constitutional Memories.'],
+        ['Cognitive System','Measurement & Integration','System configuration, dual metrics, and intelligence access. All 28 Constitutional Memories complete. Smart Org threshold achieved.'],
+        ['Advanced Programs','Translation, OS & Governance','Enterprise integration, Starling OS customization, organizational strategy, and AI governance. The path to Cognitive Designer and Chief Intelligence Officer.'],
+      ].map(([title, label, body]) => (
+        <div class="card fade-up" data-delay="0.05" style="padding:2rem;">
+          <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem;">
+            <span class="badge-neutral" style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;padding:0.18rem 0.55rem;border-radius:999px;border:1px solid rgba(255,255,255,0.1);color:#71717a;">Coming Soon</span>
+            <span style="font-size:0.8rem;color:#52525b;">{label}</span>
+          </div>
+          <h3 style="font-size:1rem;font-weight:500;color:#fff;margin:0 0 0.5rem;">{title}</h3>
+          <p style="font-size:0.875rem;color:#71717a;line-height:1.7;margin:0;">{body}</p>
+        </div>
+      ))}
+    </div>
+    <p style="text-align:center;font-size:0.8rem;color:#52525b;margin-top:1.5rem;font-family:'JetBrains Mono',monospace;">Cognitive Designer & CIO Certifications</p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── Testimonials ───────────────────────────────────────────── -->
+<section style="padding:5rem 0;">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:3rem;">
+      <h2 class="heading-display fade-up" data-delay="0.06"
+          style="font-size:clamp(1.8rem,4vw,2.5rem);margin:0 0 0.5rem;">
+        What People Are Saying
+      </h2>
+      <p class="fade-up" data-delay="0.1" style="font-size:0.9rem;color:#52525b;">The methodology works.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr;gap:1.25rem;max-width:960px;margin-inline:auto;" class="testi-grid">
+      {testimonials.map((t, i) => (
+        <div class="card fade-up" data-delay={String(i*0.07)} style="padding:2rem;">
+          <p style="font-size:0.95rem;color:#a1a1aa;line-height:1.75;margin:0 0 1.5rem;font-style:italic;">"{t.quote}"</p>
+          <div>
+            <p style="font-size:0.875rem;font-weight:500;color:#fff;margin:0;">{t.name}</p>
+            <p style="font-size:0.8rem;color:#52525b;margin:0.2rem 0 0;">{t.role}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── Final CTA ──────────────────────────────────────────────── -->
+<section style="padding:5rem 0;text-align:center;">
+  <div class="container" style="max-width:560px;margin-inline:auto;">
+    <h2 class="heading-display fade-up" data-delay="0"
+        style="font-size:clamp(1.8rem,4vw,2.8rem);margin:0 0 0.75rem;">
+      Ready to build your Org Brain?
+    </h2>
+    <p class="fade-up" data-delay="0.06" style="font-size:0.95rem;color:#71717a;line-height:1.75;margin:0 0 2rem;">
+      Nine weeks. Nine iPubs. A working organizational memory system and a career-defining credential.
+    </p>
+    <div class="fade-up" data-delay="0.1" style="display:flex;gap:0.75rem;justify-content:center;flex-wrap:wrap;">
+      <a href="https://calendly.com/starlingaix" target="_blank" rel="noopener" class="btn btn-primary" style="font-size:0.95rem;padding:0.7rem 1.5rem;">Enroll Now</a>
+      <a href="/ai-guide" class="btn btn-ghost" style="font-size:0.95rem;padding:0.7rem 1.5rem;">Get the Free AI Guide First</a>
+    </div>
+  </div>
+</section>
+
+</Layout>
+
+<style>
+  @media(min-width:768px) {
+    .how-grid    { grid-template-columns: repeat(2,1fr) !important; }
+    .next-grid   { grid-template-columns: repeat(3,1fr) !important; }
+    .testi-grid  { grid-template-columns: repeat(3,1fr) !important; }
+    .pricing-cols { grid-template-columns: 1fr 1fr !important; }
+  }
+  @media(min-width:1024px) {
+    .how-grid { grid-template-columns: repeat(4,1fr) !important; }
+  }
+</style>

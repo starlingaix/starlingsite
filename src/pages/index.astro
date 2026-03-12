@@ -1,0 +1,246 @@
+---
+import Layout from '../layouts/Layout.astro';
+const CDN = 'https://cdn.prod.website-files.com/68a8c21bc88f17902fc14981';
+const usaTodayLogo = `${CDN}/697d0d971e75e603938c8e02_usa-today-seeklogo.svg`;
+const ibtLogo      = `${CDN}/697d0da1b283dc95eb1d53a5_international-business-times-logo-vector.svg`;
+const chrisImg     = `${CDN}/69336097cd299f5bc5e0f762_Chris%20Smiling%20_Silo.png`;
+---
+
+<Layout title="Starling AIX — Mach 1 Business" description="The sound barrier didn't stop aviation. It defined the engineering required to go faster. Your business has a similar barrier. We built the airframe to safely surpass it.">
+
+<!-- ── Hero ──────────────────────────────────────────────────── -->
+<section style="position:relative;overflow:hidden;padding:6rem 0 5rem;text-align:center;" class="grid-bg">
+  <div class="hero-glow"></div>
+  <div class="container" style="position:relative;z-index:1;">
+
+    <div class="badge fade-up" data-delay="0" style="margin-bottom:1.5rem;">
+      Introducing
+    </div>
+
+    <h1 class="heading-display fade-up" data-delay="0.08"
+        style="font-size:clamp(3rem,8vw,5.5rem);margin:0 0 1.5rem;max-width:700px;margin-inline:auto;">
+      Mach&nbsp;1&nbsp;<em>Business</em>
+    </h1>
+
+    <p class="fade-up" data-delay="0.15"
+       style="font-size:1.05rem;color:#71717a;line-height:1.75;max-width:520px;margin:0 auto 2.5rem;">
+      The sound barrier didn't stop aviation. It defined the engineering required to go faster. Your business has a similar barrier. We built the airframe to safely surpass it.
+    </p>
+
+    <!-- DLM equation visual -->
+    <div class="fade-up" data-delay="0.2" style="display:flex;align-items:center;justify-content:center;gap:0.75rem;flex-wrap:wrap;margin-bottom:2.5rem;">
+      {[
+        ['LLM','Stateless\nProcessing'],
+        ['×',  null],
+        ['MCP','Connection\nProtocol'],
+        ['×',  null],
+        ['UCA','Semantic\nAddressing'],
+        ['×',  null],
+        ['ORG\nBRAIN','Sovereign\nRepository'],
+      ].map(([label, sub]) => label === '×'
+        ? <span style="color:#3f3f46;font-family:'JetBrains Mono',monospace;font-size:1rem;">×</span>
+        : (
+          <div style="display:flex;flex-direction:column;align-items:center;gap:0.35rem;">
+            <div class="dlm-box">{label}</div>
+            {sub && <span style="font-family:'JetBrains Mono',monospace;font-size:0.6rem;color:#3f3f46;text-align:center;line-height:1.4;white-space:pre-line;">{sub}</span>}
+          </div>
+        )
+      )}
+    </div>
+
+    <p class="fade-up" data-delay="0.25"
+       style="font-size:0.95rem;color:#a1a1aa;margin-bottom:0.4rem;">
+      The <strong style="color:#fff;">Domain Language Model</strong> — machine processing married to human know-how.
+    </p>
+    <p class="fade-up" data-delay="0.28"
+       style="font-size:0.875rem;color:#52525b;margin-bottom:2.5rem;">
+      The know-how is the asset, the processing the commodity.
+    </p>
+
+    <div class="fade-up" data-delay="0.3">
+      <a href="/ai-guide" class="btn btn-primary" style="font-size:0.95rem;padding:0.7rem 1.75rem;">
+        Start Here →
+      </a>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── Press ─────────────────────────────────────────────────── -->
+<section style="padding:2rem 0;">
+  <div class="container" style="text-align:center;">
+    <p class="section-label" style="margin-bottom:1.25rem;">As Featured In</p>
+    <div class="marquee-wrap" style="overflow:hidden;">
+      <div class="marquee-track">
+        {[usaTodayLogo, ibtLogo, usaTodayLogo, ibtLogo, usaTodayLogo, ibtLogo, usaTodayLogo, ibtLogo].map((src, i) => (
+          <img src={src} alt="press" class="press-logo" />
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── Cognition Barrier ──────────────────────────────────────── -->
+<section style="padding:5rem 0;">
+  <div class="container">
+    <div style="max-width:760px;margin-inline:auto;text-align:center;margin-bottom:3.5rem;">
+      <p class="section-label fade-up" data-delay="0" style="margin-bottom:0.75rem;">The Cognition Barrier</p>
+      <h2 class="heading-display fade-up" data-delay="0.06"
+          style="font-size:clamp(2rem,5vw,3.2rem);margin:0 0 1.25rem;">
+        More AI won't make you faster.<br/>Better architecture will.
+      </h2>
+      <p class="fade-up" data-delay="0.12"
+         style="font-size:1rem;color:#71717a;line-height:1.75;">
+        Every organization hits the same wall. You add AI tools, solutions, and specialists — but instead of accelerating, you hit turbulence. Information fragments. Context evaporates. Your AI is out of synch. Your team resists. That's the cognition barrier. The answer isn't more power. It's better infrastructure.
+      </p>
+    </div>
+
+    <!-- Card: From Scope to Authority -->
+    <div class="card fade-up" data-delay="0.15" style="padding:2.5rem;max-width:820px;margin-inline:auto;">
+      <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1.5rem;">
+        <span class="badge">11 Organizational Cognates</span>
+        <span style="color:#3f3f46;font-size:0.8rem;">The Neural System for Business</span>
+      </div>
+      <h3 class="heading-upright fade-up" data-delay="0.18" style="font-size:1.5rem;margin:0 0 1rem;color:#fff;">
+        From Scope to Authority
+      </h3>
+      <p style="color:#71717a;line-height:1.75;font-size:0.95rem;margin:0 0 1.5rem;">
+        Most AI strategies chase coverage — more data, more integrations, more compute. We invert this. Every piece of organizational knowledge gets a permanent semantic address — a Single Source of Truth your AI reads by name. <span style="color:#e4e4e7;">MA20 is always your competitive position.</span> That's canon — the governing truth your entire organization, <em>but especially your AI</em> works from. Not a search result. Not a best guess. The final authority, at a permanent coordinate, operating as head code for every downstream agent, workflow, and session.
+      </p>
+      <p style="color:#52525b;font-size:0.875rem;line-height:1.7;margin:0 0 1.75rem;">
+        Persistent Memory guides growth. Active Memory powers daily work. Learned Memory memorializes what worked. The addressing system governs context retrieval.
+      </p>
+      <a href="/cognitive-design" class="btn btn-ghost" style="font-size:0.875rem;">
+        See how it's built →
+      </a>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── The Airframe ───────────────────────────────────────────── -->
+<section style="padding:5rem 0;">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:3rem;">
+      <p class="section-label fade-up" data-delay="0" style="margin-bottom:0.75rem;">The Airframe</p>
+      <h2 class="heading-display fade-up" data-delay="0.06"
+          style="font-size:clamp(2rem,5vw,3rem);margin:0;">
+        Three breakthroughs. One architecture.
+      </h2>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr;gap:1.25rem;" class="airframe-grid">
+
+      <!-- UCA -->
+      <div class="card fade-up" data-delay="0" style="padding:2rem;">
+        <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1.25rem;">
+          <span class="badge">UCA</span>
+        </div>
+        <h3 class="heading-upright" style="font-size:1.3rem;margin:0 0 0.75rem;color:#fff;">Universal Cognitive Architecture</h3>
+        <p style="color:#71717a;font-size:0.9rem;line-height:1.7;margin:0 0 1.5rem;">
+          UCA is the Dewey Decimal System for business knowledge — a free standard that gives every piece of organizational knowledge a semantic address. UCA makes your business addressable, retrievable, and speakable to AI.
+        </p>
+        <a href="/ai-guide" class="btn btn-ghost" style="font-size:0.85rem;">Get the Free AI Guide →</a>
+      </div>
+
+      <!-- ORG BRAIN -->
+      <div class="card fade-up" data-delay="0.06" style="padding:2rem;">
+        <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1.25rem;">
+          <span class="badge">ORG BRAIN</span>
+        </div>
+        <h3 class="heading-upright" style="font-size:1.3rem;margin:0 0 0.75rem;color:#fff;">Organizational Intelligence</h3>
+        <p style="color:#71717a;font-size:0.9rem;line-height:1.7;margin:0 0 1.5rem;">
+          The first architecture that models business as a neural system. Two hemispheres — <strong style="color:#e4e4e7;">Innovation</strong> and <strong style="color:#e4e4e7;">Optimization</strong> — bridged by a <strong style="color:#e4e4e7;">Cognitive</strong> layer that synthesizes across the whole brain. 11 Organizational Cognates, 28 Constitutional Memories, four tiers of intelligence.
+        </p>
+        <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
+          <a href="/cognitive-design" class="btn btn-ghost" style="font-size:0.85rem;">Build It Yourself →</a>
+          <a href="/services"         class="btn btn-ghost" style="font-size:0.85rem;">Build It With Us →</a>
+        </div>
+      </div>
+
+      <!-- DLM -->
+      <div class="card fade-up" data-delay="0.12" style="padding:2rem;">
+        <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1.25rem;">
+          <span class="badge">DLM</span>
+        </div>
+        <h3 class="heading-upright" style="font-size:1.3rem;margin:0 0 0.75rem;color:#fff;">Domain Language Model</h3>
+        <p style="color:#71717a;font-size:0.9rem;line-height:1.7;margin:0 0 0.5rem;">
+          The equation that provides information sovereignty:
+        </p>
+        <p class="mono" style="font-size:0.85rem;color:#f97316;margin:0 0 1rem;background:rgba(249,115,22,0.06);padding:0.6rem 0.8rem;border-radius:6px;border:1px solid rgba(249,115,22,0.15);">
+          LLM × MCP × UCA × Org Brain = DLM
+        </p>
+        <p style="color:#71717a;font-size:0.9rem;line-height:1.7;margin:0 0 1.5rem;">
+          A stateless model combined with a sovereign knowledge base, universally accessible through semantic retrieval. The model processes. The domain remembers.
+        </p>
+        <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
+          <a href="/platform" class="btn btn-ghost" style="font-size:0.85rem;">Request Beta Invite →</a>
+          <a href="/services"  class="btn btn-ghost" style="font-size:0.85rem;">Enterprise →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── Newsletter ─────────────────────────────────────────────── -->
+<section id="newsletter" style="padding:5rem 0;">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr;gap:3rem;align-items:center;max-width:820px;margin-inline:auto;" class="newsletter-grid">
+
+      <div>
+        <p class="section-label fade-up" data-delay="0" style="margin-bottom:0.75rem;">On Cognitive Design</p>
+        <h2 class="heading-display fade-up" data-delay="0.06"
+            style="font-size:clamp(1.8rem,4vw,2.6rem);margin:0 0 1rem;">
+          The weekly deep dive.
+        </h2>
+        <p class="fade-up" data-delay="0.1"
+           style="font-size:0.95rem;color:#71717a;line-height:1.75;margin:0 0 2rem;">
+          Each issue unpacks a piece of the methodology in a free, in-depth essay. From Chris Kincade, Starling CEO and creator of Cognitive Design.
+        </p>
+        <form id="nl-form" class="fade-up" data-delay="0.14"
+              style="display:flex;gap:0.75rem;flex-wrap:wrap;">
+          <input type="email" name="email" placeholder="Email address" required class="input" style="flex:1;min-width:220px;" />
+          <button type="submit" class="btn btn-primary">Subscribe</button>
+        </form>
+        <p style="font-size:0.78rem;color:#3f3f46;margin-top:0.75rem;">Weekly. No spam. Unsubscribe anytime.</p>
+      </div>
+
+      <div class="fade-up" data-delay="0.1" style="display:flex;justify-content:center;">
+        <div style="position:relative;width:200px;">
+          <img src={chrisImg} alt="Chris Kincade"
+               style="width:100%;border-radius:12px;border:1px solid rgba(255,255,255,0.08);display:block;" />
+          <div style="position:absolute;bottom:-10px;left:-10px;background:#f97316;border-radius:8px;padding:0.4rem 0.75rem;">
+            <span style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;color:#fff;letter-spacing:0.05em;">Chris Kincade</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+</Layout>
+
+<style>
+  @media(min-width:768px) {
+    .airframe-grid    { grid-template-columns: repeat(3,1fr) !important; }
+    .newsletter-grid  { grid-template-columns: 1fr 220px !important; }
+  }
+</style>
+
+<script>
+  document.getElementById('nl-form')?.addEventListener('submit', e => {
+    e.preventDefault();
+    const btn = (e.target as HTMLFormElement).querySelector('button') as HTMLButtonElement;
+    btn.textContent = 'Thank you!';
+    btn.disabled = true;
+    setTimeout(() => { btn.textContent = 'Subscribe'; btn.disabled = false; (e.target as HTMLFormElement).reset(); }, 3500);
+  });
+</script>
