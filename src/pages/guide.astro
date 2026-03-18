@@ -1,0 +1,2353 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+---
+<BaseLayout title="Starling AIX | Mach 1 Business — Free AI Guide" description="Download Mach 1 Business free — the architecture guide for AI-native organizations. Includes the complete UCA Standard and Summon Starling appendix.">
+<Nav currentPage="guide" />
+<main>
+
+<!-- ===== HERO ===== -->
+<section class="guide-hero" id="hero">
+    <div class="guide-hero__bg">
+        <canvas id="heroCanvas"></canvas>
+    </div>
+    <div class="guide-hero__inner">
+        <div class="guide-hero__text">
+            <div class="guide-hero__badge">
+                <span class="guide-hero__badge-dot"></span>
+                Free eBook
+            </div>
+            <h1 class="guide-hero__title"><strong>The AI-native enterprise is here.</strong><br>Are you ready for it?</h1>
+            <p class="guide-hero__subtitle">AI has arrived — it is now squarely in work.</p>
+            <p class="guide-hero__desc">Claude connects to 50+ workplace tools. Agent teams run multi-step workflows. The outputs are Word docs, decks, and spreadsheets — not chat responses. The question isn't whether AI will change your organization. It's whether you've got the architecture to handle it.</p>
+            <div class="guide-hero__cta">
+                <div class="btn-group">
+                    <a href="#download" class="btn btn--primary btn--large">
+                        Get the Free eBook
+                        <svg class="arrow" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2"><path d="M0.5 5.5h7"/><path d="M5.5 1.5l4 4-4 4"/></svg>
+                    </a>
+                    <a href="#toc" class="btn btn--secondary btn--large">Build Your Org Brain</a>
+                </div>
+                <p class="guide-hero__note">Includes the complete UCA Standard · Download below</p>
+            </div>
+        </div>
+        <div class="guide-hero__visual">
+            <div class="hero-term" id="heroTerminal">
+                <div class="hero-term__bar">
+                    <div class="hero-term__dots">
+                        <span class="hero-term__dot" id="htDot1"></span>
+                        <span class="hero-term__dot" id="htDot2"></span>
+                        <span class="hero-term__dot" id="htDot3"></span>
+                    </div>
+                    <span class="hero-term__bar-title">
+                        <span class="hero-term__bar-status" id="htBarStatus"></span>
+                        Summon Starling
+                    </span>
+                </div>
+                <div class="hero-term__body">
+                    <!-- Step 1: Upload with progress bar -->
+                    <div class="hero-term__upload" id="htUpload">
+                        <div class="hero-term__upload-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 10v6m0-6l-3 3m3-3l3 3M3.5 18.5l.7-2.8c.2-.8.3-1.2.5-1.5a2 2 0 01.8-.8c.3-.2.7-.2 1.5-.2h10c.8 0 1.2 0 1.5.2a2 2 0 01.8.8c.2.3.3.7.5 1.5l.7 2.8"/><rect x="2" y="18" width="20" height="4" rx="1"/></svg>
+                        </div>
+                        <div class="hero-term__upload-text">
+                            <div class="hero-term__upload-name">Mach 1 Business.pdf</div>
+                            <div class="hero-term__upload-size" id="htUploadStatus">iPub · 2.4 MB · Uploading...</div>
+                        </div>
+                        <div class="hero-term__upload-check" id="htCheck">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg>
+                        </div>
+                        <div class="hero-term__upload-progress" id="htProgress"></div>
+                    </div>
+
+                    <!-- Step 2: Command -->
+                    <div class="hero-term__cmd" id="htCmd">
+                        <span class="hero-term__cmd-prompt">▸</span>
+                        <span class="hero-term__cmd-text" id="htCmdText"></span>
+                        <span class="hero-term__cmd-cursor" id="htCursor"></span>
+                    </div>
+
+                    <!-- Step 3: Resolution steps with progress bars + spinners -->
+                    <div class="hero-term__steps">
+                        <div class="hero-term__step" id="htStep1">
+                            <div class="hero-term__step-icon hero-term__step-icon--uca">
+                                UCA
+                                <div class="hero-term__step-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg></div>
+                            </div>
+                            <div class="hero-term__step-body">
+                                <div class="hero-term__step-label">Loading Standard <span class="hero-term__counter" id="htCount1"></span></div>
+                                <div class="hero-term__step-value">Universal Cognitive Architecture <strong>v1.0</strong></div>
+                                <div class="hero-term__step-progress"><div class="hero-term__step-fill hero-term__step-fill--uca" id="htFill1"></div></div>
+                                <span class="hero-term__step-tag">11 Cognates · 28 Constitutional</span>
+                            </div>
+                        </div>
+                        <div class="hero-term__step" id="htStep2">
+                            <div class="hero-term__step-icon hero-term__step-icon--brain">
+                                DLM
+                                <div class="hero-term__step-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg></div>
+                            </div>
+                            <div class="hero-term__step-body">
+                                <div class="hero-term__step-label">Activating Domain Language Model <span class="hero-term__counter" id="htCount2"></span></div>
+                                <div class="hero-term__step-value">Semantic addressing <strong>online</strong> · O(1) lookup ready</div>
+                                <div class="hero-term__step-progress"><div class="hero-term__step-fill hero-term__step-fill--brain" id="htFill2"></div></div>
+                            </div>
+                        </div>
+                        <div class="hero-term__step" id="htStep3">
+                            <div class="hero-term__step-icon hero-term__step-icon--dlm">
+                                SOS
+                                <div class="hero-term__step-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg></div>
+                            </div>
+                            <div class="hero-term__step-body">
+                                <div class="hero-term__step-label">Smart OS <span class="hero-term__counter" id="htCount3"></span></div>
+                                <div class="hero-term__step-value">AI Chief of Staff <strong>activated</strong> · Org Brain initialized</div>
+                                <div class="hero-term__step-progress"><div class="hero-term__step-fill hero-term__step-fill--dlm" id="htFill3"></div></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 4: Result -->
+                    <div class="hero-term__result" id="htResult">
+                        <div class="hero-term__result-header">
+                            <span class="hero-term__result-title">✦ Starling Active</span>
+                            <span class="hero-term__result-status"><span class="hero-term__result-dot"></span>Online</span>
+                        </div>
+                        <p class="hero-term__result-desc">Organizational intelligence ready. Ask me anything about your business architecture.</p>
+                        <div class="hero-term__result-tags">
+                            <span class="hero-term__result-pill" id="htPill1">Sovereignty ✓</span>
+                            <span class="hero-term__result-pill" id="htPill2">Addressable ✓</span>
+                            <span class="hero-term__result-pill" id="htPill3">Stateless AI ✓</span>
+                        </div>
+                    </div>
+
+                    <!-- Replay -->
+                    <button class="hero-term__replay" id="htReplay">↻ Replay activation</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<hr class="glow-line">
+
+<!-- ===== SECTION 2: THE REAL PROBLEM ===== -->
+<section class="section section--gray" id="problem">
+    <div class="container">
+        <div class="section__header reveal">
+            <h2 class="section__h"><strong>The tools work.</strong> The architecture doesn't.</h2>
+            <div class="section__header-right">
+                <p class="body-lg">AI got good fast. Your organization didn't reorganize to match. That's where the failures come from — not the model, prompt, or vendor. The knowledge underneath isn't structured.</p>
+            </div>
+        </div>
+        <div class="problem__cards">
+            <div class="problem-card reveal reveal-d1">
+                <div class="problem-card__pulse problem-card__pulse--sov"></div>
+                <div class="problem-card__icon problem-card__icon--sov">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+                </div>
+                <span class="problem-card__label">Sovereignty</span>
+                <h3 class="problem-card__title">Who owns your knowledge?</h3>
+                <p class="problem-card__desc">Every conversation with AI teaches the platform more about how your organization thinks. If that intelligence lives on their servers, under their governance, improving their model — you're building someone else's asset.</p>
+                <div class="problem-card__visual">
+                    <div class="data-stream data-stream--out" style="top:25%"></div>
+                    <div class="data-stream data-stream--out" style="top:50%;animation-delay:1s"></div>
+                    <div class="data-stream data-stream--out" style="top:75%;animation-delay:2s"></div>
+                </div>
+            </div>
+            <div class="problem-card reveal reveal-d2">
+                <div class="problem-card__pulse problem-card__pulse--lock"></div>
+                <div class="problem-card__icon problem-card__icon--lock">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
+                </div>
+                <span class="problem-card__label">Lock-in</span>
+                <h3 class="problem-card__title">The HAL Architecture</h3>
+                <p class="problem-card__desc">Try switching AI vendors after a year of accumulated context. That's the trap. When the platform owns the memory, switching means starting from zero. The more you use it, the harder it is to leave.</p>
+                <div class="lock-chain">
+                    <div class="lock-chain__link"></div>
+                    <div class="lock-chain__link"></div>
+                    <div class="lock-chain__link"></div>
+                    <div class="lock-chain__link"></div>
+                    <div class="lock-chain__link"></div>
+                    <div class="lock-chain__link"></div>
+                    <div class="lock-chain__link"></div>
+                    <div class="lock-chain__link"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== SECTION 3: COGNITIVE DESIGN SOLUTION ===== -->
+<section class="section section--white" id="solution">
+    <div class="container">
+        <div class="section__header reveal">
+            <h2 class="section__h"><strong>Search vs. Address.</strong> Every AI system today searches. That's the problem.</h2>
+            <div class="section__header-right">
+                <p class="body-lg">Search burns tokens re-discovering context you already have. Addressing eliminates the cost entirely. This is the shift from O(n) to O(1).</p>
+            </div>
+        </div>
+
+        <div class="solution-toggle reveal reveal-d1">
+            <div class="solution-toggle__bar" id="solToggleBar">
+                <div class="solution-toggle__pill" id="solPill"></div>
+                <button class="solution-toggle__btn is-active" data-panel="search">Current State</button>
+                <button class="solution-toggle__btn" data-panel="address">Cognitive Architecture</button>
+                <button class="solution-toggle__btn" data-panel="compare">Compare</button>
+            </div>
+        </div>
+
+        <div class="solution-panels reveal reveal-d2" id="solPanels">
+            <!-- Search panel -->
+            <div class="solution-panel is-active" id="panel-search">
+                <div class="solution-card">
+                    <div class="sol-search__inner">
+                        <div class="sol-search__label">
+                            <span class="sol-search__label-dot"></span>
+                            Search
+                        </div>
+                        <div class="sol-search__grid">
+                            <div class="search-item" data-idx="0"><div class="search-item__icon search-item__icon--scatter">📂</div><div class="search-item__text"><strong>Scattered data</strong> across platforms — no single source of truth</div></div>
+                            <div class="search-item" data-idx="1"><div class="search-item__icon search-item__icon--tangle">🔗</div><div class="search-item__text"><strong>Tangled connections,</strong> exponential complexity as you scale</div></div>
+                            <div class="search-item" data-idx="2"><div class="search-item__icon search-item__icon--burn">🔥</div><div class="search-item__text"><strong>Every query burns tokens</strong> re-discovering context you already have</div></div>
+                            <div class="search-item" data-idx="3"><div class="search-item__icon search-item__icon--wall">🧱</div><div class="search-item__text"><strong>RAG hits a wall</strong> at enterprise volume — retrieval degrades</div></div>
+                            <div class="search-item" data-idx="4"><div class="search-item__icon search-item__icon--cost">📈</div><div class="search-item__text"><strong>Token cost scales</strong> with organizational size — no ceiling</div></div>
+                        </div>
+                    </div>
+                    <div class="sol-search__counter">
+                        <span class="sol-search__counter-label">Est. token cost per query</span>
+                        <span><span class="sol-search__counter-value" id="searchTokenCounter">0</span><span class="sol-search__counter-unit">tokens</span></span>
+                    </div>
+                    <div class="sol-graph">
+                        <canvas id="searchViz"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Address panel -->
+            <div class="solution-panel" id="panel-address">
+                <div class="solution-card">
+                    <div class="sol-address__inner">
+                        <div class="sol-address__label">
+                            <span class="sol-address__label-dot"></span>
+                            Address
+                        </div>
+                        <div class="sol-address__grid">
+                            <div class="address-item" data-idx="0"><div class="address-item__icon">📍</div><div class="address-item__text"><strong>Organized knowledge</strong> in semantic coordinates — permanent addresses</div><span class="address-item__check"><svg width="10" height="10" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 5l2.5 2.5L8 3"/></svg></span></div>
+                            <div class="address-item" data-idx="1"><div class="address-item__icon">⚡</div><div class="address-item__text"><strong>Instant retrieval</strong> — constant time regardless of scale</div><span class="address-item__check"><svg width="10" height="10" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 5l2.5 2.5L8 3"/></svg></span></div>
+                            <div class="address-item" data-idx="2"><div class="address-item__icon">🎯</div><div class="address-item__text"><strong>O(1) lookup</strong> replaces O(n) search — no token burn</div><span class="address-item__check"><svg width="10" height="10" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 5l2.5 2.5L8 3"/></svg></span></div>
+                            <div class="address-item" data-idx="3"><div class="address-item__icon">🧠</div><div class="address-item__text"><strong>The output is head code</strong> — canonical context your agents reference</div><span class="address-item__check"><svg width="10" height="10" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 5l2.5 2.5L8 3"/></svg></span></div>
+                            <div class="address-item" data-idx="4"><div class="address-item__icon">🏗️</div><div class="address-item__text"><strong>Scales with structure,</strong> not volume — architecture over brute force</div><span class="address-item__check"><svg width="10" height="10" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 5l2.5 2.5L8 3"/></svg></span></div>
+                        </div>
+                    </div>
+                    <div class="sol-address__counter">
+                        <span class="sol-address__counter-label">Lookup cost per query</span>
+                        <span><span class="sol-address__counter-value" id="addressTokenCounter">0</span><span class="sol-address__counter-unit">tokens</span></span>
+                    </div>
+                    <div class="sol-graph">
+                        <canvas id="addressViz"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Compare panel -->
+            <div class="solution-panel" id="panel-compare">
+                <div class="solution-card">
+                    <div class="sol-compare__inner">
+                        <div class="sol-compare__metrics" id="compareMetrics">
+                            <div class="sol-metric">
+                                <div class="sol-metric__label">Cost per query</div>
+                                <div class="sol-metric__row">
+                                    <span class="sol-metric__val sol-metric__val--bad" data-target="4200" data-suffix="">0</span>
+                                    <span class="sol-metric__vs">vs</span>
+                                    <span class="sol-metric__val sol-metric__val--good" data-target="80" data-suffix="">0</span>
+                                </div>
+                            </div>
+                            <div class="sol-metric">
+                                <div class="sol-metric__label">Latency</div>
+                                <div class="sol-metric__row">
+                                    <span class="sol-metric__val sol-metric__val--bad" data-target="3200" data-suffix="ms">0</span>
+                                    <span class="sol-metric__vs">vs</span>
+                                    <span class="sol-metric__val sol-metric__val--good" data-target="40" data-suffix="ms">0</span>
+                                </div>
+                            </div>
+                            <div class="sol-metric">
+                                <div class="sol-metric__label">At 10x scale</div>
+                                <div class="sol-metric__row">
+                                    <span class="sol-metric__val sol-metric__val--bad" data-target="10" data-suffix="x">0</span>
+                                    <span class="sol-metric__vs">vs</span>
+                                    <span class="sol-metric__val sol-metric__val--good" data-target="1" data-suffix="x">0</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sol-compare__graph">
+                            <canvas id="compareViz"></canvas>
+                            <div class="sol-compare__graph-legend">
+                                <div class="sol-compare__legend-item"><span class="sol-compare__legend-dot" style="background:var(--accent-pink)"></span><span style="color:var(--accent-pink)">Search O(n)</span></div>
+                                <div class="sol-compare__legend-item"><span class="sol-compare__legend-dot" style="background:#1a9e82"></span><span style="color:#1a9e82">Address O(1)</span></div>
+                            </div>
+                        </div>
+                        <div class="sol-compare__split">
+                            <div class="sol-compare__col sol-compare__col--search">
+                                <div class="sol-compare__col-label sol-compare__col-label--search">
+                                    <span class="sol-compare__col-label-dot" style="background:var(--accent-pink)"></span>
+                                    Search — O(n)
+                                </div>
+                                <div class="sol-compare__item sol-compare__item--search" data-idx="0"><span class="sol-compare__item-icon search-item__icon--scatter">📂</span><span><strong>Scattered</strong> data across platforms</span></div>
+                                <div class="sol-compare__item sol-compare__item--search" data-idx="1"><span class="sol-compare__item-icon search-item__icon--burn">🔥</span><span><strong>Burns tokens</strong> re-discovering context</span></div>
+                                <div class="sol-compare__item sol-compare__item--search" data-idx="2"><span class="sol-compare__item-icon search-item__icon--cost">📈</span><span><strong>Cost scales</strong> with org size</span></div>
+                            </div>
+                            <div class="sol-compare__col sol-compare__col--address">
+                                <div class="sol-compare__col-label sol-compare__col-label--address">
+                                    <span class="sol-compare__col-label-dot" style="background:#1a9e82"></span>
+                                    Address — O(1)
+                                </div>
+                                <div class="sol-compare__item sol-compare__item--address" data-idx="0"><span class="sol-compare__item-icon" style="background:rgba(54,209,183,0.1);color:#1a9e82">📍</span><span><strong>Organized</strong> in semantic coordinates</span></div>
+                                <div class="sol-compare__item sol-compare__item--address" data-idx="1"><span class="sol-compare__item-icon" style="background:rgba(54,209,183,0.1);color:#1a9e82">⚡</span><span><strong>Instant retrieval</strong> at any scale</span></div>
+                                <div class="sol-compare__item sol-compare__item--address" data-idx="2"><span class="sol-compare__item-icon" style="background:rgba(54,209,183,0.1);color:#1a9e82">🎯</span><span><strong>Constant cost</strong> — architecture wins</span></div>
+                            </div>
+                        </div>
+                        <div class="sol-compare__verdict" id="compareVerdict">
+                            <span class="sol-compare__verdict-icon">✦</span>
+                            <span class="sol-compare__verdict-text">Cognitive Architecture eliminates 98% of token cost at scale</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== SECTION 4: WHO THIS IS FOR ===== -->
+<section class="section section--gray" id="audience">
+    <div class="container">
+        <div class="section__header reveal">
+            <h2 class="section__h"><strong>Leaders who want AI that compounds,</strong> remembers, and delivers.</h2>
+            <div class="section__header-right">
+                <p class="body-lg">You're ready to get serious about AI implementation. But you're watching platforms rise and fall, vendors pivot overnight. You need architecture that outlasts the tools.</p>
+            </div>
+        </div>
+        <div class="audience__cards">
+            <div class="audience-card reveal reveal-d1">
+                <span class="audience-card__num">01</span>
+                <div class="audience-card__icon audience-card__icon--deploy">🚀</div>
+                <h3 class="audience-card__title">You've deployed AI and still get generic outputs.</h3>
+                <p class="audience-card__desc">You've trained models on company knowledge. Built custom GPTs. Deployed agents that execute tasks but don't understand your business. Different teams re-teach the same context to different tools.</p>
+            </div>
+            <div class="audience-card reveal reveal-d2">
+                <span class="audience-card__num">02</span>
+                <div class="audience-card__icon audience-card__icon--domain">🧠</div>
+                <h3 class="audience-card__title">You need AI that knows your domain.</h3>
+                <p class="audience-card__desc">Not a search engine with memory. Not an autonomous model. A productivity booster that compounds your knowledge — where every session builds on the last, and the intelligence belongs to you.</p>
+            </div>
+            <div class="audience-card reveal reveal-d3">
+                <span class="audience-card__num">03</span>
+                <div class="audience-card__icon audience-card__icon--arch">🏗️</div>
+                <h3 class="audience-card__title">You need architecture, not another tool.</h3>
+                <p class="audience-card__desc">You don't need a technical background to realize this. You need a framework that makes your AI smarter every day — not just today's shiny interface that's tomorrow's technical debt.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== SECTION 5: WHAT YOU GET (Book TOC) ===== -->
+<section class="section section--white" id="toc">
+    <div class="container">
+        <div class="section__header reveal">
+            <h2 class="section__h"><strong>Mach 1 Business.</strong> The architecture guide for AI-native organizations.</h2>
+            <div class="section__header-right">
+                <p class="body-lg">This book names the forces breaking enterprise AI, introduces the Domain Language Model, and includes the complete Universal Cognitive Architecture Standard as a working appendix. It's also a dataset — load it into your AI and summon Starling.</p>
+            </div>
+        </div>
+        <div class="toc-mockup reveal reveal-d1">
+            <div class="toc-mockup__bar">
+                <div class="toc-mockup__dots">
+                    <span class="toc-mockup__dot"></span>
+                    <span class="toc-mockup__dot"></span>
+                    <span class="toc-mockup__dot"></span>
+                </div>
+                <span class="toc-mockup__title">Table of Contents</span>
+            </div>
+            <div class="toc-mockup__body">
+                <div class="toc-section" data-toc="p1">
+                    <div class="toc-section__header">
+                        <div class="toc-section__icon toc-section__icon--p1">I</div>
+                        <div class="toc-section__info">
+                            <span class="toc-section__label">Part I — The Problem</span>
+                            <span class="toc-section__name">Why Enterprise AI Fails</span>
+                        </div>
+                        <svg class="toc-section__chevron" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"/></svg>
+                    </div>
+                    <div class="toc-section__body">
+                        <p class="toc-section__content">Business has never had canon. The NL/JSON handoff point. Why 95% of enterprise AI pilots fail — and why the problem is architecture, not intelligence.</p>
+                    </div>
+                </div>
+                <div class="toc-section" data-toc="p2">
+                    <div class="toc-section__header">
+                        <div class="toc-section__icon toc-section__icon--p2">II</div>
+                        <div class="toc-section__info">
+                            <span class="toc-section__label">Part II — The Architecture</span>
+                            <span class="toc-section__name">The Domain Language Model</span>
+                        </div>
+                        <svg class="toc-section__chevron" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"/></svg>
+                    </div>
+                    <div class="toc-section__body">
+                        <p class="toc-section__content">The DLM equation. O(1) semantic addressing vs. O(n) search. Information sovereignty. 3P0 Architecture — you own the memory, AI remains stateless.</p>
+                    </div>
+                </div>
+                <div class="toc-section" data-toc="p3">
+                    <div class="toc-section__header">
+                        <div class="toc-section__icon toc-section__icon--p3">III</div>
+                        <div class="toc-section__info">
+                            <span class="toc-section__label">Part III — Your Path Forward</span>
+                            <span class="toc-section__name">Unlocking Organizational Intelligence</span>
+                        </div>
+                        <svg class="toc-section__chevron" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"/></svg>
+                    </div>
+                    <div class="toc-section__body">
+                        <p class="toc-section__content">Smart OS activation at 23 memories. The Constitutional 28 that complete organizational wholeness. Three paths from this book to a working Org Brain.</p>
+                    </div>
+                </div>
+                <div class="toc-section" data-toc="a">
+                    <div class="toc-section__header">
+                        <div class="toc-section__icon toc-section__icon--a">A</div>
+                        <div class="toc-section__info">
+                            <span class="toc-section__label">Appendix A</span>
+                            <span class="toc-section__name">Universal Cognitive Architecture</span>
+                        </div>
+                        <svg class="toc-section__chevron" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"/></svg>
+                    </div>
+                    <div class="toc-section__body">
+                        <p class="toc-section__content">The complete UCA Standard. 11 Organizational Cognates, four memory tiers, semantic addressing protocol, the Constitutional 28, the 17 Value Systems, and the AI Processing Directive. CC BY 4.0.</p>
+                    </div>
+                </div>
+                <div class="toc-section" data-toc="b">
+                    <div class="toc-section__header">
+                        <div class="toc-section__icon toc-section__icon--b">B</div>
+                        <div class="toc-section__info">
+                            <span class="toc-section__label">Appendix B</span>
+                            <span class="toc-section__name">Summon Starling</span>
+                        </div>
+                        <svg class="toc-section__chevron" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"/></svg>
+                    </div>
+                    <div class="toc-section__body">
+                        <p class="toc-section__content">The book installs itself. Upload to any AI, type "Starling," and activate an AI Chief of Staff that understands semantic addressing. Five minutes to organizational intelligence.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== SECTION 6: THE LEARNING SYSTEM ===== -->
+<section class="section section--gray" id="ipub">
+    <div class="container">
+        <div class="section__header reveal">
+            <h2 class="section__h"><strong>What's an iPub?</strong> Books that double as datasets.</h2>
+            <div class="section__header-right">
+                <p class="body-lg">You read the narrative — your AI reads the architecture. iPubs are a new kind of business book. Each one teaches a framework, produces strategic outputs, and functions as a plug-in for your AI.</p>
+            </div>
+        </div>
+        <p class="body reveal" style="max-width:760px;margin-bottom:48px">Mach 1 Business is the free entry point. It teaches the architecture and includes the complete Universal Cognitive Architecture Standard. Upload it, type "Starling," and your AI Chief of Staff activates from the book itself.</p>
+
+        <div class="ipub-mockup reveal reveal-d1">
+            <div class="ipub-sidebar">
+                <span class="ipub-sidebar__title">Anatomy of an iPub</span>
+                <div class="ipub-sidebar__item is-active" data-ipub="chapters">
+                    <span class="ipub-sidebar__item-dot ipub-sidebar__item-dot--ch"></span>
+                    Chapters
+                </div>
+                <div class="ipub-sidebar__item" data-ipub="appendix-a">
+                    <span class="ipub-sidebar__item-dot ipub-sidebar__item-dot--a"></span>
+                    Appendix A
+                    <span class="ipub-sidebar__item-tag ipub-sidebar__item-tag--always">Always</span>
+                </div>
+                <div class="ipub-sidebar__item" data-ipub="appendix-b">
+                    <span class="ipub-sidebar__item-dot ipub-sidebar__item-dot--b"></span>
+                    Appendix B
+                    <span class="ipub-sidebar__item-tag ipub-sidebar__item-tag--always">Always</span>
+                </div>
+                <div class="ipub-sidebar__item" data-ipub="appendix-c">
+                    <span class="ipub-sidebar__item-dot ipub-sidebar__item-dot--c"></span>
+                    Appendix C
+                    <span class="ipub-sidebar__item-tag ipub-sidebar__item-tag--opt">Optional</span>
+                </div>
+            </div>
+            <div class="ipub-content" id="ipubContent">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== SECTION 7: BEYOND THE FREE STANDARD ===== -->
+<section class="section section--white" id="beyond">
+    <div class="container">
+        <div class="section__header reveal">
+            <h2 class="section__h"><strong>What's behind the paywall.</strong> The book is free. The methodology is where expertise matters.</h2>
+        </div>
+        <div class="beyond__cards">
+            <div class="beyond-card beyond-card--lib reveal reveal-d1">
+                <span class="beyond-card__badge beyond-card__badge--lib">System Library</span>
+                <h3 class="beyond-card__title">The Starling System Library</h3>
+                <p class="beyond-card__subtitle">Six systems. Twelve installers. Teaching nodes. Diagnostics.</p>
+                <div class="beyond-card__features">
+                    <div class="beyond-feature">
+                        <div class="beyond-feature__check beyond-feature__check--lib">
+                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 6l3 3 5-5"/></svg>
+                        </div>
+                        Starling OS gives your AI judgment
+                    </div>
+                    <div class="beyond-feature">
+                        <div class="beyond-feature__check beyond-feature__check--lib">
+                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 6l3 3 5-5"/></svg>
+                        </div>
+                        Innovation, Optimization, Cognitive, and Translation Systems
+                    </div>
+                    <div class="beyond-feature">
+                        <div class="beyond-feature__check beyond-feature__check--lib">
+                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 6l3 3 5-5"/></svg>
+                        </div>
+                        Each installer knows what questions to ask and how to shape raw conversation into governed memory
+                    </div>
+                </div>
+            </div>
+            <div class="beyond-card beyond-card--acc reveal reveal-d2">
+                <span class="beyond-card__badge beyond-card__badge--acc">Accelerator</span>
+                <h3 class="beyond-card__title">Cognitive Design Accelerator</h3>
+                <p class="beyond-card__subtitle">Nine iPubs. System Librarian certification. A sovereign dataset you own.</p>
+                <div class="beyond-card__features">
+                    <div class="beyond-feature">
+                        <div class="beyond-feature__check beyond-feature__check--acc">
+                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 6l3 3 5-5"/></svg>
+                        </div>
+                        Takes you from this book to a working Org Brain
+                    </div>
+                    <div class="beyond-feature">
+                        <div class="beyond-feature__check beyond-feature__check--acc">
+                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 6l3 3 5-5"/></svg>
+                        </div>
+                        Each iPub produces real Constitutional Memories through guided conversation
+                    </div>
+                    <div class="beyond-feature">
+                        <div class="beyond-feature__check beyond-feature__check--acc">
+                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 6l3 3 5-5"/></svg>
+                        </div>
+                        Turns scattered knowledge into compounding intelligence
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== CTA 1: EMAIL DOWNLOAD ===== -->
+<section class="section section--gray" id="download">
+    <div class="container">
+        <div class="cta-download reveal">
+            <div class="mini-book-wrap">
+                <div class="mini-book">
+                    <div class="mini-book__glow"></div>
+                    <div class="mini-book__back"></div>
+                    <div class="mini-book__pages"></div>
+                    <div class="mini-book__flip">
+                        <div class="mini-book__flip-face mini-book__flip-front"></div>
+                        <div class="mini-book__flip-face mini-book__flip-back"></div>
+                    </div>
+                    <div class="mini-book__flip">
+                        <div class="mini-book__flip-face mini-book__flip-front"></div>
+                        <div class="mini-book__flip-face mini-book__flip-back"></div>
+                    </div>
+                    <div class="mini-book__flip">
+                        <div class="mini-book__flip-face mini-book__flip-front"></div>
+                        <div class="mini-book__flip-face mini-book__flip-back"></div>
+                    </div>
+                    <div class="mini-book__cover">
+                        <span class="mini-book__cover-line mini-book__cover-line--1"></span>
+                        <span class="mini-book__cover-line mini-book__cover-line--2"></span>
+                        <span class="mini-book__cover-line mini-book__cover-line--3"></span>
+                        <span class="mini-book__cover-dot"></span>
+                    </div>
+                </div>
+            </div>
+            <p class="overline" style="margin-bottom:16px">Get Started</p>
+            <h2 class="cta-download__title">Get the book.</h2>
+            <p class="cta-download__desc">Download Mach 1 Business free — including the complete UCA Standard and the Summon Starling appendix. You'll also receive the newsletter <em>On Cognitive Design</em> with insights on organizational intelligence.</p>
+            <form class="cta-download__form" onsubmit="return false">
+                <input type="email" class="cta-download__input" placeholder="you@company.com" aria-label="Email address"/>
+                <button type="submit" class="btn btn--primary btn--large">
+                    Download Free
+                    <svg class="arrow" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2"><path d="M0.5 5.5h7"/><path d="M5.5 1.5l4 4-4 4"/></svg>
+                </button>
+            </form>
+            <p class="cta-download__note">Delivered immediately as PDF. No spam. Unsubscribe anytime.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ===== FINAL CTA: THREE PATHS ===== -->
+<section class="section section--white" id="paths">
+    <div class="container">
+        <div class="final-cta">
+            <p class="overline reveal" style="margin-bottom:16px">Ready to build?</p>
+            <h2 class="final-cta__title reveal reveal-d1">The book makes the case.<br><span>Three paths forward.</span></h2>
+            <p class="final-cta__desc reveal reveal-d2">Once you've read Mach 1 Business, you'll understand why the architecture matters. Start free with Appendix B, build it yourself with the Cognitive Design accelerator, or have us build it for you.</p>
+            <div class="paths reveal reveal-d3">
+                <div class="path-card">
+                    <div class="path-card__icon path-card__icon--free">📖</div>
+                    <h3 class="path-card__title">Start Free</h3>
+                    <p class="path-card__desc">Read the book, use Appendix B to summon Starling, and explore what organizational intelligence feels like.</p>
+                    <p class="path-card__price"><span>Free</span></p>
+                    <a href="#download" class="btn btn--secondary">Download Now</a>
+                </div>
+                <div class="path-card path-card--featured">
+                    <div class="path-card__icon path-card__icon--build">🛠️</div>
+                    <h3 class="path-card__title">Build It Yourself</h3>
+                    <p class="path-card__desc">The Cognitive Design Accelerator — nine iPubs, guided installers, and System Librarian certification.</p>
+                    <a href="#" class="btn btn--primary btn--large" style="margin-top:auto">
+                        Learn More
+                        <svg class="arrow" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2"><path d="M0.5 5.5h7"/><path d="M5.5 1.5l4 4-4 4"/></svg>
+                    </a>
+                </div>
+                <div class="path-card">
+                    <div class="path-card__icon path-card__icon--done">🏢</div>
+                    <h3 class="path-card__title">Have Us Build It</h3>
+                    <p class="path-card__desc">Starling designs and installs your Org Brain. Full Cognitive Design engagement with ongoing support.</p>
+                    <a href="services.html" class="btn btn--secondary">Our Services</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+</main>
+<Footer />
+<script is:inline>
+/* ========================================================
+   HERO — Ambient Particle Canvas
+   ======================================================== */
+(function(){
+    const c = document.getElementById('heroCanvas');
+    if(!c) return;
+    const ctx = c.getContext('2d');
+    let W, H, particles = [], raf;
+    const colors = ['rgba(212,112,44,0.4)','rgba(54,209,183,0.35)','rgba(99,91,255,0.35)','rgba(245,100,147,0.3)','rgba(232,147,79,0.3)'];
+
+    function resize(){
+        const r = window.devicePixelRatio || 1;
+        W = c.parentElement.clientWidth;
+        H = c.parentElement.clientHeight;
+        c.width = W * r; c.height = H * r;
+        c.style.width = W + 'px'; c.style.height = H + 'px';
+        ctx.setTransform(r,0,0,r,0,0);
+    }
+    function init(){
+        resize(); particles = [];
+        const count = Math.min(80, Math.floor(W*H/8000));
+        for(let i=0;i<count;i++){
+            particles.push({x:Math.random()*W,y:Math.random()*H,r:Math.random()*2.5+0.8,
+                vx:(Math.random()-0.5)*0.3,vy:(Math.random()-0.5)*0.3,
+                color:colors[Math.floor(Math.random()*colors.length)],phase:Math.random()*Math.PI*2});
+        }
+    }
+    function draw(t){
+        ctx.clearRect(0,0,W,H);
+        const time=t*0.001;
+        for(let i=0;i<particles.length;i++){
+            for(let j=i+1;j<particles.length;j++){
+                const dx=particles[i].x-particles[j].x,dy=particles[i].y-particles[j].y,dist=Math.sqrt(dx*dx+dy*dy);
+                if(dist<120){ctx.beginPath();ctx.moveTo(particles[i].x,particles[i].y);ctx.lineTo(particles[j].x,particles[j].y);ctx.strokeStyle=`rgba(212,112,44,${0.06*(1-dist/120)})`;ctx.lineWidth=0.5;ctx.stroke();}
+            }
+        }
+        for(const p of particles){
+            const pulse=0.3+0.7*(0.5+0.5*Math.sin(time+p.phase));
+            ctx.beginPath();ctx.arc(p.x,p.y,p.r*pulse,0,Math.PI*2);ctx.fillStyle=p.color;ctx.fill();
+            ctx.beginPath();ctx.arc(p.x,p.y,p.r*3*pulse,0,Math.PI*2);ctx.fillStyle=p.color.replace(/[\d.]+\)$/,(0.08*pulse).toFixed(3)+')');ctx.fill();
+            p.x+=p.vx+Math.sin(time*0.5+p.phase)*0.1;p.y+=p.vy+Math.cos(time*0.4+p.phase)*0.1;
+            if(p.x<-10)p.x=W+10;if(p.x>W+10)p.x=-10;if(p.y<-10)p.y=H+10;if(p.y>H+10)p.y=-10;
+        }
+        raf=requestAnimationFrame(draw);
+    }
+    init(); raf=requestAnimationFrame(draw);
+    window.addEventListener('resize',()=>{init();});
+    setTimeout(()=>document.querySelector('.guide-hero').classList.add('is-loaded'),100);
+})();
+
+/* ========================================================
+   HERO — Summon Starling Terminal Animation (Dynamic)
+   ======================================================== */
+(function(){
+    const $ = id => document.getElementById(id);
+    const upload=$('htUpload'), check=$('htCheck'), progress=$('htProgress'),
+          uploadStatus=$('htUploadStatus'),
+          cmd=$('htCmd'), cmdText=$('htCmdText'), cursor=$('htCursor'),
+          step1=$('htStep1'), step2=$('htStep2'), step3=$('htStep3'),
+          fill1=$('htFill1'), fill2=$('htFill2'), fill3=$('htFill3'),
+          count1=$('htCount1'), count2=$('htCount2'), count3=$('htCount3'),
+          result=$('htResult'), replay=$('htReplay'),
+          pill1=$('htPill1'), pill2=$('htPill2'), pill3=$('htPill3'),
+          barStatus=$('htBarStatus'),
+          dot1=$('htDot1'), dot2=$('htDot2'), dot3=$('htDot3');
+    if(!upload) return;
+
+    let timers = [];
+    function delay(fn, ms){ const t = setTimeout(fn, ms); timers.push(t); return t; }
+
+    function reset(){
+        timers.forEach(clearTimeout); timers = [];
+        [upload,cmd,step1,step2,step3,result].forEach(el => {
+            el.classList.remove('is-visible','is-done','is-loading','is-active');
+        });
+        [check,pill1,pill2,pill3].forEach(el => el.classList.remove('is-visible'));
+        barStatus.classList.remove('is-active');
+        replay.classList.remove('is-visible');
+        cmdText.textContent = '';
+        cursor.style.display = 'inline-block';
+        cmd.classList.remove('is-active');
+        progress.style.width = '0%';
+        fill1.style.width = '0%'; fill2.style.width = '0%'; fill3.style.width = '0%';
+        count1.textContent = ''; count2.textContent = ''; count3.textContent = '';
+        uploadStatus.textContent = 'iPub · 2.4 MB · Uploading...';
+        dot1.style.background = dot2.style.background = dot3.style.background = '';
+    }
+
+    function typeText(el, text, speed, cb){
+        let i = 0;
+        function tick(){
+            if(i < text.length){ el.textContent += text[i]; i++; delay(tick, speed + Math.random()*40); }
+            else if(cb) cb();
+        }
+        tick();
+    }
+
+    function animateProgress(el, duration, cb){
+        const start = performance.now();
+        function tick(now){
+            const p = Math.min((now - start) / duration, 1);
+            const eased = 1 - Math.pow(1 - p, 3); // ease-out cubic
+            el.style.width = (eased * 100).toFixed(1) + '%';
+            if(p < 1) requestAnimationFrame(tick);
+            else if(cb) cb();
+        }
+        requestAnimationFrame(tick);
+    }
+
+    function countUp(el, from, to, duration, suffix){
+        const start = performance.now();
+        function tick(now){
+            const p = Math.min((now - start) / duration, 1);
+            const val = Math.floor(from + (to - from) * p);
+            el.textContent = val + (suffix || '');
+            if(p < 1) requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+    }
+
+    function runSequence(){
+        reset();
+        const d = 500;
+
+        // Phase 1: Upload with animated progress bar
+        delay(() => {
+            upload.classList.add('is-visible');
+            delay(() => animateProgress(progress, 1200, () => {
+                upload.classList.add('is-done');
+                uploadStatus.textContent = 'iPub · 2.4 MB · Uploaded as project knowledge';
+                check.classList.add('is-visible');
+            }), 200);
+        }, d);
+
+        // Phase 2: Command input with active glow
+        delay(() => {
+            cmd.classList.add('is-visible');
+            delay(() => {
+                cmd.classList.add('is-active');
+                typeText(cmdText, 'Starling', 100, () => {
+                    cursor.style.display = 'none';
+                    cmd.classList.remove('is-active');
+                });
+            }, 250);
+        }, d + 1800);
+
+        // Phase 3: Resolution step 1 — UCA (loading → progress → done)
+        delay(() => {
+            step1.classList.add('is-visible','is-loading');
+            countUp(count1, 0, 11, 800, ' cognates');
+            delay(() => animateProgress(fill1, 700, () => {
+                step1.classList.remove('is-loading');
+                step1.classList.add('is-done');
+            }), 300);
+        }, d + 3200);
+
+        // Phase 3b: Resolution step 2 — DLM
+        delay(() => {
+            step2.classList.add('is-visible','is-loading');
+            countUp(count2, 0, 28, 600, ' nodes');
+            delay(() => animateProgress(fill2, 600, () => {
+                step2.classList.remove('is-loading');
+                step2.classList.add('is-done');
+            }), 250);
+        }, d + 4400);
+
+        // Phase 3c: Resolution step 3 — Smart OS
+        delay(() => {
+            step3.classList.add('is-visible','is-loading');
+            countUp(count3, 0, 100, 500, '%');
+            delay(() => animateProgress(fill3, 500, () => {
+                step3.classList.remove('is-loading');
+                step3.classList.add('is-done');
+            }), 200);
+        }, d + 5400);
+
+        // Phase 4: Result card with staggered pills
+        delay(() => {
+            result.classList.add('is-visible');
+            barStatus.classList.add('is-active');
+            dot1.style.background = '#F56493';
+            dot2.style.background = '#FBBF24';
+            dot3.style.background = '#36D1B7';
+            delay(() => pill1.classList.add('is-visible'), 200);
+            delay(() => pill2.classList.add('is-visible'), 400);
+            delay(() => pill3.classList.add('is-visible'), 600);
+        }, d + 6400);
+
+        // Replay
+        delay(() => replay.classList.add('is-visible'), d + 7400);
+    }
+
+    // Auto-start on load
+    runSequence();
+
+    // Replay click
+    replay.addEventListener('click', runSequence);
+})();
+
+/* ========================================================
+   SCROLL REVEAL — IntersectionObserver
+   ======================================================== */
+(function(){
+    const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('is-visible'); io.unobserve(e.target); }});
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+})();
+
+/* ========================================================
+   LOCK-CHAIN — Animate on scroll
+   ======================================================== */
+(function(){
+    const chain = document.querySelector('.lock-chain');
+    if(!chain) return;
+    const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+            if(e.isIntersecting){
+                chain.classList.add('is-visible');
+                const links = chain.querySelectorAll('.lock-chain__link');
+                links.forEach((l, i) => { l.style.transitionDelay = (i * 0.08) + 's'; });
+                io.unobserve(chain);
+            }
+        });
+    }, { threshold: 0.3 });
+    io.observe(chain);
+})();
+
+/* ========================================================
+   SOLUTION TOGGLE — Search / Address / Compare
+   ======================================================== */
+(function(){
+    const bar = document.getElementById('solToggleBar');
+    const pill = document.getElementById('solPill');
+    const btns = document.querySelectorAll('.solution-toggle__btn');
+    const panels = document.querySelectorAll('.solution-panel');
+    const wrapper = document.getElementById('solPanels');
+    if(!bar || !btns.length) return;
+
+    // Position the sliding pill
+    function movePill(btn){
+        const barRect = bar.getBoundingClientRect();
+        const btnRect = btn.getBoundingClientRect();
+        pill.style.left = (btnRect.left - barRect.left) + 'px';
+        pill.style.width = btnRect.width + 'px';
+    }
+
+    // Initialize pill on first active
+    const firstActive = bar.querySelector('.solution-toggle__btn.is-active');
+    if(firstActive) requestAnimationFrame(() => movePill(firstActive));
+    window.addEventListener('resize', () => {
+        const cur = bar.querySelector('.solution-toggle__btn.is-active');
+        if(cur) movePill(cur);
+    });
+
+    // Animate items in a panel
+    function animatePanel(panelId){
+        const panel = document.getElementById('panel-' + panelId);
+        if(!panel) return;
+
+        if(panelId === 'search') animateSearch(panel);
+        else if(panelId === 'address') animateAddress(panel);
+        else if(panelId === 'compare') animateCompare(panel);
+    }
+
+    // Measure wrapper height for smooth transition
+    function updateHeight(activePanel){
+        // Let browser calculate, then set explicit height for transition
+        wrapper.style.height = wrapper.offsetHeight + 'px';
+        requestAnimationFrame(() => {
+            wrapper.style.height = activePanel.offsetHeight + 'px';
+            setTimeout(() => { wrapper.style.height = 'auto'; }, 450);
+        });
+    }
+
+    btns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const target = btn.dataset.panel;
+            const current = document.querySelector('.solution-panel.is-active');
+            const next = document.getElementById('panel-' + target);
+            if(current === next) return;
+
+            btns.forEach(b => b.classList.remove('is-active'));
+            btn.classList.add('is-active');
+            movePill(btn);
+
+            // Transition panels
+            if(current) current.classList.remove('is-active');
+            next.classList.add('is-active');
+            updateHeight(next);
+
+            // Reset and re-animate items
+            animatePanel(target);
+
+            // Draw graph for new panel
+            if(target === 'search') triggerGraph('searchViz', 'search');
+            else if(target === 'address') triggerGraph('addressViz', 'address');
+            else if(target === 'compare') triggerGraph('compareViz', 'compare');
+        });
+    });
+
+    // Initial animation for search panel
+    setTimeout(() => animatePanel('search'), 300);
+    setTimeout(() => triggerGraph('searchViz', 'search'), 600);
+
+    /* ----- Search panel animation ----- */
+    let searchHighlightTimer = null;
+    function animateSearch(panel){
+        clearInterval(searchHighlightTimer);
+        const items = panel.querySelectorAll('.search-item');
+        const counter = document.getElementById('searchTokenCounter');
+        // Reset
+        items.forEach(i => { i.classList.remove('is-visible','is-highlight'); });
+        if(counter) counter.textContent = '0';
+
+        // Stagger entrance
+        items.forEach((item, i) => {
+            setTimeout(() => item.classList.add('is-visible'), i * 120);
+        });
+
+        // Animate token counter
+        if(counter){
+            setTimeout(() => {
+                const target = 4200;
+                const duration = 1800;
+                const start = performance.now();
+                function tick(now){
+                    const p = Math.min((now - start) / duration, 1);
+                    const eased = 1 - Math.pow(1 - p, 3);
+                    counter.textContent = Math.floor(eased * target).toLocaleString();
+                    if(p < 1) requestAnimationFrame(tick);
+                }
+                requestAnimationFrame(tick);
+            }, items.length * 120 + 200);
+        }
+
+        // Highlight cycling
+        let hlIdx = 0;
+        setTimeout(() => {
+            searchHighlightTimer = setInterval(() => {
+                items.forEach(i => i.classList.remove('is-highlight'));
+                items[hlIdx].classList.add('is-highlight');
+                hlIdx = (hlIdx + 1) % items.length;
+            }, 2000);
+        }, items.length * 120 + 400);
+    }
+
+    /* ----- Address panel animation ----- */
+    let addressHighlightTimer = null;
+    function animateAddress(panel){
+        clearInterval(addressHighlightTimer);
+        const items = panel.querySelectorAll('.address-item');
+        const counter = document.getElementById('addressTokenCounter');
+        items.forEach(i => { i.classList.remove('is-visible','is-highlight','is-checked'); });
+        if(counter) counter.textContent = '0';
+
+        // Stagger entrance
+        items.forEach((item, i) => {
+            setTimeout(() => item.classList.add('is-visible'), i * 120);
+            setTimeout(() => item.classList.add('is-checked'), i * 120 + 400);
+        });
+
+        // Counter
+        if(counter){
+            setTimeout(() => {
+                const target = 80;
+                const duration = 800;
+                const start = performance.now();
+                function tick(now){
+                    const p = Math.min((now - start) / duration, 1);
+                    const eased = 1 - Math.pow(1 - p, 3);
+                    counter.textContent = Math.floor(eased * target);
+                    if(p < 1) requestAnimationFrame(tick);
+                }
+                requestAnimationFrame(tick);
+            }, items.length * 120 + 200);
+        }
+
+        // Highlight cycling
+        let hlIdx = 0;
+        setTimeout(() => {
+            addressHighlightTimer = setInterval(() => {
+                items.forEach(i => i.classList.remove('is-highlight'));
+                items[hlIdx].classList.add('is-highlight');
+                hlIdx = (hlIdx + 1) % items.length;
+            }, 2000);
+        }, items.length * 120 + 600);
+    }
+
+    /* ----- Compare panel animation ----- */
+    function animateCompare(panel){
+        // Animate metrics
+        const vals = panel.querySelectorAll('.sol-metric__val');
+        vals.forEach(v => v.classList.remove('is-visible'));
+        vals.forEach((v, i) => {
+            setTimeout(() => {
+                v.classList.add('is-visible');
+                const target = parseInt(v.dataset.target);
+                const suffix = v.dataset.suffix || '';
+                const duration = 1200;
+                const start = performance.now();
+                function tick(now){
+                    const p = Math.min((now - start) / duration, 1);
+                    const eased = 1 - Math.pow(1 - p, 3);
+                    v.textContent = Math.floor(eased * target).toLocaleString() + suffix;
+                    if(p < 1) requestAnimationFrame(tick);
+                }
+                requestAnimationFrame(tick);
+            }, i * 150);
+        });
+
+        // Animate compare items
+        const items = panel.querySelectorAll('.sol-compare__item');
+        items.forEach(i => i.classList.remove('is-visible'));
+        items.forEach((item, i) => {
+            setTimeout(() => item.classList.add('is-visible'), 600 + i * 100);
+        });
+
+        // Verdict
+        const verdict = document.getElementById('compareVerdict');
+        if(verdict){
+            verdict.classList.remove('is-visible');
+            setTimeout(() => verdict.classList.add('is-visible'), 1400);
+        }
+    }
+
+    /* ========================================================
+       GRAPH DRAWING — Shared renderer
+       ======================================================== */
+    const graphStates = {};
+
+    function triggerGraph(canvasId, type){
+        const c = document.getElementById(canvasId);
+        if(!c) return;
+
+        if(graphStates[canvasId]) graphStates[canvasId].cancel = true;
+
+        const ctx = c.getContext('2d');
+        const r = window.devicePixelRatio || 1;
+        const state = { progress: 0, cancel: false };
+        graphStates[canvasId] = state;
+
+        function resize(){
+            const W = c.parentElement.clientWidth;
+            const H = c.parentElement.clientHeight;
+            c.width = W * r; c.height = H * r;
+            c.style.width = W + 'px'; c.style.height = H + 'px';
+            ctx.setTransform(r,0,0,r,0,0);
+            return { W, H };
+        }
+
+        function draw(){
+            if(state.cancel) return;
+            const { W, H } = resize();
+            ctx.clearRect(0,0,W,H);
+            const pad = { top:20, right:20, bottom:30, left:40 };
+            const gW = W - pad.left - pad.right;
+            const gH = H - pad.top - pad.bottom;
+
+            // Grid lines
+            ctx.strokeStyle = 'rgba(227,232,238,0.6)';
+            ctx.lineWidth = 1;
+            for(let i = 0; i <= 4; i++){
+                const y = pad.top + (gH / 4) * i;
+                ctx.beginPath(); ctx.moveTo(pad.left, y); ctx.lineTo(pad.left + gW, y); ctx.stroke();
+            }
+
+            // Axes
+            ctx.strokeStyle = '#e3e8ee';
+            ctx.lineWidth = 1.5;
+            ctx.beginPath();
+            ctx.moveTo(pad.left, pad.top);
+            ctx.lineTo(pad.left, pad.top + gH);
+            ctx.lineTo(pad.left + gW, pad.top + gH);
+            ctx.stroke();
+
+            // Labels
+            ctx.fillStyle = '#8792a2';
+            ctx.font = '500 10px Inter, sans-serif';
+            ctx.fillText('Cost', pad.left + 4, pad.top - 6);
+            ctx.textAlign = 'right';
+            ctx.fillText('Scale →', pad.left + gW, pad.top + gH + 18);
+            ctx.textAlign = 'left';
+
+            const steps = Math.floor(100 * state.progress);
+
+            if(type === 'compare'){
+                // Draw both curves (pass isCompare=true for label positioning)
+                drawCurve(ctx, 'address', pad, gW, gH, steps, true);
+                drawCurve(ctx, 'search', pad, gW, gH, steps, true);
+
+                // Shaded gap between curves
+                if(steps > 20){
+                    ctx.globalAlpha = 0.05;
+                    ctx.beginPath();
+                    for(let i = 0; i <= steps; i++){
+                        const t = i / 100;
+                        const x = pad.left + t * gW;
+                        if(i === 0) ctx.moveTo(x, searchY(t, pad, gH));
+                        else ctx.lineTo(x, searchY(t, pad, gH));
+                    }
+                    for(let i = steps; i >= 0; i--){
+                        const t = i / 100;
+                        ctx.lineTo(pad.left + t * gW, addressY(pad, gH));
+                    }
+                    ctx.closePath();
+                    ctx.fillStyle = '#F56493';
+                    ctx.fill();
+                    ctx.globalAlpha = 1;
+                }
+
+                // Savings label — centered in the gap at 70% along x
+                if(state.progress > 0.65){
+                    const lx = pad.left + gW * 0.7;
+                    const sY = searchY(0.7, pad, gH);
+                    const aY = addressY(pad, gH);
+                    const midY = (sY + aY) / 2 + 4;
+                    ctx.globalAlpha = Math.min((state.progress - 0.65) * 3, 1);
+                    ctx.font = '700 12px Inter, sans-serif';
+                    ctx.fillStyle = '#F56493';
+                    ctx.textAlign = 'center';
+                    ctx.fillText('98% savings', lx, midY);
+                    ctx.textAlign = 'left';
+                    ctx.globalAlpha = 1;
+                }
+            } else {
+                drawCurve(ctx, type, pad, gW, gH, steps, false);
+            }
+
+            // Dot at leading edge
+            if(steps > 0 && type !== 'compare'){
+                const t = steps / 100;
+                const x = pad.left + t * gW;
+                let y;
+                if(type === 'search'){
+                    y = searchY(t, pad, gH);
+                    ctx.fillStyle = '#F56493';
+                } else {
+                    y = addressY(pad, gH);
+                    ctx.fillStyle = '#1a9e82';
+                }
+                ctx.beginPath(); ctx.arc(x, y, 4, 0, Math.PI * 2); ctx.fill();
+            }
+
+            if(state.progress < 1){
+                state.progress += 0.018;
+                if(state.progress > 1) state.progress = 1;
+                requestAnimationFrame(draw);
+            }
+        }
+
+        /* Curve math helpers — address line sits at 88% down (low cost) */
+        function searchY(t, pad, gH){ return pad.top + gH - (t * t * 0.85 + t * 0.1) * gH; }
+        function addressY(pad, gH){ return pad.top + gH * 0.88; }
+
+        function drawCurve(ctx, curveType, pad, gW, gH, steps, isCompare){
+            const color = curveType === 'search' ? '#F56493' : '#1a9e82';
+            const yFn = curveType === 'search'
+                ? (t) => searchY(t, pad, gH)
+                : () => addressY(pad, gH);
+
+            // Line
+            ctx.lineWidth = 2.5;
+            ctx.strokeStyle = color;
+            ctx.beginPath();
+            for(let i = 0; i <= steps; i++){
+                const t = i / 100;
+                const x = pad.left + t * gW;
+                const y = yFn(t);
+                if(i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+            }
+            ctx.stroke();
+
+            // Area fill
+            if(steps > 0){
+                ctx.globalAlpha = 0.06;
+                ctx.beginPath();
+                for(let i = 0; i <= steps; i++){
+                    const t = i / 100;
+                    const x = pad.left + t * gW;
+                    if(i === 0) ctx.moveTo(x, yFn(t)); else ctx.lineTo(x, yFn(t));
+                }
+                ctx.lineTo(pad.left + (steps/100) * gW, pad.top + gH);
+                ctx.lineTo(pad.left, pad.top + gH);
+                ctx.closePath();
+                ctx.fillStyle = color;
+                ctx.fill();
+                ctx.globalAlpha = 1;
+            }
+
+            // Label — position differently in compare mode to avoid overlap
+            if(steps > 50){
+                ctx.font = '600 11px Inter, sans-serif';
+                ctx.fillStyle = color;
+                if(curveType === 'search'){
+                    // Place label above the curve at ~40% along x
+                    const lx = pad.left + gW * 0.35;
+                    const ly = searchY(0.35, pad, gH) - 12;
+                    ctx.fillText('O(n) — scales with size', lx, isCompare ? ly : ly);
+                } else {
+                    // Place label just above the flat line at ~55% along x
+                    const lx = pad.left + gW * 0.45;
+                    const ly = addressY(pad, gH) - 10;
+                    ctx.fillText('O(1) — constant cost', lx, ly);
+                }
+            }
+        }
+
+        draw();
+        window.addEventListener('resize', () => { if(state.progress >= 1){ state.progress = 1; draw(); } });
+    }
+})();
+
+/* ========================================================
+   TOC — Expandable sections
+   ======================================================== */
+(function(){
+    document.querySelectorAll('.toc-section__header').forEach(header => {
+        header.addEventListener('click', () => {
+            const section = header.parentElement;
+            const wasOpen = section.classList.contains('is-open');
+            // Close all
+            document.querySelectorAll('.toc-section').forEach(s => s.classList.remove('is-open'));
+            // Toggle
+            if(!wasOpen) section.classList.add('is-open');
+        });
+    });
+
+    // Auto-open first on scroll
+    const tocMockup = document.querySelector('.toc-mockup');
+    if(tocMockup){
+        const io = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if(e.isIntersecting){
+                    setTimeout(() => {
+                        const first = document.querySelector('.toc-section');
+                        if(first) first.classList.add('is-open');
+                    }, 600);
+                    io.unobserve(tocMockup);
+                }
+            });
+        }, { threshold: 0.2 });
+        io.observe(tocMockup);
+    }
+
+    // Auto-cycle through TOC sections
+    let tocCycleIdx = 0;
+    const tocSections = document.querySelectorAll('.toc-section');
+    if(tocSections.length > 0){
+        setInterval(() => {
+            // Only cycle if mockup is in viewport
+            const rect = tocMockup.getBoundingClientRect();
+            if(rect.top < window.innerHeight && rect.bottom > 0){
+                tocCycleIdx = (tocCycleIdx + 1) % tocSections.length;
+                tocSections.forEach(s => s.classList.remove('is-open'));
+                tocSections[tocCycleIdx].classList.add('is-open');
+            }
+        }, 4000);
+    }
+})();
+
+/* ========================================================
+   iPUB ANATOMY — Interactive sidebar
+   ======================================================== */
+(function(){
+    const data = {
+        'chapters': {
+            label: 'Chapters',
+            title: 'Narrative + Framework',
+            desc: 'The argument. Proprietary business frameworks taught through guided discovery. You read to understand — your AI reads to process. Each chapter builds on the last, creating a compounding knowledge architecture.'
+        },
+        'appendix-a': {
+            label: 'Appendix A — Always Included',
+            title: 'The Standard',
+            desc: 'The open specification. Machine-readable architecture your AI uses to classify, address, and govern organizational knowledge. In Mach 1 Business, this is the complete Universal Cognitive Architecture Standard.'
+        },
+        'appendix-b': {
+            label: 'Appendix B — Always Included',
+            title: 'The Installer or Wake Word',
+            desc: 'Machine-executable logic. In the full library, this is the guided extraction sequence. In Mach 1 Business, it\'s the Summon Starling protocol — upload the book, type "Starling," and activate your AI Chief of Staff.'
+        },
+        'appendix-c': {
+            label: 'Appendix C — When Applicable',
+            title: 'The Worked Example',
+            desc: 'A complete reference implementation. Shows what the output looks like when the installer runs against real organizational data. Not every iPub includes one — but when it does, it\'s the fastest path to understanding.'
+        }
+    };
+
+    const items = document.querySelectorAll('.ipub-sidebar__item');
+    const content = document.getElementById('ipubContent');
+    let cycleTimer;
+
+    function show(key){
+        items.forEach(i => i.classList.remove('is-active'));
+        document.querySelector(`[data-ipub="${key}"]`).classList.add('is-active');
+        const d = data[key];
+        content.innerHTML = `
+            <span class="ipub-content__label">${d.label}</span>
+            <h3 class="ipub-content__title">${d.title}</h3>
+            <p class="ipub-content__desc">${d.desc}</p>
+            <div class="ipub-format">
+                <span class="ipub-format__icon">📚</span>
+                <span class="ipub-format__text">Format: <span>iPub</span> — read it, load it, run it</span>
+            </div>
+        `;
+    }
+
+    items.forEach(item => {
+        item.addEventListener('click', () => {
+            show(item.dataset.ipub);
+            clearInterval(cycleTimer);
+            startCycle();
+        });
+    });
+
+    // Initial
+    show('chapters');
+
+    // Auto-cycle
+    const keys = Object.keys(data);
+    let idx = 0;
+    function startCycle(){
+        cycleTimer = setInterval(() => {
+            const mockup = document.querySelector('.ipub-mockup');
+            const rect = mockup.getBoundingClientRect();
+            if(rect.top < window.innerHeight && rect.bottom > 0){
+                idx = (idx + 1) % keys.length;
+                show(keys[idx]);
+            }
+        }, 4000);
+    }
+    startCycle();
+})();
+
+</script>
+</BaseLayout>
+
+<style is:global>
+/* ========================================================
+   DESIGN TOKENS
+   ======================================================== */
+:root {
+    --font: "Inter Variable", "Inter", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    --text-light: rgb(138, 143, 152);
+    --font-mono: 'Source Code Pro', 'SFMono-Regular', monospace;
+    --brand: #D4702C;
+    --brand-dark: #B85E22;
+    --brand-light: #E8934F;
+    --brand-pale: #FDF3EB;
+    --brand-glow: rgba(212,112,44,0.15);
+    --accent-teal: #36D1B7;
+    --accent-pink: #F56493;
+    --accent-yellow: #FBBF24;
+    --accent-blue: #635bff;
+    --text-primary: rgb(45, 37, 100);
+    --text-secondary: #4f566b;
+    --text-muted: #8792a2;
+    --bg-white: #ffffff;
+    --bg-gray: #f6f9fc;
+    --bg-cream: #FDF8F4;
+    --border: #e3e8ee;
+    --radius: 8px;
+    --radius-lg: 12px;
+    --radius-pill: 100px;
+    --shadow-sm: 0 2px 4px rgba(0,0,0,0.04);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.06);
+    --shadow-lg: 0 15px 35px rgba(0,0,0,0.06), 0 5px 15px rgba(0,0,0,0.04);
+    --shadow-brand: 0 8px 30px rgba(212,112,44,0.18);
+    --max-w: 1440px;
+    --pad-x: 20px;
+    --nav-h: 64px;
+    --col-gap: 24px;
+    --section-pad: 60px;
+    --section-pad-lg: 60px;
+    --hero-pad: 60px;
+}
+@media (min-width: 768px) {
+    :root { --section-pad: 110px; --section-pad-lg: 110px; --hero-pad: 130px; --pad-x: 32px; }
+}
+@media (min-width: 1024px) {
+    :root { --section-pad: 140px; --section-pad-lg: 140px; --hero-pad: 160px; --pad-x: 40px; }
+}
+
+/* RESET */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--font);font-weight:400;color:var(--text-primary);background:var(--bg-white);line-height:1.6;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:hidden;font-size:16px}
+a{color:inherit;text-decoration:none}
+ul,ol{list-style:none}
+img{max-width:100%;display:block}
+button{font-family:inherit;cursor:pointer;border:none;background:none}
+
+/* GRID */
+.container{max-width:var(--max-w);margin:0 auto;padding:0 var(--pad-x)}
+.section{padding:var(--section-pad) 0;position:relative;overflow:hidden}
+.section--white{background:var(--bg-white)}
+.section--gray{background:var(--bg-gray)}
+
+/* TYPOGRAPHY */
+.overline{font-size:0.8125rem;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:var(--brand)}
+.body-lg{font-size:1rem;font-weight:400;line-height:1.7;color:var(--text-secondary)}
+@media(min-width:768px){.body-lg{font-size:1.125rem}}
+.body{font-size:1rem;font-weight:400;line-height:1.6;color:var(--text-secondary)}
+.body-sm{font-size:0.875rem;font-weight:400;line-height:1.5;color:var(--text-secondary)}
+.mono{font-family:var(--font-mono);font-size:0.8125rem;font-weight:500}
+
+/* SECTION HEADER */
+.section__header{display:grid;grid-template-columns:1fr;gap:16px;margin-bottom:32px;align-items:start}
+@media(min-width:768px){.section__header{grid-template-columns:1.2fr 1fr;gap:60px;margin-bottom:72px}}
+.section__h{font-size:clamp(1.75rem,3.5vw,40px);font-weight:400;line-height:1.15;letter-spacing:-0.025em;color:var(--text-secondary)}
+.section__h strong{font-weight:500;color:var(--text-primary)}
+.section__header-right{display:flex;flex-direction:column;gap:20px}
+@media(min-width:768px){.section__header-right{padding-top:8px}}
+
+/* ========================================================
+   BUTTONS
+   ======================================================== */
+.btn{
+    display:inline-flex;align-items:center;gap:8px;
+    font-family:var(--font);font-size:14px;font-weight:500;line-height:1;
+    padding:12px 24px;border-radius:52px;
+    transition:all 0.35s cubic-bezier(0.4,0,0.2,1);
+    white-space:nowrap;cursor:pointer;border:none;text-decoration:none;
+    position:relative;overflow:hidden;z-index:1;letter-spacing:-0.005em;
+}
+.btn:hover{transform:translateY(-1px)}
+.btn:active{transform:translateY(0) scale(0.97);transition-duration:0.1s}
+.btn::before{
+    content:'';position:absolute;top:0;left:-75%;width:50%;height:100%;
+    background:linear-gradient(120deg,transparent 0%,rgba(255,255,255,0.25) 50%,transparent 100%);
+    transition:left 0.5s ease;z-index:2;pointer-events:none;
+}
+.btn:hover::before{left:125%}
+.btn--primary{
+    background:linear-gradient(135deg,var(--brand) 0%,#e8945a 100%);color:#fff;
+    box-shadow:0 1px 2px rgba(0,0,0,0.06),0 4px 16px rgba(212,112,44,0.2);
+}
+.btn--primary:hover{
+    background:linear-gradient(135deg,var(--brand-dark) 0%,var(--brand) 100%);
+    box-shadow:0 2px 4px rgba(0,0,0,0.08),0 8px 32px rgba(212,112,44,0.28),0 0 0 3px rgba(212,112,44,0.08);
+}
+.btn--secondary{
+    background:rgba(255,255,255,0.6);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+    color:var(--text-primary);
+    box-shadow:inset 0 0 0 1.5px rgba(45,37,100,0.1),0 1px 3px rgba(0,0,0,0.04);
+}
+.btn--secondary::before{background:linear-gradient(120deg,transparent 0%,rgba(45,37,100,0.06) 50%,transparent 100%)}
+.btn--secondary:hover{
+    background:rgba(255,255,255,0.85);
+    box-shadow:inset 0 0 0 1.5px rgba(45,37,100,0.18),0 4px 20px rgba(0,0,0,0.06),0 0 0 3px rgba(45,37,100,0.04);
+}
+.btn--large{font-size:15px;padding:14px 32px}
+.btn-group{display:flex;flex-wrap:wrap;gap:14px}
+.arrow{transition:transform 0.35s cubic-bezier(0.34,1.56,0.64,1);flex-shrink:0;display:inline-block}
+.btn:hover .arrow{transform:translateX(4px)}
+
+/* ========================================================
+   NAVIGATION
+   ======================================================== */
+.nav{
+    position:fixed;top:0;left:0;right:0;z-index:100;height:var(--nav-h);
+    background:hsla(0,0%,100%,0.8);backdrop-filter:saturate(180%) blur(10px);-webkit-backdrop-filter:saturate(180%) blur(10px);
+    border-bottom:1px solid rgba(0,0,0,0.06);
+}
+.nav__inner{max-width:var(--max-w);margin:0 auto;padding:0 var(--pad-x);height:100%;display:flex;align-items:center;justify-content:space-between}
+.nav__logo{display:flex;align-items:center;height:22px}
+.nav__logo img{height:100%;width:auto}
+.nav__links{display:none;align-items:center;gap:4px}
+@media(min-width:768px){.nav__links{display:flex}}
+.nav__links a{font-size:15px;font-weight:500;color:var(--text-secondary);padding:8px 16px;border-radius:var(--radius-pill);transition:all 0.25s ease}
+.nav__links a:hover{color:var(--text-primary);background:rgba(212,112,44,0.06)}
+.nav__links a.is-current{color:var(--brand);background:rgba(212,112,44,0.08)}
+.nav__divider{color:var(--border);font-size:15px;font-weight:300;padding:0 4px;user-select:none}
+.nav__right{display:flex;align-items:center;gap:10px}
+.nav__right .btn{font-size:13px;padding:8px 18px}
+.nav__right .btn--primary{padding:8px 20px}
+.nav__right .btn--secondary{background:rgba(255,255,255,0.5)}
+.nav__mobile{display:flex;width:40px;height:40px;align-items:center;justify-content:center}
+@media(min-width:768px){.nav__mobile{display:none}}
+.nav__desktop{display:none}
+@media(min-width:768px){.nav__desktop{display:inline-flex}}
+
+/* ========================================================
+   FOOTER
+   ======================================================== */
+.footer{background:#000;border-top:1px solid rgba(255,255,255,0.06)}
+.footer__inner{max-width:var(--max-w);margin:0 auto;padding:40px var(--pad-x);display:flex;flex-direction:column;gap:24px}
+@media(min-width:640px){.footer__inner{flex-direction:row;justify-content:space-between;align-items:center}}
+.footer__links{display:flex;flex-wrap:wrap;gap:8px 24px}
+.footer__links a{font-size:15px;font-weight:500;color:rgba(255,255,255,0.4);padding:6px 14px;border-radius:var(--radius-pill);transition:all 0.25s ease}
+.footer__links a:hover{color:var(--brand-light);background:rgba(212,112,44,0.08)}
+.footer__divider{color:rgba(255,255,255,0.15);font-size:15px;font-weight:300;user-select:none}
+.footer__copy{font-size:0.875rem;color:rgba(255,255,255,0.25)}
+
+/* GLOW LINE */
+.glow-line{height:2px;background:linear-gradient(90deg,transparent,var(--brand-light),var(--brand),var(--brand-light),transparent);border:none;opacity:0.4}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity 0.7s cubic-bezier(0.16,1,0.3,1),transform 0.7s cubic-bezier(0.16,1,0.3,1)}
+.reveal.is-visible{opacity:1;transform:translateY(0)}
+.reveal-d1{transition-delay:0.1s}.reveal-d2{transition-delay:0.2s}.reveal-d3{transition-delay:0.3s}.reveal-d4{transition-delay:0.4s}.reveal-d5{transition-delay:0.5s}
+
+/* REDUCED MOTION */
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:0.01ms!important;transition-duration:0.01ms!important}}
+
+/* ========================================================
+   HERO — eBook Landing
+   ======================================================== */
+.guide-hero{position:relative;overflow:hidden;background:var(--bg-white)}
+.guide-hero__bg{position:absolute;inset:0;z-index:0;pointer-events:none}
+.guide-hero__bg canvas{position:absolute;inset:0;width:100%;height:100%}
+.guide-hero__bg::before{
+    content:'';position:absolute;inset:0;z-index:1;
+    background:
+        radial-gradient(ellipse 70% 60% at 70% 45%,rgba(212,112,44,0.08),transparent 60%),
+        radial-gradient(ellipse 50% 50% at 30% 60%,rgba(99,91,255,0.06),transparent 50%),
+        radial-gradient(ellipse 40% 40% at 80% 30%,rgba(54,209,183,0.05),transparent 50%);
+}
+.guide-hero__bg::after{
+    content:'';position:absolute;top:0;bottom:0;left:0;width:55%;z-index:2;
+    background:linear-gradient(90deg,#fff 15%,rgba(255,255,255,0.95) 40%,rgba(255,255,255,0.6) 70%,transparent 100%);
+}
+.guide-hero__inner{
+    position:relative;z-index:3;max-width:var(--max-w);margin:0 auto;
+    padding:calc(var(--nav-h) + var(--hero-pad)) var(--pad-x) var(--hero-pad);
+    display:grid;grid-template-columns:1fr;gap:48px;align-items:center;
+}
+@media(min-width:768px){.guide-hero__inner{grid-template-columns:1fr 1fr;gap:64px}}
+
+/* Hero text */
+.guide-hero__text{max-width:580px}
+.guide-hero__badge{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:6px 16px;border-radius:var(--radius-pill);
+    background:var(--brand-pale);border:1px solid rgba(212,112,44,0.15);
+    font-size:12px;font-weight:700;color:var(--brand);text-transform:uppercase;letter-spacing:0.06em;
+    margin-bottom:28px;
+    opacity:0;transform:translateY(16px);transition:all 0.6s cubic-bezier(0.16,1,0.3,1);
+}
+.guide-hero.is-loaded .guide-hero__badge{opacity:1;transform:translateY(0);transition-delay:0.1s}
+.guide-hero__badge-dot{width:6px;height:6px;border-radius:50%;background:var(--brand);animation:badgePulse 2s ease infinite}
+@keyframes badgePulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.5;transform:scale(0.7)}}
+.guide-hero__title{
+    font-size:clamp(2rem,4.5vw,50px);font-weight:400;line-height:1.15;letter-spacing:-0.025em;
+    color:var(--text-secondary);margin-bottom:12px;
+    opacity:0;transform:translateY(20px);transition:all 0.7s cubic-bezier(0.16,1,0.3,1);
+}
+.guide-hero.is-loaded .guide-hero__title{opacity:1;transform:translateY(0);transition-delay:0.25s}
+.guide-hero__title strong{font-weight:500;color:var(--text-primary)}
+.guide-hero__subtitle{
+    font-size:clamp(1.15rem,2vw,1.4rem);font-weight:400;color:var(--text-secondary);line-height:1.5;
+    margin-bottom:8px;
+    opacity:0;transform:translateY(20px);transition:all 0.7s cubic-bezier(0.16,1,0.3,1);
+}
+.guide-hero.is-loaded .guide-hero__subtitle{opacity:1;transform:translateY(0);transition-delay:0.4s}
+.guide-hero__desc{
+    font-size:15px;color:var(--text-muted);line-height:1.7;margin-bottom:32px;max-width:500px;
+    opacity:0;transform:translateY(20px);transition:all 0.7s cubic-bezier(0.16,1,0.3,1);
+}
+.guide-hero.is-loaded .guide-hero__desc{opacity:1;transform:translateY(0);transition-delay:0.55s}
+.guide-hero__cta{
+    opacity:0;transform:translateY(20px);transition:all 0.7s cubic-bezier(0.16,1,0.3,1);
+}
+.guide-hero.is-loaded .guide-hero__cta{opacity:1;transform:translateY(0);transition-delay:0.7s}
+.guide-hero__note{font-size:12px;color:var(--text-muted);margin-top:12px;font-style:italic}
+
+/* Hero interactive terminal mockup */
+.guide-hero__visual{
+    opacity:0;transform:translateY(30px) scale(0.95);transition:all 0.9s cubic-bezier(0.16,1,0.3,1);
+}
+.guide-hero.is-loaded .guide-hero__visual{opacity:1;transform:translateY(0) scale(1);transition-delay:0.3s}
+
+.hero-term{
+    border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;
+    background:var(--bg-white);box-shadow:0 8px 40px rgba(0,0,0,0.06),0 1px 3px rgba(0,0,0,0.04);
+    width:100%;max-width:480px;
+}
+.hero-term__bar{display:flex;align-items:center;gap:8px;padding:10px 16px;background:var(--bg-gray);border-bottom:1px solid var(--border)}
+.hero-term__dots{display:flex;gap:5px}
+.hero-term__dot{width:8px;height:8px;border-radius:50%;background:var(--border);transition:background 0.3s}
+.hero-term__bar-title{font-size:11px;font-weight:600;color:var(--text-muted);margin-left:auto;text-transform:uppercase;letter-spacing:0.06em;display:flex;align-items:center;gap:6px}
+.hero-term__bar-status{width:6px;height:6px;border-radius:50%;background:var(--border);transition:background 0.5s}
+.hero-term__bar-status.is-active{background:#1a9e82;box-shadow:0 0 6px rgba(26,158,130,0.4)}
+.hero-term__body{padding:20px;min-height:360px;display:flex;flex-direction:column;gap:14px}
+
+/* Upload step */
+.hero-term__upload{
+    display:flex;align-items:center;gap:12px;padding:12px 16px;border-radius:var(--radius);
+    background:var(--bg-gray);border:1px dashed var(--border);
+    opacity:0;transform:translateY(8px);transition:all 0.5s cubic-bezier(0.16,1,0.3,1);
+    position:relative;overflow:hidden;
+}
+.hero-term__upload.is-visible{opacity:1;transform:translateY(0)}
+.hero-term__upload.is-done{border-style:solid;border-color:rgba(54,209,183,0.2);background:rgba(54,209,183,0.03)}
+.hero-term__upload-icon{
+    width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;
+    background:linear-gradient(135deg,var(--brand-pale),rgba(212,112,44,0.08));flex-shrink:0;
+    transition:all 0.4s ease;
+}
+.hero-term__upload.is-done .hero-term__upload-icon{background:linear-gradient(135deg,rgba(54,209,183,0.15),rgba(54,209,183,0.05))}
+.hero-term__upload-icon svg{width:18px;height:18px;color:var(--brand);transition:color 0.4s}
+.hero-term__upload.is-done .hero-term__upload-icon svg{color:#1a9e82}
+.hero-term__upload-text{flex:1}
+.hero-term__upload-name{font-size:13px;font-weight:600;color:var(--text-primary)}
+.hero-term__upload-size{font-size:11px;color:var(--text-muted)}
+.hero-term__upload-progress{
+    position:absolute;bottom:0;left:0;height:3px;background:linear-gradient(90deg,var(--brand),var(--accent-teal));
+    border-radius:0 2px 2px 0;width:0;transition:width 0.05s linear;
+}
+.hero-term__upload-check{
+    width:22px;height:22px;border-radius:50%;background:rgba(54,209,183,0.1);
+    display:flex;align-items:center;justify-content:center;
+    opacity:0;transform:scale(0) rotate(-180deg);transition:all 0.5s cubic-bezier(0.34,1.56,0.64,1);
+}
+.hero-term__upload-check.is-visible{opacity:1;transform:scale(1) rotate(0deg)}
+.hero-term__upload-check svg{width:12px;height:12px;color:#1a9e82}
+
+/* Command input */
+.hero-term__cmd{
+    display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:var(--radius);
+    background:var(--bg-gray);border:1px solid var(--border);
+    opacity:0;transform:translateY(8px);transition:all 0.5s cubic-bezier(0.16,1,0.3,1);
+}
+.hero-term__cmd.is-visible{opacity:1;transform:translateY(0)}
+.hero-term__cmd.is-active{border-color:var(--brand);box-shadow:0 0 0 3px rgba(212,112,44,0.08)}
+.hero-term__cmd-prompt{font-family:var(--font-mono);font-size:12px;font-weight:700;color:var(--brand);flex-shrink:0}
+.hero-term__cmd-text{font-family:var(--font-mono);font-size:12px;color:var(--text-primary)}
+.hero-term__cmd-cursor{width:2px;height:14px;background:var(--brand);animation:termCursorBlink 0.7s step-end infinite;flex-shrink:0}
+@keyframes termCursorBlink{0%,100%{opacity:1}50%{opacity:0}}
+
+/* Resolution steps */
+.hero-term__steps{display:flex;flex-direction:column;gap:8px}
+.hero-term__step{
+    display:flex;align-items:flex-start;gap:10px;padding:10px 14px;border-radius:var(--radius);
+    border:1px solid var(--border);background:var(--bg-white);
+    opacity:0;transform:translateX(-12px);transition:all 0.5s cubic-bezier(0.16,1,0.3,1);
+}
+.hero-term__step.is-visible{opacity:1;transform:translateX(0)}
+.hero-term__step.is-loading{border-color:rgba(212,112,44,0.12)}
+.hero-term__step.is-done{border-color:rgba(54,209,183,0.15);background:rgba(54,209,183,0.02)}
+.hero-term__step-icon{
+    width:28px;height:28px;border-radius:8px;display:flex;align-items:center;justify-content:center;
+    font-size:9px;font-weight:800;color:#fff;flex-shrink:0;letter-spacing:0.02em;
+    position:relative;
+}
+.hero-term__step-icon--uca{background:linear-gradient(135deg,var(--brand),#e8945a)}
+.hero-term__step-icon--brain{background:linear-gradient(135deg,#635bff,#9b5de5)}
+.hero-term__step-icon--dlm{background:linear-gradient(135deg,#1a9e82,var(--accent-teal))}
+
+/* Spinner ring on loading */
+.hero-term__step.is-loading .hero-term__step-icon::after{
+    content:'';position:absolute;inset:-3px;border-radius:11px;
+    border:2px solid transparent;border-top-color:currentColor;
+    animation:stepSpin 0.8s linear infinite;
+}
+.hero-term__step-icon--uca::after{color:var(--brand)!important}
+.hero-term__step-icon--brain::after{color:#635bff!important}
+.hero-term__step-icon--dlm::after{color:#1a9e82!important}
+@keyframes stepSpin{to{transform:rotate(360deg)}}
+
+/* Done checkmark overlay */
+.hero-term__step-check{
+    position:absolute;inset:0;border-radius:8px;
+    background:rgba(54,209,183,0.9);display:flex;align-items:center;justify-content:center;
+    opacity:0;transform:scale(0);transition:all 0.4s cubic-bezier(0.34,1.56,0.64,1);
+}
+.hero-term__step.is-done .hero-term__step-check{opacity:1;transform:scale(1)}
+.hero-term__step-check svg{width:14px;height:14px;color:#fff}
+
+.hero-term__step-body{flex:1;min-width:0}
+.hero-term__step-label{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.04em;color:var(--text-muted);margin-bottom:2px;display:flex;align-items:center;gap:6px}
+.hero-term__step-value{font-family:var(--font-mono);font-size:11.5px;color:var(--text-primary);line-height:1.4}
+.hero-term__step-value strong{font-weight:700}
+.hero-term__step-tag{
+    font-size:8px;font-weight:700;padding:2px 7px;border-radius:var(--radius-pill);
+    text-transform:uppercase;letter-spacing:0.04em;margin-top:4px;display:inline-block;
+    background:rgba(54,209,183,0.1);color:#1a9e82;
+    opacity:0;transform:translateY(4px);transition:all 0.3s ease;
+}
+.hero-term__step.is-done .hero-term__step-tag{opacity:1;transform:translateY(0)}
+
+/* Progress bar inside steps */
+.hero-term__step-progress{height:3px;border-radius:2px;background:var(--bg-gray);overflow:hidden;margin-top:6px}
+.hero-term__step-fill{height:100%;border-radius:2px;width:0;transition:width 0.6s cubic-bezier(0.16,1,0.3,1)}
+.hero-term__step-fill--uca{background:linear-gradient(90deg,var(--brand),#e8945a)}
+.hero-term__step-fill--brain{background:linear-gradient(90deg,#635bff,#9b5de5)}
+.hero-term__step-fill--dlm{background:linear-gradient(90deg,#1a9e82,var(--accent-teal))}
+
+/* Activated result */
+.hero-term__result{
+    padding:14px;border-radius:var(--radius);
+    background:linear-gradient(135deg,rgba(212,112,44,0.04),rgba(155,93,229,0.04));
+    border:1px solid rgba(212,112,44,0.15);
+    opacity:0;transform:scale(0.9);transition:all 0.6s cubic-bezier(0.34,1.56,0.64,1);
+}
+.hero-term__result.is-visible{
+    opacity:1;transform:scale(1);
+    animation:resultGlow 3s ease-in-out infinite;
+}
+@keyframes resultGlow{
+    0%,100%{box-shadow:0 0 0 0 rgba(212,112,44,0)}
+    50%{box-shadow:0 0 20px 2px rgba(212,112,44,0.08)}
+}
+.hero-term__result-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px}
+.hero-term__result-title{font-size:14px;font-weight:700;color:var(--brand)}
+.hero-term__result-status{display:flex;align-items:center;gap:4px;font-size:9px;font-weight:700;color:#1a9e82;text-transform:uppercase;letter-spacing:0.04em}
+.hero-term__result-dot{width:6px;height:6px;border-radius:50%;background:#1a9e82;animation:statusPulse 2s ease infinite}
+@keyframes statusPulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.4;transform:scale(0.8)}}
+.hero-term__result-desc{font-size:12px;color:var(--text-secondary);line-height:1.5;margin-bottom:8px}
+.hero-term__result-tags{display:flex;flex-wrap:wrap;gap:6px}
+.hero-term__result-pill{
+    font-size:10px;font-weight:600;padding:3px 10px;border-radius:var(--radius-pill);
+    background:var(--bg-gray);border:1px solid var(--border);color:var(--text-secondary);
+    opacity:0;transform:translateY(6px);transition:all 0.4s cubic-bezier(0.34,1.56,0.64,1);
+}
+.hero-term__result-pill.is-visible{opacity:1;transform:translateY(0)}
+
+/* Live counter */
+.hero-term__counter{
+    font-family:var(--font-mono);font-size:11px;font-weight:700;
+    color:var(--brand);tabular-nums:true;
+    font-variant-numeric:tabular-nums;
+}
+
+/* Replay */
+.hero-term__replay{
+    display:flex;align-items:center;gap:6px;font-size:10px;font-weight:600;
+    color:var(--brand);cursor:pointer;background:none;border:none;padding:4px 0;
+    font-family:var(--font);opacity:0;transition:opacity 0.3s ease;
+}
+.hero-term__replay.is-visible{opacity:1}
+.hero-term__replay:hover{text-decoration:underline}
+
+/* ========================================================
+   SECTION 2 — THE REAL PROBLEM
+   ======================================================== */
+.problem__cards{display:grid;grid-template-columns:1fr;gap:24px;margin-top:0}
+@media(min-width:768px){.problem__cards{grid-template-columns:1fr 1fr}}
+
+.problem-card{
+    position:relative;padding:40px;border-radius:var(--radius-lg);
+    background:var(--bg-white);border:1px solid var(--border);
+    overflow:hidden;transition:all 0.4s ease;
+}
+.problem-card:hover{border-color:rgba(212,112,44,0.15);box-shadow:var(--shadow-md);transform:translateY(-3px)}
+.problem-card__icon{
+    width:52px;height:52px;border-radius:14px;
+    display:flex;align-items:center;justify-content:center;
+    margin-bottom:20px;position:relative;
+}
+.problem-card__icon svg{width:24px;height:24px}
+.problem-card__icon--sov{background:linear-gradient(135deg,rgba(245,100,147,0.12),rgba(245,100,147,0.04))}
+.problem-card__icon--sov svg{color:var(--accent-pink)}
+.problem-card__icon--lock{background:linear-gradient(135deg,rgba(99,91,255,0.12),rgba(99,91,255,0.04))}
+.problem-card__icon--lock svg{color:var(--accent-blue)}
+.problem-card__label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-muted);margin-bottom:8px}
+.problem-card__title{font-size:20px;font-weight:600;color:var(--text-primary);margin-bottom:12px;letter-spacing:-0.01em}
+.problem-card__desc{font-size:14px;color:var(--text-muted);line-height:1.7}
+
+/* Animated warning pulse */
+.problem-card__pulse{
+    position:absolute;top:32px;right:32px;width:10px;height:10px;border-radius:50%;
+}
+.problem-card__pulse::before,.problem-card__pulse::after{
+    content:'';position:absolute;inset:0;border-radius:50%;
+}
+.problem-card__pulse--sov{background:var(--accent-pink)}
+.problem-card__pulse--sov::before{background:var(--accent-pink);animation:warnPulse 2s ease infinite}
+.problem-card__pulse--lock{background:var(--accent-blue)}
+.problem-card__pulse--lock::before{background:var(--accent-blue);animation:warnPulse 2s ease infinite 0.5s}
+@keyframes warnPulse{0%{transform:scale(1);opacity:0.6}100%{transform:scale(3);opacity:0}}
+
+/* Data leak animation inside sovereignty card */
+.problem-card__visual{
+    margin-top:24px;height:80px;position:relative;border-radius:var(--radius);
+    background:var(--bg-gray);border:1px solid var(--border);overflow:hidden;
+}
+.data-stream{
+    position:absolute;top:50%;height:2px;border-radius:2px;
+    transform:translateY(-50%);opacity:0;
+}
+.data-stream--out{
+    background:linear-gradient(90deg,var(--accent-pink),transparent);
+    animation:streamOut 3s ease-in-out infinite;
+}
+@keyframes streamOut{
+    0%{left:10%;width:0;opacity:0}
+    20%{opacity:0.8}
+    100%{left:90%;width:30%;opacity:0}
+}
+
+/* Lock-in chain visual */
+.lock-chain{display:flex;align-items:center;justify-content:center;gap:4px;margin-top:24px;padding:16px;border-radius:var(--radius);background:var(--bg-gray);border:1px solid var(--border)}
+.lock-chain__link{
+    width:28px;height:14px;border:2px solid var(--accent-blue);border-radius:8px;
+    opacity:0;transform:translateX(-6px);transition:all 0.4s cubic-bezier(0.34,1.56,0.64,1);
+}
+.lock-chain__link:nth-child(even){margin-left:-8px}
+.lock-chain.is-visible .lock-chain__link{opacity:1;transform:translateX(0)}
+
+/* ========================================================
+   SECTION 3 — COGNITIVE DESIGN SOLUTION (Toggle)
+   ======================================================== */
+.solution-toggle{display:flex;justify-content:center;margin-bottom:48px}
+.solution-toggle__bar{display:inline-flex;background:var(--bg-gray);border:1px solid var(--border);border-radius:var(--radius-pill);padding:4px;gap:2px;position:relative}
+.solution-toggle__btn{
+    padding:10px 28px;border-radius:var(--radius-pill);font-size:14px;font-weight:600;
+    color:var(--text-muted);background:transparent;border:none;cursor:pointer;
+    transition:color 0.25s ease;font-family:var(--font);letter-spacing:0.01em;position:relative;z-index:1;
+}
+.solution-toggle__btn:hover{color:var(--text-primary)}
+.solution-toggle__btn.is-active{color:var(--text-primary)}
+.solution-toggle__pill{
+    position:absolute;top:4px;height:calc(100% - 8px);border-radius:var(--radius-pill);
+    background:var(--bg-white);box-shadow:0 1px 3px rgba(0,0,0,0.08),0 2px 8px rgba(0,0,0,0.04);
+    transition:left 0.35s cubic-bezier(0.34,1.56,0.64,1),width 0.35s cubic-bezier(0.34,1.56,0.64,1);
+    z-index:0;
+}
+
+/* Panel wrapper — animated transitions */
+.solution-panels{position:relative;overflow:hidden;transition:height 0.4s cubic-bezier(0.16,1,0.3,1)}
+.solution-panel{
+    opacity:0;transform:translateY(12px);pointer-events:none;
+    position:absolute;top:0;left:0;width:100%;
+    transition:opacity 0.4s cubic-bezier(0.16,1,0.3,1),transform 0.4s cubic-bezier(0.16,1,0.3,1);
+}
+.solution-panel.is-active{
+    opacity:1;transform:translateY(0);pointer-events:auto;
+    position:relative;
+}
+
+.solution-card{
+    border:1px solid var(--border);border-radius:var(--radius-lg);
+    background:var(--bg-white);overflow:hidden;box-shadow:var(--shadow-sm);
+}
+
+/* Current State (Search) panel */
+.sol-search__inner{padding:32px}
+.sol-search__label{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;
+    color:var(--accent-pink);margin-bottom:20px;
+}
+.sol-search__label-dot{width:8px;height:8px;border-radius:50%;background:var(--accent-pink);animation:solPulse 2s ease infinite}
+@keyframes solPulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.5;transform:scale(1.4)}}
+.sol-search__grid{display:flex;flex-direction:column;gap:12px}
+.search-item{
+    display:flex;align-items:center;gap:14px;
+    padding:14px 18px;border-radius:var(--radius);
+    background:var(--bg-gray);border:1px solid var(--border);
+    opacity:0;transform:translateX(-16px);
+    transition:all 0.5s cubic-bezier(0.16,1,0.3,1);
+}
+.search-item.is-visible{opacity:1;transform:translateX(0)}
+.search-item.is-highlight{border-color:rgba(245,100,147,0.3);background:rgba(245,100,147,0.04);box-shadow:0 0 0 3px rgba(245,100,147,0.06)}
+.search-item__icon{
+    width:36px;height:36px;border-radius:10px;flex-shrink:0;
+    display:flex;align-items:center;justify-content:center;
+    font-size:15px;transition:transform 0.3s ease;
+}
+.search-item:hover .search-item__icon{transform:scale(1.1)}
+.search-item__icon--scatter{background:rgba(245,100,147,0.1);color:var(--accent-pink)}
+.search-item__icon--tangle{background:rgba(251,191,36,0.1);color:var(--accent-yellow)}
+.search-item__icon--burn{background:rgba(212,112,44,0.1);color:var(--brand)}
+.search-item__icon--wall{background:rgba(99,91,255,0.1);color:var(--accent-blue)}
+.search-item__icon--cost{background:rgba(245,100,147,0.1);color:var(--accent-pink)}
+.search-item__text{font-size:13.5px;color:var(--text-secondary);line-height:1.5}
+.search-item__text strong{color:var(--text-primary);font-weight:600}
+
+/* Token counter */
+.sol-search__counter{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:16px 20px;background:rgba(245,100,147,0.04);border-top:1px solid var(--border);
+}
+.sol-search__counter-label{font-size:11px;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.06em}
+.sol-search__counter-value{
+    font-family:var(--font-mono);font-size:20px;font-weight:700;color:var(--accent-pink);
+    letter-spacing:-0.02em;
+}
+.sol-search__counter-unit{font-size:11px;font-weight:500;color:var(--text-muted);margin-left:4px}
+
+/* Graph */
+.sol-graph{height:140px;position:relative;overflow:hidden;border-top:1px solid var(--border);background:var(--bg-gray)}
+.sol-graph canvas{position:absolute;inset:0;width:100%;height:100%}
+
+/* Cognitive Architecture (Address) panel */
+.sol-address__inner{padding:32px}
+.sol-address__label{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;
+    color:#1a9e82;margin-bottom:20px;
+}
+.sol-address__label-dot{width:8px;height:8px;border-radius:50%;background:#1a9e82;animation:solPulse 2s ease infinite}
+.sol-address__grid{display:flex;flex-direction:column;gap:12px}
+.address-item{
+    display:flex;align-items:center;gap:14px;
+    padding:14px 18px;border-radius:var(--radius);
+    background:rgba(54,209,183,0.03);border:1px solid rgba(54,209,183,0.12);
+    opacity:0;transform:translateX(16px);
+    transition:all 0.5s cubic-bezier(0.16,1,0.3,1);
+}
+.address-item.is-visible{opacity:1;transform:translateX(0)}
+.address-item.is-highlight{border-color:rgba(54,209,183,0.35);background:rgba(54,209,183,0.08);box-shadow:0 0 0 3px rgba(54,209,183,0.08)}
+.address-item__icon{
+    width:36px;height:36px;border-radius:10px;flex-shrink:0;
+    display:flex;align-items:center;justify-content:center;
+    background:rgba(54,209,183,0.1);color:#1a9e82;font-size:15px;
+    transition:transform 0.3s ease;
+}
+.address-item:hover .address-item__icon{transform:scale(1.1)}
+.address-item__check{
+    width:20px;height:20px;border-radius:50%;flex-shrink:0;margin-left:auto;
+    display:flex;align-items:center;justify-content:center;
+    background:rgba(54,209,183,0.1);color:#1a9e82;
+    opacity:0;transform:scale(0);transition:all 0.4s cubic-bezier(0.34,1.56,0.64,1);
+}
+.address-item.is-checked .address-item__check{opacity:1;transform:scale(1)}
+.address-item__text{font-size:13.5px;color:var(--text-secondary);line-height:1.5;flex:1}
+.address-item__text strong{color:var(--text-primary);font-weight:600}
+
+/* Address counter */
+.sol-address__counter{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:16px 20px;background:rgba(54,209,183,0.04);border-top:1px solid var(--border);
+}
+.sol-address__counter-label{font-size:11px;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.06em}
+.sol-address__counter-value{
+    font-family:var(--font-mono);font-size:20px;font-weight:700;color:#1a9e82;
+    letter-spacing:-0.02em;
+}
+.sol-address__counter-unit{font-size:11px;font-weight:500;color:var(--text-muted);margin-left:4px}
+
+/* ===== COMPARE TAB ===== */
+.sol-compare__inner{padding:0}
+
+/* Metrics row */
+.sol-compare__metrics{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:0;
+    border-bottom:1px solid var(--border);
+}
+.sol-metric{
+    padding:24px 20px;text-align:center;position:relative;
+    border-right:1px solid var(--border);
+}
+.sol-metric:last-child{border-right:none}
+.sol-metric__label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-muted);margin-bottom:12px}
+.sol-metric__row{display:flex;align-items:center;justify-content:center;gap:12px}
+.sol-metric__val{font-family:var(--font-mono);font-size:22px;font-weight:700;letter-spacing:-0.02em;opacity:0;transform:translateY(8px);transition:all 0.6s cubic-bezier(0.16,1,0.3,1)}
+.sol-metric__val.is-visible{opacity:1;transform:translateY(0)}
+.sol-metric__val--bad{color:var(--accent-pink)}
+.sol-metric__val--good{color:#1a9e82}
+.sol-metric__vs{font-size:10px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.04em}
+@media(max-width:600px){
+    .sol-compare__metrics{grid-template-columns:1fr}
+    .sol-metric{border-right:none;border-bottom:1px solid var(--border);padding:16px 20px}
+    .sol-metric:last-child{border-bottom:none}
+}
+
+/* Dual graph */
+.sol-compare__graph{height:200px;position:relative;overflow:hidden;border-bottom:1px solid var(--border);background:var(--bg-gray)}
+.sol-compare__graph canvas{position:absolute;inset:0;width:100%;height:100%}
+.sol-compare__graph-legend{
+    position:absolute;top:16px;right:16px;display:flex;flex-direction:column;gap:6px;z-index:2;
+}
+.sol-compare__legend-item{display:flex;align-items:center;gap:6px;font-size:10px;font-weight:600;letter-spacing:0.02em}
+.sol-compare__legend-dot{width:8px;height:8px;border-radius:50%}
+
+/* Side-by-side items */
+.sol-compare__split{display:grid;grid-template-columns:1fr;gap:0}
+@media(min-width:768px){.sol-compare__split{grid-template-columns:1fr 1fr}}
+.sol-compare__col{padding:24px;display:flex;flex-direction:column;gap:10px}
+.sol-compare__col--search{background:rgba(245,100,147,0.02);border-right:1px solid var(--border)}
+@media(max-width:767px){.sol-compare__col--search{border-right:none;border-bottom:1px solid var(--border)}}
+.sol-compare__col--address{background:rgba(54,209,183,0.02)}
+.sol-compare__col-label{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;
+    margin-bottom:4px;
+}
+.sol-compare__col-label--search{color:var(--accent-pink)}
+.sol-compare__col-label--address{color:#1a9e82}
+.sol-compare__col-label-dot{width:8px;height:8px;border-radius:50%}
+
+/* Compare items — smaller version */
+.sol-compare__item{
+    display:flex;align-items:center;gap:12px;
+    padding:12px 14px;border-radius:var(--radius);font-size:12.5px;color:var(--text-secondary);line-height:1.4;
+    opacity:0;transform:translateY(8px);transition:all 0.5s cubic-bezier(0.16,1,0.3,1);
+}
+.sol-compare__item.is-visible{opacity:1;transform:translateY(0)}
+.sol-compare__item--search{background:var(--bg-gray);border:1px solid var(--border)}
+.sol-compare__item--address{background:rgba(54,209,183,0.03);border:1px solid rgba(54,209,183,0.12)}
+.sol-compare__item strong{font-weight:600;color:var(--text-primary)}
+.sol-compare__item-icon{width:28px;height:28px;border-radius:8px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:13px}
+
+/* Verdict bar */
+.sol-compare__verdict{
+    display:flex;align-items:center;justify-content:center;gap:12px;
+    padding:16px 24px;background:rgba(54,209,183,0.06);border-top:1px solid rgba(54,209,183,0.12);
+    opacity:0;transition:opacity 0.6s ease 1.2s;
+}
+.sol-compare__verdict.is-visible{opacity:1}
+.sol-compare__verdict-icon{font-size:16px}
+.sol-compare__verdict-text{font-size:13px;font-weight:600;color:#1a9e82}
+
+/* ========================================================
+   SECTION 4 — WHO THIS IS FOR
+   ======================================================== */
+.audience__cards{display:grid;grid-template-columns:1fr;gap:24px}
+@media(min-width:768px){.audience__cards{grid-template-columns:1fr 1fr 1fr}}
+
+.audience-card{
+    padding:36px;border-radius:var(--radius-lg);
+    background:var(--bg-gray);border:1px solid var(--border);
+    transition:all 0.4s ease;position:relative;overflow:hidden;
+}
+.audience-card:hover{border-color:rgba(212,112,44,0.15);box-shadow:var(--shadow-md);transform:translateY(-3px)}
+.audience-card__num{
+    font-size:48px;font-weight:800;color:rgba(212,112,44,0.08);
+    position:absolute;top:16px;right:24px;line-height:1;
+}
+.audience-card__icon{
+    width:44px;height:44px;border-radius:12px;
+    display:flex;align-items:center;justify-content:center;
+    margin-bottom:20px;font-size:18px;
+}
+.audience-card__icon--deploy{background:linear-gradient(135deg,rgba(212,112,44,0.12),rgba(212,112,44,0.04));color:var(--brand)}
+.audience-card__icon--domain{background:linear-gradient(135deg,rgba(54,209,183,0.12),rgba(54,209,183,0.04));color:#1a9e82}
+.audience-card__icon--arch{background:linear-gradient(135deg,rgba(99,91,255,0.12),rgba(99,91,255,0.04));color:var(--accent-blue)}
+.audience-card__title{font-size:17px;font-weight:600;color:var(--text-primary);margin-bottom:10px;line-height:1.3}
+.audience-card__desc{font-size:14px;color:var(--text-muted);line-height:1.7}
+
+/* ========================================================
+   SECTION 5 — WHAT YOU GET (Book TOC)
+   ======================================================== */
+.toc-mockup{
+    border:1px solid var(--border);border-radius:var(--radius-lg);
+    background:var(--bg-white);box-shadow:var(--shadow-sm);overflow:hidden;
+}
+.toc-mockup__bar{
+    display:flex;align-items:center;gap:8px;padding:12px 20px;
+    background:var(--bg-gray);border-bottom:1px solid var(--border);
+}
+.toc-mockup__dots{display:flex;gap:5px}
+.toc-mockup__dot{width:8px;height:8px;border-radius:50%;background:var(--border)}
+.toc-mockup__title{font-size:11px;font-weight:600;color:var(--text-muted);margin-left:auto;text-transform:uppercase;letter-spacing:0.06em}
+
+.toc-mockup__body{padding:0}
+.toc-section{border-bottom:1px solid var(--border)}
+.toc-section:last-child{border-bottom:none}
+
+.toc-section__header{
+    display:flex;align-items:center;gap:14px;padding:20px 24px;
+    cursor:pointer;transition:background 0.2s ease;user-select:none;
+}
+.toc-section__header:hover{background:rgba(212,112,44,0.02)}
+.toc-section__icon{
+    width:36px;height:36px;border-radius:10px;flex-shrink:0;
+    display:flex;align-items:center;justify-content:center;
+    font-size:11px;font-weight:800;color:#fff;letter-spacing:0.02em;
+}
+.toc-section__icon--p1{background:linear-gradient(135deg,var(--accent-pink),#e06090)}
+.toc-section__icon--p2{background:linear-gradient(135deg,var(--brand),#e8945a)}
+.toc-section__icon--p3{background:linear-gradient(135deg,#1a9e82,var(--accent-teal))}
+.toc-section__icon--a{background:linear-gradient(135deg,var(--accent-blue),#9b5de5)}
+.toc-section__icon--b{background:linear-gradient(135deg,#1a1a2e,#16213e)}
+.toc-section__info{flex:1;min-width:0}
+.toc-section__label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-muted);margin-bottom:2px}
+.toc-section__name{font-size:15px;font-weight:600;color:var(--text-primary);letter-spacing:-0.01em}
+.toc-section__chevron{
+    width:20px;height:20px;color:var(--text-muted);flex-shrink:0;
+    transition:transform 0.3s cubic-bezier(0.34,1.56,0.64,1);
+}
+.toc-section.is-open .toc-section__chevron{transform:rotate(180deg)}
+
+.toc-section__body{
+    max-height:0;overflow:hidden;
+    transition:max-height 0.4s cubic-bezier(0.16,1,0.3,1);
+}
+.toc-section.is-open .toc-section__body{max-height:200px}
+.toc-section__content{padding:0 24px 20px 74px;font-size:13.5px;color:var(--text-muted);line-height:1.7}
+
+/* ========================================================
+   SECTION 6 — THE LEARNING SYSTEM (iPub Anatomy)
+   ======================================================== */
+.ipub-mockup{
+    display:grid;grid-template-columns:1fr;gap:0;
+    border:1px solid var(--border);border-radius:var(--radius-lg);
+    background:var(--bg-white);box-shadow:var(--shadow-sm);overflow:hidden;
+}
+@media(min-width:768px){.ipub-mockup{grid-template-columns:260px 1fr}}
+
+.ipub-sidebar{padding:24px;border-bottom:1px solid var(--border);display:flex;flex-direction:column;gap:6px}
+@media(min-width:768px){.ipub-sidebar{border-bottom:none;border-right:1px solid var(--border)}}
+.ipub-sidebar__title{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-muted);margin-bottom:12px}
+.ipub-sidebar__item{
+    display:flex;align-items:center;gap:10px;
+    padding:10px 14px;border-radius:var(--radius);
+    cursor:pointer;transition:all 0.25s ease;
+    font-size:13px;font-weight:500;color:var(--text-secondary);
+}
+.ipub-sidebar__item:hover{background:var(--bg-gray)}
+.ipub-sidebar__item.is-active{background:var(--brand-pale);color:var(--brand);font-weight:600}
+.ipub-sidebar__item-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.ipub-sidebar__item-dot--ch{background:var(--brand)}
+.ipub-sidebar__item-dot--a{background:var(--accent-blue)}
+.ipub-sidebar__item-dot--b{background:var(--accent-teal)}
+.ipub-sidebar__item-dot--c{background:var(--accent-pink)}
+.ipub-sidebar__item-tag{
+    font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:0.04em;
+    padding:2px 8px;border-radius:var(--radius-pill);margin-left:auto;
+}
+.ipub-sidebar__item-tag--always{background:rgba(54,209,183,0.1);color:#1a9e82}
+.ipub-sidebar__item-tag--opt{background:rgba(212,112,44,0.08);color:var(--brand)}
+
+.ipub-content{padding:32px;min-height:340px;display:flex;flex-direction:column;justify-content:center}
+.ipub-content__label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-muted);margin-bottom:8px}
+.ipub-content__title{font-size:22px;font-weight:600;color:var(--text-primary);margin-bottom:12px;letter-spacing:-0.01em}
+.ipub-content__desc{font-size:14px;color:var(--text-muted);line-height:1.7;max-width:500px}
+.ipub-content__visual{margin-top:24px}
+
+/* iPub format badge */
+.ipub-format{
+    display:inline-flex;align-items:center;gap:8px;padding:8px 16px;
+    border-radius:var(--radius);background:var(--bg-gray);border:1px solid var(--border);
+    margin-top:20px;
+}
+.ipub-format__icon{font-size:16px}
+.ipub-format__text{font-size:12px;font-weight:600;color:var(--text-secondary)}
+.ipub-format__text span{color:var(--brand)}
+
+/* ========================================================
+   SECTION 7 — BEYOND THE FREE STANDARD
+   ======================================================== */
+.beyond__cards{display:grid;grid-template-columns:1fr;gap:32px}
+@media(min-width:768px){.beyond__cards{grid-template-columns:1fr 1fr}}
+
+.beyond-card{
+    padding:44px;border-radius:var(--radius-lg);
+    border:1px solid var(--border);position:relative;overflow:hidden;
+    transition:all 0.4s ease;
+}
+.beyond-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg)}
+.beyond-card--lib{background:linear-gradient(145deg,#f8f6ff 0%,var(--bg-white) 100%);border-color:rgba(99,91,255,0.12)}
+.beyond-card--acc{background:linear-gradient(145deg,var(--brand-pale) 0%,var(--bg-white) 100%);border-color:rgba(212,112,44,0.12)}
+.beyond-card__badge{
+    display:inline-flex;align-items:center;gap:6px;
+    font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;
+    padding:4px 12px;border-radius:var(--radius-pill);margin-bottom:20px;
+}
+.beyond-card__badge--lib{background:rgba(99,91,255,0.08);color:var(--accent-blue)}
+.beyond-card__badge--acc{background:rgba(212,112,44,0.08);color:var(--brand)}
+.beyond-card__title{font-size:22px;font-weight:600;color:var(--text-primary);margin-bottom:8px;letter-spacing:-0.01em}
+.beyond-card__subtitle{font-size:14px;color:var(--text-muted);line-height:1.6;margin-bottom:24px}
+.beyond-card__features{display:flex;flex-direction:column;gap:12px}
+.beyond-feature{display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(--text-secondary);line-height:1.5}
+.beyond-feature__check{
+    width:20px;height:20px;border-radius:50%;flex-shrink:0;
+    display:flex;align-items:center;justify-content:center;
+    margin-top:1px;
+}
+.beyond-feature__check--lib{background:rgba(99,91,255,0.08);color:var(--accent-blue)}
+.beyond-feature__check--acc{background:rgba(212,112,44,0.08);color:var(--brand)}
+
+/* ========================================================
+   CTA 1 — EMAIL DOWNLOAD
+   ======================================================== */
+.cta-download{text-align:center;max-width:600px;margin:0 auto}
+.cta-download__title{font-size:clamp(1.75rem,3.5vw,40px);font-weight:500;line-height:1.15;letter-spacing:-0.025em;color:var(--text-primary);margin-bottom:16px}
+.cta-download__desc{font-size:16px;color:var(--text-secondary);line-height:1.7;margin-bottom:36px}
+
+/* Mini book animation — light theme */
+.mini-book-wrap{display:flex;justify-content:center;margin-bottom:28px}
+.mini-book{
+    width:72px;height:88px;position:relative;
+    perspective:600px;transform-style:preserve-3d;
+    animation:bookShift 5s ease-in-out infinite;
+}
+@keyframes bookShift{
+    0%,15%{transform:translateX(0)}
+    30%,70%{transform:translateX(34px)}
+    85%,100%{transform:translateX(0)}
+}
+/* Back cover (static) */
+.mini-book__back{
+    position:absolute;inset:0;border-radius:3px 6px 6px 3px;
+    background:linear-gradient(135deg,#f0ebe4,#e8e2d8);
+    border:1px solid rgba(0,0,0,0.06);
+    box-shadow:0 2px 10px rgba(0,0,0,0.06);
+}
+/* Page block */
+.mini-book__pages{
+    position:absolute;top:3px;left:4px;right:2px;bottom:3px;
+    background:linear-gradient(90deg,#faf8f5,#fff);
+    border-radius:1px 4px 4px 1px;
+    border:1px solid rgba(0,0,0,0.04);
+}
+.mini-book__pages::before{
+    content:'';position:absolute;right:0;top:6px;bottom:6px;width:1px;
+    background:repeating-linear-gradient(180deg,transparent,transparent 3px,rgba(0,0,0,0.04) 3px,rgba(0,0,0,0.04) 4px);
+}
+/* Flipping pages */
+.mini-book__flip{
+    position:absolute;top:3px;left:4px;right:2px;bottom:3px;
+    transform-origin:left center;transform-style:preserve-3d;
+}
+.mini-book__flip-face{
+    position:absolute;inset:0;border-radius:1px 4px 4px 1px;backface-visibility:hidden;
+}
+.mini-book__flip-front{background:#fff;border:1px solid rgba(0,0,0,0.04)}
+.mini-book__flip-back{background:linear-gradient(90deg,#faf8f5,#fff);border:1px solid rgba(0,0,0,0.04);transform:rotateY(180deg)}
+/* Text lines on page */
+.mini-book__flip-front::after,.mini-book__flip-back::after{
+    content:'';position:absolute;top:10px;left:8px;right:8px;height:2px;
+    background:var(--border);border-radius:1px;
+    box-shadow:0 5px 0 var(--border),0 10px 0 var(--border),
+               0 15px 0 rgba(212,112,44,0.12),
+               0 20px 0 var(--border),0 25px 0 var(--border),
+               0 30px 0 var(--border),0 38px 0 rgba(212,112,44,0.1),
+               0 43px 0 var(--border),0 48px 0 var(--border);
+}
+.mini-book__flip:nth-child(3){animation:flipPage 5s ease-in-out infinite;z-index:4}
+.mini-book__flip:nth-child(4){animation:flipPage 5s ease-in-out 1.6s infinite;z-index:3}
+.mini-book__flip:nth-child(5){animation:flipPage 5s ease-in-out 3.2s infinite;z-index:2}
+
+/* Front cover */
+.mini-book__cover{
+    position:absolute;inset:0;border-radius:3px 6px 6px 3px;
+    background:linear-gradient(135deg,#faf6f1,#f5ede3);
+    border:1px solid rgba(212,112,44,0.12);
+    box-shadow:0 2px 12px rgba(0,0,0,0.06);
+    transform-origin:left center;
+    animation:coverOpen 5s ease-in-out infinite;
+    z-index:5;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;
+    padding:12px 8px;
+}
+.mini-book__cover-line{height:1.5px;border-radius:1px;background:var(--brand);opacity:0.3}
+.mini-book__cover-line--1{width:28px}
+.mini-book__cover-line--2{width:36px;opacity:0.5;height:2px}
+.mini-book__cover-line--3{width:20px;margin-top:2px}
+.mini-book__cover-dot{
+    width:8px;height:8px;border-radius:50%;margin-top:6px;
+    background:linear-gradient(135deg,var(--brand),var(--brand-light));
+    opacity:0.4;
+}
+/* Spine edge */
+.mini-book__cover::before{
+    content:'';position:absolute;top:0;left:0;bottom:0;width:4px;
+    background:linear-gradient(180deg,var(--brand-light),var(--brand));
+    border-radius:3px 0 0 3px;opacity:0.6;
+}
+
+/* Glow that appears when book opens */
+.mini-book__glow{
+    position:absolute;top:50%;left:50%;width:60px;height:60px;
+    transform:translate(-50%,-50%);border-radius:50%;z-index:0;pointer-events:none;
+    background:radial-gradient(circle,rgba(212,112,44,0.12),transparent 70%);
+    opacity:0;animation:miniGlow 5s ease-in-out infinite;
+}
+
+@keyframes coverOpen{
+    0%,15%{transform:rotateY(0deg)}
+    30%,70%{transform:rotateY(-165deg)}
+    85%,100%{transform:rotateY(0deg)}
+}
+@keyframes flipPage{
+    0%,20%{transform:rotateY(0deg)}
+    40%,60%{transform:rotateY(-170deg)}
+    80%,100%{transform:rotateY(0deg)}
+}
+@keyframes miniGlow{
+    0%,15%{opacity:0;transform:translate(-50%,-50%) scale(0.5)}
+    30%{opacity:1;transform:translate(-50%,-50%) scale(1)}
+    70%{opacity:1;transform:translate(-50%,-50%) scale(1.1)}
+    85%,100%{opacity:0;transform:translate(-50%,-50%) scale(0.5)}
+}
+
+.cta-download__form{
+    display:flex;gap:12px;max-width:460px;margin:0 auto;
+}
+@media(max-width:520px){.cta-download__form{flex-direction:column}}
+.cta-download__input{
+    flex:1;padding:14px 20px;border-radius:var(--radius-pill);
+    border:1.5px solid var(--border);background:var(--bg-white);
+    font-family:var(--font);font-size:14px;color:var(--text-primary);
+    outline:none;transition:border-color 0.25s ease,box-shadow 0.25s ease;
+}
+.cta-download__input:focus{border-color:var(--brand);box-shadow:0 0 0 3px rgba(212,112,44,0.1)}
+.cta-download__input::placeholder{color:var(--text-muted)}
+.cta-download__note{font-size:12px;color:var(--text-muted);margin-top:16px;font-style:italic}
+
+/* ========================================================
+   FINAL CTA — THREE PATHS
+   ======================================================== */
+.final-cta{text-align:center}
+.final-cta__title{font-size:clamp(1.75rem,3.5vw,42px);font-weight:500;line-height:1.15;letter-spacing:-0.025em;color:var(--text-primary);margin-bottom:12px}
+.final-cta__title span{color:var(--brand)}
+.final-cta__desc{font-size:16px;color:var(--text-secondary);line-height:1.7;max-width:660px;margin:0 auto 48px}
+
+.paths{display:grid;grid-template-columns:1fr;gap:24px;max-width:900px;margin:0 auto}
+@media(min-width:768px){.paths{grid-template-columns:1fr 1fr 1fr}}
+
+.path-card{
+    padding:36px 28px;border-radius:var(--radius-lg);
+    border:1px solid var(--border);background:var(--bg-white);
+    text-align:center;transition:all 0.4s ease;position:relative;
+}
+.path-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+.path-card--featured{border-color:rgba(212,112,44,0.2);box-shadow:var(--shadow-brand)}
+.path-card--featured::before{
+    content:'RECOMMENDED';position:absolute;top:-11px;left:50%;transform:translateX(-50%);
+    font-size:9px;font-weight:800;letter-spacing:0.08em;color:#fff;
+    background:linear-gradient(135deg,var(--brand),#e8945a);
+    padding:4px 14px;border-radius:var(--radius-pill);
+}
+.path-card__icon{
+    width:56px;height:56px;border-radius:16px;
+    display:flex;align-items:center;justify-content:center;
+    margin:0 auto 20px;font-size:22px;
+}
+.path-card__icon--free{background:rgba(54,209,183,0.08);color:#1a9e82}
+.path-card__icon--build{background:rgba(212,112,44,0.08);color:var(--brand)}
+.path-card__icon--done{background:rgba(99,91,255,0.08);color:var(--accent-blue)}
+.path-card__title{font-size:18px;font-weight:600;color:var(--text-primary);margin-bottom:8px}
+.path-card__desc{font-size:13px;color:var(--text-muted);line-height:1.6;margin-bottom:24px}
+.path-card__price{font-size:13px;font-weight:600;color:var(--text-secondary);margin-bottom:20px}
+.path-card__price span{font-size:28px;font-weight:800;color:var(--text-primary)}
+
+</style>

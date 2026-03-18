@@ -1,0 +1,1470 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+---
+<BaseLayout title="Starling AIX | Workspace — Your Domain Language Model, Live" description="Starling Workspace is where your Domain Language Model lives. An AI work surface with your entire Org Brain behind it.">
+<Nav currentPage="workspace" />
+<main>
+
+<!-- ===== HERO ===== -->
+<section class="ws-hero" id="hero">
+    <div class="ws-hero__bg">
+        <canvas id="heroCanvas"></canvas>
+    </div>
+    <div class="ws-hero__inner">
+        <div class="ws-hero__text">
+            <div class="ws-hero__badge">
+                <span class="ws-hero__badge-dot"></span>
+                Coming March 2026
+            </div>
+            <h1 class="ws-hero__title"><strong>Work that</strong> <em>remembers.</em></h1>
+            <p class="ws-hero__subtitle">Starling Workspace is where your Domain Language Model lives.</p>
+            <p class="ws-hero__desc">An AI work surface with your entire Org Brain behind it &mdash; every deliverable you produce makes the next one better.</p>
+            <div class="ws-hero__cta">
+                <div class="btn-group">
+                    <a href="#beta" class="btn btn--primary btn--large">
+                        Request Beta Access
+                        <svg class="arrow" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2"><path d="M0.5 5.5h7"/><path d="M5.5 1.5l4 4-4 4"/></svg>
+                    </a>
+                    <a href="#dlm" class="btn btn--secondary btn--large">See How It Works</a>
+                </div>
+                <p class="ws-hero__note">Beta opens March 2026 &middot; Free for 14 days</p>
+            </div>
+        </div>
+        <div class="ws-hero__visual">
+            <div class="ws-illo" id="wsIllo">
+
+                <!-- Floating memory chips -->
+                <div class="ws-mem ws-mem--0" id="wsMem0">
+                    <span class="ws-mem__dot" style="color:var(--brand);background:var(--brand)"></span>
+                    <div class="ws-mem__info"><span class="ws-mem__code">MA20</span><span class="ws-mem__name">Position</span></div>
+                    <div class="ws-mem__popup ws-mem__popup--below">Competitive positioning loaded</div>
+                </div>
+                <div class="ws-mem ws-mem--1" id="wsMem1">
+                    <span class="ws-mem__dot" style="color:var(--accent-teal);background:var(--accent-teal)"></span>
+                    <div class="ws-mem__info"><span class="ws-mem__code">MA28</span><span class="ws-mem__name">Identity</span></div>
+                    <div class="ws-mem__popup ws-mem__popup--below">Brand voice &amp; tone applied</div>
+                </div>
+                <div class="ws-mem ws-mem--2" id="wsMem2">
+                    <span class="ws-mem__dot" style="color:#635bff;background:#635bff"></span>
+                    <div class="ws-mem__info"><span class="ws-mem__code">AM55</span><span class="ws-mem__name">Churn</span></div>
+                    <div class="ws-mem__popup ws-mem__popup--above">Q1 churn analysis context</div>
+                </div>
+                <div class="ws-mem ws-mem--3" id="wsMem3">
+                    <span class="ws-mem__dot" style="color:var(--accent-pink);background:var(--accent-pink)"></span>
+                    <div class="ws-mem__info"><span class="ws-mem__code">VL01</span><span class="ws-mem__name">Offering</span></div>
+                    <div class="ws-mem__popup ws-mem__popup--above">Core value proposition injected</div>
+                </div>
+                <div class="ws-mem ws-mem--4" id="wsMem4">
+                    <span class="ws-mem__dot" style="color:#d97706;background:#d97706"></span>
+                    <div class="ws-mem__info"><span class="ws-mem__code">LM82</span><span class="ws-mem__name">Learned</span></div>
+                    <div class="ws-mem__popup ws-mem__popup--above">Direct outreach converts 3&times; cold email</div>
+                </div>
+                <div class="ws-mem ws-mem--5" id="wsMem5">
+                    <span class="ws-mem__dot" style="color:#2563eb;background:#2563eb"></span>
+                    <div class="ws-mem__info"><span class="ws-mem__code">MA05</span><span class="ws-mem__name">Vision</span></div>
+                    <div class="ws-mem__popup ws-mem__popup--above">Company vision &amp; mission aligned</div>
+                </div>
+
+                <!-- Workspace card -->
+                <div class="ws-illo__card" id="wsCard">
+                    <div class="ws-illo__bar">
+                        <span class="ws-illo__bar-dot" id="illoDot1"></span>
+                        <span class="ws-illo__bar-dot" id="illoDot2"></span>
+                        <span class="ws-illo__bar-dot" id="illoDot3"></span>
+                        <span class="ws-illo__bar-title">
+                            <span class="ws-illo__bar-status" id="illoBarStatus"></span>
+                            Workspace
+                        </span>
+                    </div>
+                    <div class="ws-illo__body">
+                        <div class="ws-illo__prompt" id="illoPrompt">
+                            <span class="ws-illo__prompt-icon">&#9656;</span>
+                            <span class="ws-illo__prompt-text" id="illoPromptText"></span>
+                            <span class="ws-illo__prompt-cursor" id="illoCursor"></span>
+                        </div>
+                        <div class="ws-illo__output" id="illoOutput">
+                            <div class="ws-illo__out-row" id="illoRow0">
+                                <div class="ws-illo__out-title">Subject: We built what you asked for</div>
+                            </div>
+                            <div class="ws-illo__out-row" id="illoRow1">
+                                <div class="ws-illo__out-bar ws-illo__out-bar--full"></div>
+                            </div>
+                            <div class="ws-illo__out-row" id="illoRow2">
+                                <div class="ws-illo__out-bar ws-illo__out-bar--full ws-illo__out-bar--brand"></div>
+                            </div>
+                            <div class="ws-illo__out-row" id="illoRow3">
+                                <div class="ws-illo__out-bar ws-illo__out-bar--long"></div>
+                            </div>
+                            <div class="ws-illo__out-row" id="illoRow4">
+                                <div class="ws-illo__out-bar ws-illo__out-bar--med"></div>
+                            </div>
+                            <div class="ws-illo__out-row" id="illoRow5">
+                                <div class="ws-illo__out-inline">
+                                    <span class="ws-illo__out-chip ws-illo__out-chip--brand" id="illoChip0">MA20</span>
+                                    <span class="ws-illo__out-chip ws-illo__out-chip--teal" id="illoChip1">MA28</span>
+                                    <span class="ws-illo__out-chip ws-illo__out-chip--purple" id="illoChip2">VL01</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Status badge -->
+                <div class="ws-illo__badge" id="illoBadge">
+                    <span class="ws-illo__badge-dot"></span>
+                    <span id="illoBadgeText">Initializing&hellip;</span>
+                </div>
+
+                <!-- Replay -->
+                <button class="ws-illo__replay" id="illoReplay">&#x21bb; Replay</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<hr class="glow-line">
+
+<!-- ===== SECTION 2: YOUR DOMAIN LANGUAGE MODEL ===== -->
+<section class="dlm-section" id="dlm">
+    <div class="dlm-section__canvas"><canvas id="dlmCanvas"></canvas></div>
+    <div class="dlm-section__inner">
+        <div class="section__header reveal" style="position:relative;z-index:2">
+            <h2 class="section__h"><strong>Your Domain Language Model.</strong> The model processes. The domain remembers.</h2>
+            <div class="section__header-right">
+                <p class="body-lg">Workspace assembles your DLM on every request. It loads the right organizational context from your Org Brain, routes it through semantic addressing, and delivers intelligence no general-purpose AI can match.</p>
+            </div>
+        </div>
+
+        <!-- Interactive equation bar -->
+        <div class="dlm-bar reveal reveal-d1" id="dlmBar">
+            <div class="dlm-bar__line"></div>
+            <div class="dlm-bar__node is-active" data-dlm="llm">
+                <div class="dlm-bar__pip dlm-bar__pip--llm">LLM</div>
+                <div class="dlm-bar__label">LLM</div>
+                <div class="dlm-bar__sub">Stateless Processing</div>
+            </div>
+            <div class="dlm-bar__op">&times;</div>
+            <div class="dlm-bar__node" data-dlm="mcp">
+                <div class="dlm-bar__pip dlm-bar__pip--mcp">MCP</div>
+                <div class="dlm-bar__label">MCP</div>
+                <div class="dlm-bar__sub">Connection Protocol</div>
+            </div>
+            <div class="dlm-bar__op">&times;</div>
+            <div class="dlm-bar__node" data-dlm="uca">
+                <div class="dlm-bar__pip dlm-bar__pip--uca">UCA</div>
+                <div class="dlm-bar__label">UCA</div>
+                <div class="dlm-bar__sub">Semantic Addressing</div>
+            </div>
+            <div class="dlm-bar__op">&times;</div>
+            <div class="dlm-bar__node" data-dlm="org">
+                <div class="dlm-bar__pip dlm-bar__pip--org">ORG</div>
+                <div class="dlm-bar__label">Org Brain</div>
+                <div class="dlm-bar__sub">Sovereign Repository</div>
+            </div>
+            <div class="dlm-bar__op">=</div>
+            <div class="dlm-bar__node" data-dlm="dlm">
+                <div class="dlm-bar__pip dlm-bar__pip--dlm">DLM</div>
+                <div class="dlm-bar__label">DLM</div>
+                <div class="dlm-bar__sub">Domain Language Model</div>
+            </div>
+        </div>
+
+        <!-- Expanding detail panel -->
+        <div class="dlm-detail" id="dlmDetail">
+            <div class="dlm-detail__card is-active" data-dlm-panel="llm">
+                <div class="dlm-detail__header">
+                    <span class="dlm-detail__tag dlm-detail__tag--llm">Large Language Model</span>
+                </div>
+                <div class="dlm-detail__title">Stateless processing. Reads, reasons, advises &mdash; then forgets.</div>
+                <p class="dlm-detail__desc">Powerful, but starts from zero every time. An LLM has no memory of your organization, your strategy, or your voice. It's a general-purpose engine &mdash; brilliant at language, blind to your business.</p>
+            </div>
+            <div class="dlm-detail__card" data-dlm-panel="mcp">
+                <div class="dlm-detail__header">
+                    <span class="dlm-detail__tag dlm-detail__tag--mcp">Model Context Protocol</span>
+                </div>
+                <div class="dlm-detail__title">Anthropic's open standard for connecting AI to external data.</div>
+                <p class="dlm-detail__desc">The pipe &mdash; not the water. MCP is the protocol that lets any LLM talk to external tools and data sources. It's how context flows from your Org Brain into the model at inference time.</p>
+            </div>
+            <div class="dlm-detail__card" data-dlm-panel="uca">
+                <div class="dlm-detail__header">
+                    <span class="dlm-detail__tag dlm-detail__tag--uca">Universal Cognitive Architecture</span>
+                </div>
+                <div class="dlm-detail__title">Eleven cognates. Four memory tiers. Semantic addressing.</div>
+                <p class="dlm-detail__desc">UCA gives business knowledge permanent coordinates. O(1) lookup, not O(n) search. Every piece of organizational intelligence gets a semantic address your AI can call by name &mdash; no vector search, no token burn.</p>
+            </div>
+            <div class="dlm-detail__card" data-dlm-panel="org">
+                <div class="dlm-detail__header">
+                    <span class="dlm-detail__tag dlm-detail__tag--org">Your Sovereign Repository</span>
+                </div>
+                <div class="dlm-detail__title">Values, strategy, positioning, operations, culture &mdash; governed and addressable.</div>
+                <p class="dlm-detail__desc">Your Org Brain lives in Notion. You own it. It travels with you. Switch AI providers tomorrow and every memory comes along. This is information sovereignty &mdash; your knowledge is never locked inside someone else's platform.</p>
+            </div>
+            <div class="dlm-detail__card" data-dlm-panel="dlm">
+                <div class="dlm-detail__header">
+                    <span class="dlm-detail__tag dlm-detail__tag--dlm">Domain Language Model</span>
+                </div>
+                <div class="dlm-detail__title">Not a fine-tuned model. A general-purpose model with your complete organizational context loaded on every request.</div>
+                <p class="dlm-detail__desc">The DLM is what happens when stateless processing meets sovereign memory. It doesn't know "business." It knows <em>your</em> business &mdash; your voice, your strategy, your competitive position, your culture. Every output is grounded in your canon.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== SECTION 3: HOW IT WORKS — THREE LAYERS ===== -->
+<section class="layers" id="how-it-works">
+    <div class="layers__inner">
+        <div class="section__header reveal">
+            <h2 class="section__h"><strong>Build once. Deploy anywhere.</strong> Three layers. One stores. One translates. One thinks.</h2>
+            <div class="section__header-right">
+                <p class="body-lg">You own the first two. The third is stateless and swappable.</p>
+            </div>
+        </div>
+
+        <div class="layers__grid reveal reveal-d1">
+            <!-- Layer 1: Store -->
+            <div class="layer-card">
+                <div class="layer-card__num">01 &mdash; Store</div>
+                <div class="layer-card__icon layer-card__icon--store">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#635bff" stroke-width="1.5"><path d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7"/><path d="M20 7c0 2.21-3.582 4-8 4S4 9.21 4 7"/><ellipse cx="12" cy="7" rx="8" ry="4"/></svg>
+                </div>
+                <div class="layer-card__title">Org Brain</div>
+                <div class="layer-card__sub">Notion</div>
+                <div class="layer-card__desc">Your sovereign knowledge repository. Structured memories with semantic addresses. PMNs, AMNs, and LMNs &mdash; governed, versioned, and human-owned.</div>
+                <div class="layer-arrow">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </div>
+            </div>
+
+            <!-- Layer 2: Translate -->
+            <div class="layer-card">
+                <div class="layer-card__num">02 &mdash; Translate</div>
+                <div class="layer-card__icon layer-card__icon--translate">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="var(--brand)" stroke-width="1.5"><path d="M8 3H5a2 2 0 00-2 2v3m18 0V5a2 2 0 00-2-2h-3m0 18h3a2 2 0 002-2v-3M3 16v3a2 2 0 002 2h3"/><path d="M12 8v8M8 12h8"/></svg>
+                </div>
+                <div class="layer-card__title">MCP Server</div>
+                <div class="layer-card__sub">Starling</div>
+                <div class="layer-card__desc">The orchestration layer. Reads your Org Brain, assembles context, injects it into any LLM. Automatic memory management and token budgeting.</div>
+                <div class="layer-arrow">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </div>
+            </div>
+
+            <!-- Layer 3: Think -->
+            <div class="layer-card">
+                <div class="layer-card__num">03 &mdash; Think</div>
+                <div class="layer-card__icon layer-card__icon--think">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#1a9e82" stroke-width="1.5"><path d="M12 2a7 7 0 017 7c0 3-2 5-3.5 6.5S14 18 14 20h-4c0-2-.5-3.5-2-5S5 12 5 9a7 7 0 017-7z"/><path d="M10 20h4v1a2 2 0 01-2 2 2 2 0 01-2-2v-1z"/></svg>
+                </div>
+                <div class="layer-card__title">Any LLM</div>
+                <div class="layer-card__sub">Your Choice</div>
+                <div class="layer-card__desc">Claude today. GPT tomorrow. Gemini next week. The intelligence isn't in the model &mdash; it's in your Org Brain. Switch providers without losing a single memory.</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== SECTION 4: INSIDE THE PLATFORM ===== -->
+<section class="platform" id="platform">
+    <div class="platform__inner">
+        <div class="section__header reveal">
+            <h2 class="section__h"><strong>Two modes. One intelligence layer.</strong></h2>
+            <div class="section__header-right">
+                <p class="body-lg">Workspace operates in two modes &mdash; Excavation for building the Org Brain, Document for putting it to work. Both connect to the same memory system through the same AI Chief of Staff.</p>
+            </div>
+        </div>
+
+        <div class="platform__modes">
+            <!-- Excavation Mode -->
+            <div class="mode-card reveal">
+                <div class="mode-card__icon mode-card__icon--excavation">&#9998;</div>
+                <div class="mode-card__title">Excavation Mode</div>
+                <div class="mode-card__desc">Guided installers excavate organizational knowledge through structured conversation. Your answers become governed memory.</div>
+                <div class="mode-card__visual">
+                    <div class="mode-mock__line">
+                        <span class="mode-mock__dot" style="background:var(--brand)"></span>
+                        <span class="mode-mock__text mode-mock__text--long mode-mock__text--brand"></span>
+                    </div>
+                    <div class="mode-mock__line">
+                        <span class="mode-mock__dot" style="background:var(--border)"></span>
+                        <span class="mode-mock__text mode-mock__text--med"></span>
+                    </div>
+                    <div class="mode-mock__divider"></div>
+                    <div class="mode-mock__line">
+                        <span class="mode-mock__dot" style="background:var(--accent-teal)"></span>
+                        <span class="mode-mock__text mode-mock__text--long mode-mock__text--teal"></span>
+                    </div>
+                    <div class="mode-mock__line">
+                        <span class="mode-mock__dot" style="background:var(--border)"></span>
+                        <span class="mode-mock__text mode-mock__text--short"></span>
+                    </div>
+                    <div class="mode-mock__divider"></div>
+                    <div style="display:flex;gap:8px;margin-top:4px">
+                        <span class="mode-mock__chip">MA01 Purpose</span>
+                        <span class="mode-mock__chip">MA05 Vision</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Document Mode -->
+            <div class="mode-card reveal reveal-d1">
+                <div class="mode-card__icon mode-card__icon--document">&#128196;</div>
+                <div class="mode-card__title">Document Mode</div>
+                <div class="mode-card__desc">Work on project deliverables with your entire Org Brain loaded as context. Web copy, proposals, reports &mdash; all in your organization's voice.</div>
+                <div class="mode-card__visual">
+                    <div class="mode-mock__line">
+                        <span class="mode-mock__dot" style="background:#635bff"></span>
+                        <span class="mode-mock__text mode-mock__text--long mode-mock__text--purple"></span>
+                    </div>
+                    <div class="mode-mock__line">
+                        <span class="mode-mock__dot" style="background:var(--border)"></span>
+                        <span class="mode-mock__text mode-mock__text--long"></span>
+                    </div>
+                    <div class="mode-mock__line">
+                        <span class="mode-mock__dot" style="background:var(--border)"></span>
+                        <span class="mode-mock__text mode-mock__text--med"></span>
+                    </div>
+                    <div class="mode-mock__divider"></div>
+                    <div class="mode-mock__line">
+                        <span class="mode-mock__dot" style="background:var(--border)"></span>
+                        <span class="mode-mock__text mode-mock__text--long"></span>
+                    </div>
+                    <div class="mode-mock__line">
+                        <span class="mode-mock__dot" style="background:var(--border)"></span>
+                        <span class="mode-mock__text mode-mock__text--short"></span>
+                    </div>
+                    <div style="display:flex;gap:8px;margin-top:4px">
+                        <span class="mode-mock__chip">MA20 Position</span>
+                        <span class="mode-mock__chip">MA28 Identity</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Feature cards -->
+        <div class="platform__features">
+            <div class="feat-card reveal reveal-d2">
+                <div class="feat-card__icon">&#128279;</div>
+                <div class="feat-card__body">
+                    <div class="feat-card__title">Inline References</div>
+                    <div class="feat-card__desc">Semantic addresses appear as clickable chips. Click MA20 mid-conversation to see your Competitive Position without leaving the thread.</div>
+                </div>
+            </div>
+            <div class="feat-card reveal reveal-d3">
+                <div class="feat-card__icon">&#128218;</div>
+                <div class="feat-card__body">
+                    <div class="feat-card__title">Capture Learning</div>
+                    <div class="feat-card__desc">Extract patterns from every project. Lessons learned and process improvements become Learning Memories that compound over time.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<hr class="glow-line">
+
+<!-- ===== SECTION 5: THREE STEPS ===== -->
+<section class="steps" id="steps">
+    <div class="steps__inner">
+        <div class="section__header reveal">
+            <h2 class="section__h"><strong>Three steps to intelligence.</strong></h2>
+            <div class="section__header-right">
+                <p class="body-lg">Open a project. Let context load. Generate an artifact that already knows you.</p>
+            </div>
+        </div>
+
+        <div class="steps__grid">
+            <!-- Step 1 -->
+            <div class="step reveal">
+                <div class="step__text">
+                    <div class="step__num">01 &mdash; Create a Session</div>
+                    <div class="step__title">Open a project, create a session.</div>
+                    <div class="step__desc">The system already knows you. Your Org Brain loads automatically.</div>
+                </div>
+                <div class="step__visual">
+                    <div class="step-mock__bar">
+                        <div class="step-mock__dots"><span class="step-mock__dot"></span><span class="step-mock__dot"></span><span class="step-mock__dot"></span></div>
+                        <div class="step-mock__title">Projects</div>
+                    </div>
+                    <div class="step-mock__body">
+                        <div class="step1-projects" id="step1Projects">
+                            <div class="step1-proj is-active">
+                                <div class="step1-proj__icon step1-proj__icon--brain">&#129504;</div>
+                                <div class="step1-proj__info">
+                                    <div class="step1-proj__name">Q2 Campaign Strategy</div>
+                                    <div class="step1-proj__meta">3 sessions &middot; Updated 2h ago</div>
+                                </div>
+                                <span class="step1-proj__badge step1-proj__badge--connected">Connected</span>
+                            </div>
+                            <div class="step1-proj">
+                                <div class="step1-proj__icon step1-proj__icon--doc">&#128196;</div>
+                                <div class="step1-proj__info">
+                                    <div class="step1-proj__name">Enterprise Page Copy</div>
+                                    <div class="step1-proj__meta">1 session &middot; Updated 1d ago</div>
+                                </div>
+                                <span class="step1-proj__badge step1-proj__badge--brain">Org Brain</span>
+                            </div>
+                            <div class="step1-proj">
+                                <div class="step1-proj__icon step1-proj__icon--gear">&#9881;</div>
+                                <div class="step1-proj__info">
+                                    <div class="step1-proj__name">Investor Update Draft</div>
+                                    <div class="step1-proj__meta">2 sessions &middot; Updated 3d ago</div>
+                                </div>
+                                <span class="step1-proj__badge step1-proj__badge--brain">Org Brain</span>
+                            </div>
+                        </div>
+                        <div class="step1-status">
+                            <span class="step1-status__dot"></span>
+                            Org Brain connected &middot; 28 memories loaded
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="step step--reverse reveal reveal-d1">
+                <div class="step__text">
+                    <div class="step__num">02 &mdash; Add Context</div>
+                    <div class="step__title">The right knowledge loads.</div>
+                    <div class="step__desc">Persistent memory, active work, and learned patterns &mdash; all through semantic addressing.</div>
+                </div>
+                <div class="step__visual">
+                    <div class="step-mock__bar">
+                        <div class="step-mock__dots"><span class="step-mock__dot"></span><span class="step-mock__dot"></span><span class="step-mock__dot"></span></div>
+                        <div class="step-mock__title">Context</div>
+                    </div>
+                    <div class="step-mock__body">
+                        <div class="step2-ctx" id="step2Ctx">
+                            <div class="step2-mem is-loaded">
+                                <span class="step2-mem__dot" style="background:var(--brand)"></span>
+                                <div class="step2-mem__info">
+                                    <div class="step2-mem__label">Brand Voice &amp; Tone</div>
+                                    <div class="step2-mem__sub">Persistent Memory</div>
+                                </div>
+                                <span class="step2-mem__code">MA28</span>
+                                <span class="step2-mem__check">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1a9e82" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg>
+                                </span>
+                            </div>
+                            <div class="step2-mem is-loaded">
+                                <span class="step2-mem__dot" style="background:var(--accent-teal)"></span>
+                                <div class="step2-mem__info">
+                                    <div class="step2-mem__label">Competitive Position</div>
+                                    <div class="step2-mem__sub">Persistent Memory</div>
+                                </div>
+                                <span class="step2-mem__code">MA20</span>
+                                <span class="step2-mem__check">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1a9e82" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg>
+                                </span>
+                            </div>
+                            <div class="step2-mem is-loaded">
+                                <span class="step2-mem__dot" style="background:#8b5cf6"></span>
+                                <div class="step2-mem__info">
+                                    <div class="step2-mem__label">Q1 Churn Analysis</div>
+                                    <div class="step2-mem__sub">Active Memory</div>
+                                </div>
+                                <span class="step2-mem__code">AM55</span>
+                                <span class="step2-mem__check">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1a9e82" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg>
+                                </span>
+                            </div>
+                            <div class="step2-mem is-loaded">
+                                <span class="step2-mem__dot" style="background:#f59e0b"></span>
+                                <div class="step2-mem__info">
+                                    <div class="step2-mem__label">Direct outreach converts 3&times; cold email</div>
+                                    <div class="step2-mem__sub">Learned Memory</div>
+                                </div>
+                                <span class="step2-mem__code">LM82</span>
+                                <span class="step2-mem__check">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1a9e82" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="step reveal reveal-d2">
+                <div class="step__text">
+                    <div class="step__num">03 &mdash; Generate Artifact</div>
+                    <div class="step__title">Super content, from the jump.</div>
+                    <div class="step__desc">The output knows you. Every artifact becomes memory for the next one.</div>
+                </div>
+                <div class="step__visual">
+                    <div class="step-mock__bar">
+                        <div class="step-mock__dots"><span class="step-mock__dot"></span><span class="step-mock__dot"></span><span class="step-mock__dot"></span></div>
+                        <div class="step-mock__title">Artifact</div>
+                    </div>
+                    <div class="step-mock__body">
+                        <div class="step3-artifact">
+                            <div class="step3-header">
+                                <span class="step3-header__label">Win-Back Email &mdash; Enterprise</span>
+                                <span class="step3-header__status">
+                                    <span class="step3-header__status-dot"></span>
+                                    DLM Active
+                                </span>
+                            </div>
+                            <div class="step3-block">
+                                <div class="step3-block__title">Subject: We built what you asked for</div>
+                                <div class="step3-block__line step3-block__line--long"></div>
+                                <div class="step3-block__line step3-block__line--long"></div>
+                                <div class="step3-block__line step3-block__line--med"></div>
+                            </div>
+                            <div class="step3-block">
+                                <div class="step3-block__title">Body</div>
+                                <div class="step3-block__line step3-block__line--long"></div>
+                                <div class="step3-block__line step3-block__line--long step3-block__line--brand"></div>
+                                <div class="step3-block__line step3-block__line--long"></div>
+                                <div class="step3-block__line step3-block__line--med"></div>
+                                <div class="step3-block__line step3-block__line--short"></div>
+                            </div>
+                            <div class="step3-refs">
+                                <span class="step3-ref">MA20</span>
+                                <span class="step3-ref">MA28</span>
+                                <span class="step3-ref">AM55</span>
+                                <span class="step3-ref">LM82</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== FINAL CTA ===== -->
+<section class="final" id="beta">
+    <div class="final__inner">
+        <p class="overline reveal" style="margin-bottom:16px">Request Access</p>
+        <h2 class="final__title reveal reveal-d1"><strong>Beta opens March 2026.</strong></h2>
+        <div class="final__pricing reveal reveal-d2">
+            <span class="final__price">Free for 14 days.</span>
+            <span class="final__price-period">$99/mo after that.</span>
+        </div>
+        <div class="final__form reveal reveal-d3">
+            <input type="email" class="final__input" placeholder="you@company.com" aria-label="Email address"/>
+            <button class="btn btn--primary">
+                Request Invite
+                <svg class="arrow" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2"><path d="M0.5 5.5h7"/><path d="M5.5 1.5l4 4-4 4"/></svg>
+            </button>
+        </div>
+        <p class="final__note reveal reveal-d4">We'll email when it's ready.</p>
+    </div>
+</section>
+
+</main>
+<Footer />
+<script is:inline>
+/* ========================================================
+   SCROLL REVEAL
+   ======================================================== */
+(function(){
+    const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('is-visible'); io.unobserve(e.target); }});
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+})();
+
+/* ========================================================
+   HERO CANVAS — Floating particle network
+   ======================================================== */
+(function(){
+    const canvas = document.getElementById('heroCanvas');
+    if(!canvas) return;
+    const ctx = canvas.getContext('2d');
+    let w, h, particles = [];
+    const COLORS = ['rgba(212,112,44,0.12)','rgba(54,209,183,0.10)','rgba(155,93,229,0.10)','rgba(99,91,255,0.10)'];
+
+    function resize(){ w = canvas.width = canvas.offsetWidth; h = canvas.height = canvas.offsetHeight; }
+    function init(){
+        resize();
+        particles = [];
+        const count = Math.min(60, Math.floor(w * h / 12000));
+        for(let i = 0; i < count; i++){
+            particles.push({
+                x: Math.random()*w, y: Math.random()*h,
+                vx: (Math.random()-0.5)*0.3, vy: (Math.random()-0.5)*0.3,
+                r: Math.random()*2+1,
+                color: COLORS[Math.floor(Math.random()*COLORS.length)]
+            });
+        }
+    }
+    function draw(){
+        ctx.clearRect(0,0,w,h);
+        for(let i = 0; i < particles.length; i++){
+            const p = particles[i];
+            p.x += p.vx; p.y += p.vy;
+            if(p.x < 0 || p.x > w) p.vx *= -1;
+            if(p.y < 0 || p.y > h) p.vy *= -1;
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.r, 0, Math.PI*2);
+            ctx.fillStyle = p.color;
+            ctx.fill();
+            for(let j = i+1; j < particles.length; j++){
+                const q = particles[j];
+                const dx = p.x-q.x, dy = p.y-q.y;
+                const dist = Math.sqrt(dx*dx+dy*dy);
+                if(dist < 120){
+                    ctx.beginPath();
+                    ctx.moveTo(p.x, p.y);
+                    ctx.lineTo(q.x, q.y);
+                    ctx.strokeStyle = `rgba(212,112,44,${0.06*(1-dist/120)})`;
+                    ctx.lineWidth = 0.5;
+                    ctx.stroke();
+                }
+            }
+        }
+        requestAnimationFrame(draw);
+    }
+    init(); draw();
+    window.addEventListener('resize', init);
+})();
+
+/* ========================================================
+   HERO — Trigger is-loaded + Interactive Workspace Illustration
+   ======================================================== */
+(function(){
+    const hero = document.querySelector('.ws-hero');
+    if(!hero) return;
+    requestAnimationFrame(() => hero.classList.add('is-loaded'));
+
+    const card      = document.getElementById('wsCard');
+    const mems      = [];
+    for(let i=0;i<6;i++) mems.push(document.getElementById('wsMem'+i));
+    const prompt    = document.getElementById('illoPrompt');
+    const promptTxt = document.getElementById('illoPromptText');
+    const cursor    = document.getElementById('illoCursor');
+    const rows      = [];
+    for(let i=0;i<6;i++) rows.push(document.getElementById('illoRow'+i));
+    const chips     = [];
+    for(let i=0;i<3;i++) chips.push(document.getElementById('illoChip'+i));
+    const badge     = document.getElementById('illoBadge');
+    const badgeTxt  = document.getElementById('illoBadgeText');
+    const barStatus = document.getElementById('illoBarStatus');
+    const dot1      = document.getElementById('illoDot1');
+    const dot2      = document.getElementById('illoDot2');
+    const dot3      = document.getElementById('illoDot3');
+    const replay    = document.getElementById('illoReplay');
+
+    const PROMPT = 'Draft a win-back email for churned enterprise accounts';
+    const FLOAT_DELAYS = [0, 0.7, 1.3, 0.5, 1.0, 0.3];
+
+    function reset(){
+        card.classList.remove('is-visible');
+        mems.forEach(m => { m.classList.remove('is-visible','is-pulsing','is-floating'); m.style.animationDelay = ''; });
+        prompt.classList.remove('is-visible','is-active');
+        promptTxt.textContent = '';
+        cursor.style.display = 'none';
+        rows.forEach(r => r.classList.remove('is-visible'));
+        chips.forEach(ch => ch.classList.remove('is-visible'));
+        badge.classList.remove('is-visible','is-complete');
+        badgeTxt.textContent = 'Initializing\u2026';
+        barStatus.classList.remove('is-active');
+        [dot1,dot2,dot3].forEach(d => d.classList.remove('is-green'));
+        replay.classList.remove('is-visible');
+    }
+
+    function run(){
+        reset();
+        let t = 400;
+
+        /* 1 — Workspace card slides in */
+        setTimeout(() => { card.classList.add('is-visible'); dot1.classList.add('is-green'); }, t);
+
+        /* 2 — Memory chips pop in one by one */
+        [0,1,2,3,4,5].forEach((idx,i) => {
+            setTimeout(() => mems[idx].classList.add('is-visible'), t + 300 + i * 250);
+        });
+
+        /* 3 — Badge appears */
+        t += 300 + 6 * 250 + 200;
+        setTimeout(() => { badge.classList.add('is-visible'); badgeTxt.textContent = 'Loading memories\u2026'; }, t);
+
+        /* 4 — Prompt typing */
+        t += 300;
+        setTimeout(() => {
+            prompt.classList.add('is-visible','is-active');
+            cursor.style.display = '';
+            let ci = 0;
+            const typeInt = setInterval(() => {
+                ci++;
+                promptTxt.textContent = PROMPT.slice(0, ci);
+                if(ci >= PROMPT.length){
+                    clearInterval(typeInt);
+                    setTimeout(() => { cursor.style.display = 'none'; prompt.classList.remove('is-active'); }, 300);
+                }
+            }, 28);
+        }, t);
+
+        /* 5 — Pulse memory chips (consult) with popup flash */
+        t += PROMPT.length * 28 + 500;
+        [0,1,2,3,4,5].forEach((idx,i) => {
+            setTimeout(() => {
+                mems[idx].classList.add('is-pulsing');
+                badgeTxt.textContent = `${i+1}/6 memories consulted`;
+                setTimeout(() => mems[idx].classList.remove('is-pulsing'), 800);
+            }, t + i * 350);
+        });
+
+        /* 6 — Generate output */
+        t += 6 * 350 + 300;
+        setTimeout(() => { dot2.classList.add('is-green'); barStatus.classList.add('is-active'); }, t);
+        rows.forEach((row,i) => {
+            setTimeout(() => row.classList.add('is-visible'), t + 80 + i * 180);
+        });
+
+        /* 7 — Inline ref chips */
+        t += 80 + 6 * 180 + 250;
+        chips.forEach((ch,i) => {
+            setTimeout(() => ch.classList.add('is-visible'), t + i * 180);
+        });
+
+        /* 8 — Complete */
+        t += 3 * 180 + 350;
+        setTimeout(() => {
+            dot3.classList.add('is-green');
+            badge.classList.add('is-complete');
+            badgeTxt.textContent = '\u2726 Artifact Ready \u2014 DLM Active';
+            /* Start gentle floating */
+            mems.forEach((m,i) => {
+                m.classList.add('is-floating');
+                m.style.animationDelay = FLOAT_DELAYS[i] + 's';
+            });
+            setTimeout(() => replay.classList.add('is-visible'), 500);
+        }, t);
+    }
+
+    /* Interactive: hover ref chips → highlight corresponding memory */
+    const MEM_MAP = [0,1,3]; // chip 0→mem0 (MA20), chip 1→mem1 (MA28), chip 2→mem3 (VL01)
+    chips.forEach((ch,i) => {
+        ch.addEventListener('mouseenter', () => {
+            const m = mems[MEM_MAP[i]];
+            if(m) m.classList.add('is-pulsing');
+        });
+        ch.addEventListener('mouseleave', () => {
+            const m = mems[MEM_MAP[i]];
+            if(m) m.classList.remove('is-pulsing');
+        });
+    });
+
+    replay.addEventListener('click', run);
+    setTimeout(run, 700);
+})();
+
+/* ========================================================
+   STEP 2 — Animated context loading
+   ======================================================== */
+(function(){
+    const items = document.querySelectorAll('#step2Ctx .step2-mem');
+    if(!items.length) return;
+    const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+            if(!e.isIntersecting) return;
+            items.forEach((item, i) => {
+                item.classList.remove('is-loaded');
+                setTimeout(() => item.classList.add('is-loaded'), 300 + i * 350);
+            });
+            io.unobserve(e.target);
+        });
+    }, { threshold: 0.3 });
+    io.observe(document.getElementById('step2Ctx'));
+})();
+
+/* ========================================================
+   DLM EQUATION — Interactive node switching + auto-cycle
+   ======================================================== */
+(function(){
+    const nodes = document.querySelectorAll('#dlmBar .dlm-bar__node');
+    const panels = document.querySelectorAll('#dlmDetail .dlm-detail__card');
+    if(!nodes.length) return;
+
+    function activate(key){
+        nodes.forEach(n => n.classList.toggle('is-active', n.dataset.dlm === key));
+        panels.forEach(p => {
+            p.classList.remove('is-active');
+            p.style.animation = 'none';
+        });
+        const target = document.querySelector(`[data-dlm-panel="${key}"]`);
+        if(target){
+            // Trigger reflow to restart animation
+            void target.offsetWidth;
+            target.style.animation = '';
+            target.classList.add('is-active');
+        }
+    }
+
+    nodes.forEach(n => n.addEventListener('click', () => {
+        activate(n.dataset.dlm);
+        clearInterval(autoTimer);
+        // Restart auto-cycle after 10s of inactivity
+        autoTimer = setInterval(cycle, 4500);
+    }));
+
+    const keys = ['llm','mcp','uca','org','dlm'];
+    let idx = 0;
+    function cycle(){
+        idx = (idx + 1) % keys.length;
+        activate(keys[idx]);
+    }
+    let autoTimer = setInterval(cycle, 4500);
+})();
+
+/* ========================================================
+   DLM SECTION CANVAS — Subtle floating grid
+   ======================================================== */
+(function(){
+    const canvas = document.getElementById('dlmCanvas');
+    if(!canvas) return;
+    const ctx = canvas.getContext('2d');
+    let w, h, dots = [];
+
+    function resize(){ w = canvas.width = canvas.offsetWidth; h = canvas.height = canvas.offsetHeight; }
+    function init(){
+        resize(); dots = [];
+        const count = Math.min(40, Math.floor(w * h / 20000));
+        for(let i = 0; i < count; i++){
+            dots.push({
+                x: Math.random()*w, y: Math.random()*h,
+                vx: (Math.random()-0.5)*0.15, vy: (Math.random()-0.5)*0.15,
+                r: Math.random()*1.5+0.5,
+                color: ['rgba(212,112,44,0.12)','rgba(54,209,183,0.10)','rgba(155,93,229,0.10)','rgba(99,91,255,0.08)'][Math.floor(Math.random()*4)]
+            });
+        }
+    }
+    function draw(){
+        ctx.clearRect(0,0,w,h);
+        for(let i=0;i<dots.length;i++){
+            const p = dots[i];
+            p.x += p.vx; p.y += p.vy;
+            if(p.x<0||p.x>w) p.vx*=-1;
+            if(p.y<0||p.y>h) p.vy*=-1;
+            ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+            ctx.fillStyle = p.color; ctx.fill();
+            for(let j=i+1;j<dots.length;j++){
+                const q=dots[j], dx=p.x-q.x, dy=p.y-q.y, dist=Math.sqrt(dx*dx+dy*dy);
+                if(dist<150){
+                    ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(q.x,q.y);
+                    ctx.strokeStyle=`rgba(255,255,255,${0.04*(1-dist/150)})`;ctx.lineWidth=0.5;ctx.stroke();
+                }
+            }
+        }
+        requestAnimationFrame(draw);
+    }
+    init(); draw();
+    window.addEventListener('resize', init);
+})();
+</script>
+</BaseLayout>
+
+<style is:global>
+/* ========================================================
+   HERO — Split layout (guide.html style)
+   ======================================================== */
+.ws-hero{position:relative;overflow:hidden;background:var(--bg-white)}
+.ws-hero__bg{position:absolute;inset:0;z-index:0;pointer-events:none}
+.ws-hero__bg canvas{position:absolute;inset:0;width:100%;height:100%;z-index:0}
+.ws-hero__bg::before{
+    content:'';position:absolute;inset:0;z-index:1;
+    background:
+        radial-gradient(ellipse 70% 60% at 70% 45%,rgba(212,112,44,0.08),transparent 60%),
+        radial-gradient(ellipse 50% 50% at 30% 60%,rgba(99,91,255,0.06),transparent 50%),
+        radial-gradient(ellipse 40% 40% at 80% 30%,rgba(54,209,183,0.05),transparent 50%);
+}
+.ws-hero__bg::after{
+    content:'';position:absolute;top:0;bottom:0;left:0;width:55%;z-index:2;
+    background:linear-gradient(90deg,#fff 15%,rgba(255,255,255,0.95) 40%,rgba(255,255,255,0.6) 70%,transparent 100%);
+}
+.ws-hero__inner{
+    position:relative;z-index:3;max-width:var(--max-w);margin:0 auto;
+    padding:calc(var(--nav-h) + var(--hero-pad)) var(--pad-x) var(--hero-pad);
+    display:grid;grid-template-columns:1fr;gap:48px;align-items:center;
+}
+@media(min-width:768px){.ws-hero__inner{grid-template-columns:1fr 1fr;gap:64px}}
+
+/* Hero text */
+.ws-hero__text{max-width:640px}
+.ws-hero__badge{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:6px 16px;border-radius:var(--radius-pill);
+    background:var(--brand-pale);border:1px solid rgba(212,112,44,0.15);
+    font-size:12px;font-weight:700;color:var(--brand);text-transform:uppercase;letter-spacing:0.06em;
+    margin-bottom:28px;
+    opacity:0;transform:translateY(16px);transition:all 0.6s cubic-bezier(0.16,1,0.3,1);
+}
+.ws-hero.is-loaded .ws-hero__badge{opacity:1;transform:translateY(0);transition-delay:0.1s}
+.ws-hero__badge-dot{width:6px;height:6px;border-radius:50%;background:var(--brand);animation:badgePulse 2s ease infinite}
+@keyframes badgePulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.5;transform:scale(0.7)}}
+.ws-hero__title{
+    font-size:clamp(2rem,4.5vw,50px);font-weight:400;line-height:1.15;letter-spacing:-0.025em;
+    color:var(--text-secondary);margin-bottom:12px;
+    opacity:0;transform:translateY(20px);transition:all 0.7s cubic-bezier(0.16,1,0.3,1);
+}
+.ws-hero.is-loaded .ws-hero__title{opacity:1;transform:translateY(0);transition-delay:0.25s}
+.ws-hero__title strong{font-weight:500;color:var(--text-primary)}
+.ws-hero__title em{font-style:normal;color:var(--text-secondary)}
+.ws-hero__subtitle{
+    font-size:clamp(1.05rem,1.8vw,1.25rem);font-weight:400;color:var(--text-secondary);line-height:1.55;
+    margin-bottom:8px;
+    opacity:0;transform:translateY(20px);transition:all 0.7s cubic-bezier(0.16,1,0.3,1);
+}
+.ws-hero.is-loaded .ws-hero__subtitle{opacity:1;transform:translateY(0);transition-delay:0.4s}
+.ws-hero__desc{
+    font-size:15px;color:var(--text-muted);line-height:1.7;margin-bottom:32px;max-width:580px;
+    opacity:0;transform:translateY(20px);transition:all 0.7s cubic-bezier(0.16,1,0.3,1);
+}
+.ws-hero.is-loaded .ws-hero__desc{opacity:1;transform:translateY(0);transition-delay:0.55s}
+.ws-hero__cta{
+    opacity:0;transform:translateY(20px);transition:all 0.7s cubic-bezier(0.16,1,0.3,1);
+}
+.ws-hero.is-loaded .ws-hero__cta{opacity:1;transform:translateY(0);transition-delay:0.7s}
+.ws-hero__note{font-size:12px;color:var(--text-muted);margin-top:12px;font-style:italic}
+
+/* Hero illustration — Interactive Workspace with Popups */
+.ws-hero__visual{
+    opacity:0;transform:translateY(30px) scale(0.97);transition:all 0.9s cubic-bezier(0.16,1,0.3,1);
+}
+.ws-hero.is-loaded .ws-hero__visual{opacity:1;transform:translateY(0) scale(1);transition-delay:0.3s}
+
+/* Container */
+.ws-illo{position:relative;width:100%;max-width:520px;padding:22px 6px 12px}
+
+/* ── Floating memory chips ── */
+.ws-mem{
+    position:absolute;z-index:4;
+    display:flex;align-items:center;gap:7px;
+    padding:7px 14px 7px 10px;border-radius:12px;
+    background:#fff;border:1px solid var(--border);
+    box-shadow:0 4px 16px rgba(0,0,0,0.05),0 1px 3px rgba(0,0,0,0.03);
+    cursor:pointer;
+    opacity:0;transform:scale(0.7) translateY(10px);
+    transition:all 0.5s cubic-bezier(0.34,1.56,0.64,1);
+}
+.ws-mem.is-visible{opacity:1;transform:scale(1) translateY(0)}
+.ws-mem.is-pulsing{box-shadow:0 4px 20px var(--_mem-glow,rgba(0,0,0,0.08)),0 0 0 2.5px var(--_mem-glow,rgba(0,0,0,0.05))}
+.ws-mem:hover{box-shadow:0 8px 28px rgba(0,0,0,0.09);transform:scale(1.06) translateY(-3px)}
+.ws-mem.is-floating:not(:hover):not(.is-pulsing){animation:memFloat 5s ease-in-out infinite}
+@keyframes memFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+
+.ws-mem__dot{width:9px;height:9px;border-radius:50%;flex-shrink:0;transition:box-shadow 0.3s}
+.ws-mem.is-pulsing .ws-mem__dot{box-shadow:0 0 10px 3px currentColor}
+.ws-mem__info{display:flex;flex-direction:column;gap:1px}
+.ws-mem__code{font-family:var(--font-mono);font-size:10px;font-weight:700;color:var(--text-primary);line-height:1}
+.ws-mem__name{font-size:9px;font-weight:500;color:var(--text-muted);line-height:1}
+
+/* Positions */
+.ws-mem--0{top:0;left:4%;--_mem-glow:rgba(212,112,44,0.22)}
+.ws-mem--1{top:0;right:4%;--_mem-glow:rgba(54,209,183,0.22)}
+.ws-mem--2{top:46%;left:-4%;--_mem-glow:rgba(99,91,255,0.22)}
+.ws-mem--3{top:44%;right:-4%;--_mem-glow:rgba(245,100,147,0.22)}
+.ws-mem--4{bottom:5%;left:2%;--_mem-glow:rgba(217,119,6,0.22)}
+.ws-mem--5{bottom:7%;right:0;--_mem-glow:rgba(96,165,250,0.22)}
+
+/* ── Popup tooltip ── */
+.ws-mem__popup{
+    position:absolute;left:50%;z-index:10;
+    transform:translateX(-50%) translateY(5px) scale(0.92);
+    opacity:0;pointer-events:none;
+    transition:all 0.25s cubic-bezier(0.16,1,0.3,1);
+    padding:7px 14px;border-radius:9px;
+    background:#fff;border:1px solid var(--border);
+    box-shadow:0 8px 28px rgba(0,0,0,0.10);
+    font-size:11px;font-weight:500;color:var(--text-secondary);
+    white-space:nowrap;line-height:1.3;
+}
+.ws-mem__popup--above{bottom:calc(100% + 10px)}
+.ws-mem__popup--above::after{
+    content:'';position:absolute;top:100%;left:50%;transform:translateX(-50%);
+    border:5px solid transparent;border-top-color:#fff;
+}
+.ws-mem__popup--below{top:calc(100% + 10px);transform:translateX(-50%) translateY(-5px) scale(0.92)}
+.ws-mem__popup--below::after{
+    content:'';position:absolute;bottom:100%;left:50%;transform:translateX(-50%);
+    border:5px solid transparent;border-bottom-color:#fff;
+}
+.ws-mem:hover .ws-mem__popup,
+.ws-mem.is-pulsing .ws-mem__popup{
+    opacity:1;transform:translateX(-50%) translateY(0) scale(1);pointer-events:auto;
+}
+
+/* ── Workspace card ── */
+.ws-illo__card{
+    position:relative;z-index:2;margin:26px 8% 0;
+    border-radius:14px;overflow:hidden;background:#fff;
+    border:1px solid var(--border);
+    box-shadow:0 16px 48px rgba(0,0,0,0.06),0 2px 8px rgba(0,0,0,0.03);
+    opacity:0;transform:translateY(16px);
+    transition:all 0.7s cubic-bezier(0.16,1,0.3,1);
+}
+.ws-illo__card.is-visible{opacity:1;transform:translateY(0)}
+.ws-illo__bar{
+    display:flex;align-items:center;gap:5px;padding:10px 14px;
+    background:var(--bg-gray);border-bottom:1px solid var(--border);
+}
+.ws-illo__bar-dot{width:7px;height:7px;border-radius:50%;background:var(--border);transition:background 0.3s}
+.ws-illo__bar-dot.is-green{background:#34d399}
+.ws-illo__bar-title{
+    margin-left:auto;font-size:9px;font-weight:600;
+    color:var(--text-muted);letter-spacing:0.08em;text-transform:uppercase;
+    display:flex;align-items:center;gap:5px;
+}
+.ws-illo__bar-status{width:5px;height:5px;border-radius:50%;background:var(--border);transition:all 0.4s}
+.ws-illo__bar-status.is-active{background:#34d399;box-shadow:0 0 6px rgba(52,211,153,0.5)}
+.ws-illo__body{padding:14px;display:flex;flex-direction:column;gap:10px;min-height:220px}
+
+/* Prompt */
+.ws-illo__prompt{
+    display:flex;align-items:center;gap:8px;padding:9px 12px;
+    border-radius:8px;background:var(--bg-gray);border:1px solid var(--border);
+    opacity:0;transform:translateY(6px);
+    transition:all 0.4s cubic-bezier(0.16,1,0.3,1);
+}
+.ws-illo__prompt.is-visible{opacity:1;transform:translateY(0)}
+.ws-illo__prompt.is-active{border-color:var(--brand);box-shadow:0 0 0 3px rgba(212,112,44,0.06)}
+.ws-illo__prompt-icon{font-size:11px;color:var(--brand);flex-shrink:0;font-family:var(--font-mono);font-weight:700}
+.ws-illo__prompt-text{font-family:var(--font-mono);font-size:11px;color:var(--text-primary);line-height:1.3}
+.ws-illo__prompt-cursor{width:2px;height:13px;background:var(--brand);animation:illoCursorBlink 0.7s step-end infinite;flex-shrink:0;display:none}
+@keyframes illoCursorBlink{0%,100%{opacity:1}50%{opacity:0}}
+
+/* Output area */
+.ws-illo__output{display:flex;flex-direction:column;gap:8px}
+.ws-illo__out-row{
+    opacity:0;transform:translateX(-8px);
+    transition:all 0.4s cubic-bezier(0.16,1,0.3,1);
+}
+.ws-illo__out-row.is-visible{opacity:1;transform:translateX(0)}
+.ws-illo__out-title{
+    font-size:12px;font-weight:700;color:var(--text-primary);
+    padding-bottom:6px;border-bottom:1px solid var(--border);
+}
+.ws-illo__out-bar{height:7px;border-radius:4px;background:var(--border)}
+.ws-illo__out-bar--full{width:100%}
+.ws-illo__out-bar--long{width:88%}
+.ws-illo__out-bar--med{width:65%}
+.ws-illo__out-bar--short{width:40%}
+.ws-illo__out-bar--brand{background:rgba(212,112,44,0.15)}
+
+/* Inline ref chips in output */
+.ws-illo__out-inline{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.ws-illo__out-chip{
+    font-family:var(--font-mono);font-size:9px;font-weight:700;
+    padding:3px 9px;border-radius:var(--radius-pill);border:1px solid;
+    opacity:0;transform:scale(0.8);
+    transition:all 0.4s cubic-bezier(0.34,1.56,0.64,1);cursor:default;
+}
+.ws-illo__out-chip.is-visible{opacity:1;transform:scale(1)}
+.ws-illo__out-chip:hover{transform:scale(1.1)}
+.ws-illo__out-chip--brand{color:var(--brand);border-color:rgba(212,112,44,0.2);background:rgba(212,112,44,0.06)}
+.ws-illo__out-chip--teal{color:#1a9e82;border-color:rgba(54,209,183,0.2);background:rgba(54,209,183,0.06)}
+.ws-illo__out-chip--purple{color:#635bff;border-color:rgba(99,91,255,0.2);background:rgba(99,91,255,0.06)}
+
+/* ── Badge ── */
+.ws-illo__badge{
+    display:flex;align-items:center;gap:6px;
+    margin:12px auto 0;width:fit-content;
+    padding:6px 16px;border-radius:var(--radius-pill);
+    background:#fff;border:1px solid var(--border);
+    box-shadow:0 4px 12px rgba(0,0,0,0.04);
+    font-size:11px;font-weight:600;color:var(--text-muted);
+    opacity:0;transition:all 0.5s cubic-bezier(0.16,1,0.3,1);
+}
+.ws-illo__badge.is-visible{opacity:1}
+.ws-illo__badge.is-complete{color:var(--brand);border-color:rgba(212,112,44,0.15)}
+.ws-illo__badge-dot{
+    width:6px;height:6px;border-radius:50%;background:var(--border);transition:all 0.4s;
+}
+.ws-illo__badge.is-complete .ws-illo__badge-dot{
+    background:var(--brand);box-shadow:0 0 6px rgba(212,112,44,0.4);
+    animation:illoBadgePulse 2s ease infinite;
+}
+@keyframes illoBadgePulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.5;transform:scale(0.7)}}
+
+/* Replay */
+.ws-illo__replay{
+    display:flex;align-items:center;justify-content:center;gap:4px;
+    margin:6px auto 0;font-size:9px;font-weight:600;color:var(--text-muted);
+    cursor:pointer;background:none;border:none;padding:4px 8px;
+    font-family:var(--font);opacity:0;transition:all 0.3s ease;
+}
+.ws-illo__replay.is-visible{opacity:1}
+.ws-illo__replay:hover{color:var(--brand)}
+
+/* ========================================================
+   SECTION 2 — DLM EQUATION (Dark interactive)
+   ======================================================== */
+.dlm-section{
+    padding:var(--section-pad-lg) 0;position:relative;overflow:hidden;
+    background:#0a0c12;color:#fff;
+}
+.dlm-section__inner{max-width:var(--max-w);margin:0 auto;padding:0 var(--pad-x)}
+.dlm-section .section__h{color:rgba(255,255,255,0.5)}
+.dlm-section .section__h strong{color:#fff}
+.dlm-section .body-lg{color:rgba(255,255,255,0.55)}
+
+/* Canvas background */
+.dlm-section__canvas{position:absolute;inset:0;z-index:0;pointer-events:none}
+.dlm-section__canvas canvas{width:100%;height:100%}
+
+/* ── Equation bar: the visual centerpiece ── */
+.dlm-bar{
+    position:relative;z-index:2;max-width:1100px;margin:0 auto;
+    display:flex;align-items:center;justify-content:center;
+    gap:0;flex-wrap:nowrap;padding:8px 0;
+}
+@media(max-width:767px){.dlm-bar{flex-wrap:wrap;gap:8px;justify-content:center}}
+
+.dlm-bar__node{
+    display:flex;flex-direction:column;align-items:center;gap:6px;
+    padding:16px 12px;cursor:pointer;position:relative;
+    transition:all 0.4s cubic-bezier(0.34,1.56,0.64,1);
+    flex:0 0 auto;min-width:80px;
+}
+@media(min-width:768px){.dlm-bar__node{min-width:100px;padding:20px 16px}}
+.dlm-bar__node:hover{transform:translateY(-6px)}
+.dlm-bar__node.is-active{transform:translateY(-6px)}
+
+.dlm-bar__pip{
+    width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;
+    font-size:12px;font-weight:800;color:#fff;letter-spacing:0.03em;
+    position:relative;transition:all 0.4s cubic-bezier(0.34,1.56,0.64,1);
+}
+@media(min-width:768px){.dlm-bar__pip{width:60px;height:60px;font-size:13px;border-radius:16px}}
+.dlm-bar__node:hover .dlm-bar__pip,.dlm-bar__node.is-active .dlm-bar__pip{transform:scale(1.12);box-shadow:0 0 32px var(--_glow)}
+.dlm-bar__pip--llm{background:linear-gradient(135deg,#e06090,#f580b0);--_glow:rgba(224,96,144,0.35)}
+.dlm-bar__pip--mcp{background:linear-gradient(135deg,#1a9e82,#36d1b7);--_glow:rgba(54,209,183,0.35)}
+.dlm-bar__pip--uca{background:linear-gradient(135deg,var(--brand),#e8945a);--_glow:rgba(212,112,44,0.35)}
+.dlm-bar__pip--org{background:linear-gradient(135deg,#635bff,#9b5de5);--_glow:rgba(99,91,255,0.35)}
+.dlm-bar__pip--dlm{
+    background:linear-gradient(135deg,var(--brand),#9b5de5);--_glow:rgba(212,112,44,0.4);
+    width:68px;height:68px;font-size:15px;border-radius:18px;
+}
+@media(min-width:768px){.dlm-bar__pip--dlm{width:76px;height:76px;font-size:16px;border-radius:20px}}
+
+/* Pulse ring on active */
+.dlm-bar__pip::after{
+    content:'';position:absolute;inset:-6px;border-radius:inherit;
+    border:2px solid var(--_glow);opacity:0;transition:opacity 0.3s ease;
+    animation:none;
+}
+.dlm-bar__node.is-active .dlm-bar__pip::after{opacity:1;animation:dlmPulseRing 2s ease infinite}
+@keyframes dlmPulseRing{0%,100%{transform:scale(1);opacity:0.6}50%{transform:scale(1.15);opacity:0}}
+
+.dlm-bar__label{font-size:12px;font-weight:600;color:rgba(255,255,255,0.7);text-align:center;letter-spacing:0.02em;transition:color 0.3s ease}
+.dlm-bar__node:hover .dlm-bar__label,.dlm-bar__node.is-active .dlm-bar__label{color:#fff}
+.dlm-bar__sub{font-size:10px;color:rgba(255,255,255,0.35);text-align:center;max-width:110px;line-height:1.3;transition:color 0.3s ease}
+.dlm-bar__node:hover .dlm-bar__sub,.dlm-bar__node.is-active .dlm-bar__sub{color:rgba(255,255,255,0.55)}
+
+/* Operator glyphs */
+.dlm-bar__op{
+    display:flex;align-items:center;justify-content:center;
+    width:28px;flex-shrink:0;font-size:18px;font-weight:300;
+    color:rgba(255,255,255,0.2);padding-bottom:28px;
+}
+@media(max-width:767px){.dlm-bar__op{width:auto;padding:0;font-size:16px}}
+
+/* Connection line behind nodes */
+.dlm-bar__line{
+    position:absolute;top:50%;left:10%;right:10%;height:2px;z-index:0;
+    background:linear-gradient(90deg,rgba(224,96,144,0.15),rgba(54,209,183,0.15),rgba(212,112,44,0.15),rgba(99,91,255,0.15),rgba(155,93,229,0.15));
+    transform:translateY(-14px);
+}
+@media(max-width:767px){.dlm-bar__line{display:none}}
+
+/* ── Detail panel below equation ── */
+.dlm-detail{
+    max-width:860px;margin:40px auto 0;min-height:120px;position:relative;z-index:2;
+}
+.dlm-detail__card{
+    display:none;padding:32px;border-radius:var(--radius-lg);
+    background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);
+    backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+    animation:dlmDetailIn 0.4s cubic-bezier(0.16,1,0.3,1) forwards;
+}
+.dlm-detail__card.is-active{display:block}
+@keyframes dlmDetailIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.dlm-detail__header{display:flex;align-items:center;gap:14px;margin-bottom:14px}
+.dlm-detail__tag{
+    font-size:11px;font-weight:700;padding:4px 12px;border-radius:var(--radius-pill);
+    text-transform:uppercase;letter-spacing:0.06em;
+}
+.dlm-detail__tag--llm{background:rgba(224,96,144,0.15);color:#f580b0}
+.dlm-detail__tag--mcp{background:rgba(54,209,183,0.15);color:#36d1b7}
+.dlm-detail__tag--uca{background:rgba(212,112,44,0.15);color:var(--brand-light)}
+.dlm-detail__tag--org{background:rgba(99,91,255,0.15);color:#9b8fff}
+.dlm-detail__tag--dlm{background:rgba(212,112,44,0.2);color:var(--brand-light)}
+.dlm-detail__title{font-size:18px;font-weight:600;color:#fff}
+.dlm-detail__desc{font-size:14.5px;color:rgba(255,255,255,0.6);line-height:1.65}
+
+/* ========================================================
+   SECTION 3 — THREE LAYERS
+   ======================================================== */
+.layers{padding:var(--section-pad-lg) 0;background:var(--bg-gray);position:relative;overflow:hidden}
+.layers__inner{max-width:var(--max-w);margin:0 auto;padding:0 var(--pad-x)}
+
+.layers__grid{
+    display:grid;grid-template-columns:1fr;gap:24px;
+}
+@media(min-width:768px){.layers__grid{grid-template-columns:repeat(3,1fr);gap:0}}
+
+.layer-card{
+    position:relative;padding:40px 32px;border:1px solid var(--border);
+    background:var(--bg-white);transition:all 0.4s cubic-bezier(0.16,1,0.3,1);
+}
+@media(min-width:768px){
+    .layer-card:first-child{border-radius:var(--radius-lg) 0 0 var(--radius-lg)}
+    .layer-card:last-child{border-radius:0 var(--radius-lg) var(--radius-lg) 0}
+    .layer-card + .layer-card{border-left:none}
+}
+@media(max-width:767px){
+    .layer-card:first-child{border-radius:var(--radius-lg) var(--radius-lg) 0 0}
+    .layer-card:last-child{border-radius:0 0 var(--radius-lg) var(--radius-lg)}
+    .layer-card + .layer-card{border-top:none}
+}
+.layer-card:hover{z-index:2;box-shadow:0 8px 40px rgba(0,0,0,0.06)}
+
+.layer-card__num{
+    font-family:var(--font-mono);font-size:12px;font-weight:700;color:var(--brand);
+    margin-bottom:20px;letter-spacing:0.06em;
+}
+.layer-card__icon{
+    width:56px;height:56px;border-radius:14px;display:flex;align-items:center;justify-content:center;
+    margin-bottom:20px;
+}
+.layer-card__icon--store{background:linear-gradient(135deg,rgba(99,91,255,0.1),rgba(155,93,229,0.1))}
+.layer-card__icon--translate{background:linear-gradient(135deg,rgba(212,112,44,0.1),rgba(232,148,90,0.1))}
+.layer-card__icon--think{background:linear-gradient(135deg,rgba(54,209,183,0.1),rgba(26,158,130,0.1))}
+.layer-card__icon svg{width:26px;height:26px}
+
+.layer-card__title{font-size:18px;font-weight:600;color:var(--text-primary);margin-bottom:4px}
+.layer-card__sub{font-size:13px;font-weight:500;color:var(--text-muted);margin-bottom:14px}
+.layer-card__desc{font-size:14px;color:var(--text-secondary);line-height:1.6}
+
+/* Connection arrows between layers */
+.layer-arrow{display:none}
+@media(min-width:768px){
+    .layer-arrow{
+        display:flex;align-items:center;justify-content:center;
+        position:absolute;right:-13px;top:50%;transform:translateY(-50%);z-index:3;
+        width:26px;height:26px;border-radius:50%;background:var(--bg-white);
+        border:1px solid var(--border);box-shadow:var(--shadow-sm);
+    }
+    .layer-arrow svg{width:12px;height:12px;color:var(--brand)}
+}
+
+/* ========================================================
+   SECTION 4 — INSIDE THE PLATFORM
+   ======================================================== */
+.platform{padding:var(--section-pad) 0;background:var(--bg-white);position:relative;overflow:hidden}
+.platform__inner{max-width:var(--max-w);margin:0 auto;padding:0 var(--pad-x)}
+
+.platform__modes{
+    display:grid;grid-template-columns:1fr;gap:24px;margin-bottom:48px;
+}
+@media(min-width:768px){.platform__modes{grid-template-columns:1fr 1fr;gap:24px}}
+
+.mode-card{
+    padding:36px 32px;border-radius:var(--radius-lg);border:1px solid var(--border);
+    background:var(--bg-white);transition:all 0.4s cubic-bezier(0.16,1,0.3,1);
+    position:relative;overflow:hidden;
+}
+.mode-card:hover{box-shadow:0 8px 40px rgba(0,0,0,0.06);transform:translateY(-4px)}
+.mode-card__icon{
+    font-size:28px;width:52px;height:52px;border-radius:14px;display:flex;
+    align-items:center;justify-content:center;margin-bottom:20px;
+}
+.mode-card__icon--excavation{background:linear-gradient(135deg,rgba(212,112,44,0.1),rgba(232,148,90,0.08))}
+.mode-card__icon--document{background:linear-gradient(135deg,rgba(99,91,255,0.1),rgba(155,93,229,0.08))}
+.mode-card__title{font-size:18px;font-weight:600;color:var(--text-primary);margin-bottom:8px}
+.mode-card__desc{font-size:14px;color:var(--text-secondary);line-height:1.6}
+
+/* Mode mockup illustrations */
+.mode-card__visual{
+    margin-top:24px;padding:16px;border-radius:var(--radius);
+    background:var(--bg-gray);border:1px solid var(--border);
+}
+.mode-mock__line{
+    display:flex;align-items:center;gap:8px;padding:6px 0;
+}
+.mode-mock__dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+.mode-mock__text{height:8px;border-radius:4px;background:var(--border)}
+.mode-mock__text--long{width:80%}
+.mode-mock__text--med{width:55%}
+.mode-mock__text--short{width:35%}
+.mode-mock__text--brand{background:rgba(212,112,44,0.2)}
+.mode-mock__text--teal{background:rgba(54,209,183,0.2)}
+.mode-mock__text--purple{background:rgba(155,93,229,0.2)}
+.mode-mock__divider{height:1px;background:var(--border);margin:8px 0}
+.mode-mock__chip{
+    display:inline-flex;align-items:center;gap:4px;padding:4px 10px;border-radius:var(--radius-pill);
+    font-family:var(--font-mono);font-size:10px;font-weight:600;
+    background:rgba(212,112,44,0.1);color:var(--brand);margin-top:4px;
+}
+
+/* Feature cards below modes */
+.platform__features{
+    display:grid;grid-template-columns:1fr;gap:16px;
+}
+@media(min-width:768px){.platform__features{grid-template-columns:1fr 1fr;gap:16px}}
+
+.feat-card{
+    display:flex;gap:16px;align-items:flex-start;padding:24px;
+    border-radius:var(--radius-lg);border:1px solid var(--border);
+    background:var(--bg-white);transition:all 0.3s ease;
+}
+.feat-card:hover{box-shadow:var(--shadow-sm);border-color:rgba(212,112,44,0.15)}
+.feat-card__icon{
+    font-size:22px;width:44px;height:44px;border-radius:12px;
+    display:flex;align-items:center;justify-content:center;flex-shrink:0;
+    background:var(--bg-gray);
+}
+.feat-card__body{flex:1}
+.feat-card__title{font-size:15px;font-weight:600;color:var(--text-primary);margin-bottom:4px}
+.feat-card__desc{font-size:13px;color:var(--text-secondary);line-height:1.55}
+
+/* ========================================================
+   SECTION 5 — THREE STEPS
+   ======================================================== */
+.steps{padding:var(--section-pad-lg) 0;background:var(--bg-gray);position:relative;overflow:hidden}
+.steps__inner{max-width:var(--max-w);margin:0 auto;padding:0 var(--pad-x)}
+
+.steps__grid{
+    display:grid;grid-template-columns:1fr;gap:48px;
+}
+
+.step{display:grid;grid-template-columns:1fr;gap:32px;align-items:center}
+@media(min-width:768px){
+    .step{grid-template-columns:1fr 1fr;gap:48px}
+    .step--reverse{direction:rtl}
+    .step--reverse > *{direction:ltr}
+}
+
+.step__text{}
+.step__num{
+    font-family:var(--font-mono);font-size:12px;font-weight:700;color:var(--brand);
+    margin-bottom:16px;letter-spacing:0.06em;text-transform:uppercase;
+}
+.step__title{font-size:clamp(1.25rem,2.5vw,26px);font-weight:500;color:var(--text-primary);line-height:1.2;letter-spacing:-0.02em;margin-bottom:12px}
+.step__desc{font-size:15px;color:var(--text-secondary);line-height:1.65}
+
+/* Step mockup illustration */
+.step__visual{
+    border-radius:var(--radius-lg);border:1px solid var(--border);
+    background:var(--bg-white);box-shadow:var(--shadow-lg);overflow:hidden;
+}
+.step-mock__bar{
+    display:flex;align-items:center;gap:8px;padding:10px 16px;
+    background:var(--bg-gray);border-bottom:1px solid var(--border);
+}
+.step-mock__dots{display:flex;gap:5px}
+.step-mock__dot{width:8px;height:8px;border-radius:50%;background:var(--border)}
+.step-mock__title{font-size:10px;font-weight:600;color:var(--text-muted);margin-left:auto;text-transform:uppercase;letter-spacing:0.06em}
+.step-mock__body{padding:20px;min-height:200px;display:flex;flex-direction:column;gap:12px}
+
+/* Step 1 mockup — project list */
+.step1-projects{display:flex;flex-direction:column;gap:8px}
+.step1-proj{
+    display:flex;align-items:center;gap:10px;padding:10px 14px;
+    border-radius:var(--radius);border:1px solid var(--border);cursor:pointer;
+    transition:all 0.25s ease;
+}
+.step1-proj:hover,.step1-proj.is-active{border-color:rgba(212,112,44,0.3);background:var(--brand-pale)}
+.step1-proj__icon{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
+.step1-proj__icon--brain{background:linear-gradient(135deg,rgba(212,112,44,0.15),rgba(232,148,90,0.1))}
+.step1-proj__icon--doc{background:linear-gradient(135deg,rgba(99,91,255,0.15),rgba(155,93,229,0.1))}
+.step1-proj__icon--gear{background:linear-gradient(135deg,rgba(54,209,183,0.15),rgba(26,158,130,0.1))}
+.step1-proj__name{font-size:13px;font-weight:600;color:var(--text-primary)}
+.step1-proj__meta{font-size:11px;color:var(--text-muted)}
+.step1-proj__info{flex:1;display:flex;flex-direction:column;gap:1px}
+.step1-proj__badge{
+    font-size:9px;font-weight:700;padding:3px 8px;border-radius:var(--radius-pill);
+    text-transform:uppercase;letter-spacing:0.04em;flex-shrink:0;
+}
+.step1-proj__badge--brain{background:rgba(212,112,44,0.1);color:var(--brand)}
+.step1-proj__badge--connected{background:rgba(54,209,183,0.1);color:#1a9e82}
+.step1-status{
+    margin-top:4px;display:flex;align-items:center;gap:6px;
+    font-size:11px;color:#1a9e82;font-weight:500;
+}
+.step1-status__dot{width:6px;height:6px;border-radius:50%;background:#1a9e82;animation:statusPulse 2s ease infinite}
+@keyframes statusPulse{0%,100%{opacity:1}50%{opacity:0.4}}
+
+/* Step 2 mockup — context loading */
+.step2-ctx{display:flex;flex-direction:column;gap:10px}
+.step2-mem{
+    display:flex;align-items:center;gap:10px;padding:10px 14px;
+    border-radius:var(--radius);border:1px solid var(--border);
+    transition:all 0.4s cubic-bezier(0.16,1,0.3,1);
+}
+.step2-mem.is-loaded{border-color:rgba(54,209,183,0.3);background:rgba(54,209,183,0.04)}
+.step2-mem__dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.step2-mem__info{flex:1}
+.step2-mem__label{font-size:12px;font-weight:600;color:var(--text-primary)}
+.step2-mem__sub{font-size:10px;color:var(--text-muted)}
+.step2-mem__code{
+    font-family:var(--font-mono);font-size:10px;font-weight:700;
+    padding:3px 8px;border-radius:var(--radius-pill);
+    background:rgba(212,112,44,0.1);color:var(--brand);flex-shrink:0;
+}
+.step2-mem__check{
+    width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+    flex-shrink:0;opacity:0;transition:opacity 0.3s ease;
+}
+.step2-mem.is-loaded .step2-mem__check{opacity:1}
+
+/* Step 3 mockup — artifact generation */
+.step3-artifact{display:flex;flex-direction:column;gap:12px}
+.step3-header{display:flex;align-items:center;gap:10px;margin-bottom:4px}
+.step3-header__label{font-size:10px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.06em}
+.step3-header__status{
+    display:flex;align-items:center;gap:4px;margin-left:auto;
+    font-size:10px;font-weight:600;color:#1a9e82;
+}
+.step3-header__status-dot{width:5px;height:5px;border-radius:50%;background:#1a9e82}
+.step3-block{
+    padding:14px;border-radius:var(--radius);background:var(--bg-gray);border:1px solid var(--border);
+}
+.step3-block__title{font-size:11px;font-weight:700;color:var(--text-primary);margin-bottom:6px}
+.step3-block__line{height:7px;border-radius:3px;background:var(--border);margin-bottom:5px}
+.step3-block__line:last-child{margin-bottom:0}
+.step3-block__line--long{width:100%}
+.step3-block__line--med{width:75%}
+.step3-block__line--short{width:45%}
+.step3-block__line--brand{background:rgba(212,112,44,0.15)}
+.step3-refs{display:flex;gap:6px;flex-wrap:wrap}
+.step3-ref{
+    font-family:var(--font-mono);font-size:9px;font-weight:700;padding:3px 8px;
+    border-radius:var(--radius-pill);background:rgba(212,112,44,0.08);color:var(--brand);
+}
+
+/* ========================================================
+   FINAL CTA
+   ======================================================== */
+.final{padding:var(--section-pad-lg) 0;background:var(--bg-white);position:relative;overflow:hidden}
+.final__inner{
+    max-width:700px;margin:0 auto;padding:0 var(--pad-x);text-align:center;
+}
+.final__title{
+    font-size:clamp(1.75rem,3.5vw,40px);font-weight:400;line-height:1.15;letter-spacing:-0.025em;
+    color:var(--text-primary);margin-bottom:8px;
+}
+.final__title strong{font-weight:500}
+.final__pricing{
+    display:flex;align-items:baseline;justify-content:center;gap:8px;
+    margin-bottom:28px;
+}
+.final__price{font-size:15px;font-weight:600;color:var(--text-primary)}
+.final__price-period{font-size:14px;color:var(--text-muted)}
+.final__form{
+    display:flex;gap:10px;max-width:480px;margin:0 auto 12px;
+}
+@media(max-width:480px){.final__form{flex-direction:column}}
+.final__input{
+    flex:1;padding:12px 20px;border-radius:52px;border:1.5px solid var(--border);
+    font-family:var(--font);font-size:14px;color:var(--text-primary);
+    background:var(--bg-white);outline:none;transition:border-color 0.25s ease;
+}
+.final__input:focus{border-color:var(--brand)}
+.final__input::placeholder{color:var(--text-muted)}
+.final__note{font-size:13px;color:var(--text-muted)}
+</style>

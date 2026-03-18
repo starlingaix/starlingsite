@@ -1,916 +1,542 @@
 ---
-import Layout from '../layouts/Layout.astro';
-const CDN = 'https://cdn.prod.website-files.com/68a8c21bc88f17902fc14981';
-const usaTodayLogo = `${CDN}/697d0d971e75e603938c8e02_usa-today-seeklogo.svg`;
-const ibtLogo      = `${CDN}/697d0da1b283dc95eb1d53a5_international-business-times-logo-vector.svg`;
-const chrisImg     = `${CDN}/69336097cd299f5bc5e0f762_Chris%20Smiling%20_Silo.png`;
-
-const cognates = [
-  ['MA','Market Analysis',true],
-  ['ID','Identity & Culture',false],
-  ['BR','Brand & Story',false],
-  ['IN','Innovation',false],
-  ['FN','Finance',false],
-  ['OP','Operations',false],
-  ['HR','People & Talent',false],
-  ['IT','Technology',false],
-  ['CN','Compliance',false],
-  ['CS','Customer Success',false],
-  ['PM','Product & Market',false],
-];
-
-const ucaFields = [
-  ['Market Position','Mid-market B2B leader with enterprise migration path. AI-native architecture advantage in all segments.'],
-  ['Primary Competitors','Salesforce, HubSpot, Monday.com — each lacking a sovereign knowledge layer. No competitor has DLM.'],
-  ['Competitive Moat','The Org Brain architecture. Once installed, switching costs approach 100% — knowledge compounds in your system, not ours.'],
-  ['Strategic Evidence','47% faster decision cycles post-implementation. 12 enterprise pilots. Zero churn at 18 months.'],
-];
-
-const innovationSystems = [
-  { name: 'Innovation System',  mems: ['Corporate Vision', 'Innovation Charter', 'R&D Roadmap'] },
-  { name: 'Disruption System',  mems: ['Market Signals',   'Competitive Intel',  'Opportunity Map'] },
-  { name: 'Discovery System',   mems: ['Research Vault',   'Prototype Log',      'Learning Ledger'] },
-];
-const optimizationSystems = [
-  { name: 'Revenue Intelligence', mems: ['Pipeline Memory', 'Pricing Matrix',    'Win/Loss Archive'] },
-  { name: 'Process Intelligence', mems: ['SOP Library',     'Quality Standards', 'Efficiency Log'] },
-  { name: 'Risk Intelligence',    mems: ['Compliance Vault','Risk Register',     'Incident Archive'] },
-];
-
-const ctxChips  = ['28 memories loaded','11 cognates indexed','MA20 · BR20 · PM20 active','Org Brain v2.4'];
-const dlmRefs   = ['MA20','BR20','PM20','FN20'];
-const stats     = [['11','Org Cognates'],['28','Constitutional Memories'],['4','Memory Tiers'],['9 wk','Certification Program']];
-const memTypes  = [
-  ['Persistent Memory','guides growth and strategic direction across every session'],
-  ['Active Memory','powers daily work and in-flight projects with full context'],
-  ['Learned Memory','memorializes what worked and compounds intelligence over time'],
-];
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
 ---
+<BaseLayout title="Starling AIX | Enterprise Organizational Intelligence" description="Starling builds organizational intelligence systems — then makes sure someone in your organization can run them.">
+<Nav currentPage="index" />
+<main>
 
-<Layout
-  title="Starling AIX — Mach 1 Business"
-  description="The sound barrier didn't stop aviation. It defined the engineering required to go faster. Your business has a similar barrier. We built the airframe to safely surpass it."
->
-
-<!-- ══════════════════════════════════════════════════════════════
-     HERO — Stripe-style left/right split
-     ══════════════════════════════════════════════════════════════ -->
-<section style="position:relative;overflow:hidden;background:#ffffff;border-bottom:1px solid rgba(0,0,0,0.07);">
-
-  <div class="container" style="position:relative;z-index:1;">
-    <div class="hero-split">
-
-      <!-- ── Left: copy ── -->
-      <div style="padding:7rem 0 6rem;">
-        <div class="stag stag-o fade-up" data-delay="0" style="margin-bottom:1.5rem;">Introducing Mach 1 Business</div>
-
-        <h1 class="fade-up" data-delay="0.06"
-            style="font-family:'Bitter',Georgia,serif;font-weight:700;line-height:1.02;letter-spacing:-0.04em;font-size:clamp(3rem,7vw,5.5rem);margin:0 0 1.5rem;color:#0c0c0c;">
-          Organisational intelligence<br/><em style="color:#e0641c;font-style:italic;">that compounds.</em>
-        </h1>
-
-        <p class="fade-up" data-delay="0.12"
-           style="font-family:'Inter Tight',system-ui,sans-serif;font-size:1.05rem;color:#4a4a4a;line-height:1.7;max-width:440px;margin:0 0 2.25rem;">
-          Your AI is a brilliant consultant, not a contextualised Chief of Staff. The Org Brain changes that — sovereign knowledge architecture that speaks the language of your specific business.
-        </p>
-
-        <div class="fade-up" data-delay="0.17" style="display:flex;gap:0.75rem;flex-wrap:wrap;margin-bottom:3rem;">
-          <a href="/ai-guide" class="btn btn-org" style="font-size:0.95rem;padding:0.75rem 1.75rem;">Get the Free Book →</a>
-          <a href="#architecture" class="btn-ghost-light" style="font-size:0.95rem;padding:0.75rem 1.75rem;">See the Architecture</a>
+<section class="hero">
+    <div class="hero__bg"></div>
+    <div class="hero__content">
+        <div class="hero__text">
+            <p class="hero__eyebrow">Introducing</p>
+            <div class="hero__title">
+                <em><span style="color:var(--brand);display:inline">Mach 1</span> Business</em>
+                <span>The sound barrier didn't stop aviation. It defined the engineering required to go faster. Your business has a similar barrier. We built the airframe.</span>
+            </div>
+            <div class="hero__cta-wrap">
+                <a href="#barrier" class="btn btn--primary btn--large">
+                    Start Here
+                    <svg class="arrow" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2"><path d="M0.5 5.5h7"/><path d="M5.5 1.5l4 4-4 4"/></svg>
+                </a>
+            </div>
         </div>
+    </div>
 
-        <!-- DLM equation — compact chips -->
-        <div class="fade-up" data-delay="0.23" style="display:flex;align-items:center;gap:0.45rem;flex-wrap:wrap;">
-          {[
-            ['LLM','Stateless\nProcessing'],['×',null],
-            ['MCP','Connection\nProtocol'],['×',null],
-            ['UCA','Semantic\nAddressing'],['×',null],
-            ['ORG\nBRAIN','Sovereign\nRepository'],['=',null],
-            ['DLM','Domain\nLanguage Model'],
-          ].map(([label,sub]) =>
-            (label==='×'||label==='=')
-              ? <span style="color:#bbb;font-family:'JetBrains Mono',monospace;font-size:0.85rem;">{label}</span>
-              : <div style="display:flex;flex-direction:column;align-items:center;gap:0.25rem;">
-                  <div class="dlm-box-lt" style={label==='DLM'?'border-color:rgba(224,100,28,0.55);background:rgba(224,100,28,0.1);color:#c05010;':''}>
-                    {label}
-                  </div>
-                  {sub&&<span style="font-family:'JetBrains Mono',monospace;font-size:0.52rem;color:#aaa;text-align:center;line-height:1.3;white-space:pre-line;">{sub}</span>}
+    <!-- Full-width DLM Intelligence Engine Mockup -->
+    <div class="hero-mock" id="heroMock">
+        <div class="hero-mock__card">
+            <div class="hero-mock__bar">
+                <div class="hero-mock__dots"><span class="hero-mock__dot"></span><span class="hero-mock__dot"></span><span class="hero-mock__dot"></span></div>
+                <div class="hero-mock__bar-title">Starling Intelligence Engine</div>
+            </div>
+            <div class="hero-mock__body">
+                <!-- Left: 4 Pillar Modules -->
+                <div class="hero-mock__modules">
+                    <div class="hero-mock__module" data-mod="llm" style="color:var(--accent-pink)">
+                        <div class="hero-mock__module-icon hero-mock__module-icon--llm">LLM</div>
+                        <div class="hero-mock__module-info">
+                            <div class="hero-mock__module-name">Language Model</div>
+                            <div class="hero-mock__module-desc">Stateless processing engine</div>
+                        </div>
+                        <div class="hero-mock__module-pulse" style="background:var(--accent-pink)"></div>
+                    </div>
+                    <div class="hero-mock__module" data-mod="mcp" style="color:var(--accent-teal)">
+                        <div class="hero-mock__module-icon hero-mock__module-icon--mcp">MCP</div>
+                        <div class="hero-mock__module-info">
+                            <div class="hero-mock__module-name">Context Protocol</div>
+                            <div class="hero-mock__module-desc">Universal connector layer</div>
+                        </div>
+                        <div class="hero-mock__module-pulse" style="background:var(--accent-teal)"></div>
+                    </div>
+                    <div class="hero-mock__module" data-mod="uca" style="color:var(--brand)">
+                        <div class="hero-mock__module-icon hero-mock__module-icon--uca">UCA</div>
+                        <div class="hero-mock__module-info">
+                            <div class="hero-mock__module-name">Cognitive Architecture</div>
+                            <div class="hero-mock__module-desc">Semantic address system</div>
+                        </div>
+                        <div class="hero-mock__module-pulse" style="background:var(--brand)"></div>
+                    </div>
+                    <div class="hero-mock__module" data-mod="org" style="color:var(--accent-blue)">
+                        <div class="hero-mock__module-icon hero-mock__module-icon--org">ORG</div>
+                        <div class="hero-mock__module-info">
+                            <div class="hero-mock__module-name">Org Brain</div>
+                            <div class="hero-mock__module-desc">Sovereign knowledge store</div>
+                        </div>
+                        <div class="hero-mock__module-pulse" style="background:var(--accent-blue)"></div>
+                    </div>
                 </div>
-          )}
-        </div>
 
-        <p style="font-family:'Inter',sans-serif;font-size:0.72rem;color:#aaa;letter-spacing:0.03em;margin-top:0.75rem;">The Domain Language Model equation</p>
-      </div>
-
-      <!-- ── Right: 3D brain canvas ── -->
-      <div class="hero-right-col">
-        <canvas id="brain-canvas" style="width:100%;height:100%;min-height:600px;display:block;"></canvas>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════════════════════════════
-     PRESS — light paper band
-     ══════════════════════════════════════════════════════════════ -->
-<section style="background:#f8f7f5;padding:1.75rem 0;overflow:hidden;border-top:1px solid rgba(0,0,0,0.07);border-bottom:1px solid rgba(0,0,0,0.07);">
-  <div class="container" style="text-align:center;">
-    <p style="font-family:'Inter',sans-serif;font-size:0.6rem;font-weight:600;letter-spacing:0.13em;text-transform:uppercase;color:rgba(0,0,0,0.3);margin-bottom:1.1rem;">As Featured In</p>
-    <div class="marquee-wrap marquee-outer">
-      <div class="marquee-track">
-        {[usaTodayLogo,ibtLogo,usaTodayLogo,ibtLogo,usaTodayLogo,ibtLogo,usaTodayLogo,ibtLogo,usaTodayLogo,ibtLogo].map(src=>(
-          <img src={src} alt="press" style="height:22px;width:auto;filter:grayscale(1) brightness(0) opacity(0.22);"/>
-        ))}
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════════════════════════════
-     BENTO PRODUCTS — Stripe-style product cards
-     ══════════════════════════════════════════════════════════════ -->
-<section style="background:#f8f7f5;padding:6rem 0;border-bottom:1px solid rgba(0,0,0,0.07);">
-  <div class="container">
-
-    <div class="arch-header fade-up" data-delay="0" style="margin-bottom:3.5rem;">
-      <div>
-        <div class="stag stag-o" style="margin-bottom:1.25rem;">1.0 · The Products</div>
-        <h2 style="font-family:'Bitter',Georgia,serif;font-weight:700;font-size:clamp(1.9rem,4vw,2.9rem);line-height:1.1;letter-spacing:-0.03em;margin:0;color:#0c0c0c;">
-          Three breakthroughs.<br/>One system.
-        </h2>
-      </div>
-      <div>
-        <p style="font-family:'Inter Tight',system-ui,sans-serif;font-size:1rem;color:#4a4a4a;line-height:1.75;margin:0 0 1.5rem;">
-          UCA semantically addresses every idea your company produces. The Org Brain stores it all in a sovereign knowledge repository you own. The DLM fuses them into an AI that speaks the language of your specific business.
-        </p>
-        <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
-          <a href="/cognitive-design" class="btn btn-org">Enroll Now →</a>
-          <a href="/platform" class="btn-ghost-light">Explore the Workspace</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Row 1: 3 equal bento cards -->
-    <div class="bento-row3 fade-up" data-delay="0.06">
-
-      <!-- Card 1: UCA -->
-      <div class="bento-card">
-        <div class="bento-card-head">
-          <div>
-            <span style="display:inline-flex;font-family:'JetBrains Mono',monospace;font-size:0.6rem;padding:0.18rem 0.55rem;border-radius:4px;border:1px solid rgba(224,100,28,0.25);color:#e0641c;background:rgba(224,100,28,0.06);margin-bottom:0.65rem;">UCA</span>
-            <h3 style="font-family:'Bitter',Georgia,serif;font-size:1.15rem;font-weight:700;color:#0c0c0c;margin:0 0 0.4rem;letter-spacing:-0.02em;line-height:1.2;">Every idea, permanently addressed</h3>
-            <p style="font-family:'Inter Tight',system-ui,sans-serif;font-size:0.82rem;color:#4a4a4a;margin:0;line-height:1.6;">Semantic coordinates your AI reads by name — not by search. O(1) lookup at any scale.</p>
-          </div>
-          <a href="/cognitive-design" style="font-family:'JetBrains Mono',monospace;font-size:0.62rem;color:#aaa;text-decoration:none;flex-shrink:0;">↗</a>
-        </div>
-        <!-- Mini UCA visual -->
-        <div class="bento-mock">
-          <div style="font-family:'JetBrains Mono',monospace;font-size:0.6rem;color:#aaa;margin-bottom:0.75rem;letter-spacing:0.06em;text-transform:uppercase;">Cognate Library · 11 addresses</div>
-          {[
-            ['MA20','Market Analysis','#e0641c',true],
-            ['ID20','Identity & Culture','#888',false],
-            ['BR20','Brand & Story','#e0641c',true],
-            ['FN20','Finance','#888',false],
-            ['PM20','Product & Market','#e0641c',true],
-            ['OP20','Operations','#888',false],
-          ].map(([code,label,col,active])=>(
-            <div style={`display:flex;align-items:center;gap:0.65rem;padding:0.35rem 0.5rem;border-radius:5px;margin-bottom:0.2rem;${active?'background:rgba(224,100,28,0.05);':''}`}>
-              <span style={`font-family:'JetBrains Mono',monospace;font-size:0.65rem;font-weight:500;color:${col};min-width:30px;`}>{code}</span>
-              <span style={`font-family:'Inter Tight',system-ui,sans-serif;font-size:0.75rem;color:${active?'#1e1e1e':'#aaa'};`}>{label}</span>
-              {active && <span style="margin-left:auto;width:5px;height:5px;border-radius:50%;background:#e0641c;flex-shrink:0;"></span>}
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <!-- Card 2: Org Brain -->
-      <div class="bento-card">
-        <div class="bento-card-head">
-          <div>
-            <span style="display:inline-flex;font-family:'JetBrains Mono',monospace;font-size:0.6rem;padding:0.18rem 0.55rem;border-radius:4px;border:1px solid rgba(224,100,28,0.25);color:#e0641c;background:rgba(224,100,28,0.06);margin-bottom:0.65rem;">Org Brain</span>
-            <h3 style="font-family:'Bitter',Georgia,serif;font-size:1.15rem;font-weight:700;color:#0c0c0c;margin:0 0 0.4rem;letter-spacing:-0.02em;line-height:1.2;">Your company's neural system</h3>
-            <p style="font-family:'Inter Tight',system-ui,sans-serif;font-size:0.82rem;color:#4a4a4a;margin:0;line-height:1.6;">28 Constitutional Memories in a sovereign repository you own forever. Intelligence compounds weekly.</p>
-          </div>
-          <a href="/platform" style="font-family:'JetBrains Mono',monospace;font-size:0.62rem;color:#aaa;text-decoration:none;flex-shrink:0;">↗</a>
-        </div>
-        <!-- Mini tier stack visual -->
-        <div class="bento-mock">
-          <div style="font-family:'JetBrains Mono',monospace;font-size:0.6rem;color:#aaa;margin-bottom:0.75rem;letter-spacing:0.06em;text-transform:uppercase;">Memory Architecture · 4 Tiers</div>
-          {[
-            ['Persistent','Strategic direction · 4 memories','#e0641c','100%'],
-            ['Active','In-flight projects · 8 memories','#f97316','75%'],
-            ['Learned','Compounded wins · 12 memories','#fb923c','90%'],
-            ['Ephemeral','Live session · 4 memories','#fcd34d','40%'],
-          ].map(([tier,desc,col,width])=>(
-            <div style="margin-bottom:0.75rem;">
-              <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.25rem;">
-                <span style={`font-family:'Inter Tight',system-ui,sans-serif;font-size:0.72rem;font-weight:600;color:#0c0c0c;`}>{tier}</span>
-                <span style="font-family:'JetBrains Mono',monospace;font-size:0.58rem;color:#aaa;">{desc.split('·')[1]?.trim()}</span>
-              </div>
-              <div style="height:4px;background:rgba(0,0,0,0.07);border-radius:999px;overflow:hidden;">
-                <div style={`height:100%;width:${width};background:${col};border-radius:999px;`}></div>
-              </div>
-            </div>
-          ))}
-          <div style="display:flex;align-items:center;gap:0.4rem;margin-top:0.85rem;">
-            <span style="width:5px;height:5px;border-radius:50%;background:#34d399;"></span>
-            <span style="font-family:'JetBrains Mono',monospace;font-size:0.6rem;color:#34d399;">All systems nominal · 28/28 indexed</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Card 3: DLM -->
-      <div class="bento-card">
-        <div class="bento-card-head">
-          <div>
-            <span style="display:inline-flex;font-family:'JetBrains Mono',monospace;font-size:0.6rem;padding:0.18rem 0.55rem;border-radius:4px;border:1px solid rgba(224,100,28,0.25);color:#e0641c;background:rgba(224,100,28,0.06);margin-bottom:0.65rem;">DLM</span>
-            <h3 style="font-family:'Bitter',Georgia,serif;font-size:1.15rem;font-weight:700;color:#0c0c0c;margin:0 0 0.4rem;letter-spacing:-0.02em;line-height:1.2;">Intelligence that compounds</h3>
-            <p style="font-family:'Inter Tight',system-ui,sans-serif;font-size:0.82rem;color:#4a4a4a;margin:0;line-height:1.6;">A general-purpose LLM loaded with your complete organisational context on every request.</p>
-          </div>
-          <a href="/about" style="font-family:'JetBrains Mono',monospace;font-size:0.62rem;color:#aaa;text-decoration:none;flex-shrink:0;">↗</a>
-        </div>
-        <!-- Mini DLM chat -->
-        <div class="bento-mock" style="padding:0.85rem;">
-          <div style="display:flex;flex-direction:column;gap:0.65rem;">
-            <div style="display:flex;gap:0.5rem;align-items:flex-start;">
-              <span style="width:18px;height:18px;border-radius:50%;background:#f2f1ee;border:1px solid rgba(0,0,0,0.1);font-family:'JetBrains Mono',monospace;font-size:0.48rem;color:#888;display:flex;align-items:center;justify-content:center;flex-shrink:0;">You</span>
-              <div style="background:#f2f1ee;border-radius:4px 8px 8px 4px;padding:0.45rem 0.65rem;font-size:0.75rem;color:#0c0c0c;font-family:'Inter Tight',system-ui,sans-serif;line-height:1.4;">Draft the exec summary for our Series A deck.</div>
-            </div>
-            <div style="display:flex;gap:0.5rem;align-items:flex-start;">
-              <span style="width:18px;height:18px;border-radius:50%;background:rgba(224,100,28,0.1);border:1px solid rgba(224,100,28,0.25);font-family:'JetBrains Mono',monospace;font-size:0.44rem;color:#e0641c;display:flex;align-items:center;justify-content:center;flex-shrink:0;">DLM</span>
-              <div style="flex:1;">
-                <div style="font-family:'JetBrains Mono',monospace;font-size:0.55rem;color:#aaa;margin-bottom:0.3rem;">MA20 · BR20 · FN20 · ID20</div>
-                <div style="background:#fffaf7;border:1px solid rgba(224,100,28,0.1);border-radius:4px 8px 8px 4px;padding:0.45rem 0.65rem;font-size:0.75rem;color:#1e1e1e;font-family:'Inter Tight',system-ui,sans-serif;line-height:1.45;">Starling AIX is redefining enterprise AI through sovereign knowledge architecture — the only platform where organisational intelligence compounds in infrastructure <em>you own</em>.</div>
-              </div>
-            </div>
-            <div style="display:flex;gap:0.3rem;flex-wrap:wrap;padding-left:22px;">
-              {['MA20','BR20','FN20','ID20'].map(r=>(
-                <span style="font-family:'JetBrains Mono',monospace;font-size:0.55rem;color:#e0641c;background:rgba(224,100,28,0.06);border:1px solid rgba(224,100,28,0.15);border-radius:3px;padding:0.1rem 0.35rem;">{r}</span>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- Row 2: 2/3 + 1/3 wide cards -->
-    <div class="bento-row2 fade-up" data-delay="0.12" style="margin-top:1.25rem;">
-
-      <!-- Wide left: The Barrier -->
-      <div class="bento-card" style="background:#0c0c0c;border-color:rgba(255,255,255,0.08);">
-        <div class="bento-card-head">
-          <div>
-            <span style="display:inline-flex;font-family:'JetBrains Mono',monospace;font-size:0.6rem;padding:0.18rem 0.55rem;border-radius:4px;border:1px solid rgba(224,100,28,0.3);color:#e0641c;background:rgba(224,100,28,0.08);margin-bottom:0.65rem;">The Problem</span>
-            <h3 style="font-family:'Bitter',Georgia,serif;font-size:1.15rem;font-weight:700;color:#fff;margin:0 0 0.5rem;letter-spacing:-0.02em;line-height:1.2;">More AI won't make you faster.<br/><em style="color:#e0641c;">Better architecture will.</em></h3>
-            <p style="font-family:'Inter Tight',system-ui,sans-serif;font-size:0.82rem;color:rgba(255,255,255,0.5);margin:0 0 1.25rem;line-height:1.65;max-width:380px;">You've deployed AI and still get generic outputs. You've built custom GPTs. Deployed agents that don't understand your business. The intelligence is generic. The memory is theirs.</p>
-            <a href="/about" class="btn btn-org" style="font-size:0.8rem;padding:0.5rem 1.1rem;">How It Works →</a>
-          </div>
-          <a href="/about" style="font-family:'JetBrains Mono',monospace;font-size:0.62rem;color:rgba(255,255,255,0.2);text-decoration:none;flex-shrink:0;">↗</a>
-        </div>
-        <!-- 3 memory types inline -->
-        <div style="display:flex;flex-direction:column;gap:0.6rem;margin-top:1.25rem;padding-top:1.25rem;border-top:1px solid rgba(255,255,255,0.06);">
-          {memTypes.map(([title,body])=>(
-            <div style="display:flex;align-items:flex-start;gap:0.65rem;">
-              <span style="display:block;width:5px;height:5px;border-radius:50%;background:#e0641c;flex-shrink:0;margin-top:0.55rem;"></span>
-              <p style="font-family:'Inter Tight',system-ui,sans-serif;font-size:0.8rem;color:rgba(255,255,255,0.45);margin:0;line-height:1.55;"><strong style="color:rgba(255,255,255,0.75);">{title}</strong> — {body}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <!-- Right: Key stats -->
-      <div class="bento-card" style="display:flex;flex-direction:column;justify-content:space-between;">
-        <div>
-          <span style="display:inline-flex;font-family:'JetBrains Mono',monospace;font-size:0.6rem;padding:0.18rem 0.55rem;border-radius:4px;border:1px solid rgba(0,0,0,0.1);color:#888;background:rgba(0,0,0,0.03);margin-bottom:0.65rem;">By the numbers</span>
-          <h3 style="font-family:'Bitter',Georgia,serif;font-size:1.15rem;font-weight:700;color:#0c0c0c;margin:0 0 0.5rem;letter-spacing:-0.02em;line-height:1.2;">The architecture behind the results.</h3>
-        </div>
-        <div class="stats-2x2">
-          {stats.map(([num,label])=>(
-            <div style="padding:1.25rem 1rem;border:1px solid rgba(0,0,0,0.07);border-radius:10px;background:#fff;">
-              <div style="font-family:'Bitter',Georgia,serif;font-size:2.2rem;font-weight:700;color:#e0641c;line-height:0.9;letter-spacing:-0.04em;">{num}</div>
-              <div style="font-family:'Inter',sans-serif;font-size:0.58rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#888;margin-top:0.5rem;">{label}</div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════════════════════════════
-     ARCHITECTURE — silk background, dark mock window
-     ══════════════════════════════════════════════════════════════ -->
-<section style="background:#f2f1ee;padding:6rem 0;" id="architecture">
-  <div class="container">
-
-    <div class="arch-header fade-up" data-delay="0" style="margin-bottom:3rem;">
-      <div>
-        <div class="stag stag-o" style="margin-bottom:1.25rem;">2.0 · Deep Dive</div>
-        <h2 style="font-family:'Bitter',Georgia,serif;font-weight:700;font-size:clamp(1.9rem,4vw,2.9rem);line-height:1.1;letter-spacing:-0.03em;margin:0;color:#0c0c0c;">
-          Inside the Org Brain.
-        </h2>
-      </div>
-      <div>
-        <p style="font-family:'Inter Tight',system-ui,sans-serif;font-size:1rem;color:#4a4a4a;line-height:1.75;margin:0 0 1.5rem;">
-          Switch between the UCA cognate library, the full Org Brain architecture, and the DLM query interface. This is what organisational intelligence actually looks like when it's running.
-        </p>
-        <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
-          <a href="/platform" class="btn btn-org">Request Beta Access →</a>
-          <a href="/about" class="btn-ghost-light">Learn How It Works</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Tabbed wide mock -->
-    <div class="wide-mock fade-up" data-delay="0.08" id="arch-mock">
-      <div class="mock-bar">
-        <span class="mock-dot r"></span><span class="mock-dot y"></span><span class="mock-dot g"></span>
-        <span id="mock-bar-label" style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;color:#3f3f46;margin-left:0.5rem;">starling.workspace — UCA · Cognate Library</span>
-        <span id="mock-bar-status" style="font-family:'JetBrains Mono',monospace;font-size:0.62rem;color:#e0641c;margin-left:auto;padding-right:0.75rem;">MA20 active</span>
-      </div>
-
-      <!-- Panel 0: UCA -->
-      <div class="tab-panel active" id="panel-0">
-        <div class="mock-split">
-          <div class="mock-side">
-            <div class="mock-side-head">All Cognates <span style="color:#e0641c;">11</span></div>
-            {cognates.map(([code,label,active]) => (
-              <div class={`mock-side-row${active ? ' is-active' : ''}`}>
-                <span class="msr-code">{code}</span>
-                <span class="msr-label">{label}</span>
-                {active && <span class="msr-dot"></span>}
-              </div>
-            ))}
-          </div>
-          <div class="mock-content">
-            <div style="display:flex;align-items:center;gap:0.75rem;flex-wrap:wrap;margin-bottom:0.75rem;">
-              <span style="font-family:'JetBrains Mono',monospace;font-size:0.78rem;color:#e0641c;font-weight:500;">MA20</span>
-              <h3 style="font-size:1.15rem;font-weight:600;letter-spacing:-0.02em;color:#fff;margin:0;">Competitive Position</h3>
-              <span class="badge" style="font-size:0.58rem;padding:0.12rem 0.5rem;border-color:rgba(224,100,28,0.3);color:#e0641c;background:rgba(224,100,28,0.07);">Active</span>
-              <span style="margin-left:auto;font-family:'JetBrains Mono',monospace;font-size:0.6rem;color:#3f3f46;">Persistent · Tier 3</span>
-            </div>
-            <div style="height:1px;background:rgba(255,255,255,0.06);margin-bottom:1.25rem;"></div>
-            <div class="mock-fields">
-              {ucaFields.map(([label,val]) => (
-                <div class="mock-field">
-                  <p class="mf-label">{label}</p>
-                  <p class="mf-val">{val}</p>
+                <!-- Right: Live Resolution -->
+                <div class="hero-mock__live">
+                    <div class="hero-mock__live-header">
+                        <span class="hero-mock__live-label">Live Resolution</span>
+                        <span class="hero-mock__live-status" id="mockStatus"><span class="hero-mock__live-status-dot"></span> Connected</span>
+                    </div>
+                    <div class="hero-mock__query" id="mockQuery">
+                        <span class="hero-mock__query-icon">resolve&gt;</span>
+                        <span class="hero-mock__query-text" id="mockQueryText"></span>
+                        <span class="hero-mock__query-cursor" id="mockCursor"></span>
+                    </div>
+                    <div class="hero-mock__pipeline" id="mockPipeline"></div>
+                    <div class="hero-mock__result" id="mockResult"></div>
                 </div>
-              ))}
             </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Panel 1: Org Brain -->
-      <div class="tab-panel" id="panel-1">
-        <div class="brain-grid">
-          <div class="brain-hem brain-hem-innov">
-            <div class="brain-hem-label">Innovation Hemisphere</div>
-            {innovationSystems.map(sys => (
-              <div class="brain-sys">
-                <div class="brain-sys-name">{sys.name}</div>
-                {sys.mems.map(m => <div class="brain-mem">{m}</div>)}
-              </div>
-            ))}
-          </div>
-          <div class="brain-center">
-            <div class="brain-center-label">Cognitive<br/>Layer</div>
-            {['Memory Router','Context Engine','DLM Gateway','Semantic Index'].map(c => (
-              <div class="brain-chip">{c}</div>
-            ))}
-          </div>
-          <div class="brain-hem brain-hem-optim">
-            <div class="brain-hem-label">Optimization Hemisphere</div>
-            {optimizationSystems.map(sys => (
-              <div class="brain-sys brain-sys-optim">
-                <div class="brain-sys-name">{sys.name}</div>
-                {sys.mems.map(m => <div class="brain-mem">{m}</div>)}
-              </div>
-            ))}
-          </div>
-        </div>
-        <div style="padding:0.75rem 1.25rem;border-top:1px solid rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.5rem;">
-          <span style="font-family:'JetBrains Mono',monospace;font-size:0.62rem;color:#52525b;">28 Constitutional Memories · 11 Cognates · 4 Tiers</span>
-          <span style="font-family:'JetBrains Mono',monospace;font-size:0.62rem;color:#34d399;">● All systems nominal</span>
-        </div>
-      </div>
-
-      <!-- Panel 2: DLM -->
-      <div class="tab-panel" id="panel-2">
-        <div style="padding:0.75rem 1.25rem;border-bottom:1px solid rgba(255,255,255,0.06);display:flex;gap:0.4rem;flex-wrap:wrap;background:rgba(224,100,28,0.02);">
-          {ctxChips.map(t => (
-            <span style="display:inline-flex;align-items:center;font-family:'JetBrains Mono',monospace;font-size:0.62rem;padding:0.2rem 0.6rem;border-radius:6px;border:1px solid rgba(224,100,28,0.2);color:#e0641c;background:rgba(224,100,28,0.05);">{t}</span>
-          ))}
-        </div>
-        <div class="dlm-thread">
-          <div class="dlm-msg">
-            <div class="dlm-avatar dlm-avatar-user">You</div>
-            <div class="dlm-bubble-user">What's our competitive positioning narrative for the Q2 board presentation?</div>
-          </div>
-          <div class="dlm-msg">
-            <div class="dlm-avatar dlm-avatar-ai">DLM</div>
-            <div style="flex:1;">
-              <div class="dlm-ref-line">Referencing MA20 · BR20 · PM20 · FN20 — 4 memories active</div>
-              <div class="dlm-bubble-ai">
-                Your Q2 narrative should center on <span style="color:#fff;font-weight:500;">the sovereignty advantage</span>: no competitor offers a system where organizational knowledge compounds in an architecture the client permanently owns. Lead with the 47% decision-cycle improvement from persistent memory, then position DLM as infrastructure — not software.
-              </div>
-              <div style="display:flex;gap:0.4rem;margin-top:0.5rem;flex-wrap:wrap;">
-                {dlmRefs.map(ref => (
-                  <span class="dlm-ref-tag" style="border-color:rgba(224,100,28,0.2);color:#e0641c;background:rgba(224,100,28,0.05);">{ref}</span>
-                ))}
-              </div>
+            <div class="hero-mock__footer">
+                <div class="hero-mock__footer-left">
+                    <div class="hero-mock__footer-stat">
+                        <span class="hero-mock__footer-dot" style="background:var(--accent-teal)"></span>
+                        Canonical Coverage
+                        <div class="hero-mock__footer-bar"><div class="hero-mock__footer-fill" id="mockFill"></div></div>
+                    </div>
+                    <div class="hero-mock__footer-stat">
+                        <span class="hero-mock__footer-dot" style="background:var(--brand)"></span>
+                        <span id="mockCognates">0</span> / 28 Cognates Mapped
+                    </div>
+                </div>
+                <button class="hero-mock__replay" id="mockReplay">&#x21bb; Replay</button>
             </div>
-          </div>
         </div>
-      </div>
+        <div class="hero-mock__spacer"></div>
     </div>
-
-    <!-- Tab selector cards -->
-    <div class="tab-cards-row" id="tab-cards" style="margin-top:1.25rem;">
-
-      <div class="tab-card-lt active" data-tab="0">
-        <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:0.75rem;">
-          <span style="font-family:'JetBrains Mono',monospace;font-size:0.62rem;color:#e0641c;">01</span>
-          <span style="display:inline-flex;font-family:'JetBrains Mono',monospace;font-size:0.62rem;padding:0.12rem 0.5rem;border-radius:999px;border:1px solid rgba(224,100,28,0.3);color:#e0641c;background:rgba(224,100,28,0.06);">UCA</span>
-        </div>
-        <h3 style="font-size:1rem;font-weight:600;letter-spacing:-0.02em;color:#0c0c0c;margin:0 0 0.4rem;font-family:'Inter Tight',sans-serif;">Universal Cognitive Architecture</h3>
-        <p style="font-size:0.82rem;color:#4a4a4a;margin:0;line-height:1.65;font-family:'Inter Tight',sans-serif;">Every idea, permanently addressed. Semantic coordinates your AI reads by name — not by search.</p>
-      </div>
-
-      <div class="tab-card-lt" data-tab="1">
-        <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:0.75rem;">
-          <span style="font-family:'JetBrains Mono',monospace;font-size:0.62rem;color:#e0641c;">02</span>
-          <span style="display:inline-flex;font-family:'JetBrains Mono',monospace;font-size:0.62rem;padding:0.12rem 0.5rem;border-radius:999px;border:1px solid rgba(224,100,28,0.3);color:#e0641c;background:rgba(224,100,28,0.06);">Org Brain</span>
-        </div>
-        <h3 style="font-size:1rem;font-weight:600;letter-spacing:-0.02em;color:#0c0c0c;margin:0 0 0.4rem;font-family:'Inter Tight',sans-serif;">Organizational Intelligence</h3>
-        <p style="font-size:0.82rem;color:#4a4a4a;margin:0;line-height:1.65;font-family:'Inter Tight',sans-serif;">Your company's neural system. 28 Constitutional Memories in a sovereign knowledge repository you own forever.</p>
-      </div>
-
-      <div class="tab-card-lt" data-tab="2">
-        <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:0.75rem;">
-          <span style="font-family:'JetBrains Mono',monospace;font-size:0.62rem;color:#e0641c;">03</span>
-          <span style="display:inline-flex;font-family:'JetBrains Mono',monospace;font-size:0.62rem;padding:0.12rem 0.5rem;border-radius:999px;border:1px solid rgba(224,100,28,0.3);color:#e0641c;background:rgba(224,100,28,0.06);">DLM</span>
-        </div>
-        <h3 style="font-size:1rem;font-weight:600;letter-spacing:-0.02em;color:#0c0c0c;margin:0 0 0.4rem;font-family:'Inter Tight',sans-serif;">Domain Language Model</h3>
-        <p style="font-size:0.82rem;color:#4a4a4a;margin:0;line-height:1.65;font-family:'Inter Tight',sans-serif;">Intelligence that compounds. A general-purpose LLM loaded with your complete organizational context on every request.</p>
-      </div>
-
-    </div>
-
-  </div>
 </section>
 
-<!-- ══════════════════════════════════════════════════════════════
-     STATS — white section, Bitter numbers in orange
-     ══════════════════════════════════════════════════════════════ -->
-<div style="background:#ffffff;position:relative;overflow:hidden;border-top:1px solid rgba(0,0,0,0.07);border-bottom:1px solid rgba(0,0,0,0.07);">
-  <div class="container" style="position:relative;padding-inline:0;">
-    <div class="stats-strip">
-      {stats.map(([num,label]) => (
-        <div class="stat-cell">
-          <div style="font-family:'Bitter',Georgia,serif;font-size:clamp(2.5rem,6vw,4.5rem);font-weight:700;color:#e0641c;line-height:0.9;letter-spacing:-0.04em;">{num}</div>
-          <div style="font-family:'Inter',sans-serif;font-size:0.62rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#888;margin-top:0.65rem;">{label}</div>
+<!-- ===== THE COGNITION BARRIER ===== -->
+<section class="barrier" id="barrier">
+    <div class="barrier__inner">
+        <div class="barrier__header reveal">
+            <div class="barrier__header-left">
+                <h2 class="barrier__h"><strong>More AI won't make you faster.</strong> Better architecture will.</h2>
+            </div>
+            <div class="barrier__header-right">
+                <p class="body-lg">Every organization hits the same wall. You add AI tools, solutions, and specialists — but instead of accelerating, you hit turbulence. Information fragments. Context evaporates. Your AI is out of sync. Your team resists.</p>
+                <p class="body-lg">That's the cognition barrier. The answer isn't more power. It's better infrastructure.</p>
+            </div>
         </div>
-      ))}
+
+        <div class="barrier__visual reveal">
+            <div class="barrier-mockup">
+                <div class="barrier-toggle">
+                    <div class="barrier-toggle__bar">
+                        <button class="barrier-toggle__btn is-active" data-panel="without">Without DLM</button>
+                        <button class="barrier-toggle__btn" data-panel="with">With DLM</button>
+                    </div>
+                </div>
+                <div class="barrier-panels">
+                    <!-- Without DLM: messy chat -->
+                    <div class="barrier-panel is-active" id="barrierWithout">
+                        <div class="barrier-chat">
+                            <div class="barrier-chat__msg barrier-chat__msg--user">
+                                <div class="barrier-chat__avatar barrier-chat__avatar--user">You</div>
+                                <div class="barrier-chat__bubble barrier-chat__bubble--user">What's our competitive positioning strategy?</div>
+                            </div>
+                            <div class="barrier-chat__msg">
+                                <div class="barrier-chat__avatar barrier-chat__avatar--ai">AI</div>
+                                <div class="barrier-chat__bubble barrier-chat__bubble--ai">
+                                    <span class="vague">Based on various sources, here are some general thoughts on competitive positioning...</span>
+                                    <div class="barrier-chat__results">
+                                        <div class="barrier-chat__result"><span class="url">drive.google.com/doc/47x...</span> Marketing deck v3 (outdated)</div>
+                                        <div class="barrier-chat__result"><span class="url">notion.so/strategy-q2...</span> Q2 notes (partial)</div>
+                                        <div class="barrier-chat__result"><span class="url">slack.com/archive/c-strat...</span> Thread from 6 months ago</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="barrier-chat__msg barrier-chat__msg--user">
+                                <div class="barrier-chat__avatar barrier-chat__avatar--user">You</div>
+                                <div class="barrier-chat__bubble barrier-chat__bubble--user">Which one is the actual current strategy?</div>
+                            </div>
+                            <div class="barrier-chat__msg">
+                                <div class="barrier-chat__avatar barrier-chat__avatar--ai">AI</div>
+                                <div class="barrier-chat__bubble barrier-chat__bubble--ai"><span class="vague">I'm not sure which document is the most up-to-date. You may want to check with your strategy team...</span></div>
+                            </div>
+                            <div class="barrier-chat__noise">Scattered context. No authority. No single source of truth.</div>
+                        </div>
+                    </div>
+                    <!-- With DLM: clean retrieval -->
+                    <div class="barrier-panel" id="barrierWith">
+                        <div class="barrier-retrieval">
+                            <div class="barrier-retrieval__prompt">
+                                <div class="barrier-retrieval__prompt-icon"><svg viewBox="0 0 24 24"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg></div>
+                                <div class="barrier-retrieval__prompt-text">Resolve: <strong>MA20</strong> — Competitive Position</div>
+                            </div>
+                            <div class="barrier-retrieval__arrow">&#8595;</div>
+                            <div class="barrier-retrieval__card">
+                                <div class="barrier-retrieval__addr">
+                                    <span class="barrier-retrieval__code">MA20</span>
+                                    <span class="barrier-retrieval__status"><span class="barrier-retrieval__status-dot"></span> Canonical</span>
+                                </div>
+                                <div class="barrier-retrieval__title">Competitive Position &amp; Market Strategy</div>
+                                <div class="barrier-retrieval__meta">
+                                    <span class="barrier-retrieval__tag barrier-retrieval__tag--type">Persistent Memory</span>
+                                    <span class="barrier-retrieval__tag barrier-retrieval__tag--canon">Single Source of Truth</span>
+                                </div>
+                                <div class="barrier-retrieval__excerpt">The organization competes on cognitive infrastructure — not features. Our moat is the architecture itself: UCA addressing + sovereign Org Brain + DLM synthesis. Updated Q1 2026.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
-  </div>
-</div>
-
-<!-- ══════════════════════════════════════════════════════════════
-     REAL-WORLD IMPACT — white bg, image cards
-     ══════════════════════════════════════════════════════════════ -->
-<section style="background:#ffffff;padding:6rem 0;border-top:1px solid rgba(0,0,0,0.07);">
-  <div class="container">
-
-    <div class="arch-header fade-up" data-delay="0" style="margin-bottom:3rem;">
-      <div>
-        <div class="stag stag-g" style="margin-bottom:1.25rem;">3.0 · Real-World Impact</div>
-        <h2 style="font-family:'Bitter',Georgia,serif;font-weight:700;font-size:clamp(1.9rem,4vw,2.9rem);line-height:1.1;letter-spacing:-0.03em;margin:0;color:#0c0c0c;">
-          Built for the<br/>businesses that build.
-        </h2>
-      </div>
-      <div>
-        <p style="font-family:'Inter Tight',system-ui,sans-serif;font-size:1rem;color:#4a4a4a;line-height:1.75;margin:0 0 1.5rem;">
-          From founders closing enterprise deals to teams running multi-city operations — the Org Brain adapts to the context of your industry. Cognitive Design deployments across real estate, professional services, and complex B2B sales.
-        </p>
-        <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
-          <a href="/services" class="btn btn-org">Explore Services →</a>
-          <a href="/about" class="btn-ghost-light">Our Methodology</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="img-cards-grid fade-up" data-delay="0.08">
-
-      <div class="img-card" style="height:400px;">
-        <img src="/images/realestateclient.png" alt="Real estate professional using AI intelligence platform" />
-        <div class="img-card-overlay">
-          <span style="display:inline-flex;font-family:'Inter',sans-serif;font-size:0.62rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#e0641c;margin-bottom:0.6rem;background:rgba(0,0,0,0.5);padding:0.2rem 0.6rem;border-radius:999px;">Real Estate</span>
-          <h3 style="font-size:1.05rem;font-weight:600;color:#fff;margin:0 0 0.3rem;letter-spacing:-0.02em;font-family:'Bitter',Georgia,serif;">Deal Intelligence<br/>on demand</h3>
-          <p style="font-size:0.78rem;color:rgba(255,255,255,0.55);margin:0;line-height:1.5;font-family:'Inter Tight',sans-serif;">Comps, client profiles, and negotiation history — addressed and retrieved in seconds.</p>
-        </div>
-      </div>
-
-      <div class="img-card" style="height:400px;">
-        <img src="/images/women-teal.png" alt="Executive leveraging AI cognitive design system" />
-        <div class="img-card-overlay">
-          <span style="display:inline-flex;font-family:'Inter',sans-serif;font-size:0.62rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#e0641c;margin-bottom:0.6rem;background:rgba(0,0,0,0.5);padding:0.2rem 0.6rem;border-radius:999px;">Leadership</span>
-          <h3 style="font-size:1.05rem;font-weight:600;color:#fff;margin:0 0 0.3rem;letter-spacing:-0.02em;font-family:'Bitter',Georgia,serif;">Strategic clarity<br/>every session</h3>
-          <p style="font-size:0.78rem;color:rgba(255,255,255,0.55);margin:0;line-height:1.5;font-family:'Inter Tight',sans-serif;">Every decision, every positioning call — grounded in the company's canonical truth.</p>
-        </div>
-      </div>
-
-      <div class="img-card" style="height:400px;">
-        <img src="/images/abstract-city-building-shadows.jpg" alt="Enterprise organization with AI infrastructure" />
-        <div class="img-card-overlay">
-          <span style="display:inline-flex;font-family:'Inter',sans-serif;font-size:0.62rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#e0641c;margin-bottom:0.6rem;background:rgba(0,0,0,0.5);padding:0.2rem 0.6rem;border-radius:999px;">Enterprise</span>
-          <h3 style="font-size:1.05rem;font-weight:600;color:#fff;margin:0 0 0.3rem;letter-spacing:-0.02em;font-family:'Bitter',Georgia,serif;">Org-wide<br/>alignment at scale</h3>
-          <p style="font-size:0.78rem;color:rgba(255,255,255,0.55);margin:0;line-height:1.5;font-family:'Inter Tight',sans-serif;">From the exec suite to the front line — one sovereign memory keeps every team in sync.</p>
-        </div>
-      </div>
-
-    </div>
-
-  </div>
 </section>
 
-<!-- ══════════════════════════════════════════════════════════════
-     NEWSLETTER — light silk, no more dark section
-     ══════════════════════════════════════════════════════════════ -->
-<section id="newsletter" style="background:#f2f1ee;padding:6rem 0;border-top:1px solid rgba(0,0,0,0.07);">
-  <div class="container">
-    <div class="nl-grid">
-      <div>
-        <div class="stag stag-o fade-up" data-delay="0" style="margin-bottom:1.25rem;">On Cognitive Design</div>
-        <h2 class="fade-up" data-delay="0.06"
-            style="font-family:'Bitter',Georgia,serif;font-weight:700;font-size:clamp(1.8rem,4vw,2.8rem);line-height:1.1;letter-spacing:-0.03em;margin:0 0 1rem;color:#0c0c0c;">
-          The weekly deep dive.
-        </h2>
-        <p class="fade-up" data-delay="0.1"
-           style="font-family:'Inter Tight',system-ui,sans-serif;font-size:0.95rem;color:#4a4a4a;line-height:1.75;margin:0 0 2rem;max-width:420px;">
-          Each issue unpacks a piece of the methodology in a free, in-depth essay. From Chris Kincade, Starling CEO and creator of Cognitive Design.
-        </p>
-        <form id="nl-form" class="fade-up" data-delay="0.14" style="display:flex;gap:0.75rem;flex-wrap:wrap;max-width:420px;">
-          <input type="email" name="email" placeholder="your@email.com" required class="input-light" style="flex:1;min-width:200px;" />
-          <button type="submit" class="btn btn-org" style="padding:0.65rem 1.5rem;">Subscribe</button>
-        </form>
-        <p style="font-family:'Inter',sans-serif;font-size:0.68rem;color:#aaa;margin-top:0.75rem;letter-spacing:0.02em;">Weekly. No spam. Unsubscribe anytime.</p>
-      </div>
-      <div class="fade-up" data-delay="0.1" style="display:flex;justify-content:center;">
-        <div style="position:relative;width:180px;">
-          <img src={chrisImg} alt="Chris Kincade"
-               style="width:100%;border-radius:16px;border:1px solid rgba(0,0,0,0.08);display:block;box-shadow:0 8px 32px rgba(0,0,0,0.08);" />
-          <div style="position:absolute;bottom:-10px;left:-10px;padding:0.4rem 0.75rem;border-radius:8px;background:#fff;border:1px solid rgba(0,0,0,0.1);box-shadow:0 4px 12px rgba(0,0,0,0.07);">
-            <span style="font-family:'Inter Tight',system-ui,sans-serif;font-size:0.72rem;font-weight:600;color:#0c0c0c;">Chris Kincade</span>
-            <div style="font-family:'Inter',sans-serif;font-size:0.62rem;color:#e0641c;margin-top:0.1rem;">CEO, Starling AIX</div>
-          </div>
+<!-- ===== FROM SCOPE TO AUTHORITY ===== -->
+<section class="scope" id="scope">
+    <div class="scope__inner">
+        <div class="cognates reveal">
+            <div class="cognates__header">
+                <p class="overline">11 Organizational Cognates</p>
+                <h3 class="h3" style="color:var(--text-secondary)"><strong style="color:var(--text-primary);font-weight:500">The Neural System</strong> for Business</h3>
+            </div>
         </div>
-      </div>
+
+        <div class="brain-mockup reveal" id="brainMockup">
+            <div class="brain-mockup__canvas-wrap">
+                <div class="brain-orbit brain-orbit--1"></div>
+                <div class="brain-orbit brain-orbit--2"></div>
+                <svg class="brain-pulse" id="brainPulse"></svg>
+                <div class="brain-hub">
+                    <span class="brain-hub__label">Brain</span>
+                    <span class="brain-hub__count" id="brainCount">0</span>
+                </div>
+                <div class="brain-node" data-brain="identity" style="color:#D4702C">
+                    <span class="brain-node__dot" style="background:#D4702C"></span>
+                    <span class="brain-node__label">Identity</span>
+                </div>
+                <div class="brain-node" data-brain="strategy" style="color:#1a9e82">
+                    <span class="brain-node__dot" style="background:#1a9e82"></span>
+                    <span class="brain-node__label">Strategy</span>
+                </div>
+                <div class="brain-node" data-brain="operations" style="color:#635bff">
+                    <span class="brain-node__dot" style="background:#635bff"></span>
+                    <span class="brain-node__label">Operations</span>
+                </div>
+                <div class="brain-node" data-brain="culture" style="color:#e06090">
+                    <span class="brain-node__dot" style="background:#e06090"></span>
+                    <span class="brain-node__label">Culture</span>
+                </div>
+                <div class="brain-node" data-brain="innovation" style="color:#e8945a">
+                    <span class="brain-node__dot" style="background:#e8945a"></span>
+                    <span class="brain-node__label">Innovation</span>
+                </div>
+                <div class="brain-node" data-brain="compliance" style="color:#36d1b7">
+                    <span class="brain-node__dot" style="background:#36d1b7"></span>
+                    <span class="brain-node__label">Compliance</span>
+                </div>
+            </div>
+            <div class="brain-sidebar">
+                <div class="brain-sidebar__title">Memory Systems</div>
+                <div class="brain-sidebar__list" id="brainSidebarList">
+                    <div class="brain-sidebar__item" data-brain-side="identity">
+                        <div class="brain-sidebar__item-row">
+                            <span class="brain-sidebar__item-dot" style="background:#D4702C"></span>
+                            <span class="brain-sidebar__item-name">Identity</span>
+                        </div>
+                        <span class="brain-sidebar__item-status">6 memories trained</span>
+                        <div class="brain-sidebar__item-bar"><div class="brain-sidebar__item-fill" style="background:#D4702C" data-width="100%"></div></div>
+                    </div>
+                    <div class="brain-sidebar__item" data-brain-side="strategy">
+                        <div class="brain-sidebar__item-row">
+                            <span class="brain-sidebar__item-dot" style="background:#1a9e82"></span>
+                            <span class="brain-sidebar__item-name">Strategy</span>
+                        </div>
+                        <span class="brain-sidebar__item-status">4 memories trained</span>
+                        <div class="brain-sidebar__item-bar"><div class="brain-sidebar__item-fill" style="background:#1a9e82" data-width="72%"></div></div>
+                    </div>
+                    <div class="brain-sidebar__item" data-brain-side="operations">
+                        <div class="brain-sidebar__item-row">
+                            <span class="brain-sidebar__item-dot" style="background:#635bff"></span>
+                            <span class="brain-sidebar__item-name">Operations</span>
+                        </div>
+                        <span class="brain-sidebar__item-status">3 memories training</span>
+                        <div class="brain-sidebar__item-bar"><div class="brain-sidebar__item-fill" style="background:#635bff" data-width="55%"></div></div>
+                    </div>
+                    <div class="brain-sidebar__item" data-brain-side="culture">
+                        <div class="brain-sidebar__item-row">
+                            <span class="brain-sidebar__item-dot" style="background:#e06090"></span>
+                            <span class="brain-sidebar__item-name">Culture</span>
+                        </div>
+                        <span class="brain-sidebar__item-status">2 memories pending</span>
+                        <div class="brain-sidebar__item-bar"><div class="brain-sidebar__item-fill" style="background:#e06090" data-width="35%"></div></div>
+                    </div>
+                </div>
+                <div class="brain-complete">
+                    <div class="brain-complete__pct" id="brainPct">0%</div>
+                    <div class="brain-complete__label">Brain completeness</div>
+                    <div class="brain-complete__bar"><div class="brain-complete__fill" id="brainFill"></div></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="scope-block reveal">
+            <div class="scope-block__text">
+                <h3 class="h3" style="color:var(--text-secondary)"><strong style="color:var(--text-primary);font-weight:500">From Scope</strong> to Authority</h3>
+                <p class="body">Most AI strategies chase coverage — more data, more integrations, more compute.</p>
+                <p class="body">We invert this. Every piece of organizational knowledge gets a permanent semantic address — a Single Source of Truth your AI reads by name. <strong style="color:var(--text-primary)">MA20 is always your competitive position.</strong></p>
+                <p class="body">That's <em>canon</em> — the governing truth your entire organization, but especially your AI works from. Not a search result. Not a best guess. The final authority, at a permanent coordinate, operating as head code for every downstream agent, workflow, and session.</p>
+                <div class="memory-types">
+                    <div class="memory-type">
+                        <span class="memory-type__dot memory-type__dot--persistent"></span>
+                        <span class="memory-type__label">Persistent Memory</span>
+                        <span class="memory-type__desc">— guides growth</span>
+                    </div>
+                    <div class="memory-type">
+                        <span class="memory-type__dot memory-type__dot--active"></span>
+                        <span class="memory-type__label">Active Memory</span>
+                        <span class="memory-type__desc">— powers daily work</span>
+                    </div>
+                    <div class="memory-type">
+                        <span class="memory-type__dot memory-type__dot--learned"></span>
+                        <span class="memory-type__label">Learned Memory</span>
+                        <span class="memory-type__desc">— memorializes what worked</span>
+                    </div>
+                </div>
+                <div style="margin-top:12px">
+                    <a href="services.html" class="btn btn--primary">
+                        See how it's built
+                        <svg class="arrow" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2"><path d="M0.5 5.5h7"/><path d="M5.5 1.5l4 4-4 4"/></svg>
+                    </a>
+                </div>
+            </div>
+            <div class="scope-block__visual" style="background:none;min-height:0">
+                <div class="uca-browser" id="ucaBrowser">
+                    <div class="uca-browser__sidebar">
+                        <div class="uca-browser__sidebar-title">Addresses</div>
+                        <div class="uca-browser__item" data-code="MA01">MA01</div>
+                        <div class="uca-browser__item" data-code="MA05">MA05</div>
+                        <div class="uca-browser__item" data-code="MA10">MA10</div>
+                        <div class="uca-browser__item" data-code="MA15">MA15</div>
+                        <div class="uca-browser__item is-active" data-code="MA20">MA20</div>
+                        <div class="uca-browser__item" data-code="VL01">VL01</div>
+                        <div class="uca-browser__item" data-code="VL05">VL05</div>
+                    </div>
+                    <div class="uca-browser__detail" id="ucaDetail">
+                        <!-- populated by JS -->
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
 </section>
 
-<script is:inline>
-(function () {
-  'use strict';
+<!-- ===== THE AIRFRAME ===== -->
+<section class="airframe" id="airframe">
+    <div class="airframe__inner">
+        <div class="airframe__header reveal">
+            <div class="airframe__header-left">
+                <h2 class="airframe__h"><strong>Three breakthroughs.</strong> One architecture.</h2>
+            </div>
+            <div class="airframe__header-right">
+                <p class="body-lg">The X-1 didn't break the sound barrier with a bigger engine. It broke it with a better airframe. Starling AIX is powered by three interlocking breakthroughs that change how your organization works with AI.</p>
+            </div>
+        </div>
 
-  const canvas = document.getElementById('brain-canvas');
-  if (!canvas) return;
-  const ctx = canvas.getContext('2d');
+        <div class="airframe__cards">
+            <div class="af-card reveal reveal-d1">
+                <div class="af-card__visual af-card__visual--uca">
+                    <span class="af-card__badge af-card__badge--uca">UCA</span>
+                    <div class="uca-tree" id="ucaTree">
+                        <div class="uca-tree__node uca-tree__node--root" data-toggle="org">
+                            <span class="uca-tree__caret">&#9654;</span>
+                            <span class="uca-tree__icon">&#128194;</span>
+                            Organization
+                        </div>
+                        <div class="uca-tree__children" data-parent="org">
+                            <div class="uca-tree__node uca-tree__node--child" data-toggle="mission">
+                                <span class="uca-tree__caret">&#9654;</span>
+                                <span class="uca-tree__icon">&#127919;</span>
+                                Mission
+                            </div>
+                            <div class="uca-tree__children" data-parent="mission">
+                                <div class="uca-tree__node uca-tree__node--grandchild">&#8226; MA01 Purpose</div>
+                                <div class="uca-tree__node uca-tree__node--grandchild">&#8226; MA05 Vision</div>
+                                <div class="uca-tree__node uca-tree__node--grandchild">&#8226; MA10 Values</div>
+                                <div class="uca-tree__node uca-tree__node--grandchild">&#8226; MA15 Strategy</div>
+                                <div class="uca-tree__node uca-tree__node--grandchild">&#8226; MA20 Position</div>
+                                <div class="uca-tree__node uca-tree__node--grandchild">&#8226; MA25 Culture</div>
+                                <div class="uca-tree__node uca-tree__node--grandchild">&#8226; MA28 Identity</div>
+                            </div>
+                            <div class="uca-tree__node uca-tree__node--child" data-toggle="value">
+                                <span class="uca-tree__caret">&#9654;</span>
+                                <span class="uca-tree__icon">&#128176;</span>
+                                Value Chain
+                            </div>
+                            <div class="uca-tree__children" data-parent="value">
+                                <div class="uca-tree__node uca-tree__node--grandchild">&#8226; VL01 Offering</div>
+                                <div class="uca-tree__node uca-tree__node--grandchild">&#8226; VL05 Market</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="af-card__body">
+                    <h4 class="af-card__title">Universal Cognitive Architecture</h4>
+                    <p class="af-card__desc">UCA is the Dewey Decimal System for business knowledge — a free standard that gives every piece of organizational knowledge a semantic address. UCA makes your business addressable, retrievable, and speakable to AI.</p>
+                    <div class="af-card__links">
+                        <a href="#" class="af-card__link">
+                            Get the Free AI Guide
+                            <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 6h8"/><path d="M6 2l4 4-4 4"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="af-card reveal reveal-d2">
+                <div class="af-card__visual af-card__visual--org">
+                    <span class="af-card__badge af-card__badge--org">ORG BRAIN</span>
+                    <div class="org-brain" id="orgBrain">
+                        <div class="org-brain__hemi org-brain__hemi--left" data-side="left">
+                            <span class="org-brain__hemi-label">Innovation</span>
+                            <span class="org-brain__hemi-sub">Strategy, Vision,<br>Culture</span>
+                        </div>
+                        <span class="org-brain__bridge">Cognitive Bridge</span>
+                        <div class="org-brain__hemi org-brain__hemi--right" data-side="right">
+                            <span class="org-brain__hemi-label">Optimization</span>
+                            <span class="org-brain__hemi-sub">Workflow, Systems,<br>Delivery</span>
+                        </div>
+                        <div class="org-brain__cognates">
+                            <span class="org-brain__cognate" data-hemi="left">Purpose</span>
+                            <span class="org-brain__cognate" data-hemi="left">Vision</span>
+                            <span class="org-brain__cognate" data-hemi="left">Strategy</span>
+                            <span class="org-brain__cognate" data-hemi="left">Culture</span>
+                            <span class="org-brain__cognate" data-hemi="left">Identity</span>
+                            <span class="org-brain__cognate" data-hemi="right">Workflow</span>
+                            <span class="org-brain__cognate" data-hemi="right">Delivery</span>
+                            <span class="org-brain__cognate" data-hemi="right">Systems</span>
+                            <span class="org-brain__cognate" data-hemi="right">Capital</span>
+                            <span class="org-brain__cognate" data-hemi="right">Scale</span>
+                            <span class="org-brain__cognate" data-hemi="both">Position</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="af-card__body">
+                    <h4 class="af-card__title">Organizational Intelligence</h4>
+                    <p class="af-card__desc">The first architecture that models business as a neural system. Two hemispheres — Innovation and Optimization — bridged by a Cognitive layer that synthesizes across the whole brain. 11 Organizational Cognates, 28 Constitutional Memories, four tiers of intelligence.</p>
+                    <div class="af-card__links">
+                        <a href="#" class="af-card__link">
+                            Build It Yourself
+                            <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 6h8"/><path d="M6 2l4 4-4 4"/></svg>
+                        </a>
+                        <a href="services.html" class="af-card__link">
+                            Build It With Us
+                            <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 6h8"/><path d="M6 2l4 4-4 4"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="af-card reveal reveal-d3">
+                <div class="af-card__visual af-card__visual--dlm">
+                    <span class="af-card__badge af-card__badge--dlm">DLM</span>
+                    <div class="dlm-equation" id="dlmEquation">
+                        <span class="dlm-equation__part dlm-equation__part--llm">LLM</span>
+                        <span class="dlm-equation__op">+</span>
+                        <span class="dlm-equation__part dlm-equation__part--mcp">MCP</span>
+                        <span class="dlm-equation__op">+</span>
+                        <span class="dlm-equation__part dlm-equation__part--uca">UCA</span>
+                        <span class="dlm-equation__op">+</span>
+                        <span class="dlm-equation__part dlm-equation__part--org">Org Brain</span>
+                        <span class="dlm-equation__op">=</span>
+                        <span class="dlm-equation__result">DLM</span>
+                    </div>
+                </div>
+                <div class="af-card__body">
+                    <h4 class="af-card__title">Domain Language Model</h4>
+                    <p class="af-card__desc">The equation that provides information sovereignty: LLM &times; MCP &times; UCA &times; Org Brain = DLM. A stateless model combined with a sovereign knowledge base, universally accessible through semantic retrieval. The model processes. The domain remembers.</p>
+                    <div class="af-card__links">
+                        <a href="#" class="af-card__link">
+                            Request Beta Invite
+                            <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 6h8"/><path d="M6 2l4 4-4 4"/></svg>
+                        </a>
+                        <a href="services.html" class="af-card__link">
+                            Enterprise
+                            <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 6h8"/><path d="M6 2l4 4-4 4"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-  let W = 0, H = 0, dpr = 1, raf = 0;
+        <div class="airframe__demo reveal">
+            <div class="airframe__demo-header">
+                <p class="overline">See It Work</p>
+                <h3 class="h3" style="color:var(--text-secondary)"><strong style="color:var(--text-primary);font-weight:500">Live resolution</strong> in three steps</h3>
+            </div>
+            <div class="hero-terminal" id="heroTerminal" style="max-width:640px">
+                <div class="hero-terminal__bar">
+                    <div class="hero-terminal__dots"><span class="hero-terminal__dot"></span><span class="hero-terminal__dot"></span><span class="hero-terminal__dot"></span></div>
+                    <div class="hero-terminal__title">DLM Workspace</div>
+                </div>
+                <div class="hero-terminal__body">
+                    <div class="hero-term__query">
+                        <span class="hero-term__prompt">resolve&gt;</span>
+                        <span class="hero-term__input" id="heroTermInput"></span>
+                        <span class="hero-term__cursor" id="heroTermCursor"></span>
+                    </div>
+                    <div class="hero-term__steps" id="heroTermSteps"></div>
+                    <div class="hero-term__result" id="heroTermResult" style="display:none"></div>
+                    <button class="hero-term__replay" id="heroTermReplay">&#x21bb; Replay</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-  /* ── 1. Geometry: Fibonacci-sphere brain ─────────────────── */
-  const N = 115;
+<!-- ===== NEWSLETTER ===== -->
+<section class="newsletter" id="newsletter">
+    <div class="newsletter__inner">
+        <div class="newsletter__text reveal">
+            <p class="overline">On Cognitive Design</p>
+            <h3 class="h3" style="color:var(--text-secondary)"><strong style="color:var(--text-primary);font-weight:500">The weekly deep dive.</strong></h3>
+            <p class="body-lg">Each issue unpacks a piece of the methodology in a free, in-depth essay. From Chris Kincade, Starling CEO and creator of Cognitive Design.</p>
+            <div class="newsletter__form" style="margin-top:8px">
+                <div class="newsletter__input-row">
+                    <input type="email" class="newsletter__input" placeholder="Your email address" aria-label="Email address"/>
+                    <button class="newsletter__submit" type="button">Subscribe</button>
+                </div>
+                <div class="newsletter__author">
+                    <div class="newsletter__avatar">CK</div>
+                    <span>Chris Kincade</span>
+                </div>
+            </div>
+        </div>
+        <div class="nl-inbox reveal reveal-d1" id="nlInbox">
+            <div class="nl-inbox__toolbar">
+                <div class="nl-inbox__dots"><span class="nl-inbox__dot"></span><span class="nl-inbox__dot"></span><span class="nl-inbox__dot"></span></div>
+                <div class="nl-inbox__toolbar-title">Inbox <span class="nl-inbox__badge">5</span></div>
+            </div>
+            <div class="nl-inbox__body">
+                <div class="nl-inbox__list">
+                    <div class="nl-inbox__item is-active" data-nl="0">
+                        <div class="nl-inbox__item-subject">Why Your AI Can't Remember</div>
+                        <div><span class="nl-inbox__item-date">Mar 17</span><span class="nl-inbox__item-tag nl-inbox__item-tag--new">New</span></div>
+                    </div>
+                    <div class="nl-inbox__item" data-nl="1">
+                        <div class="nl-inbox__item-subject">The Mach 1 Metaphor</div>
+                        <div><span class="nl-inbox__item-date">Mar 10</span><span class="nl-inbox__item-tag nl-inbox__item-tag--new">New</span></div>
+                    </div>
+                    <div class="nl-inbox__item" data-nl="2">
+                        <div class="nl-inbox__item-subject">11 Cognates, One Brain</div>
+                        <div><span class="nl-inbox__item-date">Mar 3</span><span class="nl-inbox__item-tag nl-inbox__item-tag--read">Read</span></div>
+                    </div>
+                    <div class="nl-inbox__item" data-nl="3">
+                        <div class="nl-inbox__item-subject">Canon vs. Context</div>
+                        <div><span class="nl-inbox__item-date">Feb 24</span><span class="nl-inbox__item-tag nl-inbox__item-tag--read">Read</span></div>
+                    </div>
+                    <div class="nl-inbox__item" data-nl="4">
+                        <div class="nl-inbox__item-subject">The DLM Thesis</div>
+                        <div><span class="nl-inbox__item-date">Feb 17</span><span class="nl-inbox__item-tag nl-inbox__item-tag--read">Read</span></div>
+                    </div>
+                </div>
+                <div class="nl-inbox__reader" id="nlReader">
+                    <!-- populated by JS -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-  function makeBrain(n) {
-    const pts = [];
-    for (let i = 0; i < n; i++) {
-      // Evenly-spaced Fibonacci sphere
-      const phi   = Math.acos(1 - 2 * (i + 0.5) / n);
-      const theta = Math.PI * (1 + Math.sqrt(5)) * i;
-
-      let x = Math.sin(phi) * Math.cos(theta);
-      let y = Math.cos(phi);
-      let z = Math.sin(phi) * Math.sin(theta);
-
-      // Ellipsoid scaling — wider (X) than tall (Y), shallow (Z)
-      x *= 1.42;
-      y *= 0.96;
-      z *= 1.06;
-
-      // Medial sulcus: groove down the top-centre
-      const topFactor     = Math.max(0, y / 1.1);
-      const centralFactor = Math.exp(-(x * x) / 0.32);
-      y -= 0.38 * topFactor * centralFactor;
-
-      // Organic surface wrinkle noise
-      const amp = 0.10;
-      x += amp * Math.sin(x * 5.3 + z * 3.7) * Math.cos(y * 4.1);
-      y += amp * Math.sin(y * 4.7 + x * 6.1) * Math.cos(z * 3.3);
-      z += amp * Math.sin(z * 5.1 + y * 3.9) * Math.cos(x * 4.7);
-
-      pts.push({ x, y, z });
-    }
-    return pts;
-  }
-
-  const pts = makeBrain(N);
-
-  /* ── 2. Edges: connect closest neighbours ────────────────── */
-  const MAX_EDGES_PER_NODE = 6;
-  const DIST_THRESHOLD     = 0.90;
-  const degree  = new Array(N).fill(0);
-  const edges   = [];
-
-  const cands = [];
-  for (let i = 0; i < N; i++) {
-    for (let j = i + 1; j < N; j++) {
-      const dx = pts[i].x - pts[j].x;
-      const dy = pts[i].y - pts[j].y;
-      const dz = pts[i].z - pts[j].z;
-      const d  = Math.sqrt(dx*dx + dy*dy + dz*dz);
-      if (d < DIST_THRESHOLD) cands.push([i, j, d]);
-    }
-  }
-  cands.sort((a, b) => a[2] - b[2]);
-
-  for (const [i, j] of cands) {
-    if (degree[i] < MAX_EDGES_PER_NODE && degree[j] < MAX_EDGES_PER_NODE) {
-      edges.push([i, j]);
-      degree[i]++;
-      degree[j]++;
-    }
-  }
-
-  const maxDeg = Math.max(...degree);
-
-  /* ── 3. Resize ───────────────────────────────────────────── */
-  function resize() {
-    dpr = window.devicePixelRatio || 1;
-    const rect = canvas.getBoundingClientRect();
-    W = rect.width  || 500;
-    H = rect.height || 600;
-    canvas.width  = Math.round(W * dpr);
-    canvas.height = Math.round(H * dpr);
-    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-  }
-
-  /* ── 4. 3-D math ─────────────────────────────────────────── */
-  function rotY(p, a) {
-    const c = Math.cos(a), s = Math.sin(a);
-    return { x: p.x * c - p.z * s, y: p.y, z: p.x * s + p.z * c };
-  }
-  function rotX(p, a) {
-    const c = Math.cos(a), s = Math.sin(a);
-    return { x: p.x, y: p.y * c - p.z * s, z: p.y * s + p.z * c };
-  }
-  function project(p) {
-    const fov   = Math.min(W, H) * 0.36;
-    const depth = 4.2;
-    const sc    = fov / (depth + p.z);
-    return { sx: W * 0.5 + p.x * sc, sy: H * 0.5 - p.y * sc, z: p.z };
-  }
-
-  /* ── 5. Draw loop ────────────────────────────────────────── */
-  const TILT = 0.18;   // static X-tilt for depth
-  let   angle = 0;
-
-  function draw() {
-    ctx.clearRect(0, 0, W, H);
-    angle += 0.004;
-
-    // Transform
-    const t    = pts.map(p => rotX(rotY(p, angle), TILT));
-    const proj = t.map(p => project(p));
-
-    // Depth normalisation helper (approx z range -1.8 … 1.8)
-    const depth = z => Math.max(0, Math.min(1, (z + 1.9) / 3.8));
-
-    // Edges
-    ctx.lineWidth = 0.8;
-    for (const [i, j] of edges) {
-      const d = depth((t[i].z + t[j].z) * 0.5);
-      ctx.beginPath();
-      ctx.moveTo(proj[i].sx, proj[i].sy);
-      ctx.lineTo(proj[j].sx, proj[j].sy);
-      ctx.strokeStyle = `rgba(160,150,140,${(0.10 + d * 0.30).toFixed(2)})`;
-      ctx.stroke();
-    }
-
-    // Nodes — back-to-front
-    const sorted = proj.map((p, i) => ({ ...p, i })).sort((a, b) => a.z - b.z);
-    for (const { sx, sy, z, i } of sorted) {
-      const d    = depth(z);
-      const hub  = degree[i] / maxDeg;            // 0 = leaf, 1 = hub
-      const r    = 1.6 + hub * 2.8 + d * 2.4;    // bigger if hub and closer
-      const alpha = 0.30 + d * 0.70;
-
-      ctx.beginPath();
-      ctx.arc(sx, sy, r, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(202,80,18,${alpha.toFixed(2)})`;
-      ctx.fill();
-    }
-
-    raf = requestAnimationFrame(draw);
-  }
-
-  /* ── 6. Start / stop with visibility ────────────────────── */
-  const io = new IntersectionObserver(entries => {
-    if (entries[0].isIntersecting) {
-      cancelAnimationFrame(raf);
-      resize();
-      draw();
-    } else {
-      cancelAnimationFrame(raf);
-    }
-  }, { threshold: 0.05 });
-
-  io.observe(canvas);
-
-  window.addEventListener('resize', () => {
-    cancelAnimationFrame(raf);
-    resize();
-    draw();
-  }, { passive: true });
-})();
-</script>
-</Layout>
-
-<style>
-  /* ── Hero split ───────────────────────────────────────── */
-  .hero-split { display: grid; grid-template-columns: 1fr; gap: 0; align-items: center; }
-  .hero-right-col { display: none; }
-
-  /* ── DLM box light theme ──────────────────────────────── */
-  .dlm-box-lt {
-    width: 80px; height: 80px;
-    border: 1px solid rgba(224,100,28,0.22);
-    border-radius: 12px;
-    background: rgba(224,100,28,0.05);
-    display: flex; align-items: center; justify-content: center;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.72rem; font-weight: 500; color: #c05010;
-    text-align: center; line-height: 1.3;
-    transition: all 0.2s;
-  }
-  .dlm-box-lt:hover {
-    border-color: rgba(224,100,28,0.45);
-    background: rgba(224,100,28,0.1);
-    box-shadow: 0 0 20px rgba(224,100,28,0.12);
-  }
-
-  /* ── Bento ────────────────────────────────────────────── */
-  .bento-row3 { display: grid; grid-template-columns: 1fr; gap: 1.25rem; }
-  .bento-row2 { display: grid; grid-template-columns: 1fr; gap: 1.25rem; }
-  .bento-card {
-    background: #fff; border: 1px solid rgba(0,0,0,0.09); border-radius: 16px;
-    padding: 1.75rem; overflow: hidden;
-    transition: box-shadow 0.2s, transform 0.2s;
-  }
-  .bento-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.08); transform: translateY(-1px); }
-  .bento-card-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 0.75rem; margin-bottom: 1.25rem; }
-  .bento-mock {
-    background: #f8f7f5; border: 1px solid rgba(0,0,0,0.07); border-radius: 10px;
-    padding: 1rem; margin-top: 0.25rem;
-  }
-  .stats-2x2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0.65rem; margin-top: 1.25rem; }
-
-  /* ── Architecture section header grid ─────────────────── */
-  .arch-header { display: grid; grid-template-columns: 1fr; gap: 2rem; align-items: start; }
-
-  /* ── Tab card light ───────────────────────────────────── */
-  .tab-card-lt {
-    cursor: pointer;
-    padding: 1.5rem;
-    border: 1px solid rgba(0,0,0,0.1);
-    border-radius: 12px;
-    background: #fff;
-    transition: all 0.2s;
-  }
-  .tab-card-lt:hover { border-color: rgba(0,0,0,0.18); box-shadow: 0 4px 16px rgba(0,0,0,0.07); }
-  .tab-card-lt.active { border-color: rgba(224,100,28,0.35); box-shadow: 0 4px 20px rgba(224,100,28,0.1); background: #fefaf8; }
-
-  /* ── UCA sidebar split ────────────────────────────────── */
-  .mock-split { display: grid; grid-template-columns: 1fr; }
-  .mock-side {
-    border-right: 1px solid rgba(255,255,255,0.06);
-    padding: 0.5rem 0 1rem;
-    background: #070707;
-    display: none;
-  }
-  .mock-side-head {
-    font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; color: #3f3f46;
-    text-transform: uppercase; letter-spacing: 0.08em;
-    padding: 0.5rem 1rem 0.75rem;
-    border-bottom: 1px solid rgba(255,255,255,0.05); margin-bottom: 0.35rem;
-  }
-  .mock-side-row { padding: 0.35rem 1rem; display: flex; align-items: center; gap: 0.5rem; cursor: default; }
-  .mock-side-row.is-active { background: rgba(224,100,28,0.06); }
-  .msr-code { font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; font-weight: 500; color: #3f3f46; min-width: 22px; }
-  .mock-side-row.is-active .msr-code { color: #e0641c; }
-  .msr-label { font-size: 0.78rem; color: #3f3f46; }
-  .mock-side-row.is-active .msr-label { color: #e4e4e7; }
-  .msr-dot { margin-left: auto; width: 5px; height: 5px; border-radius: 50%; background: #e0641c; flex-shrink: 0; }
-  .mock-content { padding: 1.5rem; min-height: 340px; overflow: hidden; }
-  .mock-fields { display: grid; grid-template-columns: 1fr; gap: 0.75rem; }
-  .mock-field { border: 1px solid rgba(255,255,255,0.06); border-radius: 8px; padding: 0.75rem 1rem; background: rgba(255,255,255,0.015); }
-  .mf-label { font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; color: #52525b; text-transform: uppercase; letter-spacing: 0.08em; margin: 0 0 0.4rem; }
-  .mf-val { font-size: 0.82rem; color: #a1a1aa; margin: 0; line-height: 1.6; }
-
-  /* ── Org Brain ────────────────────────────────────────── */
-  .brain-grid { display: grid; grid-template-columns: 1fr; padding: 1.5rem; gap: 1rem; min-height: 340px; }
-  .brain-hem { padding: 1rem; border: 1px solid rgba(255,255,255,0.06); border-radius: 10px; background: rgba(255,255,255,0.015); }
-  .brain-hem-innov { border-color: rgba(224,100,28,0.12); background: rgba(224,100,28,0.02); }
-  .brain-hem-optim { border-color: rgba(224,100,28,0.08); background: rgba(224,100,28,0.015); }
-  .brain-hem-label { font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; color: #52525b; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.85rem; }
-  .brain-hem-innov .brain-hem-label { color: #e0641c; }
-  .brain-hem-optim .brain-hem-label { color: #c87b45; }
-  .brain-sys { margin-bottom: 0.65rem; padding: 0.55rem 0.75rem; border: 1px solid rgba(255,255,255,0.05); border-radius: 7px; background: rgba(255,255,255,0.02); }
-  .brain-sys-optim { border-color: rgba(224,100,28,0.07); }
-  .brain-sys-name { font-size: 0.78rem; font-weight: 500; color: #e4e4e7; margin-bottom: 0.35rem; }
-  .brain-mem { font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; color: #52525b; padding: 0.1rem 0; }
-  .brain-center { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 1.25rem 1rem; gap: 0.5rem; border: 1px solid rgba(224,100,28,0.2); border-radius: 10px; background: rgba(224,100,28,0.03); order: -1; }
-  .brain-center-label { font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; color: #e0641c; text-align: center; margin-bottom: 0.35rem; line-height: 1.5; }
-  .brain-chip { font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; color: #e0641c; border: 1px solid rgba(224,100,28,0.25); background: rgba(224,100,28,0.06); border-radius: 6px; padding: 0.3rem 0.65rem; white-space: nowrap; }
-
-  /* ── DLM thread ───────────────────────────────────────── */
-  .dlm-thread { padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem; min-height: 240px; }
-  .dlm-msg { display: flex; align-items: flex-start; gap: 0.75rem; }
-  .dlm-avatar { width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; }
-  .dlm-avatar-user { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); color: #71717a; }
-  .dlm-avatar-ai { background: rgba(224,100,28,0.1); border: 1px solid rgba(224,100,28,0.3); color: #e0641c; }
-  .dlm-bubble-user { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 0.75rem 1rem; font-size: 0.875rem; color: #e4e4e7; max-width: 560px; }
-  .dlm-ref-line { font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; color: #52525b; margin-bottom: 0.5rem; }
-  .dlm-bubble-ai { background: rgba(224,100,28,0.04); border: 1px solid rgba(224,100,28,0.1); border-radius: 8px; padding: 0.875rem 1rem; font-size: 0.875rem; color: #a1a1aa; line-height: 1.75; }
-  .dlm-ref-tag { font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; border-radius: 4px; padding: 0.1rem 0.4rem; }
-
-  /* ── Tab cards row ────────────────────────────────────── */
-  .tab-cards-row { display: grid; grid-template-columns: 1fr; gap: 1rem; margin-top: 1.25rem; }
-
-  /* ── Stats strip ──────────────────────────────────────── */
-  .stats-strip { display: grid; grid-template-columns: repeat(2,1fr); }
-  .stat-cell { padding: 3rem 2.5rem; border-right: 1px solid rgba(0,0,0,0.08); border-bottom: 1px solid rgba(0,0,0,0.08); }
-  .stat-cell:nth-child(2n) { border-right: none; }
-  .stat-cell:nth-last-child(-n+2) { border-bottom: none; }
-
-  /* ── Newsletter ───────────────────────────────────────── */
-  .nl-grid { display: grid; grid-template-columns: 1fr; gap: 3rem; align-items: center; max-width: 820px; margin-inline: auto; }
-
-  /* ── Desktop ──────────────────────────────────────────── */
-  @media(min-width: 768px) {
-    .hero-split      { grid-template-columns: 1fr 1fr; gap: 0; align-items: stretch; }
-    .hero-right-col  { display: block; overflow: hidden; }
-    .arch-header     { grid-template-columns: 1fr 1fr; gap: 5rem; }
-    .bento-row3      { grid-template-columns: repeat(3,1fr); }
-    .bento-row2      { grid-template-columns: 2fr 1fr; }
-    .mock-split      { grid-template-columns: 200px 1fr; }
-    .mock-side       { display: block; }
-    .mock-fields     { grid-template-columns: 1fr 1fr; }
-    .brain-grid      { grid-template-columns: 1fr auto 1fr; }
-    .brain-center    { order: 0; }
-    .tab-cards-row   { grid-template-columns: repeat(3,1fr); }
-    .stats-strip     { grid-template-columns: repeat(4,1fr); }
-    .stat-cell       { border-bottom: none; }
-    .stat-cell:nth-child(2n)  { border-right: 1px solid rgba(0,0,0,0.08); }
-    .stat-cell:last-child     { border-right: none; }
-    .nl-grid         { grid-template-columns: 1fr 200px; }
-  }
-</style>
-
-<script>
-  // ── Tab switcher
-  const tabData: Record<string, {label: string, status: string}> = {
-    '0': { label: 'starling.workspace — UCA · Cognate Library', status: 'MA20 active' },
-    '1': { label: 'starling.workspace — Org Brain · Architecture View', status: '● 28 memories indexed' },
-    '2': { label: 'starling.dlm — Organizational Query Interface', status: '● DLM Active' },
-  };
-  const barLabel  = document.getElementById('mock-bar-label');
-  const barStatus = document.getElementById('mock-bar-status');
-
-  document.getElementById('tab-cards')?.querySelectorAll('.tab-card-lt').forEach(card => {
-    card.addEventListener('click', () => {
-      const tab = (card as HTMLElement).dataset.tab ?? '0';
-      document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
-      document.getElementById(`panel-${tab}`)?.classList.add('active');
-      document.querySelectorAll('.tab-card-lt').forEach(c => c.classList.remove('active'));
-      card.classList.add('active');
-      const d = tabData[tab];
-      if (barLabel) barLabel.textContent = d.label;
-      if (barStatus) barStatus.textContent = d.status;
-    });
-  });
-
-  // ── Newsletter form
-  document.getElementById('nl-form')?.addEventListener('submit', e => {
-    e.preventDefault();
-    const btn = (e.target as HTMLFormElement).querySelector('button') as HTMLButtonElement;
-    btn.textContent = "You're in!";
-    btn.disabled = true;
-    setTimeout(() => { btn.textContent = 'Subscribe'; btn.disabled = false; (e.target as HTMLFormElement).reset(); }, 3500);
-  });
-</script>
+</main>
+<Footer />
+<script is:inline src="/scripts/index.js"></script>
+</BaseLayout>

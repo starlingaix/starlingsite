@@ -1,0 +1,35 @@
+---
+interface Props {
+  currentPage?: string;
+}
+const { currentPage = '' } = Astro.props;
+const links = [
+  { href: '/guide.html', label: 'AI Guide', page: 'guide' },
+  { href: '/cognitive-design.html', label: 'Cognitive Design', page: 'cognitive-design' },
+  { href: '/workspace.html', label: 'Workspace', page: 'workspace' },
+  { href: '/services.html', label: 'Services', page: 'services' },
+  { href: '/about.html', label: 'About', page: 'about' },
+  { href: '#contact', label: 'Contact', page: 'contact' },
+];
+---
+<header class="nav">
+    <div class="nav__inner">
+        <a href="/" class="nav__logo">
+            <img src="/68e9751373221d5bfc14ce17_StarlingAIx06-p-2000.png" alt="Starling AIX"/>
+        </a>
+        <nav class="nav__links">
+            {links.map(link => (
+                <a href={link.href} class={currentPage === link.page ? 'is-current' : ''}>{link.label}</a>
+            ))}
+        </nav>
+        <div class="nav__right">
+            <a href="#contact" class="btn btn--primary">
+                Contact
+                <svg class="arrow" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2"><path d="M0.5 5.5h7"/><path d="M5.5 1.5l4 4-4 4"/></svg>
+            </a>
+            <button class="nav__mobile" aria-label="Menu">
+                <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 6h16M3 11h16M3 16h16"/></svg>
+            </button>
+        </div>
+    </div>
+</header>

@@ -1,372 +1,1084 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
 ---
+<BaseLayout title="Starling AIX | About — The Breakthrough" description="Starling AI Systems creates a classification system for business knowledge that lives in natural language, not machine code.">
+<Nav currentPage="about" />
+<main>
 
-<Layout title="About — Starling AIX" description="Starling AIX creates a classification system for business knowledge that lives in natural language. Our methodology transforms generic LLMs into contextualized Intelligence Agents.">
-
-<!-- ── Hero ──────────────────────────────────────────────────── -->
-<section style="position:relative;overflow:hidden;padding:7rem 0 5rem;background:#ffffff;border-bottom:1px solid rgba(0,0,0,0.07);">
-  <!-- Light grid overlay -->
-  <div style="position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(0,0,0,0.018) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,0.018) 1px,transparent 1px);background-size:72px 72px;"></div>
-  <!-- Orange radial glow -->
-  <div style="position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 50% 40% at 50% 0%,rgba(224,100,28,0.045) 0%,transparent 65%);"></div>
-
-  <div class="container" style="position:relative;z-index:1;">
-    <div class="about-hero-grid">
-      <div>
-        <div class="stag stag-o fade-up" data-delay="0" style="margin-bottom:1.5rem;">Starling AIX · The Breakthrough</div>
-        <h1 class="fade-up" data-delay="0.08"
-            style="font-family:'Bitter',Georgia,serif;font-weight:700;font-size:clamp(3rem,8vw,5rem);margin:0 0 1.5rem;max-width:580px;line-height:1;letter-spacing:-0.04em;color:#0c0c0c;">
-          Your business,<br/>now <em style="color:#e0641c;font-style:italic;">fluent in AI.</em>
-        </h1>
-        <p class="fade-up" data-delay="0.15"
-           style="font-family:'Inter Tight',system-ui,sans-serif;font-size:1.05rem;color:#4a4a4a;line-height:1.75;max-width:480px;margin:0 0 2.5rem;">
-          We create a classification system for business knowledge that lives in natural language — not machine code. Our systems establish governing protocols where AI operates by human rules.
-        </p>
-        <div class="fade-up" data-delay="0.2" style="display:flex;gap:0.75rem;flex-wrap:wrap;">
-          <a href="/cognitive-design" class="btn btn-org">Enroll Now →</a>
-          <a href="/ai-guide" class="btn-ghost-light">Get Free AI Guide</a>
-        </div>
-      </div>
-      <!-- Metric cluster -->
-      <div class="fade-up about-metrics" data-delay="0.14">
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;">
-          {[
-            ['25', 'Years of methodology'],
-            ['12K', 'Design hours'],
-            ['47%', 'Faster decisions'],
-            ['28', 'Constitutional memories'],
-          ].map(([num, label]) => (
-            <div class="metric-pill">
-              <span class="metric-pill-num">{num}</span>
-              <span class="metric-pill-label">{label}</span>
+<!-- ===== HERO ===== -->
+<section class="ab-hero" id="hero">
+    <div class="ab-hero__bg"></div>
+    <div class="ab-hero__inner">
+        <div class="ab-hero__text">
+            <div class="ab-hero__badge">
+                <span class="ab-hero__badge-dot"></span>
+                The Breakthrough
             </div>
-          ))}
-        </div>
-        <div class="card-light" style="padding:1.25rem;margin-top:0.75rem;display:flex;align-items:flex-start;gap:0.75rem;">
-          <span style="font-size:1rem;">💬</span>
-          <p style="font-size:0.82rem;color:#4a4a4a;line-height:1.65;margin:0;font-style:italic;font-family:'Inter Tight',system-ui,sans-serif;">
-            "In 20 minutes, it took me from being overwhelmed with information to only 53 attachments unattached. That huge mental burden on recall — gone."
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── Application Intelligence ──────────────────────────────── -->
-<section style="background:#f2f1ee;padding:5rem 0;border-top:1px solid rgba(0,0,0,0.07);">
-  <div class="container">
-    <div class="feat-header">
-      <div>
-        <div class="stag stag-o fade-up" data-delay="0" style="margin-bottom:1.25rem;">1.0 · Application Intelligence</div>
-        <h2 class="feat-h2 fade-up" data-delay="0.06">
-          Raw power meets<br/>structured expertise.
-        </h2>
-      </div>
-      <div>
-        <p class="feat-body fade-up" data-delay="0.1">
-          Starling transforms generic LLMs into AI² advisors that understand your specific business context. We provide the operating logic that codifies and continually refines your unique approach to innovation.
-        </p>
-        <p class="feat-body fade-up" data-delay="0.13" style="margin-bottom:0;">
-          The AI provides raw processing power. You provide structured expertise. Together they produce Cross Intelligence — cognitive systems that learn and evolve through memory training and daily conversation.
-        </p>
-      </div>
-    </div>
-
-    <!-- AI² equation — colorful mock window, intentionally dark for contrast -->
-    <div class="wide-mock fade-up" data-delay="0.18">
-      <div class="mock-bar">
-        <span class="mock-dot r"></span><span class="mock-dot y"></span><span class="mock-dot g"></span>
-        <span style="font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:#3f3f46;margin-left:0.75rem;">AI² — Cross Intelligence Formula</span>
-      </div>
-      <div style="display:grid;grid-template-columns:1fr;gap:1px;background:rgba(255,255,255,0.05);" class="ai2-grid">
-        {[
-          { label: 'AI¹', accent: '#60a5fa', bg: 'rgba(96,165,250,0.05)', border: 'rgba(96,165,250,0.15)', title: 'Artificial Intelligence', desc: 'Raw processing power and pattern recognition from Large Language Models — generalised, context-free, infinitely scalable.' },
-          { label: 'AI²', accent: '#a78bfa', bg: 'rgba(167,139,250,0.05)', border: 'rgba(167,139,250,0.15)', title: 'Application Intelligence', desc: 'Human expertise structured for machine processing — your unique genius, your values, your decision frameworks, made machine-executable.' },
-          { label: 'AI²', accent: '#fff', bg: 'rgba(255,255,255,0.025)', border: 'rgba(255,255,255,0.08)', title: 'Cross Intelligence', desc: 'The product of both: cognitive systems that learn and evolve through memory training, natural conversation, and organisational feedback loops.' },
-        ].map(({ label, accent, bg, border, title, desc }) => (
-          <div style={`background:#050505;padding:1.75rem 2rem;display:flex;gap:1.5rem;align-items:flex-start;border-left:2px solid ${border};`}>
-            <div style={`font-family:'Bitter',Georgia,serif;font-size:1.9rem;font-weight:700;color:${accent};min-width:52px;line-height:1;`}>{label}</div>
-            <div>
-              <p style={`font-size:0.9rem;font-weight:600;margin:0 0 0.35rem;color:${accent};`}>{title}</p>
-              <p style="font-size:0.825rem;color:#52525b;line-height:1.7;margin:0;">{desc}</p>
+            <h1 class="ab-hero__title"><strong>Your business,</strong> <em>now fluent in AI</em></h1>
+            <p class="ab-hero__sub">Starling AI Systems creates a classification system for business knowledge that lives in natural language, not machine code. Our six progressive systems establish governing protocols where AI operates by human rules — transforming generic LLMs into contextualized Intelligence Agents.</p>
+            <div class="ab-hero__cta">
+                <a href="#get-started" class="btn btn--primary btn--large">
+                    Get Started
+                    <svg class="arrow" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2"><path d="M0.5 5.5h7"/><path d="M5.5 1.5l4 4-4 4"/></svg>
+                </a>
             </div>
-          </div>
-        ))}
-      </div>
-      <div style="padding:1.25rem 2rem;border-top:1px solid rgba(255,255,255,0.06);display:flex;align-items:center;gap:1rem;">
-        <span class="badge badge-accent">AI¹ × AI² = AI²</span>
-        <span style="font-family:'JetBrains Mono',monospace;font-size:0.68rem;color:#3f3f46;">Cross Intelligence · Starling AIX</span>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- ── Image Split: Leader ────────────────────────────────────── -->
-<section style="border-top:1px solid rgba(0,0,0,0.07);overflow:hidden;">
-  <div class="img-split">
-    <div class="img-split-photo">
-      <img src="/images/women-teal.png" alt="AI-native leader with organizational intelligence system" />
-      <div class="img-split-overlay">
-        <div class="glass-dark" style="padding:1rem 1.25rem;border-radius:10px;max-width:260px;">
-          <p style="font-family:'JetBrains Mono',monospace;font-size:0.6rem;color:#60a5fa;margin:0 0 0.25rem;text-transform:uppercase;letter-spacing:0.08em;">Live session</p>
-          <p style="font-size:0.82rem;color:#e4e4e7;margin:0;line-height:1.5;">AI Chief of Staff loaded with full organizational context — every session, from day one.</p>
         </div>
-      </div>
-    </div>
-    <div class="img-split-content" style="padding:4rem 2.5rem;">
-      <p class="feat-num" style="margin-bottom:0.75rem;">2.0 · AI-Native Org Design</p>
-      <h2 class="feat-h2" style="margin-bottom:1.25rem;">The first methodology built<br/>for the AI era.</h2>
-      <p style="font-family:'Inter Tight',system-ui,sans-serif;font-size:0.95rem;color:#4a4a4a;line-height:1.8;margin:0 0 2rem;">
-        Starling AIX is built on <strong style="color:#0c0c0c;">Cognitive Design</strong> — a comprehensive approach to business transformation that synthesises systematic efficiency with human values. This isn't AI trained on the Internet. It's AI trained on your methodology.
-      </p>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;margin-bottom:2rem;">
-        {[
-          ['Lean + Design Thinking', 'Human-centered, now machine-executable'],
-          ['Self-improving systems', 'Intelligence compounds every session'],
-          ['Sovereign architecture', 'You own every memory, forever'],
-          ['No code required', 'Conversation as configuration'],
-        ].map(([title, body]) => (
-          <div class="card-light" style="padding:0.875rem 1rem;">
-            <p style="font-size:0.82rem;color:#0c0c0c;font-weight:600;margin:0 0 0.2rem;font-family:'Inter Tight',sans-serif;">{title}</p>
-            <p style="font-size:0.75rem;color:#6a6a6a;line-height:1.5;margin:0;font-family:'Inter Tight',sans-serif;">{body}</p>
-          </div>
-        ))}
-      </div>
-      <a href="/cognitive-design" class="btn btn-org" style="align-self:flex-start;">See the Curriculum →</a>
-    </div>
-  </div>
-</section>
 
-<!-- ── Proven Methods ─────────────────────────────────────────── -->
-<section style="padding:5rem 0;position:relative;overflow:hidden;border-top:1px solid rgba(0,0,0,0.07);background:#ffffff;">
-  <div class="section-grid-accent"></div>
-  <div class="container" style="position:relative;z-index:1;">
-    <div class="feat-header">
-      <div>
-        <div class="stag stag-g fade-up" data-delay="0" style="margin-bottom:1.25rem;">3.0 · Proven Methods</div>
-        <h2 class="feat-h2 fade-up" data-delay="0.06">
-          Built from real frameworks,<br/>not research labs.
-        </h2>
-      </div>
-      <div>
-        <p class="feat-body fade-up" data-delay="0.1">
-          Most AI platforms start with technology and try to fit business into it. Starling AIX started with <strong style="color:#0c0c0c;">Chris Kincade</strong> and <strong style="color:#0c0c0c;">Ari Meisel's</strong> frameworks for business design, optimisation, and transformation — then made them machine-executable.
-        </p>
-        <p class="feat-body fade-up" data-delay="0.13" style="font-style:italic;color:#888;margin-bottom:0;border-left:2px solid rgba(224,100,28,0.3);padding-left:1rem;">
-          The sound barrier didn't stop aviation. It defined the engineering required to go faster. We designed the airframe for Industry 5.0.
-        </p>
-      </div>
-    </div>
-
-    <!-- Stats strip — light with orange numbers -->
-    <div class="fade-up" data-delay="0.15" style="display:grid;grid-template-columns:repeat(2,1fr);border:1px solid rgba(0,0,0,0.08);border-radius:12px;overflow:hidden;margin-bottom:3rem;background:#ffffff;" class="stats-strip-4">
-      {[
-        ['25', 'Years of methodology'],
-        ['12K', 'Hours of interface design'],
-        ['12', 'Installer frameworks'],
-        ['28', 'Constitutional memories'],
-      ].map(([num, label], i) => (
-        <div style={`padding:2rem 1.5rem;text-align:center;${i % 2 === 0 ? 'border-right:1px solid rgba(0,0,0,0.08);' : ''}${i < 2 ? 'border-bottom:1px solid rgba(0,0,0,0.08);' : ''}`}>
-          <div class="stat-num">{num}</div>
-          <div class="stat-label">{label}</div>
-        </div>
-      ))}
-    </div>
-
-    <!-- Twelve Frameworks — dark mock window (intentional contrast) -->
-    <div class="wide-mock fade-up" data-delay="0.18">
-      <div class="mock-bar">
-        <span class="mock-dot r"></span><span class="mock-dot y"></span><span class="mock-dot g"></span>
-        <span style="font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:#3f3f46;margin-left:0.75rem;">Cognitive Design — 12 Installer Frameworks</span>
-        <span style="font-family:'JetBrains Mono',monospace;font-size:0.62rem;color:#34d399;margin-left:auto;padding-right:0.75rem;">● All systems active</span>
-      </div>
-      <div style="display:grid;grid-template-columns:1fr;gap:0;" class="systems-grid">
-
-        <div style="border-bottom:1px solid rgba(255,255,255,0.06);">
-          <div style="padding:1rem 2rem;border-bottom:1px solid rgba(255,255,255,0.05);display:flex;align-items:center;gap:0.75rem;background:rgba(96,165,250,0.03);">
-            <span class="badge badge-accent">Innovation System</span>
-            <span style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;color:#3f3f46;">Chris Kincade</span>
-            <span style="margin-left:auto;font-family:'JetBrains Mono',monospace;font-size:0.6rem;color:#60a5fa;">4 frameworks</span>
-          </div>
-          <div style="display:grid;gap:0;" class="framework-grid">
-            {[
-              ['ID10', 'Value-Centric Design', 'Conversational excavation of who you are — creates Cultural, Product, Customer, and Market Values (ID20–23).'],
-              ['MA10', 'Open Road Canvas', 'Strategic positioning — creates Competitive Positioning, Business Model, and Revenue Strategy (MA20–22).'],
-              ['IN10', 'Value Mapping', 'Defines what you\'re building — creates Product Roadmap and Growth Strategy (IN20–21).'],
-              ['BR10', 'Impact Branding', 'Transforms values into market impact — creates Brand Positioning and Stakeholder Communications (BR20–22).'],
-            ].map(([code, title, body], i, arr) => (
-              <div style={`padding:1.25rem 2rem;display:flex;gap:1rem;align-items:flex-start;${i < arr.length - 1 ? 'border-bottom:1px solid rgba(255,255,255,0.04);' : ''}`}>
-                <span style="font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:#60a5fa;min-width:36px;padding-top:1px;">{code}</span>
-                <div>
-                  <p style="font-size:0.875rem;color:#e4e4e7;font-weight:500;margin:0 0 0.2rem;">{title}</p>
-                  <p style="font-size:0.8rem;color:#52525b;line-height:1.65;margin:0;">{body}</p>
+        <div class="ab-hero__illo">
+            <div class="ab-hero__card">
+                <div class="ab-hero__card-bar">
+                    <div class="ab-hero__card-dots"><span class="ab-hero__card-dot"></span><span class="ab-hero__card-dot"></span><span class="ab-hero__card-dot"></span></div>
+                    <div class="ab-hero__card-title">Semantic Coordinates</div>
                 </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div style="border-bottom:1px solid rgba(255,255,255,0.06);">
-          <div style="padding:1rem 2rem;border-bottom:1px solid rgba(255,255,255,0.05);display:flex;align-items:center;gap:0.75rem;background:rgba(167,139,250,0.03);">
-            <span class="badge badge-violet">Optimisation System</span>
-            <span style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;color:#3f3f46;">Ari Meisel</span>
-            <span style="margin-left:auto;font-family:'JetBrains Mono',monospace;font-size:0.6rem;color:#a78bfa;">4 frameworks</span>
-          </div>
-          <div style="display:grid;gap:0;" class="framework-grid">
-            {[
-              ['PD10', 'The Genius Paradigm', 'Defines your most strategic work zone — creates Innovation Zone and Task Replacement Plan (PD20–21).'],
-              ['WF10', 'Smart Workflows', 'Clarifies how work flows with minimal friction — creates Signal Clarity and Delegation Standards (WF20–22).'],
-              ['PR10', 'Process Perfection', 'Establishes AI-native SOPs — creates Process Clarity and Quality Standards (PR20–22).'],
-              ['CU10', 'Eight Traits of Endurance', 'Cultural practices that sustain performance — creates Cultural Framework and Team Structure (CU20–22).'],
-            ].map(([code, title, body], i, arr) => (
-              <div style={`padding:1.25rem 2rem;display:flex;gap:1rem;align-items:flex-start;${i < arr.length - 1 ? 'border-bottom:1px solid rgba(255,255,255,0.04);' : ''}`}>
-                <span style="font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:#a78bfa;min-width:36px;padding-top:1px;">{code}</span>
-                <div>
-                  <p style="font-size:0.875rem;color:#e4e4e7;font-weight:500;margin:0 0 0.2rem;">{title}</p>
-                  <p style="font-size:0.8rem;color:#52525b;line-height:1.65;margin:0;">{body}</p>
+                <div class="ab-hero__card-body" id="heroCoords">
+                    <div class="ab-hero__coord" data-coord="0">
+                        <span class="ab-hero__coord-code">MA20</span>
+                        <span class="ab-hero__coord-label">Competitive Position</span>
+                        <span class="ab-hero__coord-status" style="background:var(--brand)"></span>
+                    </div>
+                    <div class="ab-hero__coord" data-coord="1">
+                        <span class="ab-hero__coord-code">VL01</span>
+                        <span class="ab-hero__coord-label">Product Offering</span>
+                        <span class="ab-hero__coord-status" style="background:var(--accent-teal)"></span>
+                    </div>
+                    <div class="ab-hero__coord" data-coord="2">
+                        <span class="ab-hero__coord-code">ID10</span>
+                        <span class="ab-hero__coord-label">Value-Centric Design</span>
+                        <span class="ab-hero__coord-status" style="background:var(--accent-pink)"></span>
+                    </div>
+                    <div class="ab-hero__coord" data-coord="3">
+                        <span class="ab-hero__coord-code">SY10</span>
+                        <span class="ab-hero__coord-label">Smart Orgs</span>
+                        <span class="ab-hero__coord-status" style="background:var(--accent-blue)"></span>
+                    </div>
+                    <div class="ab-hero__coord" data-coord="4">
+                        <span class="ab-hero__coord-code">BR10</span>
+                        <span class="ab-hero__coord-label">Impact Branding</span>
+                        <span class="ab-hero__coord-status" style="background:var(--accent-yellow)"></span>
+                    </div>
+                    <div class="ab-hero__coord" data-coord="5">
+                        <span class="ab-hero__coord-code">LA10</span>
+                        <span class="ab-hero__coord-label">Organizational Intelligence</span>
+                        <span class="ab-hero__coord-status" style="background:var(--accent-teal)"></span>
+                    </div>
                 </div>
-              </div>
-            ))}
-          </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== SECTION 2: APPLICATION INTELLIGENCE ===== -->
+<section class="ai2" id="ai2">
+    <div class="ai2__inner">
+        <div class="section__header reveal">
+            <h2 class="section__h"><strong>Your knowledge. Machine speed.</strong> Exponential power.</h2>
+            <div class="section__header-right">
+                <p class="body-lg">Starling transforms generic LLMs into AI&sup2; advisors that understand your specific business context. We provide the operating logic that codifies and continually refines your unique approach to innovation.</p>
+                <p class="body-lg">The AI provides raw processing power. You provide structured expertise. Together they produce Cross Intelligence — cognitive systems that learn and evolve through memory training and daily conversation.</p>
+            </div>
         </div>
 
-        <div>
-          <div style="padding:1rem 2rem;border-bottom:1px solid rgba(255,255,255,0.05);display:flex;align-items:center;gap:0.75rem;background:rgba(45,212,191,0.03);">
-            <span class="badge badge-teal">Cognitive System</span>
-            <span style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;color:#3f3f46;">Chris Kincade</span>
-            <span style="margin-left:auto;font-family:'JetBrains Mono',monospace;font-size:0.6rem;color:#2dd4bf;">4 frameworks</span>
-          </div>
-          <div style="display:grid;gap:0;" class="framework-grid">
-            {[
-              ['SY10', 'Smart Orgs', 'AI-native organisational design — establishes System Configuration and governance protocols (SY21).'],
-              ['LA10', 'Organisational Intelligence', 'Builds the measurement layer — creates Empirical and Empathic Metrics as Autonomic Equations (LA20–21).'],
-              ['IT10', 'Activating Your Smart OS', 'Connects external intelligence sources — creates Intelligence Access and Integration Standards (IT20–21).'],
-              ['SY11', 'Unlocking Deep Context', 'Advanced memory enhancement — refines all Constitutional memories with Deep Context layers.'],
-            ].map(([code, title, body], i, arr) => (
-              <div style={`padding:1.25rem 2rem;display:flex;gap:1rem;align-items:flex-start;${i < arr.length - 1 ? 'border-bottom:1px solid rgba(255,255,255,0.04);' : ''}`}>
-                <span style="font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:#2dd4bf;min-width:36px;padding-top:1px;">{code}</span>
-                <div>
-                  <p style="font-size:0.875rem;color:#e4e4e7;font-weight:500;margin:0 0 0.2rem;">{title}</p>
-                  <p style="font-size:0.8rem;color:#52525b;line-height:1.65;margin:0;">{body}</p>
+        <div class="ai2__illo reveal" id="ai2Illo">
+            <div class="ai2__illo-bar">
+                <div class="ai2__illo-dots"><span class="ai2__illo-dot"></span><span class="ai2__illo-dot"></span><span class="ai2__illo-dot"></span></div>
+                <div class="ai2__illo-title">Cross Intelligence Engine</div>
+            </div>
+            <div class="ai2__illo-body">
+                <div class="ai2__nodes">
+                    <div class="ai2__node ai2__node--ai1" id="ai2Node1">
+                        <div class="ai2__node-badge">AI1</div>
+                        <div class="ai2__node-value">AI</div>
+                        <div class="ai2__node-name">Artificial Intelligence</div>
+                        <div class="ai2__node-desc">Raw processing power and pattern recognition (LLMs)</div>
+                    </div>
+                    <div class="ai2__node ai2__node--ai2" id="ai2Node2">
+                        <div class="ai2__node-badge">AI2</div>
+                        <div class="ai2__node-value">AI</div>
+                        <div class="ai2__node-name">Application Intelligence</div>
+                        <div class="ai2__node-desc">Human expertise structured for machine processing</div>
+                    </div>
                 </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-      </div>
-      <div style="padding:1.25rem 2rem;border-top:1px solid rgba(255,255,255,0.06);display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;">
-        <span style="font-size:0.825rem;color:#71717a;">Six successive systems. Each one builds on the last.</span>
-        <span class="badge badge-neutral">No code required</span>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- ── Image Split: Enterprise ────────────────────────────────── -->
-<section style="border-top:1px solid rgba(0,0,0,0.07);overflow:hidden;">
-  <div class="img-split reverse">
-    <div class="img-split-photo">
-      <img src="/images/abstract-city-building-shadows.jpg" alt="Enterprise-scale organizational intelligence" />
-      <div class="img-split-overlay">
-        <div style="display:flex;gap:1rem;flex-wrap:wrap;">
-          {[['12', 'Installers'],['28','Memories'],['9wk','Certification']].map(([n,l]) => (
-            <div style="background:rgba(0,0,0,0.7);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:0.6rem 0.9rem;">
-              <div style="font-family:'Bitter',Georgia,serif;font-size:1.2rem;font-weight:700;color:#fff;line-height:1;">{n}</div>
-              <div style="font-family:'JetBrains Mono',monospace;font-size:0.55rem;color:#71717a;text-transform:uppercase;letter-spacing:0.08em;margin-top:0.2rem;">{l}</div>
+                <div class="ai2__flow" id="ai2Flow">
+                    <span class="ai2__flow-line"></span>
+                    <span class="ai2__flow-op">&times;</span>
+                    <span class="ai2__flow-line"></span>
+                </div>
+                <div class="ai2__result" id="ai2Result">
+                    <div class="ai2__result-badge">Cross Intelligence</div>
+                    <div class="ai2__result-value">AI&sup2;</div>
+                    <div class="ai2__result-name">Cognitive systems that learn and evolve</div>
+                    <div class="ai2__result-desc">Memory training + daily conversation = compounding organizational intelligence</div>
+                </div>
             </div>
-          ))}
-        </div>
-      </div>
-    </div>
-    <div class="img-split-content" style="background:#f2f1ee;padding:4rem 2.5rem;">
-      <p class="feat-num" style="margin-bottom:0.75rem;">4.0 · Design Principles</p>
-      <h2 class="feat-h2" style="margin-bottom:1.25rem;">Three commitments.<br/>One architecture.</h2>
-      <div style="display:flex;flex-direction:column;gap:1.25rem;margin-bottom:2rem;">
-        {[
-          { num:'01', title:'Information Sovereignty', body:'Your knowledge stays in your repository. Readable. Editable. Portable. Forever. The AI serves your data — it never owns it.' },
-          { num:'02', title:'Conversation as Configuration', body:'Business knowledge shouldn\'t require a developer to encode. Guided installers extract intelligence through conversation — at machine speed.' },
-          { num:'03', title:'Architecture Over Tools', body:'Tools change. Platforms sunset. Models improve. Architecture endures. UCA is a permanent free standard.' },
-        ].map(({num, title, body}) => (
-          <div style="display:flex;gap:1rem;align-items:flex-start;">
-            <span style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;color:#e0641c;padding-top:0.15rem;flex-shrink:0;">{num}</span>
-            <div>
-              <p style="font-family:'Inter Tight',sans-serif;font-size:0.9rem;color:#0c0c0c;font-weight:600;margin:0 0 0.2rem;">{title}</p>
-              <p style="font-family:'Inter Tight',sans-serif;font-size:0.82rem;color:#4a4a4a;line-height:1.65;margin:0;">{body}</p>
+            <div class="ai2__illo-footer">
+                <span class="ai2__illo-footer-dot" id="ai2StatusDot"></span>
+                <span class="ai2__illo-footer-text" id="ai2StatusText">Synthesis complete — AI&sup2; active</span>
             </div>
-          </div>
-        ))}
-      </div>
-      <a href="/ai-guide" class="btn btn-org" style="align-self:flex-start;">Get the Free AI Guide →</a>
+        </div>
     </div>
-  </div>
 </section>
 
-<!-- ── Final CTA ──────────────────────────────────────────────── -->
-<section style="background:#f2f1ee;padding:5rem 0;border-top:1px solid rgba(0,0,0,0.07);">
-  <div class="container">
-    <div class="cta-row">
-      <div>
-        <div class="stag stag-o fade-up" data-delay="0" style="margin-bottom:1.25rem;">Ready to build →</div>
-        <h2 class="feat-h2 fade-up" data-delay="0.06" style="margin-bottom:1rem;">
-          Ready to build the airframe?
-        </h2>
-        <p class="feat-body fade-up" data-delay="0.1">
-          Start with the free standard. See how semantic addressing works. Then decide if you want to go further.
-        </p>
-        <div class="feat-ctas fade-up" data-delay="0.14">
-          <a href="/ai-guide" class="btn btn-org">Get the Free AI Guide →</a>
-          <a href="https://calendly.com/starlingaix" target="_blank" rel="noopener" class="btn-ghost-light">Talk to Us</a>
+<!-- ===== SECTION 3: AI-NATIVE ORG DESIGN ===== -->
+<section class="orgdesign" id="org-design">
+    <div class="orgdesign__inner">
+        <div class="section__header reveal">
+            <h2 class="section__h"><strong>Design your AI agent</strong> with our Industry 5.0 innovation framework</h2>
+            <div class="section__header-right">
+                <p class="body-lg">Starling AIX is built on Cognitive Design — a comprehensive approach to business design and transformation that synthesizes systematic efficiency with human values.</p>
+            </div>
         </div>
-      </div>
-      <div class="card-light fade-up" data-delay="0.12" style="padding:2.5rem;">
-        <p class="feat-num" style="margin-bottom:1.25rem;">What you get on day one</p>
-        <div style="display:flex;flex-direction:column;gap:0.85rem;">
-          {[
-            'Universal Cognitive Architecture — the free standard',
-            'AI Guide: plain-language breakdown of how LLMs work',
-            'Access to a 9-week Cognitive Design curriculum',
-            'Your first Constitutional Memory in week one',
-            'A working AI² Chief of Staff within 90 days',
-          ].map(item => (
-            <div class="check-item">{item}</div>
-          ))}
+
+        <div class="orgdesign__highlight reveal">
+            <div class="orgdesign__highlight-title">The first business methodology designed specifically for the AI era</div>
+            <div class="orgdesign__highlight-desc">Powering your AI&sup2; Chief of Staff. This isn't AI trained on the Internet. It's AI trained on Cognitive Design — the methodology of Smart Orgs.</div>
         </div>
-      </div>
+
+        <div class="orgdesign__grid">
+            <div class="orgdesign__card reveal reveal-d1">
+                <div class="orgdesign__card-icon">&hearts;</div>
+                <div class="orgdesign__card-title">Combines the efficiency of Lean</div>
+                <div class="orgdesign__card-desc">With the human-centered problem-solving of Design Thinking — now machine-executable.</div>
+            </div>
+            <div class="orgdesign__card reveal reveal-d2">
+                <div class="orgdesign__card-icon">&cir;</div>
+                <div class="orgdesign__card-title">Makes business knowledge machine-executable</div>
+                <div class="orgdesign__card-desc">While codifying your Hierarchy of Organizational Values through six progressive systems.</div>
+            </div>
+            <div class="orgdesign__card reveal reveal-d3">
+                <div class="orgdesign__card-icon">&equiv;</div>
+                <div class="orgdesign__card-title">Creates self-improving knowledge systems</div>
+                <div class="orgdesign__card-desc">Build intelligence through natural conversation that compounds with every session.</div>
+            </div>
+            <div class="orgdesign__card reveal reveal-d4">
+                <div class="orgdesign__card-icon">&diams;</div>
+                <div class="orgdesign__card-title">Enables a systematic enterprise asset</div>
+                <div class="orgdesign__card-desc">That gets smarter and more valuable over time — not a subscription that resets.</div>
+            </div>
+        </div>
     </div>
-  </div>
 </section>
 
-</Layout>
+<!-- ===== SECTION 4: PROVEN METHODS ===== -->
+<section class="methods" id="methods">
+    <div class="methods__inner">
+        <div class="section__header reveal">
+            <h2 class="section__h"><strong>Built from real business frameworks,</strong> not research labs</h2>
+            <div class="section__header-right">
+                <p class="body-lg">Most AI platforms start with technology and try to fit business into it. Starling AIX started with Chris Kincade and Ari Meisel's frameworks for business design, optimization, and transformation — then made them machine-executable.</p>
+                <p class="body-lg">The sound barrier didn't stop aviation. It defined the engineering required to go faster. We designed the airframe for Industry 5.0.</p>
+            </div>
+        </div>
 
-<style>
-  .about-hero-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 3rem;
-    align-items: start;
-  }
-  .about-metrics { display: none; }
+        <div class="methods__stats reveal">
+            <div class="methods__stat">
+                <div class="methods__stat-num"><span class="counter" data-target="25" data-suffix="">0</span></div>
+                <div class="methods__stat-label">Years of methodology</div>
+            </div>
+            <div class="methods__stat">
+                <div class="methods__stat-num"><span class="counter" data-target="12" data-suffix="K">0</span></div>
+                <div class="methods__stat-label">Hours of interface design</div>
+            </div>
+            <div class="methods__stat">
+                <div class="methods__stat-num"><span class="counter" data-target="12" data-suffix="">0</span></div>
+                <div class="methods__stat-label">Installer frameworks</div>
+            </div>
+            <div class="methods__stat">
+                <div class="methods__stat-num"><span class="counter" data-target="28" data-suffix="">0</span></div>
+                <div class="methods__stat-label">Constitutional memories</div>
+            </div>
+        </div>
 
-  @media(min-width: 768px) {
-    .about-hero-grid    { grid-template-columns: 1fr 1fr; align-items: center; }
-    .about-metrics      { display: block; }
-    .principles-grid    { grid-template-columns: repeat(2, 1fr) !important; }
-    .framework-grid     { grid-template-columns: repeat(2, 1fr) !important; }
-    .stats-strip-4      { grid-template-columns: repeat(4, 1fr) !important; }
-    .systems-grid       { grid-template-columns: repeat(3, 1fr) !important; }
-  }
-  @media(min-width: 768px) {
-    .systems-grid > div { border-right: 1px solid rgba(255,255,255,0.06); border-bottom: none !important; }
-    .systems-grid > div:last-child { border-right: none; }
-    .stats-strip-4 > div { border-right: 1px solid rgba(0,0,0,0.08) !important; border-bottom: none !important; }
-    .stats-strip-4 > div:last-child { border-right: none !important; }
-  }
-  @media(min-width: 768px) {
-    .img-split-content { padding: 5rem 4rem !important; }
-  }
+        <div class="methods__founders reveal">
+            <div class="methods__founder">
+                <div class="methods__founder-avatar methods__founder-avatar--ck">CK</div>
+                <div class="methods__founder-name">Chris Kincade</div>
+            </div>
+            <div class="methods__founder">
+                <div class="methods__founder-avatar methods__founder-avatar--am">AM</div>
+                <div class="methods__founder-name">Ari Meisel</div>
+            </div>
+        </div>
+
+        <div class="methods__tabs reveal" id="methodTabs">
+            <button class="methods__tab is-active" data-system="innovation">Innovation System</button>
+            <button class="methods__tab" data-system="optimization">Optimization System</button>
+            <button class="methods__tab" data-system="cognitive">Cognitive System</button>
+        </div>
+
+        <div class="methods__system is-active" data-panel="innovation">
+            <div class="methods__fw reveal">
+                <div class="methods__fw-head"><span class="methods__fw-code">ID10</span><span class="methods__fw-title">Value-Centric Design</span></div>
+                <div class="methods__fw-author">Chris Kincade</div>
+                <div class="methods__fw-desc">Conversational excavation of who you are — creates Cultural, Product, Customer, and Market Values, plus Dual Metrics drafts (ID20–23; LA20–21).</div>
+            </div>
+            <div class="methods__fw reveal reveal-d1">
+                <div class="methods__fw-head"><span class="methods__fw-code">MA10</span><span class="methods__fw-title">Open Road Canvas</span></div>
+                <div class="methods__fw-author">Chris Kincade</div>
+                <div class="methods__fw-desc">Strategic positioning that defines where you compete and how you win — creates Competitive Positioning, Business Model, and Revenue Strategy (MA20–22).</div>
+            </div>
+            <div class="methods__fw reveal reveal-d2">
+                <div class="methods__fw-head"><span class="methods__fw-code">IN10</span><span class="methods__fw-title">Value Mapping</span></div>
+                <div class="methods__fw-author">Chris Kincade</div>
+                <div class="methods__fw-desc">Defines what you're building and how you're expanding — creates Product Roadmap and Growth Strategy (IN20–21).</div>
+            </div>
+            <div class="methods__fw reveal reveal-d3">
+                <div class="methods__fw-head"><span class="methods__fw-code">BR10</span><span class="methods__fw-title">Impact Branding</span></div>
+                <div class="methods__fw-author">Chris Kincade</div>
+                <div class="methods__fw-desc">Transforms values into authentic market impact — creates Brand Positioning, Market Expression, and Stakeholder Communications (BR20–22).</div>
+            </div>
+        </div>
+
+        <div class="methods__system" data-panel="optimization">
+            <div class="methods__fw reveal">
+                <div class="methods__fw-head"><span class="methods__fw-code">PD10</span><span class="methods__fw-title">The Genius Paradigm</span></div>
+                <div class="methods__fw-author">Ari Meisel</div>
+                <div class="methods__fw-desc">Defines where you do your most strategic work — creates Innovation Zone and Task Replacement Plan (PD20–21).</div>
+            </div>
+            <div class="methods__fw reveal reveal-d1">
+                <div class="methods__fw-head"><span class="methods__fw-code">WF10</span><span class="methods__fw-title">Smart Workflows</span></div>
+                <div class="methods__fw-author">Ari Meisel</div>
+                <div class="methods__fw-desc">Clarifies how work flows with minimal friction — creates Signal Clarity, Project Clarity, and Delegation Standards (WF20–22).</div>
+            </div>
+            <div class="methods__fw reveal reveal-d2">
+                <div class="methods__fw-head"><span class="methods__fw-code">PR10</span><span class="methods__fw-title">Process Perfection</span></div>
+                <div class="methods__fw-author">Ari Meisel</div>
+                <div class="methods__fw-desc">Establishes Standing Operating Protocols (the AI-native SOP) — creates Process Clarity, OAO Methodology, and Quality Standards (PR20–22).</div>
+            </div>
+            <div class="methods__fw reveal reveal-d3">
+                <div class="methods__fw-head"><span class="methods__fw-code">CU10</span><span class="methods__fw-title">Eight Traits of Endurance</span></div>
+                <div class="methods__fw-author">Ari Meisel</div>
+                <div class="methods__fw-desc">Establishes cultural practices that sustain performance — creates Cultural Framework, Leadership Development, and Team Structure (CU20–22).</div>
+            </div>
+        </div>
+
+        <div class="methods__system" data-panel="cognitive">
+            <div class="methods__fw reveal">
+                <div class="methods__fw-head"><span class="methods__fw-code">SY10</span><span class="methods__fw-title">Smart Orgs</span></div>
+                <div class="methods__fw-author">Chris Kincade</div>
+                <div class="methods__fw-desc">AI-native organizational design — establishes System Configuration and governance protocols for Smart OS activation (SY21).</div>
+            </div>
+            <div class="methods__fw reveal reveal-d1">
+                <div class="methods__fw-head"><span class="methods__fw-code">LA10</span><span class="methods__fw-title">Organizational Intelligence</span></div>
+                <div class="methods__fw-author">Chris Kincade</div>
+                <div class="methods__fw-desc">Builds the measurement layer — creates Empirical Metrics and Empathic Metrics as Autonomic Equations (LA20–21).</div>
+            </div>
+            <div class="methods__fw reveal reveal-d2">
+                <div class="methods__fw-head"><span class="methods__fw-code">IT10</span><span class="methods__fw-title">Activating Your Smart OS</span></div>
+                <div class="methods__fw-author">Chris Kincade</div>
+                <div class="methods__fw-desc">Connects external intelligence sources — creates Intelligence Access and Integration Standards (IT20–21).</div>
+            </div>
+            <div class="methods__fw reveal reveal-d3">
+                <div class="methods__fw-head"><span class="methods__fw-code">SY11</span><span class="methods__fw-title">Unlocking Deep Context</span></div>
+                <div class="methods__fw-author">Chris Kincade</div>
+                <div class="methods__fw-desc">Advanced memory enhancement — refines all Constitutional memories with Deep Context layers for richer AI synthesis.</div>
+            </div>
+        </div>
+
+        <div class="methods__arch reveal" id="methodsArch">
+            <div class="methods__arch-header">
+                <div class="methods__arch-title">Six successive systems. Each one builds on the last. No code required.</div>
+                <div class="methods__arch-sub">The result? A complete AI-native business system you can build in natural conversation.</div>
+            </div>
+            <div class="methods__arch-mock">
+                <div class="methods__arch-mock-bar">
+                    <div class="methods__arch-mock-dots"><span class="methods__arch-mock-dot"></span><span class="methods__arch-mock-dot"></span><span class="methods__arch-mock-dot"></span></div>
+                    <div class="methods__arch-mock-title">System Architecture</div>
+                </div>
+                <div class="methods__arch-body">
+                    <div class="methods__arch-stack" id="archStack">
+                        <div class="methods__arch-layer is-active" data-layer="0">Cognitive Architecture</div>
+                        <div class="methods__arch-layer" data-layer="1">Logic + Routing</div>
+                        <div class="methods__arch-layer" data-layer="2">Value Design</div>
+                        <div class="methods__arch-layer" data-layer="3">Process Design</div>
+                        <div class="methods__arch-layer" data-layer="4">Autonomic Design</div>
+                        <div class="methods__arch-layer" data-layer="5">Semantic Design</div>
+                    </div>
+                    <div class="methods__arch-detail" id="archDetail">
+                        <!-- populated by JS -->
+                    </div>
+                </div>
+                <div class="methods__arch-footer">
+                    <span>Build Progress</span>
+                    <div class="methods__arch-progress"><div class="methods__arch-fill" id="archFill" style="width:17%"></div></div>
+                    <span id="archPct">1 / 6</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== SECTION 5: GET STARTED ===== -->
+<section class="tiers" id="get-started">
+    <div class="tiers__inner">
+        <div class="section__header reveal">
+            <h2 class="section__h"><strong>Choose Your Implementation Path</strong></h2>
+            <div class="section__header-right">
+                <p class="body-lg">Three paths. One principle: Your knowledge stays yours. The AI serves it.</p>
+            </div>
+        </div>
+
+        <div class="tiers__grid">
+            <div class="tier reveal">
+                <div class="tier__badge tier__badge--free">CA</div>
+                <div class="tier__name">UCA Free Standard</div>
+                <div class="tier__tagline">See how it works. Your knowledge, your control.</div>
+                <div class="tier__desc">See how Cognitive Architecture makes business speakable to AI and experience semantic addressing in action.</div>
+                <div class="tier__what">What You Get</div>
+                <div class="tier__desc">AI00_Lite operating logic, essential frameworks (SY01, SY02, SY06), ID10 Identity Installer creating 6 Constitutional Memories (21% of total)</div>
+                <div class="tier__result">&rarr; Your first 6 memories. Proof the architecture works.</div>
+                <div class="tier__cta">
+                    <a href="#" class="btn btn--secondary">
+                        Get Started Free
+                        <svg class="arrow" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2"><path d="M0.5 5.5h7"/><path d="M5.5 1.5l4 4-4 4"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="tier tier--featured reveal reveal-d1">
+                <div class="tier__badge tier__badge--org">OS</div>
+                <div class="tier__name">Org Brain Systems</div>
+                <div class="tier__tagline">Build complete organizational memory. The AI serves it.</div>
+                <div class="tier__desc">Build your complete Org Brain with Smart OS activation.</div>
+                <div class="tier__what">What You Get</div>
+                <div class="tier__desc">Starling OS, Innovation System (12 PMNs), Optimization System (11 PMNs), Cognitive System (5 PMNs) — complete 28 Constitutional Memories with Smart OS activation at 23.</div>
+                <div class="tier__result">&rarr; Smart OS activation at 23 memories. Your AI becomes an advisor.</div>
+                <div class="tier__cta">
+                    <a href="#" class="btn btn--primary">
+                        Get Org Brain
+                        <svg class="arrow" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2"><path d="M0.5 5.5h7"/><path d="M5.5 1.5l4 4-4 4"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="tier reveal reveal-d2">
+                <div class="tier__badge tier__badge--ent">TR</div>
+                <div class="tier__name">Enterprise Solutions</div>
+                <div class="tier__tagline">Integrate everything. Own everything.</div>
+                <div class="tier__desc">Use the Translation System to plug Org Brain into your existing networks.</div>
+                <div class="tier__what">What You Get</div>
+                <div class="tier__desc">Everything in Org Brain Systems plus Translation System (IT11–14), Semantic Bridge for enterprise integration, professional implementation, 90-day onboarding.</div>
+                <div class="tier__result">&rarr; Every system speaks your language. No more JSON. No more translation.</div>
+                <div class="tier__cta">
+                    <a href="#contact" class="btn btn--dark">
+                        Book a Consultation
+                        <svg class="arrow" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2"><path d="M0.5 5.5h7"/><path d="M5.5 1.5l4 4-4 4"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== SECTION 6: NEWSLETTER ===== -->
+<section class="newsletter" id="newsletter">
+    <div class="newsletter__inner reveal">
+        <p class="overline">On Cognitive Design</p>
+        <h3 class="newsletter__title"><strong>Lean optimized the machine. Design Thinking centered the human.</strong> What comes next?</h3>
+        <p class="newsletter__desc">A weekly newsletter on value design for the AI age. How organizations build intelligence that compounds — and why the ones that don't will fall behind.</p>
+        <div class="newsletter__form">
+            <input type="email" class="newsletter__input" placeholder="you@company.com" aria-label="Email address"/>
+            <button class="newsletter__submit" type="button">Subscribe</button>
+        </div>
+    </div>
+</section>
+
+<!-- ===== SECTION 7: DESIGN PRINCIPLES ===== -->
+<section class="principles" id="principles">
+    <div class="principles__inner">
+        <div class="section__header reveal">
+            <h2 class="section__h"><strong>What we believe</strong></h2>
+            <div class="section__header-right">
+                <p class="body-lg">Every design decision in Starling traces back to three principles. They aren't marketing copy. They're engineering constraints.</p>
+            </div>
+        </div>
+
+        <div class="principles__grid">
+            <div class="principle reveal">
+                <span class="principle__num">01</span>
+                <div class="principle__title">Information Sovereignty</div>
+                <div class="principle__desc">Your knowledge stays in your repository. Readable. Editable. Portable. Forever. The AI serves your data — it never owns it. No vendor lock-in. No proprietary formats. Natural language, stored where you control it.</div>
+            </div>
+            <div class="principle reveal reveal-d1">
+                <span class="principle__num">02</span>
+                <div class="principle__title">Conversation as Configuration</div>
+                <div class="principle__desc">Business knowledge shouldn't require a developer to encode. Starling installers extract organizational intelligence through guided conversation — the same way a great consultant would, at machine speed, with permanent output.</div>
+            </div>
+            <div class="principle reveal reveal-d2">
+                <span class="principle__num">03</span>
+                <div class="principle__title">Architecture Over Tools</div>
+                <div class="principle__desc">Tools change. Platforms sunset. Models improve. Architecture endures. UCA is a permanent free standard because the classification system for business knowledge shouldn't belong to any single vendor — including us.</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== FINAL CTA ===== -->
+<section class="final-cta" id="contact">
+    <div class="final-cta__inner reveal">
+        <h2 class="final-cta__title"><strong>Ready to build the airframe?</strong></h2>
+        <p class="final-cta__desc">Start with the free standard. See how semantic addressing works. Then decide if you want to go further.</p>
+        <div class="btn-group" style="justify-content:center">
+            <a href="#" class="btn btn--primary btn--large">
+                Get UCA Free
+                <svg class="arrow" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2"><path d="M0.5 5.5h7"/><path d="M5.5 1.5l4 4-4 4"/></svg>
+            </a>
+            <a href="#contact" class="btn btn--secondary btn--large">Talk to Us</a>
+        </div>
+    </div>
+</section>
+
+</main>
+<Footer />
+<script is:inline>
+/* ========================================================
+   HERO — Entrance + Coordinate Animation
+   ======================================================== */
+(function(){
+    const hero = document.querySelector('.ab-hero');
+    if (!hero) return;
+    setTimeout(() => hero.classList.add('is-loaded'), 100);
+
+    const coords = document.querySelectorAll('.ab-hero__coord');
+    if (!coords.length) return;
+
+    let activeIdx = 0;
+    let cycleTimer = null;
+
+    // Stagger entrance
+    coords.forEach((c, i) => {
+        setTimeout(() => c.classList.add('is-visible'), 600 + i * 150);
+    });
+
+    // Activate cycling
+    function activate(idx) {
+        coords.forEach((c, i) => c.classList.toggle('is-active', i === idx));
+        activeIdx = idx;
+    }
+
+    function startCycle() {
+        cycleTimer = setInterval(() => {
+            activate((activeIdx + 1) % coords.length);
+        }, 2500);
+    }
+
+    setTimeout(() => {
+        activate(0);
+        startCycle();
+    }, coords.length * 150 + 800);
+
+    coords.forEach((c, i) => {
+        c.addEventListener('click', () => {
+            clearInterval(cycleTimer);
+            activate(i);
+            setTimeout(startCycle, 5000);
+        });
+    });
+})();
+
+/* ========================================================
+   AI² — Interactive Convergence Illustration
+   ======================================================== */
+(function(){
+    const illo = document.getElementById('ai2Illo');
+    if (!illo) return;
+    const node1 = document.getElementById('ai2Node1');
+    const node2 = document.getElementById('ai2Node2');
+    const flow = document.getElementById('ai2Flow');
+    const result = document.getElementById('ai2Result');
+    const statusDot = document.getElementById('ai2StatusDot');
+    const statusText = document.getElementById('ai2StatusText');
+    const lines = flow.querySelectorAll('.ai2__flow-line');
+    const op = flow.querySelector('.ai2__flow-op');
+
+    let played = false;
+
+    function animate() {
+        if (played) return;
+        played = true;
+        // Step 1: Show nodes
+        setTimeout(() => { node1.classList.add('is-visible'); }, 200);
+        setTimeout(() => { node2.classList.add('is-visible'); }, 400);
+        // Step 2: Activate nodes
+        setTimeout(() => { node1.classList.add('is-active'); }, 800);
+        setTimeout(() => { node2.classList.add('is-active'); }, 1100);
+        // Step 3: Flow lines converge
+        setTimeout(() => { lines.forEach(l => l.classList.add('is-visible')); op.classList.add('is-visible'); }, 1500);
+        // Step 4: Result appears
+        setTimeout(() => { result.classList.add('is-visible'); }, 2100);
+        setTimeout(() => { result.classList.add('is-active'); }, 2500);
+        // Step 5: Status
+        setTimeout(() => { statusDot.classList.add('is-visible'); statusText.classList.add('is-visible'); }, 2800);
+    }
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+            if (e.isIntersecting) { animate(); observer.unobserve(e.target); }
+        });
+    }, { threshold: 0.3 });
+    observer.observe(illo);
+})();
+
+/* ========================================================
+   METHODS — Tab switching
+   ======================================================== */
+(function(){
+    const tabs = document.querySelectorAll('.methods__tab');
+    const panels = document.querySelectorAll('.methods__system');
+    if (!tabs.length) return;
+
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            const key = tab.dataset.system;
+            tabs.forEach(t => t.classList.toggle('is-active', t === tab));
+            panels.forEach(p => {
+                const isMatch = p.dataset.panel === key;
+                p.classList.toggle('is-active', isMatch);
+                // Re-trigger reveal animations
+                if (isMatch) {
+                    p.querySelectorAll('.reveal').forEach(el => {
+                        el.classList.remove('is-visible');
+                        setTimeout(() => el.classList.add('is-visible'), 50);
+                    });
+                }
+            });
+        });
+    });
+})();
+
+/* ========================================================
+   METHODS — Architecture Interactive Mockup
+   ======================================================== */
+(function(){
+    const arch = document.getElementById('methodsArch');
+    if (!arch) return;
+    const layers = arch.querySelectorAll('.methods__arch-layer');
+    const detail = document.getElementById('archDetail');
+    const fill = document.getElementById('archFill');
+    const pct = document.getElementById('archPct');
+
+    const LAYERS = [
+        { name:'Cognitive Architecture', num:'System 01', desc:'The foundational UCA addressing system. Gives every piece of business knowledge a permanent semantic coordinate — making your organization\'s intelligence speakable to AI.', tags:['UCA Standard','Semantic Addressing','28 Cognates'] },
+        { name:'Logic + Routing', num:'System 02', desc:'Operating logic and governance protocols that determine how AI processes requests, routes information, and maintains constitutional compliance across all interactions.', tags:['AI00 Logic','Governance','Routing Rules'] },
+        { name:'Value Design', num:'System 03', desc:'The Innovation System. Excavates organizational identity, competitive positioning, and market strategy through guided conversation — creating the first 12 constitutional memories.', tags:['ID10','MA10','IN10','BR10'] },
+        { name:'Process Design', num:'System 04', desc:'The Optimization System. Defines how work flows, how genius is deployed, and how processes self-improve — creating 11 operational memories that make your AI understand how you work.', tags:['PD10','WF10','PR10','CU10'] },
+        { name:'Autonomic Design', num:'System 05', desc:'The Cognitive System. Activates Smart OS, builds measurement layers, and connects intelligence sources — the final 5 memories that unlock your AI as an autonomous advisor.', tags:['SY10','LA10','IT10','SY11'] },
+        { name:'Semantic Design', num:'System 06', desc:'The Translation System. Bridges your Org Brain to external systems, enabling enterprise-wide integration where every tool speaks your organization\'s language natively.', tags:['IT11–14','Semantic Bridge','Integration'] },
+    ];
+
+    let activeIdx = 0;
+    let cycleTimer = null;
+
+    function renderDetail(idx) {
+        const l = LAYERS[idx];
+        detail.innerHTML = `
+            <div class="methods__arch-detail-num">${l.num}</div>
+            <div class="methods__arch-detail-name">${l.name}</div>
+            <div class="methods__arch-detail-desc">${l.desc}</div>
+            <div class="methods__arch-detail-tags">${l.tags.map(t => `<span class="methods__arch-detail-tag">${t}</span>`).join('')}</div>
+        `;
+        fill.style.width = Math.round(((idx + 1) / 6) * 100) + '%';
+        pct.textContent = (idx + 1) + ' / 6';
+    }
+
+    function activate(idx) {
+        layers.forEach((l, i) => l.classList.toggle('is-active', i === idx));
+        activeIdx = idx;
+        renderDetail(idx);
+    }
+
+    function startCycle() {
+        clearInterval(cycleTimer);
+        cycleTimer = setInterval(() => {
+            activate((activeIdx + 1) % 6);
+        }, 3500);
+    }
+
+    // Entrance
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+            if (e.isIntersecting) {
+                layers.forEach((l, i) => {
+                    setTimeout(() => l.classList.add('is-visible'), i * 120);
+                });
+                setTimeout(() => { activate(0); startCycle(); }, layers.length * 120 + 300);
+                observer.unobserve(e.target);
+            }
+        });
+    }, { threshold: 0.2 });
+    observer.observe(arch);
+
+    // Click interaction
+    layers.forEach((l, i) => {
+        l.addEventListener('click', () => {
+            clearInterval(cycleTimer);
+            activate(i);
+            setTimeout(startCycle, 6000);
+        });
+    });
+})();
+
+/* ========================================================
+   SCROLL REVEAL + ANIMATED COUNTERS
+   ======================================================== */
+const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+        if (e.isIntersecting) {
+            e.target.classList.add('is-visible');
+            e.target.querySelectorAll('.counter').forEach(el => {
+                if (el.dataset.counted) return;
+                el.dataset.counted = '1';
+                const target = parseInt(el.dataset.target);
+                const suffix = el.dataset.suffix || '';
+                const duration = 2000;
+                const start = performance.now();
+                function tick(now) {
+                    const elapsed = now - start;
+                    const progress = Math.min(elapsed / duration, 1);
+                    const eased = 1 - Math.pow(1 - progress, 3);
+                    el.textContent = Math.floor(eased * target) + suffix;
+                    if (progress < 1) requestAnimationFrame(tick);
+                }
+                requestAnimationFrame(tick);
+            });
+        }
+    });
+}, { threshold: 0.08, rootMargin: '0px 0px -60px 0px' });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+/* ========================================================
+   SMOOTH SCROLL
+   ======================================================== */
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', function(e) {
+        const t = document.querySelector(this.getAttribute('href'));
+        if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+    });
+});
+</script>
+</BaseLayout>
+
+<style is:global>
+/* ========================================================
+   HERO
+   ======================================================== */
+.ab-hero{position:relative;overflow:hidden;background:var(--bg-white)}
+.ab-hero__bg{position:absolute;inset:0;z-index:0;pointer-events:none;
+    background:
+        radial-gradient(ellipse 60% 50% at 50% 40%,rgba(212,112,44,0.06),transparent 60%),
+        radial-gradient(ellipse 40% 40% at 30% 70%,rgba(54,209,183,0.04),transparent 50%),
+        radial-gradient(ellipse 40% 40% at 70% 60%,rgba(155,93,229,0.04),transparent 50%);
+}
+.ab-hero__inner{
+    position:relative;z-index:2;max-width:var(--max-w);margin:0 auto;
+    padding:calc(var(--nav-h) + var(--hero-pad)) var(--pad-x) var(--hero-pad);
+    display:grid;grid-template-columns:1fr;gap:32px;align-items:center;
+}
+@media(min-width:768px){.ab-hero__inner{grid-template-columns:1fr 1fr;gap:64px}}
+.ab-hero__text{max-width:580px}
+.ab-hero__badge{
+    display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border-radius:var(--radius-pill);
+    background:var(--brand-pale);border:1px solid rgba(212,112,44,0.15);
+    font-size:12px;font-weight:600;color:var(--brand);margin-bottom:24px;
+    opacity:0;transform:translateY(12px);transition:all 0.6s cubic-bezier(0.16,1,0.3,1);
+}
+.ab-hero.is-loaded .ab-hero__badge{opacity:1;transform:translateY(0);transition-delay:0.1s}
+.ab-hero__badge-dot{width:6px;height:6px;border-radius:50%;background:var(--brand);animation:badgePulse 2s ease infinite}
+@keyframes badgePulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.5;transform:scale(1.3)}}
+.ab-hero__title{
+    font-size:clamp(2rem,4.5vw,52px);font-weight:400;line-height:1.1;letter-spacing:-0.025em;
+    margin-bottom:24px;opacity:0;transform:translateY(16px);
+    transition:all 0.7s cubic-bezier(0.16,1,0.3,1);
+}
+.ab-hero.is-loaded .ab-hero__title{opacity:1;transform:translateY(0);transition-delay:0.2s}
+.ab-hero__title strong{font-weight:500;color:var(--text-primary)}
+.ab-hero__title em{font-style:normal;color:var(--text-secondary)}
+.ab-hero__sub{
+    font-size:1rem;line-height:1.7;color:var(--text-secondary);margin-bottom:32px;
+    opacity:0;transform:translateY(16px);transition:all 0.7s cubic-bezier(0.16,1,0.3,1);
+}
+@media(min-width:768px){.ab-hero__sub{font-size:1.125rem}}
+.ab-hero.is-loaded .ab-hero__sub{opacity:1;transform:translateY(0);transition-delay:0.35s}
+.ab-hero__cta{
+    opacity:0;transform:translateY(16px);transition:all 0.7s cubic-bezier(0.16,1,0.3,1);
+}
+.ab-hero.is-loaded .ab-hero__cta{opacity:1;transform:translateY(0);transition-delay:0.5s}
+
+/* Hero illustration — semantic coordinate visualization */
+.ab-hero__illo{
+    position:relative;opacity:0;transform:translateY(20px);
+    transition:all 0.8s cubic-bezier(0.16,1,0.3,1);
+}
+.ab-hero.is-loaded .ab-hero__illo{opacity:1;transform:translateY(0);transition-delay:0.4s}
+.ab-hero__card{
+    border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;
+    background:var(--bg-white);box-shadow:var(--shadow-lg);
+}
+.ab-hero__card-bar{
+    display:flex;align-items:center;gap:8px;padding:10px 16px;
+    background:var(--bg-gray);border-bottom:1px solid var(--border);
+}
+.ab-hero__card-dots{display:flex;gap:5px}
+.ab-hero__card-dot{width:8px;height:8px;border-radius:50%;background:var(--border)}
+.ab-hero__card-title{font-size:11px;font-weight:600;color:var(--text-muted);margin-left:auto;text-transform:uppercase;letter-spacing:0.06em}
+.ab-hero__card-body{padding:24px;display:flex;flex-direction:column;gap:12px}
+.ab-hero__coord{
+    display:flex;align-items:center;gap:12px;padding:12px 16px;
+    border-radius:var(--radius);border:1.5px solid var(--border);background:var(--bg-white);
+    opacity:0;transform:translateX(-12px);
+    transition:all 0.5s cubic-bezier(0.16,1,0.3,1);
+}
+.ab-hero__coord.is-visible{opacity:1;transform:translateX(0)}
+.ab-hero__coord.is-active{border-color:var(--brand);background:var(--brand-pale)}
+.ab-hero__coord-code{
+    font-family:var(--font-mono);font-size:12px;font-weight:700;color:var(--brand);
+    padding:4px 10px;border-radius:var(--radius-pill);background:rgba(212,112,44,0.08);flex-shrink:0;
+}
+.ab-hero__coord-label{font-size:12.5px;font-weight:500;color:var(--text-primary);flex:1}
+.ab-hero__coord-status{
+    width:8px;height:8px;border-radius:50%;flex-shrink:0;opacity:0;
+    transition:opacity 0.3s ease;
+}
+.ab-hero__coord.is-active .ab-hero__coord-status{opacity:1;animation:badgePulse 2s ease infinite}
+
+/* ========================================================
+   SECTION 2 — AI² Application Intelligence
+   ======================================================== */
+.ai2{padding:var(--section-pad) 0;background:var(--bg-gray);position:relative;overflow:hidden}
+.ai2__inner{max-width:var(--max-w);margin:0 auto;padding:0 var(--pad-x)}
+
+/* AI² Interactive Illustration */
+.ai2__illo{
+    position:relative;max-width:800px;margin:0 auto;
+    border:1px solid var(--border);border-radius:var(--radius-lg);
+    background:var(--bg-white);box-shadow:var(--shadow-lg);overflow:hidden;
+}
+.ai2__illo-bar{
+    display:flex;align-items:center;gap:8px;padding:10px 16px;
+    background:var(--bg-gray);border-bottom:1px solid var(--border);
+}
+.ai2__illo-dots{display:flex;gap:5px}
+.ai2__illo-dot{width:8px;height:8px;border-radius:50%;background:var(--border)}
+.ai2__illo-title{font-size:11px;font-weight:600;color:var(--text-muted);margin-left:auto;text-transform:uppercase;letter-spacing:0.06em}
+.ai2__illo-body{padding:32px 28px;display:flex;flex-direction:column;gap:24px}
+
+/* The two input nodes */
+.ai2__nodes{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media(max-width:480px){.ai2__nodes{grid-template-columns:1fr}}
+.ai2__node{
+    padding:20px;border-radius:var(--radius);border:1.5px solid var(--border);
+    background:var(--bg-white);text-align:center;position:relative;
+    opacity:0;transform:translateY(12px);transition:all 0.5s cubic-bezier(0.16,1,0.3,1);
+}
+.ai2__node.is-visible{opacity:1;transform:translateY(0)}
+.ai2__node.is-active{border-color:currentColor;box-shadow:0 0 0 3px color-mix(in srgb,currentColor 12%,transparent)}
+.ai2__node-badge{
+    font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;
+    color:var(--text-muted);margin-bottom:6px;
+}
+.ai2__node-value{font-family:var(--font-mono);font-size:28px;font-weight:800;color:var(--text-primary);margin-bottom:4px}
+.ai2__node-name{font-size:13px;font-weight:600;color:var(--text-primary);margin-bottom:4px}
+.ai2__node-desc{font-size:11px;color:var(--text-muted);line-height:1.4}
+.ai2__node--ai1{color:var(--accent-pink)}
+.ai2__node--ai2{color:var(--accent-teal)}
+
+/* Convergence flow */
+.ai2__flow{display:flex;align-items:center;justify-content:center;gap:10px;padding:8px 0}
+.ai2__flow-line{
+    flex:1;max-width:120px;height:2px;border-radius:2px;
+    background:linear-gradient(90deg,var(--accent-pink),var(--accent-teal));
+    transform:scaleX(0);transition:transform 0.8s cubic-bezier(0.16,1,0.3,1);
+}
+.ai2__flow-line.is-visible{transform:scaleX(1)}
+.ai2__flow-op{
+    font-size:20px;font-weight:300;color:var(--text-muted);
+    opacity:0;transition:opacity 0.3s ease;
+}
+.ai2__flow-op.is-visible{opacity:1}
+
+/* Result node */
+.ai2__result{
+    padding:24px;border-radius:var(--radius);text-align:center;
+    background:linear-gradient(135deg,rgba(212,112,44,0.04),rgba(155,93,229,0.04));
+    border:2px solid rgba(212,112,44,0.2);position:relative;
+    opacity:0;transform:scale(0.9);transition:all 0.6s cubic-bezier(0.34,1.56,0.64,1);
+}
+.ai2__result.is-visible{opacity:1;transform:scale(1)}
+.ai2__result.is-active{
+    border-color:var(--brand);
+    box-shadow:0 0 0 4px rgba(212,112,44,0.08),0 8px 32px rgba(212,112,44,0.12);
+}
+.ai2__result-badge{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--brand);margin-bottom:4px}
+.ai2__result-value{font-family:var(--font-mono);font-size:36px;font-weight:800;color:var(--brand);margin-bottom:4px}
+.ai2__result-name{font-size:14px;font-weight:600;color:var(--text-primary);margin-bottom:4px}
+.ai2__result-desc{font-size:12px;color:var(--text-muted);line-height:1.5;max-width:360px;margin:0 auto}
+
+/* Pulse particles */
+.ai2__particle{
+    position:absolute;width:6px;height:6px;border-radius:50%;opacity:0;
+    animation:ai2Particle 2s ease-in-out infinite;
+}
+@keyframes ai2Particle{
+    0%{opacity:0;transform:translate(0,0)}
+    30%{opacity:0.6}
+    100%{opacity:0;transform:translate(var(--dx),var(--dy))}
+}
+
+/* Footer status */
+.ai2__illo-footer{
+    display:flex;align-items:center;justify-content:center;gap:8px;
+    padding:12px 20px;border-top:1px solid var(--border);background:var(--bg-gray);
+    font-size:11px;font-weight:500;color:var(--text-muted);
+}
+.ai2__illo-footer-dot{width:6px;height:6px;border-radius:50%;background:#1a9e82;opacity:0;transition:opacity 0.3s ease}
+.ai2__illo-footer-dot.is-visible{opacity:1;animation:statusPulse 2s ease infinite}
+@keyframes statusPulse{0%,100%{opacity:1}50%{opacity:0.4}}
+.ai2__illo-footer-text{opacity:0;transition:opacity 0.3s ease}
+.ai2__illo-footer-text.is-visible{opacity:1}
+
+/* ========================================================
+   SECTION 3 — AI-Native Org Design
+   ======================================================== */
+.orgdesign{padding:var(--section-pad) 0;background:var(--bg-white);position:relative;overflow:hidden}
+.orgdesign__inner{max-width:var(--max-w);margin:0 auto;padding:0 var(--pad-x)}
+.orgdesign__highlight{
+    padding:24px 28px;border-radius:var(--radius-lg);
+    background:var(--bg-white);border:1px solid var(--border);
+    margin-bottom:48px;
+}
+.orgdesign__highlight-title{font-size:15px;font-weight:600;color:var(--text-primary);margin-bottom:6px}
+.orgdesign__highlight-desc{font-size:14px;color:var(--text-secondary);line-height:1.6}
+.orgdesign__grid{display:grid;grid-template-columns:1fr;gap:20px}
+@media(min-width:640px){.orgdesign__grid{grid-template-columns:1fr 1fr}}
+.orgdesign__card{
+    padding:28px;border-radius:var(--radius-lg);background:var(--bg-white);
+    border:1px solid var(--border);transition:all 0.3s ease;
+}
+.orgdesign__card:hover{border-color:rgba(212,112,44,0.15);box-shadow:var(--shadow-md);transform:translateY(-2px)}
+.orgdesign__card-icon{
+    width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;
+    margin-bottom:16px;font-size:20px;
+    background:var(--brand-pale);color:var(--brand);
+}
+.orgdesign__card-title{font-size:15px;font-weight:600;color:var(--text-primary);margin-bottom:6px}
+.orgdesign__card-desc{font-size:13px;color:var(--text-muted);line-height:1.5}
+
+/* ========================================================
+   SECTION 4 — Proven Methods
+   ======================================================== */
+.methods{padding:var(--section-pad) 0;background:var(--bg-gray);position:relative;overflow:hidden}
+.methods__inner{max-width:var(--max-w);margin:0 auto;padding:0 var(--pad-x)}
+
+/* Stats row */
+.methods__stats{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-bottom:64px}
+@media(min-width:768px){.methods__stats{grid-template-columns:repeat(4,1fr);gap:24px}}
+.methods__stat{
+    padding:24px;border-radius:var(--radius-lg);background:var(--bg-gray);
+    border:1px solid var(--border);text-align:center;
+}
+.methods__stat-num{font-size:clamp(2rem,4vw,42px);font-weight:700;color:var(--text-primary);line-height:1;margin-bottom:4px}
+.methods__stat-label{font-size:12px;font-weight:500;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.04em}
+
+/* Founders */
+.methods__founders{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:48px;justify-content:center}
+.methods__founder{
+    display:flex;align-items:center;gap:12px;padding:12px 20px;
+    border-radius:var(--radius-pill);background:var(--bg-gray);border:1px solid var(--border);
+}
+.methods__founder-avatar{
+    width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+    font-size:13px;font-weight:700;color:#fff;flex-shrink:0;
+}
+.methods__founder-avatar--ck{background:linear-gradient(135deg,var(--brand),#e8945a)}
+.methods__founder-avatar--am{background:linear-gradient(135deg,var(--accent-blue),#9b5de5)}
+.methods__founder-name{font-size:14px;font-weight:600;color:var(--text-primary)}
+
+/* System tabs */
+.methods__tabs{display:flex;gap:4px;margin-bottom:32px;overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:4px}
+.methods__tab{
+    padding:10px 20px;border-radius:var(--radius-pill);font-size:13px;font-weight:600;
+    color:var(--text-muted);background:var(--bg-gray);border:1px solid var(--border);
+    cursor:pointer;transition:all 0.25s ease;white-space:nowrap;font-family:var(--font);
+}
+.methods__tab.is-active{background:var(--brand-pale);color:var(--brand);border-color:rgba(212,112,44,0.2)}
+.methods__tab:hover{color:var(--text-primary)}
+
+/* Framework cards */
+.methods__system{display:none}
+.methods__system.is-active{display:grid;grid-template-columns:1fr;gap:16px}
+@media(min-width:768px){.methods__system.is-active{grid-template-columns:1fr 1fr}}
+.methods__fw{
+    padding:24px;border-radius:var(--radius-lg);background:var(--bg-gray);
+    border:1px solid var(--border);transition:all 0.3s ease;
+}
+.methods__fw:hover{border-color:rgba(212,112,44,0.15);box-shadow:var(--shadow-sm);transform:translateY(-1px)}
+.methods__fw-head{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+.methods__fw-code{
+    font-family:var(--font-mono);font-size:12px;font-weight:700;color:var(--brand);
+    padding:4px 10px;border-radius:var(--radius-pill);background:rgba(212,112,44,0.08);flex-shrink:0;
+}
+.methods__fw-title{font-size:14px;font-weight:600;color:var(--text-primary)}
+.methods__fw-author{font-size:11px;font-weight:500;color:var(--text-muted);margin-bottom:8px}
+.methods__fw-desc{font-size:13px;color:var(--text-secondary);line-height:1.5}
+
+/* Architecture Interactive Mockup */
+.methods__arch{margin-top:64px}
+.methods__arch-header{text-align:center;margin-bottom:24px}
+.methods__arch-title{font-size:15px;font-weight:600;color:var(--text-primary);margin-bottom:6px}
+.methods__arch-sub{font-size:13px;color:var(--text-muted)}
+.methods__arch-mock{
+    border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;
+    background:var(--bg-white);box-shadow:var(--shadow-lg);
+}
+.methods__arch-mock-bar{
+    display:flex;align-items:center;gap:8px;padding:10px 16px;
+    background:var(--bg-gray);border-bottom:1px solid var(--border);
+}
+.methods__arch-mock-dots{display:flex;gap:5px}
+.methods__arch-mock-dot{width:8px;height:8px;border-radius:50%;background:var(--border)}
+.methods__arch-mock-title{font-size:11px;font-weight:600;color:var(--text-muted);margin-left:auto;text-transform:uppercase;letter-spacing:0.06em}
+.methods__arch-body{display:grid;grid-template-columns:1fr;gap:0;min-height:320px}
+@media(min-width:768px){.methods__arch-body{grid-template-columns:200px 1fr}}
+
+/* Left: layer stack */
+.methods__arch-stack{
+    padding:20px;border-right:1px solid var(--border);background:var(--bg-gray);
+    display:flex;flex-direction:column;gap:6px;
+}
+@media(max-width:767px){.methods__arch-stack{border-right:none;border-bottom:1px solid var(--border);flex-direction:row;flex-wrap:wrap;gap:8px}}
+.methods__arch-layer{
+    padding:10px 14px;border-radius:var(--radius);font-size:12px;font-weight:600;
+    color:#fff;cursor:pointer;position:relative;
+    opacity:0;transform:translateX(-10px);
+    transition:all 0.4s cubic-bezier(0.16,1,0.3,1);
+}
+@media(max-width:767px){.methods__arch-layer{flex:1;min-width:100px;text-align:center;font-size:11px;padding:8px 10px}}
+.methods__arch-layer.is-visible{opacity:1;transform:translateX(0)}
+.methods__arch-layer.is-active{transform:translateX(4px) scale(1.02);box-shadow:0 4px 16px rgba(0,0,0,0.15)}
+@media(max-width:767px){.methods__arch-layer.is-active{transform:translateY(-2px) scale(1.02)}}
+.methods__arch-layer:nth-child(1){background:linear-gradient(135deg,#1a1d28,#2d2564)}
+.methods__arch-layer:nth-child(2){background:linear-gradient(135deg,var(--brand),#e8945a)}
+.methods__arch-layer:nth-child(3){background:linear-gradient(135deg,var(--accent-pink),#e06090)}
+.methods__arch-layer:nth-child(4){background:linear-gradient(135deg,var(--accent-teal),#1a9e82)}
+.methods__arch-layer:nth-child(5){background:linear-gradient(135deg,var(--accent-blue),#9b5de5)}
+.methods__arch-layer:nth-child(6){background:linear-gradient(135deg,#8792a2,#4f566b)}
+
+/* Right: detail panel */
+.methods__arch-detail{padding:28px;display:flex;flex-direction:column;justify-content:center}
+.methods__arch-detail-num{
+    font-family:var(--font-mono);font-size:11px;font-weight:700;color:var(--text-muted);
+    text-transform:uppercase;letter-spacing:0.06em;margin-bottom:8px;
+}
+.methods__arch-detail-name{font-size:20px;font-weight:600;color:var(--text-primary);margin-bottom:10px;line-height:1.3}
+.methods__arch-detail-desc{font-size:14px;color:var(--text-secondary);line-height:1.6;margin-bottom:16px}
+.methods__arch-detail-tags{display:flex;flex-wrap:wrap;gap:6px}
+.methods__arch-detail-tag{
+    font-size:10px;font-weight:600;padding:4px 10px;border-radius:var(--radius-pill);
+    background:var(--bg-gray);border:1px solid var(--border);color:var(--text-muted);
+}
+.methods__arch-footer{
+    display:flex;align-items:center;gap:8px;padding:10px 16px;
+    border-top:1px solid var(--border);background:var(--bg-gray);
+    font-size:10px;font-weight:500;color:var(--text-muted);
+}
+.methods__arch-progress{flex:1;max-width:200px;height:4px;border-radius:2px;background:var(--border);overflow:hidden}
+.methods__arch-fill{height:100%;border-radius:2px;background:linear-gradient(90deg,var(--accent-teal),var(--brand));transition:width 0.6s cubic-bezier(0.16,1,0.3,1)}
+
+/* ========================================================
+   SECTION 5 — Get Started (Pricing Tiers)
+   ======================================================== */
+.tiers{padding:var(--section-pad) 0;background:var(--bg-white);position:relative;overflow:hidden}
+.tiers__inner{max-width:var(--max-w);margin:0 auto;padding:0 var(--pad-x)}
+.tiers__grid{display:grid;grid-template-columns:1fr;gap:24px}
+@media(min-width:768px){.tiers__grid{grid-template-columns:repeat(3,1fr)}}
+.tier{
+    padding:32px;border-radius:var(--radius-lg);background:var(--bg-white);
+    border:1px solid var(--border);display:flex;flex-direction:column;
+    transition:all 0.3s ease;
+}
+.tier:hover{box-shadow:var(--shadow-lg);transform:translateY(-3px)}
+.tier--featured{border-color:var(--brand);box-shadow:var(--shadow-brand)}
+.tier__badge{
+    display:inline-flex;align-items:center;justify-content:center;
+    width:44px;height:44px;border-radius:12px;font-size:12px;font-weight:800;
+    letter-spacing:0.02em;color:#fff;margin-bottom:20px;flex-shrink:0;
+}
+.tier__badge--free{background:linear-gradient(135deg,var(--accent-teal),#1a9e82)}
+.tier__badge--org{background:linear-gradient(135deg,var(--brand),#e8945a)}
+.tier__badge--ent{background:linear-gradient(135deg,var(--accent-blue),#9b5de5)}
+.tier__name{font-size:18px;font-weight:600;color:var(--text-primary);margin-bottom:4px}
+.tier__tagline{font-size:13px;color:var(--text-muted);margin-bottom:20px;line-height:1.5}
+.tier__what{
+    font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;
+    color:var(--text-muted);margin-bottom:8px;
+}
+.tier__desc{font-size:13px;color:var(--text-secondary);line-height:1.6;margin-bottom:20px}
+.tier__result{
+    font-size:13px;font-weight:500;color:var(--brand);padding:12px 16px;
+    border-radius:var(--radius);background:var(--brand-pale);margin-bottom:24px;
+    border-left:3px solid var(--brand);line-height:1.5;
+}
+.tier__cta{margin-top:auto}
+
+/* ========================================================
+   SECTION 6 — Newsletter CTA
+   ======================================================== */
+.newsletter{padding:var(--section-pad) 0;background:var(--bg-cream);position:relative;overflow:hidden}
+.newsletter__inner{max-width:680px;margin:0 auto;padding:0 var(--pad-x);text-align:center}
+.newsletter__title{
+    font-size:clamp(1.75rem,3.5vw,40px);font-weight:400;line-height:1.15;
+    letter-spacing:-0.025em;color:var(--text-secondary);margin-bottom:16px;
+}
+.newsletter__title strong{font-weight:500;color:var(--text-primary)}
+.newsletter__desc{font-size:1rem;color:var(--text-secondary);line-height:1.7;margin-bottom:32px}
+@media(min-width:768px){.newsletter__desc{font-size:1.125rem}}
+.newsletter__form{display:flex;gap:8px;max-width:420px;margin:0 auto}
+@media(max-width:480px){.newsletter__form{flex-direction:column}}
+.newsletter__input{
+    flex:1;padding:12px 18px;border-radius:var(--radius-pill);font-size:14px;
+    border:1.5px solid var(--border);font-family:var(--font);color:var(--text-primary);
+    background:var(--bg-white);transition:border-color 0.2s ease;
+}
+.newsletter__input:focus{outline:none;border-color:var(--brand)}
+.newsletter__submit{
+    padding:12px 24px;border-radius:var(--radius-pill);font-size:14px;font-weight:500;
+    background:linear-gradient(135deg,var(--brand),#e8945a);color:#fff;border:none;
+    cursor:pointer;font-family:var(--font);white-space:nowrap;
+    transition:all 0.3s ease;
+}
+.newsletter__submit:hover{background:linear-gradient(135deg,var(--brand-dark),var(--brand))}
+
+/* ========================================================
+   SECTION 7 — Design Principles
+   ======================================================== */
+.principles{padding:var(--section-pad) 0;background:var(--bg-gray);position:relative;overflow:hidden}
+.principles__inner{max-width:var(--max-w);margin:0 auto;padding:0 var(--pad-x)}
+.principles__grid{display:grid;grid-template-columns:1fr;gap:24px}
+@media(min-width:768px){.principles__grid{grid-template-columns:repeat(3,1fr)}}
+.principle{
+    padding:32px;border-radius:var(--radius-lg);background:var(--bg-gray);
+    border:1px solid var(--border);transition:all 0.3s ease;
+}
+.principle:hover{border-color:rgba(212,112,44,0.15);box-shadow:var(--shadow-md);transform:translateY(-2px)}
+.principle__num{
+    font-family:var(--font-mono);font-size:12px;font-weight:700;color:var(--brand);
+    padding:4px 10px;border-radius:var(--radius-pill);background:rgba(212,112,44,0.08);
+    display:inline-block;margin-bottom:16px;
+}
+.principle__title{font-size:18px;font-weight:600;color:var(--text-primary);margin-bottom:10px;line-height:1.3}
+.principle__desc{font-size:14px;color:var(--text-secondary);line-height:1.6}
+
+/* ========================================================
+   FINAL CTA
+   ======================================================== */
+.final-cta{padding:var(--section-pad) 0;background:var(--bg-white);text-align:center}
+.final-cta__inner{max-width:640px;margin:0 auto;padding:0 var(--pad-x)}
+.final-cta__title{
+    font-size:clamp(1.75rem,3.5vw,40px);font-weight:400;line-height:1.15;
+    letter-spacing:-0.025em;margin-bottom:16px;color:var(--text-secondary);
+}
+.final-cta__title strong{font-weight:500;color:var(--text-primary)}
+.final-cta__desc{font-size:1rem;color:var(--text-secondary);line-height:1.7;margin-bottom:32px}
+@media(min-width:768px){.final-cta__desc{font-size:1.125rem}}
 </style>
